@@ -18,6 +18,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
+  console.log('<App />     rendered!!!');
   return (
     <div>
       <Switch>
