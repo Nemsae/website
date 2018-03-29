@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { Switch, Route, NavLink } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -19,17 +19,15 @@ import MaterialIcon from 'components/MaterialIcon';
 
 import A from './A';
 import AppWrapper from './AppWrapper';
-import Bullet from './Bullet';
 import Content from './Content';
 import Footer from './Footer';
 import Header from './Header';
 import HeaderBar from './HeaderBar';
 import H1 from './H1';
 import LangBar from './LangBar';
-import CrossMenu from './CrossMenu';
+import Menu from './Menu';
 import MenuItem from './MenuItem';
 import MenuItems from './MenuItems';
-import StyledNavLink from './StyledNavLink';
 import P from './P';
 import HeaderLeft from './HeaderLeft';
 import HeaderRight from './HeaderRight';
@@ -45,14 +43,14 @@ export function App(props) {
     <AppWrapper>
 
       <Header currentPath={props.location.pathname}>
-        <CrossMenu>
+        <Menu>
           <MenuItems>
-            <MenuItem><Bullet /><StyledNavLink to="/about" activeClassName="hurray">About</StyledNavLink></MenuItem>
-            <MenuItem><Bullet /><StyledNavLink to="/projects" activeClassName="hurray">Projects</StyledNavLink></MenuItem>
-            <MenuItem><Bullet /><StyledNavLink to="/blog" activeClassName="hurray">Blog</StyledNavLink></MenuItem>
-            <MenuItem><Bullet /><StyledNavLink to="/contact" activeClassName="hurray">Contact</StyledNavLink></MenuItem>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>About</MenuItem>
+            <MenuItem>Projects</MenuItem>
+            <MenuItem>Contact</MenuItem>
           </MenuItems>
-        </CrossMenu>
+        </Menu>
         {/* <HeaderLeft>
           <HeaderBar />
           <H1><b><FormattedMessage {...messages.header1} /></b><br /><FormattedMessage {...messages.header2} /></H1>

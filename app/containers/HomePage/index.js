@@ -18,17 +18,18 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
+//  NOTE: for main bg video, swap to fullscreen video.
+
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     console.log('<HomePage />     rendered!!!');
     return (
       <Wrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
-        {/* <BackgroundVideo className={this.state.videoPlay ? 'fade-in' : ''} autoPlay mute onLoadedData={this.triggerVideoPlay}> */}
-        <BackgroundVideo autoPlay loop muted onLoadedData={() => console.log('Video loaded.')}>
+        {/* <BackgroundVideo autoPlay loop muted onLoadedData={() => console.log('Video loaded.')}>
           <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
           Your browser does not support the mp4 video format.
-        </BackgroundVideo>
+        </BackgroundVideo> */}
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </Wrapper>
     );

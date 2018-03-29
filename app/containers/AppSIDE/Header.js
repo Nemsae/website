@@ -12,6 +12,11 @@ const Header = styled.div`
   background-color: white;
 
   transition: margin 600ms cubic-bezier(0.77, 0, 0.175, 1);
+
+  ${'' /* overflow: hidden;
+  float: left;
+  width: 100px;
+  height: 100vh; */}
 `;
 
 export default Header;
