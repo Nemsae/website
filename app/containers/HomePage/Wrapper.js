@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  color: #000;
-  background: #fff;
+  background: #000;
+  color: #fff;
+  ${'' /* background: #464647; */}
 
   display: flex;
   flex-direction: column;
