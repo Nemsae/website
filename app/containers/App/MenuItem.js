@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-const MenuItem = styled.li`
+import { NavLink } from 'react-router-dom';
+
+const MenuItem = styled(NavLink)`
+${'' /* const MenuItem = styled.li` */}
   height: 50%;
   width: 50%;
 
@@ -28,7 +31,7 @@ const MenuItem = styled.li`
     border-right: 1px solid #000;
     .link-group {
       bottom: 8px;
-      right: 40px;
+      right: 70px;
     }
   }
   &:nth-child(2) {
@@ -36,7 +39,7 @@ const MenuItem = styled.li`
     border-bottom: 1px solid #000;
     .link-group {
       bottom: 8px;
-      left: 40px;
+      left: 70px;
     }
   }
   &:nth-child(3) {
@@ -45,7 +48,7 @@ const MenuItem = styled.li`
     ${'' /* background: #FEC0C1; */}
     .link-group {
       top: 8px;
-      right: 40px;
+      right: 70px;
     }
   }
   &:nth-child(4) {
@@ -54,7 +57,7 @@ const MenuItem = styled.li`
     ${'' /* background: #DC2543; */}
     .link-group {
       top: 8px;
-      left: 40px;
+      left: 70px;
     }
   }
 `;

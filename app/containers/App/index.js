@@ -31,8 +31,10 @@ import HeaderTitle from './HeaderTitle';
 // import H1 from './H1';
 // import LangBar from './LangBar';
 import LinkGroup from './LinkGroup';
+import LinkText from './LinkText';
 import MenuItem from './MenuItem';
 import MenuItems from './MenuItems';
+import HomeNavLink from './HomeNavLink';
 import StyledNavLink from './StyledNavLink';
 import P from './P';
 // import HeaderLeft from './HeaderLeft';
@@ -40,17 +42,28 @@ import P from './P';
 
 import messages from './messages';
 
+const validRoutes = {
+  '/': true,
+  '/about': false,
+  '/projects': false,
+  '/blog': false,
+  '/contact': false,
+};
+
 export function App(props) {
   //  NOTE: if on home page, render landing style menu. Through className, or render separate component.
   //  If I render separate component, will this affect the css transitions? I will have to depend on react-transition-group for the render
   //  Also having the component will unmount, and the other will have to mount. No way to link the two for a smooth `transition`
   console.log('App    props.location.pathname: ', props.location.pathname);
+  console.log('validRoutes: ', validRoutes);
+  const isMenuActive = validRoutes[props.location.pathname] || false;
+  console.log('isMenuActive: ', isMenuActive);
   return (
     <AppWrapper>
 
       <Header currentPath={props.location.pathname}>
 
-        <HeaderLogo>R</HeaderLogo>
+        <HeaderLogo><HomeNavLink to="/" activeClassName="hurray">R</HomeNavLink></HeaderLogo>
 
         {/* <HeaderTitle>Web Dev</HeaderTitle> */}
 
@@ -60,46 +73,34 @@ export function App(props) {
           <A isActive={props.locale === 'ko'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('ko')}><span>KO</span></A>
         </HeaderLangBar>
 
-        <CrossMenu>
+        <CrossMenu active={isMenuActive}>
           <MenuItems>
-            <MenuItem>
+            <MenuItem to="/about" activeClassName="hurray">
               <LinkGroup>
                 <Bullet right />
-                <StyledNavLink to="/about" activeClassName="hurray"><FormattedMessage {...messages.link1} /></StyledNavLink>
+                <LinkText><FormattedMessage {...messages.link1} /></LinkText>
               </LinkGroup>
             </MenuItem>
-            <MenuItem>
+            <MenuItem to="/projects" activeClassName="hurray">
               <LinkGroup>
                 <Bullet left />
-                <StyledNavLink to="/projects" activeClassName="hurray"><FormattedMessage {...messages.link2} /></StyledNavLink>
+                <LinkText><FormattedMessage {...messages.link2} /></LinkText>
               </LinkGroup>
             </MenuItem>
-            <MenuItem>
+            <MenuItem to="/blog" activeClassName="hurray">
               <LinkGroup>
                 <Bullet right />
-                <StyledNavLink to="/blog" activeClassName="hurray"><FormattedMessage {...messages.link3} /></StyledNavLink>
+                <LinkText><FormattedMessage {...messages.link3} /></LinkText>
               </LinkGroup>
             </MenuItem>
-            <MenuItem>
+            <MenuItem to="/contact" activeClassName="hurray">
               <LinkGroup>
                 <Bullet left />
-                <StyledNavLink to="/contact" activeClassName="hurray"><FormattedMessage {...messages.link4} /></StyledNavLink>
+                <LinkText><FormattedMessage {...messages.link4} /></LinkText>
               </LinkGroup>
             </MenuItem>
           </MenuItems>
         </CrossMenu>
-        {/* <HeaderLeft>
-          <HeaderBar />
-          <H1><b><FormattedMessage {...messages.header1} /></b><br /><FormattedMessage {...messages.header2} /></H1>
-        </HeaderLeft>
-        <HeaderRight>
-          <LangBar>
-            <A isActive={props.locale === 'en'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('en')}><span>EN</span></A>
-            <A isActive={props.locale === 'es'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('es')}><span>ES</span></A>
-            <A isActive={props.locale === 'ko'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('ko')}><span>KO</span></A>
-          </LangBar>
-          <HeaderBar />
-        </HeaderRight> */}
       </Header>
 
       <Content>

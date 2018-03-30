@@ -24,8 +24,8 @@ const Bullet = (props) => {
 
 Bullet.propTypes = {
   children: PropTypes.any,
-  left: PropTypes.boolean,
-  right: PropTypes.boolean,
+  left: PropTypes.bool,
+  right: PropTypes.bool,
 };
 
 export default Bullet;

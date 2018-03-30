@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 import { squeezeIn } from 'utils/Keyframes';
 
-const MenuItems = styled.ul`
+const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
   ${'' /* background: #fff; */}
 
   display: flex;
   flex-wrap: wrap;
   position: relative;
 
-  animation: ${squeezeIn} 1100ms ease;
+  ${'' /* animation: ${squeezeIn} 1100ms ease; */}
   max-width: 600px;
   max-height: 600px;
   width: 100%;
@@ -20,7 +20,7 @@ const MenuItems = styled.ul`
   margin: 0;
   padding: 0;
 
-  ${'' /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */}
+  transition: all 400ms;
 `;
 
 export default MenuItems;

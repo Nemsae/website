@@ -1,9 +1,8 @@
 import BasicNavLink from './BasicNavLink';
 
 const StyledNavLink = BasicNavLink.extend.attrs({ className: 'nav-link_styled' })`
-  color: #000;
-
-  transition: all 400ms;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
 `;
 
 export default StyledNavLink;

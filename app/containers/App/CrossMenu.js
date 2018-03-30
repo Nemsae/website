@@ -10,6 +10,28 @@ class CrossMenu extends React.PureComponent {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      ${!this.props.active && `
+        .menu-items {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+
+          max-width: 100px;
+          max-height: 100px;
+
+          .nav-link_styled {
+            opacity: 0;
+          }
+
+          .bullet-link {
+            height: 20px;
+            width: 20px;
+
+            // right: -40px;
+          }
+        }
+      `}
     `;
 
     return (
@@ -20,6 +42,7 @@ class CrossMenu extends React.PureComponent {
 
 CrossMenu.propTypes = {
   children: PropTypes.any,
+  active: PropTypes.bool,
 };
 
 export default CrossMenu;
