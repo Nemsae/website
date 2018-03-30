@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { opaqueIn } from 'utils/KeyFrames';
+import { opaqueIn } from 'utils/keyFrames';
 
 class BackgroundVideo extends React.PureComponent {
 // const BackgroundVideo = ({ ...props }) => {

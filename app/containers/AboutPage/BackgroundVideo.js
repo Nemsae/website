@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { opaqueIn } from 'utils/KeyFrames';
+import { opaqueIn } from 'utils/keyFrames';
 
 const BackgroundVideo = styled.video`
   ${''/* height: 100vh; */}

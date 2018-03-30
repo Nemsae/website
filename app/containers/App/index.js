@@ -14,7 +14,7 @@ import { makeSelectLocation } from 'containers/App/selectors';
 import { changeLocale } from 'containers/LanguageProvider/actions';
 import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 
-import MaterialIcon from 'components/MaterialIcon';
+// import MaterialIcon from 'components/MaterialIcon';
 // import FlagIcon from 'components/FlagIcon';
 
 import A from './A';
@@ -37,7 +37,7 @@ import MenuItem from './MenuItem';
 import MenuItems from './MenuItems';
 import HomeNavLink from './HomeNavLink';
 import StyledNavLink from './StyledNavLink';
-import P from './P';
+// import P from './P';
 // import HeaderLeft from './HeaderLeft';
 // import HeaderRight from './HeaderRight';
 
@@ -56,15 +56,33 @@ export class App extends React.PureComponent {
     hoveredLocation: '',
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location === this.state.hoveredLocation) this.resetHoveredLocation();
+  }
+
   resetHoveredLocation = () => {
     this.setState({
       hoveredLocation: '',
     });
   }
 
-  captureHoveredLocation = (evt) => {
+  captureHoveredLocation = (location) => {
+    //  BUG: issue with onMouseOver being triggered multiple times. Issue is most likely the event handler intereacting with child elements triggering it.
+    //  resetHoveredLocation was being called because the mouse "left" from parent to inner child.
+    //  Solution: use mouseEnter and mouseLeave instead of mouseHover and mouseOut
+
+    //  BUG: issue with onMouseOver being triggered first on child element. Hence `location` is "" because no id.
+    //  if event fires from child, check parent div for id then.
+    //  Solution: instead of setting location from "id", pass as an argument and bind in render.
+
+    // const location = evt.target.id;
+    // console.log('evt.target.attr: ', evt.target.attr);
+    // console.log('evt.target.parentNode.className: ', evt.target.parentNode.className);
+    // console.log('Sanity:captureHoveredLocation    called!     with location: ', location, '     and a previous location: ', this.state.hoveredLocation);
+
+    if (location === '' || location === this.state.hoveredLocation) return;
     this.setState({
-      hoveredLocation: evt.target.id,
+      hoveredLocation: location,
     });
   }
 
@@ -73,7 +91,7 @@ export class App extends React.PureComponent {
     //  NOTE: if on home page, render landing style menu. Through className, or render separate component.
     //  If I render separate component, will this affect the css transitions? I will have to depend on react-transition-group for the render
     //  Also having the component will unmount, and the other will have to mount. No way to link the two for a smooth `transition`
-    console.log('App    this.props.location.pathname: ', this.props.location.pathname);
+    // console.log('App    this.props.location.pathname: ', this.props.location.pathname);
     const isMenuActive = validRoutes[this.props.location.pathname] || false;
     return (
       <AppWrapper>
@@ -83,7 +101,7 @@ export class App extends React.PureComponent {
 
           {/* <HeaderTitle>Web Dev</HeaderTitle> */}
 
-          <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length ? true : false}><b>{this.props.location.pathname}</b><i>{this.state.hoveredLocation}</i></HeaderBreadCrumb>
+          <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><b>{this.props.location.pathname}</b><i>{this.state.hoveredLocation}</i></HeaderBreadCrumb>
 
           <HeaderLangBar>
             <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
@@ -93,43 +111,43 @@ export class App extends React.PureComponent {
 
           <CrossMenu active={isMenuActive}>
             <MenuItems>
-              <MenuItem id="about" to="/about" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
+              <MenuItem id="about" to="/about" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('about')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('about')}>
                 <LinkGroup>
                   <Bullet right />
                   <LinkText><FormattedMessage {...messages.link1} /></LinkText>
                 </LinkGroup>
               </MenuItem>
-              <MenuItem id="projects" to="/projects" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
-              <LinkGroup>
-                <Bullet left />
-                <LinkText><FormattedMessage {...messages.link2} /></LinkText>
-              </LinkGroup>
-            </MenuItem>
-            <MenuItem id="blog" to="/blog" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
-            <LinkGroup>
-              <Bullet right />
-              <LinkText><FormattedMessage {...messages.link3} /></LinkText>
-            </LinkGroup>
-          </MenuItem>
-          <MenuItem id="contact" to="/contact" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
-          <LinkGroup>
-            <Bullet left />
-            <LinkText><FormattedMessage {...messages.link4} /></LinkText>
-          </LinkGroup>
-        </MenuItem>
-    </MenuItems>
-  </CrossMenu>
-</Header>
+              <MenuItem id="projects" to="/projects" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('projects')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('projects')}>
+                <LinkGroup>
+                  <Bullet left />
+                  <LinkText><FormattedMessage {...messages.link2} /></LinkText>
+                </LinkGroup>
+              </MenuItem>
+              <MenuItem id="blog" to="/blog" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('blog')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('blog')}>
+                <LinkGroup>
+                  <Bullet right />
+                  <LinkText><FormattedMessage {...messages.link3} /></LinkText>
+                </LinkGroup>
+              </MenuItem>
+              <MenuItem id="contact" to="/contact" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('contact')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('contact')}>
+                <LinkGroup>
+                  <Bullet left />
+                  <LinkText><FormattedMessage {...messages.link4} /></LinkText>
+                </LinkGroup>
+              </MenuItem>
+            </MenuItems>
+          </CrossMenu>
+        </Header>
 
-<Content>
-  <Switch>
-    <Route exact path="/" component={HomePage} />
-    <Route component={NotFoundPage} />
-  </Switch>
-</Content>
+        <Content>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </Content>
 
-</AppWrapper>
-);
+      </AppWrapper>
+    );
   }
 }
 

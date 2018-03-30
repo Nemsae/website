@@ -22,7 +22,7 @@ const HeaderBreadCrumb = (props) => {
 };
 
 HeaderBreadCrumb.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.any,
   strikeThrough: PropTypes.bool,
 };
 
