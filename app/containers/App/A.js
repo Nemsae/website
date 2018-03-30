@@ -7,6 +7,12 @@ const A = (props) => {
     display: flex;
     color: #000;
 
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+
     &:visited {
       color: #000;
     }

@@ -15,7 +15,8 @@ const Bullet = (props) => {
 
     background: #000;
 
-    transition: all 400ms;
+    opacity: 1;
+    transition: all 200ms;
   `;
 
   return <BulletPrimitive>{ props.children }</BulletPrimitive>;

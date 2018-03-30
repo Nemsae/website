@@ -52,7 +52,7 @@ export function App(props) {
 
         <HeaderLogo>R</HeaderLogo>
 
-        <HeaderTitle>Web Dev</HeaderTitle>
+        {/* <HeaderTitle>Web Dev</HeaderTitle> */}
 
         <HeaderLangBar>
           <A isActive={props.locale === 'en'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('en')}><span>EN</span></A>
@@ -65,25 +65,25 @@ export function App(props) {
             <MenuItem>
               <LinkGroup>
                 <Bullet right />
-                <StyledNavLink to="/about" activeClassName="hurray">About</StyledNavLink>
+                <StyledNavLink to="/about" activeClassName="hurray"><FormattedMessage {...messages.link1} /></StyledNavLink>
               </LinkGroup>
             </MenuItem>
             <MenuItem>
               <LinkGroup>
                 <Bullet left />
-                <StyledNavLink to="/projects" activeClassName="hurray">Projects</StyledNavLink>
+                <StyledNavLink to="/projects" activeClassName="hurray"><FormattedMessage {...messages.link2} /></StyledNavLink>
               </LinkGroup>
             </MenuItem>
             <MenuItem>
               <LinkGroup>
                 <Bullet right />
-                <StyledNavLink to="/blog" activeClassName="hurray">Blog</StyledNavLink>
+                <StyledNavLink to="/blog" activeClassName="hurray"><FormattedMessage {...messages.link3} /></StyledNavLink>
               </LinkGroup>
             </MenuItem>
             <MenuItem>
               <LinkGroup>
                 <Bullet left />
-                <StyledNavLink to="/contact" activeClassName="hurray">Contact</StyledNavLink>
+                <StyledNavLink to="/contact" activeClassName="hurray"><FormattedMessage {...messages.link4} /></StyledNavLink>
               </LinkGroup>
             </MenuItem>
           </MenuItems>

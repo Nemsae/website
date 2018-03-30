@@ -6,16 +6,20 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header1: {
-    id: 'app.components.App.header.1',
-    defaultMessage: 'project',
+  link1: {
+    id: 'app.components.App.link.1',
+    defaultMessage: 'about',
   },
-  header2: {
-    id: 'app.components.App.header.2',
-    defaultMessage: 'CAROUSEL',
+  link2: {
+    id: 'app.components.App.link.2',
+    defaultMessage: 'projects',
   },
-  footer: {
-    id: 'app.components.App.footer',
-    defaultMessage: 'made with',
+  link3: {
+    id: 'app.components.App.link.3',
+    defaultMessage: 'blog',
+  },
+  link4: {
+    id: 'app.components.App.link.4',
+    defaultMessage: 'contact',
   },
 });
