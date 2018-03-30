@@ -57,8 +57,24 @@ export const opaqueIn = () => {
   return opaque;
 };
 
+export const squeezeIn = () => {
+  const squeeze = keyframes`
+    from {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    to {
+      max-width: 600px;
+      max-height: 600px;
+    }
+  `;
+
+  return squeeze;
+};
 
 export default {
+  squeezeIn,
   opaqueIn,
   fadeIn,
   fadeOut,

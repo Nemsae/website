@@ -8,12 +8,16 @@ injectGlobal`
     width: 100%;
   }
 
+  h1 {
+    font-family: 'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
+  }
+
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
   }
 
   body.fontLoaded {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', 'Open Sans', Helvetica, Arial, sans-serif;
   }
 
   #app {

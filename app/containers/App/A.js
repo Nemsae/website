@@ -12,7 +12,7 @@ const A = (props) => {
     }
 
     ${props.isActive && `
-      color: #fff;
+      color: #FEC0C1;
     `}
   `;
 

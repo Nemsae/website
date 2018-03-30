@@ -21,18 +21,22 @@ import A from './A';
 import AppWrapper from './AppWrapper';
 import Bullet from './Bullet';
 import Content from './Content';
-import Footer from './Footer';
-import Header from './Header';
-import HeaderBar from './HeaderBar';
-import H1 from './H1';
-import LangBar from './LangBar';
 import CrossMenu from './CrossMenu';
+// import Footer from './Footer';
+import Header from './Header';
+import HeaderLangBar from './HeaderLangBar';
+import HeaderLogo from './HeaderLogo';
+import HeaderTitle from './HeaderTitle';
+// import HeaderBar from './HeaderBar';
+// import H1 from './H1';
+// import LangBar from './LangBar';
+import LinkGroup from './LinkGroup';
 import MenuItem from './MenuItem';
 import MenuItems from './MenuItems';
 import StyledNavLink from './StyledNavLink';
 import P from './P';
-import HeaderLeft from './HeaderLeft';
-import HeaderRight from './HeaderRight';
+// import HeaderLeft from './HeaderLeft';
+// import HeaderRight from './HeaderRight';
 
 import messages from './messages';
 
@@ -45,12 +49,43 @@ export function App(props) {
     <AppWrapper>
 
       <Header currentPath={props.location.pathname}>
+
+        <HeaderLogo>R</HeaderLogo>
+
+        <HeaderTitle>Web Dev</HeaderTitle>
+
+        <HeaderLangBar>
+          <A isActive={props.locale === 'en'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('en')}><span>EN</span></A>
+          <A isActive={props.locale === 'es'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('es')}><span>ES</span></A>
+          <A isActive={props.locale === 'ko'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('ko')}><span>KO</span></A>
+        </HeaderLangBar>
+
         <CrossMenu>
           <MenuItems>
-            <MenuItem><Bullet /><StyledNavLink to="/about" activeClassName="hurray">About</StyledNavLink></MenuItem>
-            <MenuItem><Bullet /><StyledNavLink to="/projects" activeClassName="hurray">Projects</StyledNavLink></MenuItem>
-            <MenuItem><Bullet /><StyledNavLink to="/blog" activeClassName="hurray">Blog</StyledNavLink></MenuItem>
-            <MenuItem><Bullet /><StyledNavLink to="/contact" activeClassName="hurray">Contact</StyledNavLink></MenuItem>
+            <MenuItem>
+              <LinkGroup>
+                <Bullet right />
+                <StyledNavLink to="/about" activeClassName="hurray">About</StyledNavLink>
+              </LinkGroup>
+            </MenuItem>
+            <MenuItem>
+              <LinkGroup>
+                <Bullet left />
+                <StyledNavLink to="/projects" activeClassName="hurray">Projects</StyledNavLink>
+              </LinkGroup>
+            </MenuItem>
+            <MenuItem>
+              <LinkGroup>
+                <Bullet right />
+                <StyledNavLink to="/blog" activeClassName="hurray">Blog</StyledNavLink>
+              </LinkGroup>
+            </MenuItem>
+            <MenuItem>
+              <LinkGroup>
+                <Bullet left />
+                <StyledNavLink to="/contact" activeClassName="hurray">Contact</StyledNavLink>
+              </LinkGroup>
+            </MenuItem>
           </MenuItems>
         </CrossMenu>
         {/* <HeaderLeft>
