@@ -20,55 +20,42 @@ import messages from './messages';
 
 //  NOTE: for main bg video, swap to fullscreen video.
 
-export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class AboutPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    console.log('<HomePage />     rendered!!!');
+    console.log('<AboutPage />     rendered!!!');
     return (
       <Wrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
-        {/* <BackgroundVideo autoPlay loop muted onLoadedData={() => console.log('Video loaded.')}>
+        <BackgroundVideo autoPlay loop muted onLoadedData={() => console.log('Video loaded.')}>
           <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
           Your browser does not support the mp4 video format.
-        </BackgroundVideo> */}
+        </BackgroundVideo>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </Wrapper>
     );
   }
 }
 
-HomePage.propTypes = {
+AboutPage.propTypes = {
   // recommendations: PropTypes.array,
-  // features: PropTypes.array,
-  // fetchRecommendationsPage: PropTypes.func,
-  // fetchFeaturesPage: PropTypes.func,
-  // changeRateRecommendation: PropTypes.func,
-  // loading: PropTypes.bool,
-  // success: PropTypes.bool,
-  // error: PropTypes.oneOfType([
-  //   PropTypes.object,
-  //   PropTypes.bool,
-  // ]),
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
     // fetchRecommendationsPage: (page, amt) => dispatch(fetchRecommendations(page, amt)),
-    // fetchFeaturesPage: (page, amt) => dispatch(fetchFeatures(page, amt)),
-    // changeRateRecommendation: (id, page, amt) => dispatch(rateRecommendation(id, page, amt)),
   };
 }
 
 const mapStateToProps = createStructuredSelector({
   // loading: makeSelectLoading(),
-  // error: makeSelectError(),
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
-const withReducer = injectReducer({ key: 'home', reducer });
-const withSaga = injectSaga({ key: 'home', saga });
+const withReducer = injectReducer({ key: 'about', reducer });
+const withSaga = injectSaga({ key: 'about', saga });
 
 export default compose(
   withReducer,
   withSaga,
   withConnect,
-)(HomePage);
+)(AboutPage);

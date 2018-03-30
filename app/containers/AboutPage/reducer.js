@@ -17,7 +17,7 @@ const initialState = fromJS({
   error: false,
 });
 
-function homeReducer(state = initialState, action) {
+function appReducer(state = initialState, action) {
   switch (action.type) {
     case GET_RECOMMENDATIONS:
       return state
@@ -58,4 +58,4 @@ function homeReducer(state = initialState, action) {
   }
 }
 
-export default homeReducer;
+export default appReducer;

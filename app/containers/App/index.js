@@ -8,6 +8,7 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 import HomePage from 'containers/HomePage/Loadable';
+import AboutPage from 'containers/AboutPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import { makeSelectLocation } from 'containers/App/selectors';
@@ -17,12 +18,14 @@ import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 // import MaterialIcon from 'components/MaterialIcon';
 // import FlagIcon from 'components/FlagIcon';
 
+import CrossMenu from 'components/CrossMenu';
+
 import A from './A';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
 import Bullet from './Bullet';
 import Content from './Content';
-import CrossMenu from './CrossMenu';
+// import CrossMenu from './CrossMenu';
 import CrumbCurrent from './CrumbCurrent';
 import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
@@ -60,7 +63,8 @@ export class App extends React.PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.location === this.state.hoveredLocation) this.resetHoveredLocation();
+    //  NOTE: clears the hover, when coming from active Menu to inactive (via selecting a route).
+    if (nextProps.location.pathname.slice(1) === this.state.hoveredLocation) this.resetHoveredLocation();
   }
 
   resetHoveredLocation = () => {
@@ -78,13 +82,13 @@ export class App extends React.PureComponent {
     //  if event fires from child, check parent div for id then.
     //  Solution: instead of setting location from "id", pass as an argument and bind in render.
 
+    //  BUG: re render of the menu items, because of the capture changing state.
+
     // const location = evt.target.id;
     // console.log('evt.target.attr: ', evt.target.attr);
     // console.log('evt.target.parentNode.className: ', evt.target.parentNode.className);
     // console.log('Sanity:captureHoveredLocation    called!     with location: ', location, '     and a previous location: ', this.state.hoveredLocation);
-
-    if (`/${location}` === this.props.location.pathname) return;
-    if (location === '' || location === this.state.hoveredLocation) return;
+    if (location === '' || location === this.state.hoveredLocation || location === this.props.location.pathname.slice(1)) return;
     this.setState({
       hoveredLocation: location,
     });
@@ -113,7 +117,12 @@ export class App extends React.PureComponent {
             <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
           </HeaderLangBar>
 
-          <CrossMenu active={isMenuActive}>
+          <CrossMenu
+            active={isMenuActive}
+            captureHoveredLocation={this.captureHoveredLocation}
+            resetHoveredLocation={this.resetHoveredLocation}
+          />
+          {/* <CrossMenu active={isMenuActive}>
             <MenuItems>
               <MenuItem id="about" to="/about" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('about')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('about')}>
                 <LinkGroup>
@@ -140,12 +149,14 @@ export class App extends React.PureComponent {
                 </LinkGroup>
               </MenuItem>
             </MenuItems>
-          </CrossMenu>
+          </CrossMenu> */}
+
         </Header>
 
         <Content>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route exact path="/about" component={AboutPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </Content>

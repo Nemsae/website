@@ -20,9 +20,6 @@ const HeaderBreadCrumb = (props) => {
       .crumb-current {
         text-decoration: line-through;
       }
-      i {
-        color: #FEC0C1;
-      }
     `}
   `;
   return <HeaderBreadCrumbPrimitive>{ props.children }</HeaderBreadCrumbPrimitive>;
