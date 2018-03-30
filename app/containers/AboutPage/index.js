@@ -22,7 +22,7 @@ import messages from './messages';
 
 export class AboutPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    console.log('<AboutPage />     rendered!!!');
+    console.log('<AboutPage />     rendered!');
     return (
       <Wrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}

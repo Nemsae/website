@@ -12,7 +12,7 @@ import messages from './messages';
 
 export class CrossMenu extends React.PureComponent {
   render() {
-    console.log('Sanity:CrossMenu     rendered!');
+    console.log('<CrossMenu />     rendered!');
     return (
       <Wrapper active={this.props.active}>
         <MenuItems>
@@ -47,7 +47,7 @@ export class CrossMenu extends React.PureComponent {
 }
 
 CrossMenu.propTypes = {
-  isMenuActive: PropTypes.bool,
+  active: PropTypes.bool,
   captureHoveredLocation: PropTypes.func,
   resetHoveredLocation: PropTypes.func,
 };

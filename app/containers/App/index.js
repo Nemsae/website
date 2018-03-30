@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { Switch, Route, NavLink } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -23,9 +23,7 @@ import CrossMenu from 'components/CrossMenu';
 import A from './A';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
-import Bullet from './Bullet';
 import Content from './Content';
-// import CrossMenu from './CrossMenu';
 import CrumbCurrent from './CrumbCurrent';
 import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
@@ -37,10 +35,6 @@ import HeaderTitle from './HeaderTitle';
 // import HeaderBar from './HeaderBar';
 // import H1 from './H1';
 // import LangBar from './LangBar';
-import LinkGroup from './LinkGroup';
-import LinkText from './LinkText';
-import MenuItem from './MenuItem';
-import MenuItems from './MenuItems';
 import HomeNavLink from './HomeNavLink';
 import StyledNavLink from './StyledNavLink';
 // import P from './P';
@@ -57,6 +51,7 @@ const validRoutes = {
   '/contact': false,
 };
 
+// export function App(props) {
 export class App extends React.PureComponent {
   state = {
     hoveredLocation: '',
@@ -94,7 +89,6 @@ export class App extends React.PureComponent {
     });
   }
 
-// export function App(props) {
   render() {
     //  NOTE: if on home page, render landing style menu. Through className, or render separate component.
     //  If I render separate component, will this affect the css transitions? I will have to depend on react-transition-group for the render
@@ -103,54 +97,21 @@ export class App extends React.PureComponent {
     const isMenuActive = validRoutes[this.props.location.pathname] || false;
     return (
       <AppWrapper>
+
         <Header currentPath={this.props.location.pathname}>
-
           <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
-
           {/* <HeaderTitle>Web Dev</HeaderTitle> */}
-
           <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
-
           <HeaderLangBar>
             <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
             <A isActive={this.props.locale === 'es'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('es')}><span>ES</span></A>
             <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
           </HeaderLangBar>
-
           <CrossMenu
             active={isMenuActive}
             captureHoveredLocation={this.captureHoveredLocation}
             resetHoveredLocation={this.resetHoveredLocation}
           />
-          {/* <CrossMenu active={isMenuActive}>
-            <MenuItems>
-              <MenuItem id="about" to="/about" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('about')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('about')}>
-                <LinkGroup>
-                  <Bullet right />
-                  <LinkText><FormattedMessage {...messages.link1} /></LinkText>
-                </LinkGroup>
-              </MenuItem>
-              <MenuItem id="projects" to="/projects" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('projects')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('projects')}>
-                <LinkGroup>
-                  <Bullet left />
-                  <LinkText><FormattedMessage {...messages.link2} /></LinkText>
-                </LinkGroup>
-              </MenuItem>
-              <MenuItem id="blog" to="/blog" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('blog')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('blog')}>
-                <LinkGroup>
-                  <Bullet right />
-                  <LinkText><FormattedMessage {...messages.link3} /></LinkText>
-                </LinkGroup>
-              </MenuItem>
-              <MenuItem id="contact" to="/contact" activeClassName="active-link" onMouseEnter={() => this.captureHoveredLocation('contact')} onMouseLeave={this.resetHoveredLocation} onFocus={() => this.captureHoveredLocation('contact')}>
-                <LinkGroup>
-                  <Bullet left />
-                  <LinkText><FormattedMessage {...messages.link4} /></LinkText>
-                </LinkGroup>
-              </MenuItem>
-            </MenuItems>
-          </CrossMenu> */}
-
         </Header>
 
         <Content>
