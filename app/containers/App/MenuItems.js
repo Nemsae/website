@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { transitionAll400 } from 'utils/transitions';
 import { squeezeIn } from 'utils/Keyframes';
 
 const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
@@ -20,7 +21,7 @@ const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
   margin: 0;
   padding: 0;
 
-  transition: all 400ms;
+  ${transitionAll400}
 `;
 
 export default MenuItems;

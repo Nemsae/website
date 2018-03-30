@@ -24,6 +24,7 @@ import Content from './Content';
 import CrossMenu from './CrossMenu';
 // import Footer from './Footer';
 import Header from './Header';
+import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
 import HeaderTitle from './HeaderTitle';
@@ -50,68 +51,86 @@ const validRoutes = {
   '/contact': false,
 };
 
-export function App(props) {
-  //  NOTE: if on home page, render landing style menu. Through className, or render separate component.
-  //  If I render separate component, will this affect the css transitions? I will have to depend on react-transition-group for the render
-  //  Also having the component will unmount, and the other will have to mount. No way to link the two for a smooth `transition`
-  console.log('App    props.location.pathname: ', props.location.pathname);
-  console.log('validRoutes: ', validRoutes);
-  const isMenuActive = validRoutes[props.location.pathname] || false;
-  console.log('isMenuActive: ', isMenuActive);
-  return (
-    <AppWrapper>
+export class App extends React.PureComponent {
+  state = {
+    hoveredLocation: '',
+  }
 
-      <Header currentPath={props.location.pathname}>
+  resetHoveredLocation = () => {
+    this.setState({
+      hoveredLocation: '',
+    });
+  }
 
-        <HeaderLogo><HomeNavLink to="/" activeClassName="hurray">R</HomeNavLink></HeaderLogo>
+  captureHoveredLocation = (evt) => {
+    this.setState({
+      hoveredLocation: evt.target.id,
+    });
+  }
 
-        {/* <HeaderTitle>Web Dev</HeaderTitle> */}
+// export function App(props) {
+  render() {
+    //  NOTE: if on home page, render landing style menu. Through className, or render separate component.
+    //  If I render separate component, will this affect the css transitions? I will have to depend on react-transition-group for the render
+    //  Also having the component will unmount, and the other will have to mount. No way to link the two for a smooth `transition`
+    console.log('App    this.props.location.pathname: ', this.props.location.pathname);
+    const isMenuActive = validRoutes[this.props.location.pathname] || false;
+    return (
+      <AppWrapper>
+        <Header currentPath={this.props.location.pathname}>
 
-        <HeaderLangBar>
-          <A isActive={props.locale === 'en'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('en')}><span>EN</span></A>
-          <A isActive={props.locale === 'es'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('es')}><span>ES</span></A>
-          <A isActive={props.locale === 'ko'} role="button" tabIndex={0} onClick={() => props.changeLocaleLang('ko')}><span>KO</span></A>
-        </HeaderLangBar>
+          <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
 
-        <CrossMenu active={isMenuActive}>
-          <MenuItems>
-            <MenuItem to="/about" activeClassName="hurray">
-              <LinkGroup>
-                <Bullet right />
-                <LinkText><FormattedMessage {...messages.link1} /></LinkText>
-              </LinkGroup>
-            </MenuItem>
-            <MenuItem to="/projects" activeClassName="hurray">
+          {/* <HeaderTitle>Web Dev</HeaderTitle> */}
+
+          <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length ? true : false}><b>{this.props.location.pathname}</b><i>{this.state.hoveredLocation}</i></HeaderBreadCrumb>
+
+          <HeaderLangBar>
+            <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
+            <A isActive={this.props.locale === 'es'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('es')}><span>ES</span></A>
+            <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
+          </HeaderLangBar>
+
+          <CrossMenu active={isMenuActive}>
+            <MenuItems>
+              <MenuItem id="about" to="/about" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
+                <LinkGroup>
+                  <Bullet right />
+                  <LinkText><FormattedMessage {...messages.link1} /></LinkText>
+                </LinkGroup>
+              </MenuItem>
+              <MenuItem id="projects" to="/projects" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
               <LinkGroup>
                 <Bullet left />
                 <LinkText><FormattedMessage {...messages.link2} /></LinkText>
               </LinkGroup>
             </MenuItem>
-            <MenuItem to="/blog" activeClassName="hurray">
-              <LinkGroup>
-                <Bullet right />
-                <LinkText><FormattedMessage {...messages.link3} /></LinkText>
-              </LinkGroup>
-            </MenuItem>
-            <MenuItem to="/contact" activeClassName="hurray">
-              <LinkGroup>
-                <Bullet left />
-                <LinkText><FormattedMessage {...messages.link4} /></LinkText>
-              </LinkGroup>
-            </MenuItem>
-          </MenuItems>
-        </CrossMenu>
-      </Header>
+            <MenuItem id="blog" to="/blog" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
+            <LinkGroup>
+              <Bullet right />
+              <LinkText><FormattedMessage {...messages.link3} /></LinkText>
+            </LinkGroup>
+          </MenuItem>
+          <MenuItem id="contact" to="/contact" activeClassName="active-link" onMouseOver={this.captureHoveredLocation} onFocus={this.captureHoveredLocation} onMouseOut={this.resetHoveredLocation}>
+          <LinkGroup>
+            <Bullet left />
+            <LinkText><FormattedMessage {...messages.link4} /></LinkText>
+          </LinkGroup>
+        </MenuItem>
+    </MenuItems>
+  </CrossMenu>
+</Header>
 
-      <Content>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </Content>
+<Content>
+  <Switch>
+    <Route exact path="/" component={HomePage} />
+    <Route component={NotFoundPage} />
+  </Switch>
+</Content>
 
-    </AppWrapper>
-  );
+</AppWrapper>
+);
+  }
 }
 
 App.propTypes = {

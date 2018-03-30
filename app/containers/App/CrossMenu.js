@@ -14,8 +14,8 @@ class CrossMenu extends React.PureComponent {
       ${!this.props.active && `
         .menu-items {
           position: absolute;
-          bottom: 0;
-          right: 0;
+          bottom: 50px;
+          right: 50px;
 
           max-width: 100px;
           max-height: 100px;

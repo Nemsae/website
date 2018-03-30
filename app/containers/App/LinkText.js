@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transitionAll400 } from 'utils/transitions';
 
 const LinkText = styled.h2.attrs({ className: 'nav-link_styled' })`
   ${'' /* font-weight: bold; */}
@@ -8,7 +9,7 @@ const LinkText = styled.h2.attrs({ className: 'nav-link_styled' })`
 
   color: #000;
 
-  transition: all 400ms;
+  ${transitionAll400}
 `;
 
 export default LinkText;

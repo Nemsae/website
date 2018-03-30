@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-
 import { NavLink } from 'react-router-dom';
+
+import { transitionAll400 } from 'utils/transitions';
 
 const MenuItem = styled(NavLink)`
 ${'' /* const MenuItem = styled.li` */}
@@ -11,7 +12,13 @@ ${'' /* const MenuItem = styled.li` */}
 
   cursor: pointer;
 
-  transition: all 400ms;
+  ${transitionAll400}
+
+  &.active-link {
+    .bullet-link {
+      background: #FEC0C1;
+    }
+  }
 
   &:hover {
     background: #000;

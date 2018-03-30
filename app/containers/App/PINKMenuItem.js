@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+// import { transitionAll400 } from 'utils/transitions';
 
 const MenuItem = styled.li`
   height: 50%;
@@ -16,7 +17,7 @@ const MenuItem = styled.li`
 
   color: #FEC0C1;
 
-  transition: all 400ms;
+  ${'' /* ${transitionAll400} */}
 
   &:hover {
     transform: scale(1.1);
