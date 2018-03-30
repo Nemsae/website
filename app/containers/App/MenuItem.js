@@ -15,20 +15,23 @@ ${'' /* const MenuItem = styled.li` */}
   ${transitionAll400}
 
   &.active-link {
+    cursor: default;
     .bullet-link {
       background: #FEC0C1;
     }
   }
 
-  &:hover {
-    background: #000;
+  &:not(.active-link) {
+    &:hover {
+      background: #000;
 
-    .bullet-link {
-      opacity: 0;
-    }
-    .nav-link_styled {
-      color: #fff;
-      font-size: 45px;
+      .bullet-link {
+        opacity: 0;
+      }
+      .nav-link_styled {
+        color: #fff;
+        font-size: 45px;
+      }
     }
   }
 

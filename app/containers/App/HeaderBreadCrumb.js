@@ -11,10 +11,17 @@ const HeaderBreadCrumb = (props) => {
 
     font-size: 40px;
 
+    ${'' /* b::first-letter {
+      color: #FEC0C1;
+    } */}
+
     ${transitionAll400}
     ${props.strikeThrough && `
-      b {
+      .crumb-current {
         text-decoration: line-through;
+      }
+      i {
+        color: #FEC0C1;
       }
     `}
   `;

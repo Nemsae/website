@@ -19,9 +19,12 @@ import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 
 import A from './A';
 import AppWrapper from './AppWrapper';
+import BackSlash from './BackSlash';
 import Bullet from './Bullet';
 import Content from './Content';
 import CrossMenu from './CrossMenu';
+import CrumbCurrent from './CrumbCurrent';
+import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
 import Header from './Header';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
@@ -80,6 +83,7 @@ export class App extends React.PureComponent {
     // console.log('evt.target.parentNode.className: ', evt.target.parentNode.className);
     // console.log('Sanity:captureHoveredLocation    called!     with location: ', location, '     and a previous location: ', this.state.hoveredLocation);
 
+    if (`/${location}` === this.props.location.pathname) return;
     if (location === '' || location === this.state.hoveredLocation) return;
     this.setState({
       hoveredLocation: location,
@@ -101,7 +105,7 @@ export class App extends React.PureComponent {
 
           {/* <HeaderTitle>Web Dev</HeaderTitle> */}
 
-          <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><b>{this.props.location.pathname}</b><i>{this.state.hoveredLocation}</i></HeaderBreadCrumb>
+          <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
 
           <HeaderLangBar>
             <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
