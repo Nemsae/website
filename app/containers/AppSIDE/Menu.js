@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Menu = styled.nav`
-  ${'' /* display: flex; */}
+  ${''/* display: flex; */}
 
   transform: rotate(270deg);
 

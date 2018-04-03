@@ -1,5 +1,6 @@
-import BasicNavLink from './BasicNavLink';
 import { transitionAll400 } from 'utils/transitions';
+
+import BasicNavLink from './BasicNavLink';
 
 const StyledNavLink = BasicNavLink.extend.attrs({ className: 'link-text' })`
   color: #000;

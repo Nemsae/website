@@ -7,7 +7,7 @@ import { opaqueIn } from 'utils/keyFrames';
 class BackgroundVideo extends React.PureComponent {
 // const BackgroundVideo = ({ ...props }) => {
   render() {
-    console.log('<BackgroundVideo />     rendered!!!');
+    console.log('<BackgroundVideo />     rendered!!!');     //  eslint-disable-line no-console
     // console.log('this.props: ', this.props);
     // console.log('this.props.className: ', this.props.className);
     const BackgroundVideoPrimitive = styled.video`
@@ -37,7 +37,7 @@ class BackgroundVideo extends React.PureComponent {
 
 BackgroundVideo.propTypes = {
   children: PropTypes.any,
-  className: PropTypes.string,
+  // className: PropTypes.string,
 };
 
 export default BackgroundVideo;

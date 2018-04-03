@@ -6,7 +6,6 @@ import { CSSTransition } from 'react-transition-group';
 import { transitionAll400 } from 'utils/transitions';
 
 const StyledCSSTransition = (props) => {
-  console.log('    props: ', props);
   const StyledCSSTransitionPrimitive = styled(CSSTransition)`
     width: 100%;
     height: 100%;

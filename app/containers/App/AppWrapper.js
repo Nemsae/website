@@ -4,7 +4,7 @@ const AppWrapper = styled.div`
   display: grid;
   grid-template-areas: 'header content';
   grid-template-columns: 100% 0px;
-  ${'' /* grid-template-columns: 100px 100%; */}
+  ${''/* grid-template-columns: 100px 100%; */}
   grid-template-rows: 100%;
 
   height: 100vh;

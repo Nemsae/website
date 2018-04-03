@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 import { transitionAll400 } from 'utils/transitions';
-import { squeezeIn } from 'utils/Keyframes';
+// import { squeezeIn } from 'utils/Keyframes';
 
 const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
-
-  ${'' /* background: #fff; */}
-  ${'' /* animation: ${squeezeIn} 1100ms ease; */}
+  ${''/* animation: ${squeezeIn} 1100ms ease; */}
 
   display: flex;
   flex-wrap: wrap;
-  ${'' /* position: relative; */}
   max-width: 600px;
   max-height: 600px;
 

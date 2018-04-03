@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -31,17 +31,17 @@ import Header from './Header';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
-import HeaderTitle from './HeaderTitle';
+// import HeaderTitle from './HeaderTitle';
 // import HeaderBar from './HeaderBar';
 // import H1 from './H1';
 // import LangBar from './LangBar';
 import HomeNavLink from './HomeNavLink';
-import StyledNavLink from './StyledNavLink';
+// import StyledNavLink from './StyledNavLink';
 // import P from './P';
 // import HeaderLeft from './HeaderLeft';
 // import HeaderRight from './HeaderRight';
 
-import messages from './messages';
+// import messages from './messages';
 
 const validRoutes = {
   '/': true,

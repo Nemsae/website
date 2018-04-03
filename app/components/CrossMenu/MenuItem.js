@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { transitionAll400 } from 'utils/transitions';
 
 const MenuItem = styled(NavLink)`
-${'' /* const MenuItem = styled.li` */}
+${''/* const MenuItem = styled.li` */}
   height: 50%;
   width: 50%;
 
@@ -55,7 +55,7 @@ ${'' /* const MenuItem = styled.li` */}
   &:nth-child(3) {
     border-top: 1px solid #000;
     border-right: 1px solid #000;
-    ${'' /* background: #FEC0C1; */}
+    ${''/* background: #FEC0C1; */}
     .link-group {
       top: 8px;
       right: 70px;
@@ -64,7 +64,7 @@ ${'' /* const MenuItem = styled.li` */}
   &:nth-child(4) {
     border-left: 1px solid #000;
     border-top: 1px solid #000;
-    ${'' /* background: #DC2543; */}
+    ${''/* background: #DC2543; */}
     .link-group {
       top: 8px;
       left: 70px;

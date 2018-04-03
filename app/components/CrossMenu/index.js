@@ -14,7 +14,7 @@ import LinkGroup from './LinkGroup';
 import LinkText from './LinkText';
 import MenuItem from './MenuItem';
 import MenuItems from './MenuItems';
-import StyledCSSTransition from './StyledCSSTransition';
+// import StyledCSSTransition from './StyledCSSTransition';
 import Wrapper from './Wrapper';
 import messages from './messages';
 
@@ -28,28 +28,16 @@ import messages from './messages';
 const minimize = (CrossMenuContainer) => {
   const menuItems = CrossMenuContainer.querySelector('.menu-items');
   const menuItem = CrossMenuContainer.querySelectorAll('.menu-item');
-  const bulletLinks = CrossMenuContainer.querySelectorAll('.bullet-link');
-  const bullet1 = CrossMenuContainer.querySelector('#bullet-link-1');
-  const bullet2 = CrossMenuContainer.querySelector('#bullet-link-2');
-  const bullet3 = CrossMenuContainer.querySelector('#bullet-link-3');
-  const bullet4 = CrossMenuContainer.querySelector('#bullet-link-4');
-  const linkGroups = CrossMenuContainer.querySelectorAll('.link-group');
+  // const bulletLinks = CrossMenuContainer.querySelectorAll('.bullet-link');
+  // const bullet1 = CrossMenuContainer.querySelector('#bullet-link-1');
+  // const bullet2 = CrossMenuContainer.querySelector('#bullet-link-2');
+  // const bullet3 = CrossMenuContainer.querySelector('#bullet-link-3');
+  // const bullet4 = CrossMenuContainer.querySelector('#bullet-link-4');
+  // const linkGroups = CrossMenuContainer.querySelectorAll('.link-group');
   const linkTexts = CrossMenuContainer.querySelectorAll('.link-text');
-  console.log('Sanity:minimize    called!', menuItems);
-  new TimelineLite()
-  // .fromTo(menuItems, 7000, { background: 'pink' }, { background: 'red' });
-  // .from(CrossMenuContainer, 0.2, {
-  //   background: '#000',
-  // })
-  // .from(linkGroups, 1, {
-  //   maxWidth: '100px',
-  //   maxHeight: '100px',
-  // })
 
+  new TimelineLite()     //  eslint-disable-line no-undef
   //  Animation sequence #1
-  // .to(menuItems, 2, {
-  //   rotation: 45,
-  // })
   .to(linkTexts, 1, {
     autoAlpha: 0,
   })
@@ -65,7 +53,7 @@ const minimize = (CrossMenuContainer) => {
     // rotation: 45,
     x: 290,
     y: 0,
-    ease: Sine.easeOut,
+    ease: Sine.easeOut,     //  eslint-disable-line no-undef
   // }, 0.3)
   }, '+=0.1')
   // })
@@ -83,7 +71,7 @@ const minimize = (CrossMenuContainer) => {
     // background: '#000',
     width: '45%',
     height: '45%',
-    onComplete: () => console.log('Minimized!'),
+    // onComplete: () => console.log('Minimized!'),
   // }, '+=0.5')
   });
 
@@ -100,9 +88,8 @@ const minimize = (CrossMenuContainer) => {
 
 const maximize = (CrossMenuContainer) => {
   const menuItems = CrossMenuContainer.querySelector('.menu-items');
-  console.log('Sanity:maximize    called!', menuItems);
-  const linkTexts = CrossMenuContainer.querySelectorAll('.link-text');
-  new TimelineLite()
+  // const linkTexts = CrossMenuContainer.querySelectorAll('.link-text');
+  new TimelineLite()     //  eslint-disable-line no-undef
   // .from(menuItems, 3, {
   //   left: 'auto',
   //   top: 'auto',
@@ -115,7 +102,7 @@ const maximize = (CrossMenuContainer) => {
     maxWidth: '10px',
     maxHeight: '10px',
     // ease: Elastic.easeOut,
-  })
+  });
 };
 
 export class CrossMenu extends React.PureComponent {
@@ -132,8 +119,8 @@ export class CrossMenu extends React.PureComponent {
 
   render() {
     const expanded = this.props.active;
-    console.log(expanded ? 'EXPANDED' : 'MINIMIZED');
-    console.log('<CrossMenu />     rendered!');
+    // console.log(expanded ? 'EXPANDED' : 'MINIMIZED');
+    console.log('<CrossMenu />     rendered!');     //  eslint-disable-line no-console
     return (
       <CSSTransition
         // in={this.props.active}
@@ -143,49 +130,51 @@ export class CrossMenu extends React.PureComponent {
         appear
         unmountOnExit
         onEnter={() => {
-          console.log('<CrossMenu /> Enter!');
+          // console.log('<CrossMenu /> Enter!');
         }}
         onEntering={() => {
-          console.log('<CrossMenu /> Entering!');
+          // console.log('<CrossMenu /> Entering!');
         }}
         onEntered={() => {
-          console.log('<CrossMenu /> Entered!');
+          // console.log('<CrossMenu /> Entered!');
+
+          //  Make it a class method instead, that is called anytime props.active changes
           if (expanded) {
-            minimize(ReactDOM.findDOMNode(this.wrapper));     //  Make it a class method instead, that is called anytime props.active changes
+            minimize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
           } else {
-            maximize(ReactDOM.findDOMNode(this.wrapper));     //  Make it a class method instead, that is called anytime props.active changes
+            maximize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
           }
         }}
         onExited={() => {
-          console.log('<CrossMenu /> Exited!');
+          // console.log('<CrossMenu /> Exited!');
         }}
       >
-        {(state) => {
-          console.log('state: ', state);
+        {(state) => {     //  eslint-disable-line arrow-body-style
+          // console.log('state: ', state);
           return (
             <Wrapper className={`cross-menu-${state}`} expanded={this.props.active} self={this}>
               <MenuItems>
                 <MenuItem id="about" className="menu-item" to="/about" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('about')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('about')}>
                   <LinkGroup>
-                    <Bullet id="bullet-link-1" ref={() => console.log('ref attached') } right />
+                    <Bullet id="bullet-link-1" right />
                     <LinkText><FormattedMessage {...messages.link1} /></LinkText>
                   </LinkGroup>
                 </MenuItem>
                 <MenuItem id="projects" className="menu-item" to="/projects" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('projects')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('projects')}>
                   <LinkGroup>
-                    <Bullet id="bullet-link-2" ref={() => console.log('ref attached') } left />
+                    <Bullet id="bullet-link-2" left />
                     <LinkText><FormattedMessage {...messages.link2} /></LinkText>
                   </LinkGroup>
                 </MenuItem>
                 <MenuItem id="blog" className="menu-item" to="/blog" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('blog')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('blog')}>
                   <LinkGroup>
-                    <Bullet id="bullet-link-3" ref={() => console.log('ref attached') } right />
+                    <Bullet id="bullet-link-3" right />
                     <LinkText><FormattedMessage {...messages.link3} /></LinkText>
                   </LinkGroup>
                 </MenuItem>
                 <MenuItem id="contact" className="menu-item" to="/contact" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('contact')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('contact')}>
                   <LinkGroup>
-                    <Bullet id="bullet-link-4" ref={() => console.log('ref attached') } left />
+                    <Bullet id="bullet-link-4" left />
                     <LinkText><FormattedMessage {...messages.link4} /></LinkText>
                   </LinkGroup>
                 </MenuItem>

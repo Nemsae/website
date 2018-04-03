@@ -83,7 +83,9 @@ const CrossMenu = (props) => {
   `;
 
   return (
+    /* eslint-disable */
     <CrossMenuPrimitive {...props} ref={(node) => props.self.wrapper = node}>{ props.children }</CrossMenuPrimitive>
+    /* eslint-enable */
   );
 };
 

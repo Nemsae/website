@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import { makeSelectRecommendations, makeSelectLoading, makeSelectSuccess, makeSelectError } from 'containers/CarouselPage/selectors';
+import { makeSelectRecommendations, makeSelectLoading, makeSelectSuccess, makeSelectError } from 'containers/AboutPage/selectors';
 
 describe('makeSelectRecommendations', () => {
   it('should select the recommendations array', () => {

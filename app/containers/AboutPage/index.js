@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import PropTypes from 'prop-types';
+// import { FormattedMessage } from 'react-intl';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -16,17 +16,17 @@ import Wrapper from './Wrapper';
 // import { fetchRecommendations, rateRecommendation, fetchFeatures } from './actions';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
+// import messages from './messages';
 
 //  NOTE: for main bg video, swap to fullscreen video.
 
 export class AboutPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    console.log('<AboutPage />     rendered!');
+    console.log('<AboutPage />     rendered!');     //  eslint-disable-line no-console
     return (
       <Wrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
-        <BackgroundVideo autoPlay loop muted onLoadedData={() => console.log('Video loaded.')}>
+        <BackgroundVideo autoPlay loop muted>
           <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
           Your browser does not support the mp4 video format.
         </BackgroundVideo>
@@ -40,7 +40,8 @@ AboutPage.propTypes = {
   // recommendations: PropTypes.array,
 };
 
-export function mapDispatchToProps(dispatch) {
+// export function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps() {
   return {
     // fetchRecommendationsPage: (page, amt) => dispatch(fetchRecommendations(page, amt)),
   };

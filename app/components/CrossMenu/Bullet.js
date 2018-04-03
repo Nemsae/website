@@ -6,7 +6,6 @@ const Bullet = (props) => {
   const BulletPrimitive = styled.div.attrs({ className: 'bullet-link' })`
     width: 20px;
     height: 20px;
-    ${'' /* border-radius: 10px; */}
 
     position: absolute;
 

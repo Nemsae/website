@@ -4,7 +4,7 @@ const MenuItems = styled.ul`
   display: flex;
   justify-content: space-between;
 
-  ${'' /* width: 100%; */}
+  ${''/* width: 100%; */}
 
   list-style: none;
 
