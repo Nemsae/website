@@ -28,7 +28,7 @@ ${'' /* const MenuItem = styled.li` */}
       .bullet-link {
         opacity: 0;
       }
-      .nav-link_styled {
+      .link-text {
         color: #fff;
         font-size: 45px;
       }

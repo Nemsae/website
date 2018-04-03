@@ -20,7 +20,7 @@ class CrossMenu extends React.PureComponent {
           max-width: 100px;
           max-height: 100px;
 
-          .nav-link_styled {
+          .link-text {
             opacity: 0;
           }
 

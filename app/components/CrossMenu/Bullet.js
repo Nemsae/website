@@ -19,7 +19,7 @@ const Bullet = (props) => {
     transition: all 200ms;
   `;
 
-  return <BulletPrimitive>{ props.children }</BulletPrimitive>;
+  return <BulletPrimitive {...props}>{ props.children }</BulletPrimitive>;
 };
 
 Bullet.propTypes = {
