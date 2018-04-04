@@ -14,9 +14,10 @@ import LinkGroup from './LinkGroup';
 import LinkText from './LinkText';
 import MenuItem from './MenuItem';
 import MenuItems from './MenuItems';
-// import StyledCSSTransition from './StyledCSSTransition';
 import Wrapper from './Wrapper';
 import messages from './messages';
+
+import Animations from './Animations';
 
 // const animateIn = (gridContainer) => {
 //   const cards = gridContainer.querySelectorAll('.card')
@@ -25,100 +26,36 @@ import messages from './messages';
 //   .staggerFromTo(cards, animationTimings.cardEnter / 1000, {autoAlpha: 0, y: -30}, {autoAlpha: 1, y: 0}, 0.1)
 // }
 
-const minimize = (CrossMenuContainer) => {
-  const menuItems = CrossMenuContainer.querySelector('.menu-items');
-  const menuItem = CrossMenuContainer.querySelectorAll('.menu-item');
-  // const bulletLinks = CrossMenuContainer.querySelectorAll('.bullet-link');
-  // const bullet1 = CrossMenuContainer.querySelector('#bullet-link-1');
-  // const bullet2 = CrossMenuContainer.querySelector('#bullet-link-2');
-  // const bullet3 = CrossMenuContainer.querySelector('#bullet-link-3');
-  // const bullet4 = CrossMenuContainer.querySelector('#bullet-link-4');
-  // const linkGroups = CrossMenuContainer.querySelectorAll('.link-group');
-  const linkTexts = CrossMenuContainer.querySelectorAll('.link-text');
-
-  new TimelineLite()     //  eslint-disable-line no-undef
-  //  Animation sequence #1
-  .to(linkTexts, 1, {
-    autoAlpha: 0,
-  })
-  .to(menuItems, 1, {
-    scale: 0.10,
-    rotation: 45,
-  // })
-  // }, 0)
-  }, '-=1')
-
-  .to(menuItems, 0.3, {
-    // scale: 0.10,
-    // rotation: 45,
-    x: 290,
-    y: 0,
-    ease: Sine.easeOut,     //  eslint-disable-line no-undef
-  // }, 0.3)
-  }, '+=0.1')
-  // })
-  .to(menuItem, 0.3, {
-    background: '#000',
-    // background: '#000',
-  // }, 1.3)
-  })
-
-  .set(menuItems, {
-  // .to(menuItems, 1, {
-    justifyContent: 'space-around',
-  })
-  .to(menuItem, 0.3, {
-    // background: '#000',
-    width: '45%',
-    height: '45%',
-    // onComplete: () => console.log('Minimized!'),
-  // }, '+=0.5')
-  });
-
-  // .to(linkGroups, 3, {
-  //   right: '50%',
-  //   top: '50%',
-  //   transform: 'translate(-50%, -50%)',
-  // }, '-=3')
-  // .to(bulletLinks, 3, {
-  //   scale: 4,
-  // }, '-=3')
-  // .staggerTo([bullet1, bullet2, bullet3, bullet4], 1.5, { rotation: 0 }, 0.25);
-};
-
-const maximize = (CrossMenuContainer) => {
-  const menuItems = CrossMenuContainer.querySelector('.menu-items');
-  // const linkTexts = CrossMenuContainer.querySelectorAll('.link-text');
-  new TimelineLite()     //  eslint-disable-line no-undef
-  // .from(menuItems, 3, {
-  //   left: 'auto',
-  //   top: 'auto',
-  // })
-  // .from(menuItems, 3, {
-  //   bottom: '50px',
-  //   right: '50px',
-  // })
-  .from(menuItems, 3, {
-    maxWidth: '10px',
-    maxHeight: '10px',
-    // ease: Elastic.easeOut,
-  });
-};
-
 export class CrossMenu extends React.PureComponent {
   // componentWillReceiveProps(nextProps) {
-  //   console.log('nextProps.active: ', nextProps.active);
-  //   if (nextProps.active !== this.props.active) {
-  //     if (nextProps.active) {
-  //       maximize(ReactDOM.findDOMNode(this.wrapper));
-  //     } else {
-  //       minimize(ReactDOM.findDOMNode(this.wrapper));
-  //     }
+  //   if (nextProps.active === true && this.props.active === false) {
+  //     console.log('Sanity:MAXIMIZE');
+  //     maximize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
+  //   } else if (nextProps.active === false && this.props.active === true) {
+  //     console.log('Sanity:MINIMIZE');
+  //     minimize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
   //   }
   // }
 
+  componentDidUpdate(prevProps, prevState) {
+    let wrapperNode;
+    if (prevProps.active === true && this.props.active === false) {
+      console.log('Sanity:MINIMIZE', this.wrapper);
+      wrapperNode = ReactDOM.findDOMNode(this.wrapper);     //  eslint-disable-line react/no-find-dom-node
+      Animations.minimizeWrapper(wrapperNode);
+      console.log('wrapperNode: ', wrapperNode);
+    } else if (prevProps.active === false && this.props.active === true) {
+      console.log('Sanity:MAXIMIZE', this.wrapper);
+      wrapperNode = ReactDOM.findDOMNode(this.wrapper);     //  eslint-disable-line react/no-find-dom-node
+      Animations.maximizeWrapper(wrapperNode);
+      console.log('wrapperNode: ', wrapperNode);
+    }
+  }
+
+  // wrapperRef = React.createRef();
+
   render() {
-    const expanded = this.props.active;
+    // const expanded = this.props.active;
     // console.log(expanded ? 'EXPANDED' : 'MINIMIZED');
     console.log('<CrossMenu />     rendered!');     //  eslint-disable-line no-console
     return (
@@ -139,11 +76,11 @@ export class CrossMenu extends React.PureComponent {
           // console.log('<CrossMenu /> Entered!');
 
           //  Make it a class method instead, that is called anytime props.active changes
-          if (expanded) {
-            minimize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
-          } else {
-            maximize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
-          }
+          // if (expanded) {
+          //   minimize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
+          // } else {
+          //   maximize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
+          // }
         }}
         onExited={() => {
           // console.log('<CrossMenu /> Exited!');
@@ -152,7 +89,8 @@ export class CrossMenu extends React.PureComponent {
         {(state) => {     //  eslint-disable-line arrow-body-style
           // console.log('state: ', state);
           return (
-            <Wrapper className={`cross-menu-${state}`} expanded={this.props.active} self={this}>
+            <Wrapper className={`cross-menu-${state}`} active={this.props.active} self={this}>
+            {/* <Wrapper className={`cross-menu-${state}`} expanded={this.props.active} self={this}> */}
               <MenuItems>
                 <MenuItem id="about" className="menu-item" to="/about" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('about')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('about')}>
                   <LinkGroup>

@@ -24,24 +24,23 @@ const CrossMenu = (props) => {
 
     ${''/*  MINIMIZED state - put it back */}
 
-    ${props.active && `
-      .menu-items {
-        transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, 290, 0);
-        justify-content: space-around;
-
-        .link-text {
-          // simulate GSAP autoAlpha
-          display: hidden;
-          opacity: 0;
-        }
-
-        .menu-item {
-          background: rgb(0, 0, 0);
-          height: 45%;
-          width: 45%;
-        }
-        .bullet-link {}
-      }
+    ${!props.active && `
+      // .menu-items {
+      //   position: absolute;
+      //   left: auto;
+      //   top: auto;
+      //   bottom: 50px;
+      //   right: 50px;
+      //
+      //   max-width: 100px;
+      //   max-height: 100px;
+      //
+      //   .link-text {
+      //     opacity: 0;
+      //   }
+      //
+      //   .bullet-link {}
+      // }
 
       // &.cross-menu-entered {
       //   .menu-items {

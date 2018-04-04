@@ -28,6 +28,7 @@ import CrumbCurrent from './CrumbCurrent';
 import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
 import Header from './Header';
+import Button from './Button';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
@@ -55,6 +56,7 @@ const validRoutes = {
 export class App extends React.PureComponent {
   state = {
     hoveredLocation: '',
+    expanded: true,
   }
 
   componentWillReceiveProps(nextProps) {
@@ -96,7 +98,8 @@ export class App extends React.PureComponent {
     //  If I render separate component, will this affect the css transitions? I will have to depend on react-transition-group for the render
     //  Also having the component will unmount, and the other will have to mount. No way to link the two for a smooth `transition`
     // console.log('App    this.props.location.pathname: ', this.props.location.pathname);
-    const isMenuActive = validRoutes[this.props.location.pathname] || false;
+    // const isMenuActive = validRoutes[this.props.location.pathname] || false;
+
     return (
       <AppWrapper>
 
@@ -110,10 +113,12 @@ export class App extends React.PureComponent {
             <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
           </HeaderLangBar>
           <CrossMenu
-            active={isMenuActive}
+            active={this.state.expanded}
+            // active={isMenuActive}
             captureHoveredLocation={this.captureHoveredLocation}
             resetHoveredLocation={this.resetHoveredLocation}
           />
+          <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
         </Header>
 
         <Content>
