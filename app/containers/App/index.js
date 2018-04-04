@@ -100,6 +100,8 @@ export class App extends React.PureComponent {
     // console.log('App    this.props.location.pathname: ', this.props.location.pathname);
     // const isMenuActive = validRoutes[this.props.location.pathname] || false;
 
+    console.log('<App />     rendered!');     //  eslint-disable-line no-console
+
     return (
       <AppWrapper>
 

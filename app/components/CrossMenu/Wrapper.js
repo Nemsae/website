@@ -26,8 +26,16 @@ const CrossMenu = (props) => {
 
     ${props.active && `
       .menu-items {
-        transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, 290, 0);
+        transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, -300, -300);
+        transform-origin: 140% 150% 0px;
+        bottom: 30px;
+        right: 30px;
+        top: auto;
+        left: auto;
         justify-content: space-around;
+
+        // transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, 0, 0);
+        // justify-content: space-around;
 
         .link-text {
           // simulate GSAP autoAlpha

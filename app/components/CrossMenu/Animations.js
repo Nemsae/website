@@ -26,6 +26,7 @@ const minimizeWrapper = (CrossMenuContainer) => {
     top: 'auto',
     right: '30px',
     bottom: '30px',
+    transformOrigin: '140% 150%',
     // transform: 'translate(0, 0)',
     // x: 290,
     // y: 0,
@@ -95,14 +96,17 @@ const maximizeWrapper = (CrossMenuContainer) => {
     height: '50%',
   })
   .set(menuItems, {
-    justifyContent: 'space-around',
+    justifyContent: 'none',
   })
   .to(menuItem, 0.3, {
     background: 'transparent',
   })
   .to(menuItems, 0.3, {
-    x: -250,
-    y: -300,
+    right: 'auto',
+    bottom: 'auto',
+    left: '50%',
+    top: '50%',
+    // transformOrigin: '140% 150%',
     ease: Sine.easeOut,     //  eslint-disable-line no-undef
   // }, '+=0.1')
   })
