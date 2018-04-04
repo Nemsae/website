@@ -1,4 +1,4 @@
-<img src="public/images/rixi_banner.jpg" alt="rixi website banner" align="center" />
+<div align="center"><img src="public/images/rixi_banner.jpg" alt="rixi website banner" align="center" /></div>
 
 <br />
 
