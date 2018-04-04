@@ -6,6 +6,14 @@
 
 <br />
 
+## Todos
+
+1. Host on S3
+2. `cd react-boilerplate`.<br />
+3. Run `npm run setup` in order to install dependencies and clean the git repo.<br />
+   *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
+
+
 <div align="center">
   <sub>Created by and maintained with ❤️ by <a href="https://github.com/Nemsae">John Son</a>.</sub>
 </div>
