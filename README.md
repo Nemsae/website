@@ -1,4 +1,4 @@
-<img src="images/rixi_banner.jpg" alt="rixi website banner" align="center" />
+<img src="public/images/rixi_banner.jpg" alt="rixi website banner" align="center" />
 
 <br />
 
@@ -12,8 +12,10 @@
 
 <br />
 
+<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
+
+<br />
+
 <div align="center">
   <sub>Bootstrapped with Max Stoiber's <a href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate</a></sub>
 </div>
-
-<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
