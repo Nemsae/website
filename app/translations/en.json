@@ -2,9 +2,9 @@
   "app.components.App.footer": "made with",
   "app.components.App.header.1": "project",
   "app.components.App.header.2": "CAROUSEL",
-  "app.components.App.link.1": "about",
-  "app.components.App.link.2": "projects",
+  "app.components.CrossMenu.link.1": "about",
+  "app.components.CrossMenu.link.2": "projects",
   "app.components.NotFoundPage.header": "This is NotFoundPage component!",
-  "app.components.App.link.3": "blog",
-  "app.components.App.link.4": "contact"
+  "app.components.CrossMenu.link.3": "blog",
+  "app.components.CrossMenu.link.4": "contact"
 }

@@ -36,90 +36,82 @@ export class CrossMenu extends React.PureComponent {
   //   }
   // }
 
+  componentWillReceiveProps(nextProps) {
+    console.log('<CrossMenu />    CWRP');
+    if (nextProps.active !== this.props.active) console.log('<CrossMenu />    CWRP     active changed');
+    // console.log('<CrossMenu />    CWRP     nextProps: ', nextProps);
+  }
+
+  //  NOTE: commented out, because on hover over menu-item will trigger re render with SCU => true
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('<CrossMenu />    SCU');
+  //   if (nextProps.active !== this.props.active) console.log('<CrossMenu />    SCU    active changed!');
+  //   if (nextProps.captureHoveredLocation !== this.props.captureHoveredLocation) console.log('<CrossMenu />    SCU    captureHoveredLocation changed!');
+  //   if (nextProps.resetHoveredLocation !== this.props.resetHoveredLocation) console.log('<CrossMenu />    SCU    resetHoveredLocation changed!');
+  //   // console.log('SCU    nextProps: ', nextProps);
+  //   // //  NOTE: prevent re render when changing language
+  //   // if (nextProps.active === this.props.active) return false;
+  //   return true;
+  // }
+
   componentDidUpdate(prevProps, prevState) {
+    console.log('<CrossMenu />     CDU!');     //  eslint-disable-line no-console
+
     let wrapperNode;
     if (prevProps.active === true && this.props.active === false) {
-      console.log('Sanity:MINIMIZE', this.wrapper);
+      console.log('Minimize     started!')
+      // console.log('Sanity:MINIMIZE', this.wrapper);
       wrapperNode = ReactDOM.findDOMNode(this.wrapper);     //  eslint-disable-line react/no-find-dom-node
       Animations.minimizeWrapper(wrapperNode);
-      console.log('wrapperNode: ', wrapperNode);
     } else if (prevProps.active === false && this.props.active === true) {
-      console.log('Sanity:MAXIMIZE', this.wrapper);
+      console.log('Maximize     started!')
+      // console.log('Sanity:MAXIMIZE', this.wrapper);
       wrapperNode = ReactDOM.findDOMNode(this.wrapper);     //  eslint-disable-line react/no-find-dom-node
       Animations.maximizeWrapper(wrapperNode);
-      console.log('wrapperNode: ', wrapperNode);
     }
+  }
+
+  //  NOTE: component unmounts when parent props for location changes..........
+  componentWillUnmount() {
+    console.log('<CrossMenu />     CWU!');     //  eslint-disable-line no-console
   }
 
   // wrapperRef = React.createRef();
 
   render() {
-    // const expanded = this.props.active;
-    // console.log(expanded ? 'EXPANDED' : 'MINIMIZED');
     console.log('<CrossMenu />     rendered!');     //  eslint-disable-line no-console
+    // console.log('<CrossMenu />     this.props.active: ', this.props.active);     //  eslint-disable-line no-console
+    // console.log('<CrossMenu />     Wrapper: ', Wrapper);     //  eslint-disable-line no-console
     return (
-      <CSSTransition
-        // in={this.props.active}
-        in
-        timeout={1}
-        classNames="cross-menu"
-        appear
-        unmountOnExit
-        onEnter={() => {
-          // console.log('<CrossMenu /> Enter!');
-        }}
-        onEntering={() => {
-          // console.log('<CrossMenu /> Entering!');
-        }}
-        onEntered={() => {
-          // console.log('<CrossMenu /> Entered!');
-
-          //  Make it a class method instead, that is called anytime props.active changes
-          // if (expanded) {
-          //   minimize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
-          // } else {
-          //   maximize(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
-          // }
-        }}
-        onExited={() => {
-          // console.log('<CrossMenu /> Exited!');
-        }}
-      >
-        {(state) => {     //  eslint-disable-line arrow-body-style
-          // console.log('state: ', state);
-          return (
-            <Wrapper className={`cross-menu-${state}`} active={this.props.active} self={this}>
-            {/* <Wrapper className={`cross-menu-${state}`} expanded={this.props.active} self={this}> */}
-              <MenuItems>
-                <MenuItem id="about" className="menu-item" to="/about" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('about')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('about')}>
-                  <LinkGroup>
-                    <Bullet id="bullet-link-1" right />
-                    <LinkText><FormattedMessage {...messages.link1} /></LinkText>
-                  </LinkGroup>
-                </MenuItem>
-                <MenuItem id="projects" className="menu-item" to="/projects" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('projects')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('projects')}>
-                  <LinkGroup>
-                    <Bullet id="bullet-link-2" left />
-                    <LinkText><FormattedMessage {...messages.link2} /></LinkText>
-                  </LinkGroup>
-                </MenuItem>
-                <MenuItem id="blog" className="menu-item" to="/blog" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('blog')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('blog')}>
-                  <LinkGroup>
-                    <Bullet id="bullet-link-3" right />
-                    <LinkText><FormattedMessage {...messages.link3} /></LinkText>
-                  </LinkGroup>
-                </MenuItem>
-                <MenuItem id="contact" className="menu-item" to="/contact" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('contact')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('contact')}>
-                  <LinkGroup>
-                    <Bullet id="bullet-link-4" left />
-                    <LinkText><FormattedMessage {...messages.link4} /></LinkText>
-                  </LinkGroup>
-                </MenuItem>
-              </MenuItems>
-            </Wrapper>
-          );
-        }}
-      </CSSTransition>
+      <Wrapper className={`cross-menu-${1}`} active={this.props.active} self={this}>
+        {/* <Wrapper className={`cross-menu-${state}`} expanded={this.props.active} self={this}> */}
+        <MenuItems>
+          <MenuItem id="about" className="menu-item" to="/about" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('about')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('about')}>
+            <LinkGroup>
+              <Bullet id="bullet-link-1" right />
+              <LinkText><FormattedMessage {...messages.link1} /></LinkText>
+            </LinkGroup>
+          </MenuItem>
+          <MenuItem id="projects" className="menu-item" to="/projects" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('projects')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('projects')}>
+            <LinkGroup>
+              <Bullet id="bullet-link-2" left />
+              <LinkText><FormattedMessage {...messages.link2} /></LinkText>
+            </LinkGroup>
+          </MenuItem>
+          <MenuItem id="blog" className="menu-item" to="/blog" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('blog')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('blog')}>
+            <LinkGroup>
+              <Bullet id="bullet-link-3" right />
+              <LinkText><FormattedMessage {...messages.link3} /></LinkText>
+            </LinkGroup>
+          </MenuItem>
+          <MenuItem id="contact" className="menu-item" to="/contact" activeClassName="active-link" onMouseEnter={() => this.props.captureHoveredLocation('contact')} onMouseLeave={this.props.resetHoveredLocation} onFocus={() => this.props.captureHoveredLocation('contact')}>
+            <LinkGroup>
+              <Bullet id="bullet-link-4" left />
+              <LinkText><FormattedMessage {...messages.link4} /></LinkText>
+            </LinkGroup>
+          </MenuItem>
+        </MenuItems>
+      </Wrapper>
     );
   }
 }

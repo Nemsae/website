@@ -64,7 +64,7 @@ const minimizeWrapper = (CrossMenuContainer) => {
     width: '45%',
     height: '45%',
     //  NOTE: once animation is complete, then re-render with new props/state
-    onComplete: () => console.log('Minimized!'),
+    onComplete: () => console.log('Minimize     ended!'),
   // }, '+=0.5')
   });
 
@@ -117,6 +117,7 @@ const maximizeWrapper = (CrossMenuContainer) => {
   })
   .to(linkTexts, 1, {
     autoAlpha: 1,
+    onComplete: () => console.log('Maximize     ended!'),
   });
 };
 

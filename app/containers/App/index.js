@@ -29,6 +29,7 @@ import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
 import Header from './Header';
 import Button from './Button';
+import TestButton from './TestButton';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
@@ -62,6 +63,25 @@ export class App extends React.PureComponent {
   componentWillReceiveProps(nextProps) {
     //  NOTE: clears the hover, when coming from active Menu to inactive (via selecting a route).
     if (nextProps.location.pathname.slice(1) === this.state.hoveredLocation) this.resetHoveredLocation();
+
+    console.log('<App />    CRWP    nextProps: ', nextProps);
+    if (nextProps.locale !== this.props.locale) console.log('<App />    CRWP    locale changed!');
+    if (nextProps.location !== this.props.location) console.log('<App />    CRWP    location changed!');
+  }
+
+  // //  NOTE: isnt' called when changing localeLang, but called for state changes (expanded)
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('<App />    SCU    nextProps: ', nextProps);
+  //   console.log('<App />    SCU    nextState: ', nextState);
+  //   if (nextProps.locale !== this.props.locale) console.log('<App />    SCU    locale changed!');    //  note called
+  //   if (nextProps.location !== this.props.location) console.log('<App />    SCU    location changed!');    //  note called
+  //   return true;
+  // }
+
+  //  NOTE: component unmounts when props for location changes..........
+  //  NOTE: This is becuase of react-intl
+  componentWillUnmount() {
+    console.log('<App />     CWU!');     //  eslint-disable-line no-console
   }
 
   resetHoveredLocation = () => {
@@ -101,11 +121,13 @@ export class App extends React.PureComponent {
     // const isMenuActive = validRoutes[this.props.location.pathname] || false;
 
     console.log('<App />     rendered!');     //  eslint-disable-line no-console
+    console.log('<App />     this.state.expanded: ', this.state.expanded);     //  eslint-disable-line no-console
 
     return (
       <AppWrapper>
 
-        <Header currentPath={this.props.location.pathname}>
+        <Header>
+          {/* <Header currentPath={this.props.location.pathname}> */}
           <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
           {/* <HeaderTitle>Web Dev</HeaderTitle> */}
           <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
@@ -116,11 +138,13 @@ export class App extends React.PureComponent {
           </HeaderLangBar>
           <CrossMenu
             active={this.state.expanded}
-            // active={isMenuActive}
+            // key="cross-menu"
             captureHoveredLocation={this.captureHoveredLocation}
             resetHoveredLocation={this.resetHoveredLocation}
           />
+
           <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
+          <TestButton onClick={() => this.setState({ testing: !this.state.testing })}>{ this.state.testing ? 'TRUE' : 'FALSE' }</TestButton>
         </Header>
 
         <Content>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { transitionAll400 } from 'utils/transitions';
+// import { transitionAll400 } from 'utils/transitions';
 
 //  NOTE: cross-menu-entering is for first mount
 
@@ -20,7 +20,7 @@ const CrossMenu = (props) => {
     &.cross-menu-entering {}
     &.cross-menu-entered {}
 
-    ${transitionAll400}
+    ${''/* ${transitionAll400} */}
 
     ${''/*  MINIMIZED state - put it back */}
 
