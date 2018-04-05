@@ -18,18 +18,21 @@ import { IntlProvider } from 'react-intl';
 
 import { makeSelectLocale } from './selectors';
 
-const MessagesContext = React.createContext('light');
+// export const MessagesContext = React.createContext();
+// console.log('MessagesContext: ', MessagesContext);
+export const { Provider, Consumer } = React.createContext();
 
 export class LanguageProvider extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     //  NOTE: messages here contains current (translated) messages, need to pass via context to children that are "subscribed"
     const messages = this.props.messages[this.props.locale];
-    console.log('messages: ', messages);
-
+    console.log('<LanguageProvider />     messages: ', messages);    //  eslint-disable-line no-console
     return (
-      <IntlProvider locale={this.props.locale} messages={this.props.messages[this.props.locale]}>
-        {React.Children.only(this.props.children)}
-      </IntlProvider>
+      <Provider value={messages}>
+        <IntlProvider locale={this.props.locale} messages={this.props.messages[this.props.locale]}>
+          {React.Children.only(this.props.children)}
+        </IntlProvider>
+      </Provider>
     );
   }
 }
