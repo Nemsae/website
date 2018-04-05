@@ -1,14 +1,74 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import { transitionAll400 } from 'utils/transitions';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import { FormattedMessage } from 'react-intl';
 
-const LinkText = styled.h2.attrs({ className: 'link-text' })`
-  font-size: 24px;
-  text-decoration: none;
-  text-transform: lowercase;
+import { transitionAll400 } from 'utils/transitions';
 
-  color: #000;
+import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 
-  ${''/* ${transitionAll400} */}
-`;
+import messages from './messages';
 
-export default LinkText;
+// const LinkTextPrimitive = styled.h2.attrs({ className: 'link-text' })`
+//   font-size: 24px;
+//   text-decoration: none;
+//   text-transform: lowercase;
+//
+//   color: #000;
+//
+//   ${transitionAll400}
+// `;
+
+export class LinkText extends React.PureComponent {
+  componentDidUpdate(prevProps, prevState) {     //  eslint-disable-line no-unused-vars
+    console.log('<LinkText />     CDU!');     //  eslint-disable-line no-console
+  }
+
+  componentWillUnmount() {
+    console.log('<LinkText />     CWU!');     //  eslint-disable-line no-console
+  }
+
+
+  render() {
+    console.log('<LinkText />    this.props.locale: ', this.props.locale);    //  eslint-disable-line no-console
+    const LinkTextPrimitive = styled.h2.attrs({ className: 'link-text' })`
+      font-size: 24px;
+      text-decoration: none;
+      text-transform: lowercase;
+
+      color: #000;
+
+      ${transitionAll400}
+
+      ${''/* ${this.props.active && 'opacity: 1'} */}
+      ${''/* ${this.props.active ? 'opacity: 1' : 'opacity: 0'} */}
+    `;
+
+    console.log('messages[`link${this.props.id}`]: ', messages[`link${this.props.id}`]);
+
+    return (
+      <LinkTextPrimitive key={this.props.locale} {...this.props}><FormattedMessage {...messages[`link${this.props.id}`]} /></LinkTextPrimitive>
+    );
+  }
+}
+
+LinkText.propTypes = {
+  children: PropTypes.any,
+  locale: PropTypes.string,
+  // active: PropTypes.bool,
+  id: PropTypes.string,
+};
+
+const mapStateToProps = createStructuredSelector({
+  locale: makeSelectLocale(),
+});
+
+const withConnect = connect(mapStateToProps);
+
+export default compose(
+  withConnect
+)(LinkText);
