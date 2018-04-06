@@ -8,16 +8,18 @@ const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
 
   display: flex;
   flex-wrap: wrap;
-  max-width: 600px;
-  max-height: 600px;
+  width: 600px;
+  height: 600px;
+  ${'' /* max-width: 600px;
+  max-height: 600px; */}
 
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  width: 100%;
-  height: 100%;
+  ${'' /* width: 100%;
+  height: 100%; */}
 
   list-style: none;
 
