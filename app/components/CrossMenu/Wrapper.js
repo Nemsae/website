@@ -15,6 +15,12 @@ const CrossMenu = (props) => {
     align-items: center;
     justify-content: center;
 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
     &.cross-menu-exiting {}
     &.cross-menu-exited {}
     &.cross-menu-entering {}

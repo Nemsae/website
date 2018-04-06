@@ -12,8 +12,16 @@ import { transitionAll400 } from 'utils/transitions';
 import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 import { Consumer } from 'containers/LanguageProvider';
 
-// import messages from './messages';
+import messages from './messages';
 
+//  NOTE: This component is still being re-rendered.
+//  the transform properties (set by GSAP is being reset)
+//  SOLUTION: try to do the opposite, so animate transition BEFORE component updates with new props.
+//  SOLUTION: try to do the opposite, so animate transition BEFORE component updates with new props.
+//  SOLUTION: try to do the opposite, so animate transition BEFORE component updates with new props.
+//  SOLUTION: try to do the opposite, so animate transition BEFORE component updates with new props.
+//  SOLUTION: try to do the opposite, so animate transition BEFORE component updates with new props.
+//  SOLUTION: try to do the opposite, so animate transition BEFORE component updates with new props.
 const LinkTextPrimitive = styled.h2.attrs({ className: 'link-text' })`
   font-size: 24px;
   text-decoration: none;
@@ -28,6 +36,10 @@ const LinkTextPrimitive = styled.h2.attrs({ className: 'link-text' })`
 `;
 
 export class LinkText extends React.PureComponent {
+  componentWillReceiveProps(nextProps, nextState) {
+    console.log('<LinkText />     CWRP!');     //  eslint-disable-line no-console
+  }
+
   componentDidUpdate(prevProps, prevState) {     //  eslint-disable-line no-unused-vars
     console.log('<LinkText />     CDU!');     //  eslint-disable-line no-console
   }
@@ -36,17 +48,19 @@ export class LinkText extends React.PureComponent {
     console.log('<LinkText />     CWU!');     //  eslint-disable-line no-console
   }
 
-
   render() {
-    console.log('<LinkText />    this.props.locale: ', this.props.locale);    //  eslint-disable-line no-console
+    console.log('<LinkText />     rendered!');    //  eslint-disable-line no-console
+    // console.log('<LinkText />    this.props.locale: ', this.props.locale);    //  eslint-disable-line no-console
     // console.log('messages[`link${this.props.id}`]: ', messages[`link${this.props.id}`]);
 
     return (
       <Consumer>
         {(appMessages) => {
-          console.log('appMessages: ', appMessages);
+          // console.log('appMessages: ', appMessages);
+          const messageId = messages[`link${this.props.id}`].id;
+          console.log('messageId: ', messageId);
           // console.log('messages[`link${this.props.id}`]: ', messages[`link${this.props.id}`]);
-          return <LinkTextPrimitive key={this.props.locale} {...this.props}><FormattedMessage id={`app.components.CrossMenu.link.${this.props.id}`} defaultMessage={appMessages[`app.components.CrossMenu.link.${this.props.id}`]} /></LinkTextPrimitive>;
+          return <LinkTextPrimitive {...this.props}><FormattedMessage id={messageId} defaultMessage={appMessages[messageId]} /></LinkTextPrimitive>;
         }}
         {/* {(appMessages) => (
           <LinkTextPrimitive key={this.props.locale} {...this.props}><FormattedMessage {...appMessages[`link${this.props.id}`]} /></LinkTextPrimitive>
@@ -55,24 +69,26 @@ export class LinkText extends React.PureComponent {
     );
     //
     // return (
-    //   <LinkTextPrimitive key={this.props.locale} {...this.props}><FormattedMessage {...messages[`link${this.props.id}`]} /></LinkTextPrimitive>
+    //   <LinkTextPrimitive {...this.props}><FormattedMessage {...messages[`link${this.props.id}`]} /></LinkTextPrimitive>
     // );
   }
 }
 
 LinkText.propTypes = {
-  children: PropTypes.any,
-  locale: PropTypes.string,
+  // children: PropTypes.any,
+  // locale: PropTypes.string,
   // active: PropTypes.bool,
   id: PropTypes.string,
 };
 
-const mapStateToProps = createStructuredSelector({
-  locale: makeSelectLocale(),
-});
+export default LinkText;
 
-const withConnect = connect(mapStateToProps);
-
-export default compose(
-  withConnect
-)(LinkText);
+// const mapStateToProps = createStructuredSelector({
+//   locale: makeSelectLocale(),
+// });
+//
+// const withConnect = connect(mapStateToProps);
+//
+// export default compose(
+//   withConnect
+// )(LinkText);

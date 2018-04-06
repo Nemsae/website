@@ -4,6 +4,7 @@ const HeaderLangBar = styled.div`
   position: absolute;
   top: 40px;
   right: 40px;
+  z-index: 3;
 
   display: flex;
 

@@ -5,9 +5,10 @@ import styled from 'styled-components';
 const Button = (props) => {
   const ButtonPrimitive = styled.div.attrs({ className: 'menu-trigger' })`
     position: absolute;
-
     right: 30px;
     bottom: 180px;
+    z-index: 3;
+
 
     text-transform: uppercase;
     padding: 10px 15px;

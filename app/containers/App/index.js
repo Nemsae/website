@@ -42,6 +42,7 @@ import HomeNavLink from './HomeNavLink';
 // import P from './P';
 // import HeaderLeft from './HeaderLeft';
 // import HeaderRight from './HeaderRight';
+import Routes from './Routes';
 
 // import messages from './messages';
 
@@ -125,35 +126,33 @@ export class App extends React.PureComponent {
 
     return (
       <AppWrapper>
+        {/* <Header id="header-root"></Header> */}
+        {/* <Header currentPath={this.props.location.pathname}> */}
+        {/* <HeaderTitle>Web Dev</HeaderTitle> */}
+        <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
+        <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
+        <HeaderLangBar>
+          <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
+          <A isActive={this.props.locale === 'es'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('es')}><span>ES</span></A>
+          <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
+        </HeaderLangBar>
 
-        <Header>
-          {/* <Header currentPath={this.props.location.pathname}> */}
-          <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
-          {/* <HeaderTitle>Web Dev</HeaderTitle> */}
-          <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
-          <HeaderLangBar>
-            <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
-            <A isActive={this.props.locale === 'es'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('es')}><span>ES</span></A>
-            <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
-          </HeaderLangBar>
-          <CrossMenu
-            active={this.state.expanded}
-            // key="cross-menu"
-            captureHoveredLocation={this.captureHoveredLocation}
-            resetHoveredLocation={this.resetHoveredLocation}
-          />
-
-          <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
-          <TestButton onClick={() => this.setState({ testing: !this.state.testing })}>{ this.state.testing ? 'TRUE' : 'FALSE' }</TestButton>
-        </Header>
+        <CrossMenu
+          active={this.state.expanded}
+          captureHoveredLocation={this.captureHoveredLocation}
+          resetHoveredLocation={this.resetHoveredLocation}
+        />
+        <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
 
         <Content>
+          {/* <Routes /> */}
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/about" component={AboutPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </Content>
+
 
       </AppWrapper>
     );

@@ -12,7 +12,8 @@ const minimizeWrapper = (CrossMenuContainer) => {
   new TimelineLite()     //  eslint-disable-line no-undef
   //  Animation sequence #1
   .to(linkTexts, 1, {
-    autoAlpha: 0,
+    // autoAlpha: 0,
+    opacity: 0,
   })
   .to(menuItems, 1, {
     scale: 0.10,
@@ -116,7 +117,8 @@ const maximizeWrapper = (CrossMenuContainer) => {
   // }, '-=1')
   })
   .to(linkTexts, 1, {
-    autoAlpha: 1,
+    // autoAlpha: 1,
+    opacity: 1,
     onComplete: () => console.log('Maximize     ended!'),
   });
 };

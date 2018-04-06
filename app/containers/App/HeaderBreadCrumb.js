@@ -8,6 +8,7 @@ const HeaderBreadCrumb = (props) => {
     position: absolute;
     bottom: 40px;
     left: 40px;
+    z-index: 3;
 
     font-size: 40px;
 

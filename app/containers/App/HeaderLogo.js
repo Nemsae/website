@@ -13,6 +13,7 @@ const HeaderLogo = styled.div.attrs({ className: 'header-title' })`
   position: absolute;
   top: 40px;
   left: 40px;
+  z-index: 3;
 
   text-transform: uppercase;
 `;
