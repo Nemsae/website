@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-// import { transitionAll400 } from 'utils/transitions';
+import { transitionAll400 } from 'utils/transitions';
+import { opacityIn } from 'utils/keyFrames';
 
 //  NOTE: cross-menu-entering is for first mount
 
@@ -21,27 +22,32 @@ const CrossMenu = (props) => {
     transform: translate(-50%, -50%);
     z-index: 2;
 
+    ${!props.active && `
+      // opacity: 1;
+      // animation: ${opacityIn} 5s;
+
+      left: auto;
+      top: auto;
+      bottom: 70px;
+      right: 70px;
+      transform: translate(0%, 0%);
+    `}
+
     &.cross-menu-exiting {}
     &.cross-menu-exited {}
     &.cross-menu-entering {}
     &.cross-menu-entered {}
 
-    ${''/* ${transitionAll400} */}
+    ${transitionAll400}
 
     ${''/*  MINIMIZED state - put it back */}
 
-    ${props.active && `
+    ${!props.active && `
       .menu-items {
-        transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, -300, -300);
-        transform-origin: 140% 150% 0px;
-        bottom: 30px;
-        right: 30px;
+        transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, 0, 0);
         top: auto;
         left: auto;
         justify-content: space-around;
-
-        // transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, 0, 0);
-        // justify-content: space-around;
 
         .link-text {
           // simulate GSAP autoAlpha

@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 import { opacityIn } from 'utils/keyFrames';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({ className: 'mx-auto' })`
   ${'' /* background: #f7f7f7;
   color: #fff; */}
 
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  max-width: 1280px;
 
   overflow: auto;
 
@@ -16,10 +18,8 @@ const Wrapper = styled.div`
 
   animation: ${opacityIn} 500ms ease-in;
 
-  ${'' /* overflow: auto;
-
-  padding-left: 80px;
-  padding-right: 80px; */}
+  padding-bottom: 120px;
+  padding-top: 120px;
 `;
 
 export default Wrapper;

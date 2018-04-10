@@ -58,7 +58,7 @@ export class LinkText extends React.PureComponent {
         {(appMessages) => {
           // console.log('appMessages: ', appMessages);
           const messageId = messages[`link${this.props.id}`].id;
-          console.log('messageId: ', messageId);
+          // console.log('messageId: ', messageId);
           // console.log('messages[`link${this.props.id}`]: ', messages[`link${this.props.id}`]);
           return <LinkTextPrimitive {...this.props}><FormattedMessage id={messageId} defaultMessage={appMessages[messageId]} /></LinkTextPrimitive>;
         }}

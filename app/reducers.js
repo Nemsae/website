@@ -28,7 +28,7 @@ function routeReducer(state = routeInitialState, action) {
   switch (action.type) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:
-      console.log('LOCATION_CHANGE dispatched');
+      // console.log('LOCATION_CHANGE dispatched');
       return state.merge({
         location: action.payload,
       });

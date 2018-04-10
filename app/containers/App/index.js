@@ -58,7 +58,7 @@ const validRoutes = {
 export class App extends React.PureComponent {
   state = {
     hoveredLocation: '',
-    expanded: true,
+    expanded: false,
   }
 
   componentWillReceiveProps(nextProps) {

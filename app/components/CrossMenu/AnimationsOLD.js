@@ -8,36 +8,25 @@ const minimizeWrapper = (CrossMenuContainer) => {
   // const bullet4 = CrossMenuContainer.querySelector('#bullet-link-4');
   // const linkGroups = CrossMenuContainer.querySelectorAll('.link-group');
   const linkTexts = CrossMenuContainer.querySelectorAll('.link-text');
-  console.log('CrossMenuContainer: ', CrossMenuContainer);
-  console.log('menuItems: ', menuItems);
 
   new TimelineLite()     //  eslint-disable-line no-undef
   //  Animation sequence #1
-  .to(linkTexts, 6, {
+  .to(linkTexts, 1, {
+    // autoAlpha: 0,
     opacity: 0,
   })
-  .to(menuItems, 0.4, {
+  .to(menuItems, 1, {
     scale: 0.10,
     rotation: 45,
   // })
   // }, 0)
   }, '-=1')
 
-  .to(CrossMenuContainer, 0.1, {
-    left: 'auto',
-    top: 'auto',
-    bottom: '70px',
-    right: '70px',
-    transform: 'translate(0%, 0%)',
-  })
   .to(menuItems, 0.3, {
     left: 'auto',
     top: 'auto',
     right: '30px',
     bottom: '30px',
-    // transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, 0, 0);
-    // justify-content: space-around;
-
     transformOrigin: '287% 260% 0px',
     // transform: 'translate(0, 0)',
     // x: 290,
@@ -45,6 +34,22 @@ const minimizeWrapper = (CrossMenuContainer) => {
     // ease: Sine.easeOut,     //  eslint-disable-line no-undef
   }, '+=0.1')
 
+  // .fromTo(menuItems, 0.3, {
+  //   left: '50%',
+  //   top: '50%',
+  //   transform: 'translate(-50%, -50%)',
+  //   // right: '0',
+  //   // bottom: '0',
+  //   // ease: Sine.easeOut,     //  eslint-disable-line no-undef
+  // }, {
+  //   left: 'auto',
+  //   top: 'auto',
+  //   right: '30px',
+  //   bottom: '30px',
+  //   transform: 'translate(0, 0)',
+  //   // ease: Sine.easeOut,     //  eslint-disable-line no-undef
+  // }, '+=0.1')
+  // // })
   .to(menuItem, 0.3, {
     // border: '14px solid #000',
     background: '#000',

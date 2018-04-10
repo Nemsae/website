@@ -26,7 +26,7 @@ export class LanguageProvider extends React.PureComponent { // eslint-disable-li
   render() {
     //  NOTE: messages here contains current (translated) messages, need to pass via context to children that are "subscribed"
     const messages = this.props.messages[this.props.locale];
-    console.log('<LanguageProvider />     messages: ', messages);    //  eslint-disable-line no-console
+    // console.log('<LanguageProvider />     messages: ', messages);    //  eslint-disable-line no-console
     return (
       <Provider value={messages}>
         <IntlProvider locale={this.props.locale} messages={this.props.messages[this.props.locale]}>

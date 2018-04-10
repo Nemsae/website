@@ -8,7 +8,10 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
+import H2 from 'components/H2';
+
 import BackgroundVideo from './BackgroundVideo';
+import BookMark from './BookMark';
 // import H2 from 'components/H2';
 import Wrapper from './Wrapper';
 
@@ -26,6 +29,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
     return (
       <Wrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
+        <BookMark><H2>About Me</H2></BookMark>
         <BackgroundVideo autoPlay loop muted>
           <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
           Your browser does not support the mp4 video format.
