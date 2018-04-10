@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { opaqueIn } from 'utils/keyFrames';
+import { opacityIn } from 'utils/keyFrames';
 
 const BackgroundVideo = styled.video`
   ${''/* height: 100vh; */}
@@ -9,7 +9,7 @@ const BackgroundVideo = styled.video`
 
   background: transparent;
 
-  animation: ${opaqueIn()} 11100ms;
+  animation: ${opacityIn()} 11100ms;
 
   ${'' /* opacity: 0;
   transition: opacity 1100ms;

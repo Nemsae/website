@@ -31,4 +31,19 @@ injectGlobal`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+
+  .px-30 {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .py-30 {
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+  }
+  .ml-auto, .mx-auto {
+    margin-left: auto !important;
+  }
+  .mr-auto, .mx-auto {
+    margin-right: auto !important;
+  }
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { opaqueIn } from 'utils/keyFrames';
+import { opacityIn } from 'utils/keyFrames';
 
 class BackgroundVideo extends React.PureComponent {
 // const BackgroundVideo = ({ ...props }) => {
@@ -16,7 +16,7 @@ class BackgroundVideo extends React.PureComponent {
 
       background: transparent;
 
-      animation: ${opaqueIn()} 11000ms;
+      animation: ${opacityIn()} 11000ms;
 
       ${'' /* opacity: 0;
       transition: opacity 1100ms;

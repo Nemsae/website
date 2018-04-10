@@ -43,7 +43,7 @@ export const fadeOut = () => {
   return fade;
 };
 
-export const opaqueIn = () => {
+export const opacityIn = () => {
   const opaque = keyframes`
     from {
       opacity: 0;
@@ -75,7 +75,7 @@ export const squeezeIn = () => {
 
 export default {
   squeezeIn,
-  opaqueIn,
+  opacityIn,
   fadeIn,
   fadeOut,
 };
