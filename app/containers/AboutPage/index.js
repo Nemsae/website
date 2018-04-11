@@ -12,6 +12,7 @@ import H2 from 'components/H2';
 
 import BackgroundVideo from './BackgroundVideo';
 import BookMark from './BookMark';
+import Content from './Content';
 import TextContent from './TextContent';
 import Wrapper from './Wrapper';
 
@@ -30,11 +31,15 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
       <Wrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
         <BookMark><H2>About Me</H2></BookMark>
-        <TextContent><H2>About Me</H2></TextContent>
-        <BackgroundVideo autoPlay loop muted>
-          <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
-          Your browser does not support the mp4 video format.
-        </BackgroundVideo>
+        <Content>
+          <BackgroundVideo autoPlay loop muted>
+            <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
+            Your browser does not support the mp4 video format.
+          </BackgroundVideo>
+          <TextContent>
+            <H2>About Me</H2>
+          </TextContent>
+        </Content>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </Wrapper>
     );

@@ -21,7 +21,8 @@ injectGlobal`
   }
 
   #app {
-    background-color: #fafafa;
+    background-color: #f6f9fc;
+    ${''/* background-color: #fafafa; */}
     min-height: 100%;
     min-width: 100%;
   }
@@ -31,6 +32,9 @@ injectGlobal`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+
+  //  NOTE: BLUE FLASH override
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   .px-30 {
     padding-left: 30px !important;

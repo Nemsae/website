@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { transitionAll400 } from 'utils/transitions';
+import { transitionAll } from 'utils/transitions';
 
 const HeaderBreadCrumb = (props) => {
   const HeaderBreadCrumbPrimitive = styled.div.attrs({ className: 'header-bar' })`
@@ -16,7 +16,7 @@ const HeaderBreadCrumb = (props) => {
       color: #FEC0C1;
     } */}
 
-    ${transitionAll400}
+    ${transitionAll(400)}
     ${props.strikeThrough && `
       .crumb-current {
         text-decoration: line-through;

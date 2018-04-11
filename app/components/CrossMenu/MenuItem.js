@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { transitionAll400 } from 'utils/transitions';
+import { transitionAll } from 'utils/transitions';
 
 const MenuItem = styled(NavLink)`
 ${''/* const MenuItem = styled.li` */}
@@ -12,7 +12,7 @@ ${''/* const MenuItem = styled.li` */}
 
   cursor: pointer;
 
-  ${transitionAll400}
+  ${transitionAll(400)}
 
   &.active-link {
     cursor: default;

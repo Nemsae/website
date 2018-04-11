@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { opacityIn } from 'utils/keyFrames';
+import { paperShadow } from 'utils/componentStyles';
 
 const BookMark = styled.div`
   background-color: pink;
@@ -10,7 +11,8 @@ const BookMark = styled.div`
 
   margin-left: 15px;
   margin-right: 15px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  ${paperShadow}
 
   animation: ${opacityIn()} 1000ms;
 `;

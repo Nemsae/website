@@ -1,8 +1,7 @@
-
-export const transitionAll400 = () => (
-  'transition: all 400ms;'
+export const transitionAll = (duration) => (
+  `transition: all ${duration}ms;`
 );
 
 export default {
-  transitionAll400,
+  transitionAll,
 };

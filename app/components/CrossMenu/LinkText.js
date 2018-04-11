@@ -7,7 +7,7 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { FormattedMessage } from 'react-intl';
 
-import { transitionAll400 } from 'utils/transitions';
+import { transitionAll } from 'utils/transitions';
 
 import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 import { Consumer } from 'containers/LanguageProvider';
@@ -29,7 +29,7 @@ const LinkTextPrimitive = styled.h2.attrs({ className: 'link-text' })`
 
   color: #000;
 
-  ${transitionAll400}
+  ${transitionAll(400)}
 
   ${''/* ${this.props.active && 'opacity: 1'} */}
   ${''/* ${this.props.active ? 'opacity: 1' : 'opacity: 0'} */}
