@@ -17,7 +17,7 @@ const BackgroundVideo = styled.video`
     }
   }
 
-  animation: ${opacityIn()} 6000ms, expandOutIn 2000ms;
+  animation: ${opacityIn()} 6000ms, expandOutIn 3000ms var(--ease-out-quart);
 `;
 
 export default BackgroundVideo;
