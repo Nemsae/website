@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import HomePage from 'containers/HomePage/Loadable';
 import AboutPage from 'containers/AboutPage/Loadable';
+import HomePage from 'containers/HomePage/Loadable';
+import ProjectsPage from 'containers/ProjectsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import { makeSelectLocation } from 'containers/App/selectors';
@@ -149,6 +150,7 @@ export class App extends React.PureComponent {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/projects" component={ProjectsPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </Content>

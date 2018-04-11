@@ -9,8 +9,8 @@ const BookMark = styled.div`
   height: 100%;
   width: 150px;
 
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
 
   ${paperShadow}
 

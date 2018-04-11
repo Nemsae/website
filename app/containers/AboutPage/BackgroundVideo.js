@@ -7,7 +7,17 @@ const BackgroundVideo = styled.video`
 
   background: transparent;
 
-  animation: ${opacityIn()} 11100ms;
+  @keyframes expandOutIn {
+    from {
+      transform: scale(2);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+
+  animation: ${opacityIn()} 6000ms, expandOutIn 2000ms;
 `;
 
 export default BackgroundVideo;

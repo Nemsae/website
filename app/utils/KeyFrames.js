@@ -45,6 +45,34 @@ export const fadeOut = () => {
 
 export const opacityIn = () => {
   const opaque = keyframes`
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  `;
+
+  return opaque;
+};
+
+export const opacityOut = () => {
+  const opaque = keyframes`
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  `;
+
+  return opaque;
+};
+
+export const autoAlphaIn = () => {
+  const autoAlpha = keyframes`
     0% {
         display: none;
         opacity: 0;
@@ -59,16 +87,9 @@ export const opacityIn = () => {
         display: block;
         opacity: 1;
     }
-    ${'' /* from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    } */}
   `;
 
-  return opaque;
+  return autoAlpha;
 };
 
 export const squeezeIn = () => {
@@ -90,6 +111,8 @@ export const squeezeIn = () => {
 export default {
   squeezeIn,
   opacityIn,
+  opacityOut,
+  autoAlphaIn,
   fadeIn,
   fadeOut,
 };
