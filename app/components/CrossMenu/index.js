@@ -37,7 +37,7 @@ export class CrossMenu extends React.PureComponent {
   // }
 
   componentWillReceiveProps(nextProps) {
-    console.log('<CrossMenu />    CWRP');
+    // console.log('<CrossMenu />    CWRP');
     if (nextProps.active !== this.props.active) console.log('<CrossMenu />    CWRP     active changed');
     // console.log('<CrossMenu />    CWRP     nextProps: ', nextProps);
   }
@@ -80,7 +80,7 @@ export class CrossMenu extends React.PureComponent {
 
   render() {
     console.log('<CrossMenu />     rendered!');     //  eslint-disable-line no-console
-    console.log('<CrossMenu />     this.props.active: ', this.props.active);     //  eslint-disable-line no-console
+    // console.log('<CrossMenu />     this.props.active: ', this.props.active);     //  eslint-disable-line no-console
     // console.log('<CrossMenu />     Wrapper: ', Wrapper);     //  eslint-disable-line no-console
     return (
       <CSSTransition

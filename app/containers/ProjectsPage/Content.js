@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { fadeIn } from 'utils/keyFrames';
 import { paperShadow } from 'utils/componentStyles';
 
-const Content = styled.div`
+const Content = styled.main`
   display: flex;
 
   background-color: pink;

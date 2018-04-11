@@ -6,6 +6,10 @@
 
 <br />
 
+## Bugs
+
+1. Issue with Routes being re rendered, because of the link hovering capture fxn. `this.state.hoveredLocation` is changing.
+
 ## Todos
 
 1. Host on S3

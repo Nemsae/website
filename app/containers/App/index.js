@@ -1,7 +1,7 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 // import { FormattedMessage } from 'react-intl';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -25,6 +25,7 @@ import A from './A';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
 import Content from './Content';
+import ContentRouter from './ContentRouter';
 import CrumbCurrent from './CrumbCurrent';
 import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
@@ -123,7 +124,8 @@ export class App extends React.PureComponent {
     // const isMenuActive = validRoutes[this.props.location.pathname] || false;
 
     console.log('<App />     rendered!');     //  eslint-disable-line no-console
-    console.log('<App />     this.state.expanded: ', this.state.expanded);     //  eslint-disable-line no-console
+    // console.log('<App />     this.state.expanded: ', this.state.expanded);     //  eslint-disable-line no-console
+    // console.log('<App />     this.props.location.key', this.props.location.key);    //  eslint-disable-line no-console
 
     return (
       <AppWrapper>
@@ -145,15 +147,36 @@ export class App extends React.PureComponent {
         />
         <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
 
-        <Content>
-          {/* <Routes /> */}
+        <ContentRouter location={this.props.location} />
+        {/* <Content location={this.props.location}>
+          <TransitionGroup component={null}>
+            <CSSTransition
+              key={this.props.location.key}
+              classNames="fade"
+              timeout={{ enter: 10000, exit: 10000 }}
+            >
+              {(state) => {
+                console.log(this.props.location.pathname, '<App />     CSSTransition    state: ', state);
+                return (
+                  <Switch location={this.props.location}>
+                    <Route exact path="/" component={HomePage} />
+                    <Route exact path="/about" component={AboutPage} />
+                    <Route exact path="/projects" component={ProjectsPage} />
+                    <Route component={NotFoundPage} />
+                  </Switch>
+                );
+              }}
+            </CSSTransition>
+          </TransitionGroup>
+        </Content> */}
+        {/* <Content>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/projects" component={ProjectsPage} />
             <Route component={NotFoundPage} />
           </Switch>
-        </Content>
+        </Content> */}
 
 
       </AppWrapper>
