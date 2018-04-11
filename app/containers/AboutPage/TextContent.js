@@ -8,7 +8,9 @@ const TextContent = styled.div`
 
   margin-left: 15px;
   margin-right: 15px;
-  padding: 4rem 3rem;
+  padding: 4rem 8rem;
+
+  overflow: auto;
 
   animation: ${opacityIn()} 1000ms;
 `;

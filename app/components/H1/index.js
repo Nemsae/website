@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const H1 = styled.h1`
-  font-size: 34px;
-  font-weight: 400;
+  font-size: 3.4rem;
   margin-bottom: 0.25em;
 `;
 

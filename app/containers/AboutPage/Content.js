@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { opacityIn } from 'utils/keyFrames';
+import { fadeIn } from 'utils/keyFrames';
 import { paperShadow } from 'utils/componentStyles';
 
 const Content = styled.div`
@@ -13,7 +13,7 @@ const Content = styled.div`
 
   ${paperShadow}
 
-  animation: ${opacityIn()} 1000ms;
+  animation: ${fadeIn('right')} 1000ms;
 
   ${'' /* ::before {
     content: "";

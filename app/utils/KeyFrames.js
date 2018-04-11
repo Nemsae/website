@@ -7,9 +7,9 @@ const directionTransform = (direction) => {
     // case 'rightOut':
     case 'left':
       return 'transform: translate3d(-100%, 0, 0);';
-    case 'up':
+    case 'top':
       return 'transform: translate3d(0, 100%, 0);';
-    case 'down':
+    case 'bottom':
       return 'transform: translate3d(0, -100%, 0);';
     default:
       return 'transform: translate3d(100%, 0, 0);';
@@ -45,13 +45,27 @@ export const fadeOut = () => {
 
 export const opacityIn = () => {
   const opaque = keyframes`
-    from {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+    ${'' /* from {
       opacity: 0;
     }
 
     to {
       opacity: 1;
-    }
+    } */}
   `;
 
   return opaque;

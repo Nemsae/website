@@ -6,6 +6,8 @@ injectGlobal`
   body {
     height: 100%;
     width: 100%;
+    font-size: 62.5%;
+    font-weight: 400;
   }
 
   h1 {
@@ -13,12 +15,12 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-  }
-
-  body.fontLoaded {
     font-family: 'Raleway', 'Open Sans', Helvetica, Arial, sans-serif;
   }
+
+  ${'' /* body.fontLoaded {
+    font-family: 'Raleway', 'Open Sans', Helvetica, Arial, sans-serif;
+  } */}
 
   #app {
     background-color: #f6f9fc;
@@ -29,7 +31,6 @@ injectGlobal`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
 
