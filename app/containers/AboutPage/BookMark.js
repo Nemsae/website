@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { opacityIn, fadeIn } from 'utils/keyFrames';
+import { fadeIn } from 'utils/keyFrames';
 import { paperShadow } from 'utils/componentStyles';
 
 const BookMark = styled.div`
@@ -14,7 +14,7 @@ const BookMark = styled.div`
 
   ${paperShadow}
 
-  animation: ${fadeIn('left')} 1000ms;
+  animation: ${fadeIn('left')} 1000ms var(--ease-in-out-quart);
 `;
 
 export default BookMark;
