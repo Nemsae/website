@@ -46,22 +46,24 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
   //   console.log('<AboutPage />     prevState: ', prevState);
   //   return null;
   // }
-  state = { mounted: true }
+  // state = { mounted: true }
 
-  // componentWillReceiveProps(nextProps, nextState) {
-  //   console.log('<AboutPage />     CWRP!');     //  eslint-disable-line no-console
-  //   console.log('<AboutPage />     nextProps: ', nextProps);
-  //   if (nextProps.location.pathname !== this.props.location.pathname) {
-  //
-  //   }
-  // }
+  componentWillReceiveProps(nextProps, nextState) {
+    console.log('<AboutPage />     CWRP!');     //  eslint-disable-line no-console
+    // console.log('<AboutPage />     this.props.location.pathname: ', this.props.location.pathname);
+    // console.log('<AboutPage />     nextProps: ', nextProps);
+    // console.log('<AboutPage />     nextProps.location.pathname: ', nextProps.location.pathname);
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+
+    }
+  }
 
   componentWillUnmount() {
     //  NOTE: create an animation for when the component is exiting.
     //  utilize CSSTransition for entire component, pass the state of `exiting` to trigger exit animation
     //  also think about whether to put CSSTransition here or in <Content /> of <App />
     console.log('<AboutPage />     CWU!');     //  eslint-disable-line no-console
-    this.setState({ mounted: false });
+    // this.setState({ mounted: false });
   }
 
   render() {
@@ -69,13 +71,13 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
     // console.log('<AboutPage />     this.props', this.props);    //  eslint-disable-line no-console
 
     return (
-      <CSSTransition
-        in={this.state.mounted}
-        timeout={{ enter: 1000, exit: 1000 }}
-      >
-        {(state) => {
-          // console.log('<AboutPage />     CSSTransition    state: ', state);
-          return (
+      // <CSSTransition
+      //   in={false}
+      //   timeout={{ enter: 4000, exit: 4000 }}
+      // >
+      //   {(state) => {
+      //     // console.log('<AboutPage />     CSSTransition    state: ', state);
+      //     return (
             <Wrapper>
               {/* eslint-disable jsx-a11y/media-has-caption */}
               <BookMark></BookMark>
@@ -105,9 +107,9 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
               </Content>
               {/* eslint-ensable jsx-a11y/media-has-caption */}
             </Wrapper>
-          );
-        }}
-      </CSSTransition>
+          // );
+        // }}
+      // </CSSTransition>
     );
   }
 }

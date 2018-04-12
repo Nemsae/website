@@ -22,6 +22,10 @@ import reducer from './reducer';
 import saga from './saga';
 
 export class ProjectsPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentWillUnmount() {
+    console.log('<ProjectsPage />     CWU!');     //  eslint-disable-line no-console
+  }
+
   render() {
     console.log('<ProjectsPage />     rendered!');     //  eslint-disable-line no-console
     return (

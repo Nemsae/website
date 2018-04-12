@@ -48,6 +48,24 @@ injectGlobal`
     margin-right: auto !important;
   }
 
+  ${'' /* .route-fade-enter
+  .route-fade-enter-active
+  .route-fade-enter-done */}
+  .route-fade-enter {
+    opacity: 0.01;
+  }
+  .route-fade-enter-active {
+    opacity: 1;
+    transition: opacity 3000ms ease-in;
+  }
+  .route-fade-exit {
+    opacity: 1;
+  }
+  .route-fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 3000ms ease-in;
+  }
+
   :root {
     --ease-in-quad: cubic-bezier(.55, .085, .68, .53);
     --ease-in-cubic: cubic-bezier(.550, .055, .675, .19);

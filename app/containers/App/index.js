@@ -94,14 +94,6 @@ export class App extends React.PureComponent {
   }
 
   captureHoveredLocation = (location) => {
-    //  BUG: issue with onMouseOver being triggered multiple times. Issue is most likely the event handler intereacting with child elements triggering it.
-    //  resetHoveredLocation was being called because the mouse "left" from parent to inner child.
-    //  Solution: use mouseEnter and mouseLeave instead of mouseHover and mouseOut
-
-    //  BUG: issue with onMouseOver being triggered first on child element. Hence `location` is "" because no id.
-    //  if event fires from child, check parent div for id then.
-    //  Solution: instead of setting location from "id", pass as an argument and bind in render.
-
     //  BUG: re render of the menu items, because of the capture changing state.
 
     // const location = evt.target.id;
