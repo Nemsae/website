@@ -14,7 +14,7 @@ const BookMark = styled.div`
 
   ${paperShadow}
 
-  animation: ${fadeIn('bottom')} 1000ms var(--ease-in-out-quart);
+  ${'' /* animation: ${fadeIn('bottom')} 1000ms var(--ease-in-out-quart); */}
 `;
 
 export default BookMark;

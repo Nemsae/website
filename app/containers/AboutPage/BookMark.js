@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { fadeIn } from 'utils/keyFrames';
 import { paperShadow } from 'utils/componentStyles';
 
-const BookMark = styled.div`
+const BookMark = styled.div.attrs({ className: 'page-bookmark' })`
   background-color: pink;
 
   height: 100%;
@@ -14,7 +14,7 @@ const BookMark = styled.div`
 
   ${paperShadow}
 
-  animation: ${fadeIn('left')} 1000ms var(--ease-in-out-quart);
+  ${'' /* animation: ${fadeIn('left')} 1000ms var(--ease-in-out-quart); */}
 `;
 
 export default BookMark;

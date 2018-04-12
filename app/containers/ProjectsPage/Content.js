@@ -13,7 +13,7 @@ const Content = styled.main`
 
   ${paperShadow}
 
-  animation: ${fadeIn('right')} 1000ms 200ms both  var(--ease-in-out-quart);
+  ${'' /* animation: ${fadeIn('right')} 1000ms 200ms both  var(--ease-in-out-quart); */}
 `;
 
 export default Content;

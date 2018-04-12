@@ -37,19 +37,19 @@ const LinkTextPrimitive = styled.h2.attrs({ className: 'link-text' })`
 
 export class LinkText extends React.PureComponent {
   componentWillReceiveProps(nextProps, nextState) {
-    console.log('<LinkText />     CWRP!');     //  eslint-disable-line no-console
+    // console.log('<LinkText />     CWRP!');     //  eslint-disable-line no-console
   }
 
   componentDidUpdate(prevProps, prevState) {     //  eslint-disable-line no-unused-vars
-    console.log('<LinkText />     CDU!');     //  eslint-disable-line no-console
+    // console.log('<LinkText />     CDU!');     //  eslint-disable-line no-console
   }
 
   componentWillUnmount() {
-    console.log('<LinkText />     CWU!');     //  eslint-disable-line no-console
+    // console.log('<LinkText />     CWU!');     //  eslint-disable-line no-console
   }
 
   render() {
-    console.log('<LinkText />     rendered!');    //  eslint-disable-line no-console
+    // console.log('<LinkText />     rendered!');    //  eslint-disable-line no-console
     // console.log('<LinkText />    this.props.locale: ', this.props.locale);    //  eslint-disable-line no-console
     // console.log('messages[`link${this.props.id}`]: ', messages[`link${this.props.id}`]);
 

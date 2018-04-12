@@ -11,7 +11,7 @@ const Wrapper = styled.div.attrs({ className: 'mx-auto' })`
 
   height: 100%;
 
-  animation: ${opacityIn} 500ms ease-in;
+  ${'' /* animation: ${opacityIn} 500ms ease-in; */}
 
   padding-bottom: 120px;
   padding-top: 120px;

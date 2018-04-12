@@ -24,7 +24,7 @@ import CrossMenu from 'components/CrossMenu';
 import A from './A';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
-import Content from './Content';
+// import Content from './Content';
 import ContentRouter from './ContentRouter';
 import CrumbCurrent from './CrumbCurrent';
 import CrumbNext from './CrumbNext';
@@ -64,6 +64,7 @@ export class App extends React.PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log('<App />    CRWP!');
     //  NOTE: clears the hover, when coming from active Menu to inactive (via selecting a route).
     if (nextProps.location.pathname.slice(1) === this.state.hoveredLocation) this.resetHoveredLocation();
 
@@ -139,7 +140,7 @@ export class App extends React.PureComponent {
         />
         <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
 
-        <ContentRouter location={this.props.location} />
+        <ContentRouter />
         {/* <Content location={this.props.location}>
           <TransitionGroup component={null}>
             <CSSTransition
