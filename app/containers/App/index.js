@@ -109,7 +109,6 @@ export class App extends React.PureComponent {
     return (
       <AppWrapper>
         {/* <Header id="header-root"></Header> */}
-        {/* <Header currentPath={this.props.location.pathname}> */}
         {/* <HeaderTitle>Web Dev</HeaderTitle> */}
         <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
 
@@ -130,37 +129,6 @@ export class App extends React.PureComponent {
         <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
 
         <ContentRouter />
-        {/* <Content location={this.props.location}>
-          <TransitionGroup component={null}>
-            <CSSTransition
-              key={this.props.location.key}
-              classNames="fade"
-              timeout={{ enter: 10000, exit: 10000 }}
-            >
-              {(state) => {
-                console.log(this.props.location.pathname, '<App />     CSSTransition    state: ', state);
-                return (
-                  <Switch location={this.props.location}>
-                    <Route exact path="/" component={HomePage} />
-                    <Route exact path="/about" component={AboutPage} />
-                    <Route exact path="/projects" component={ProjectsPage} />
-                    <Route component={NotFoundPage} />
-                  </Switch>
-                );
-              }}
-            </CSSTransition>
-          </TransitionGroup>
-        </Content> */}
-        {/* <Content>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/projects" component={ProjectsPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </Content> */}
-
-
       </AppWrapper>
     );
   }
