@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { withRouter, Switch, Route } from 'react-router-dom';
 
-import { fadeIn, fadeOut } from 'utils/keyFrames';
-
 import AboutPage from 'containers/AboutPage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import ProjectsPage from 'containers/ProjectsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+
+import SwitchWrapper from './SwitchWrapper';
+import Wrapper from './Wrapper';
 
 //  BUG: React DOM, each <CSSTransition /> is not exiting, doesn't trigger exit
 //       Solution?: key isn't changing. Therefore it won't leave?
@@ -40,52 +41,6 @@ const childFactoryCreator = (locationKey) => (
     );
   }
 );
-
-const SwitchWrapper = styled.main`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  overflow: auto;
-  height: 100%;
-  width: 100%;
-`;
-
-const ContentRouterWrapper = styled.div`
-  .entering-child-enter, .entering-child-enter-active {
-    .page-bookmark {
-      transform: translate3d(0, 2000px, 0);
-    }
-    .page-content {
-      transform: translate3d(2000px, 0, 0);
-    }
-  }
-  .entering-child-enter-done {
-    .page-bookmark {
-      animation: ${fadeIn('bottom')} 1000ms var(--ease-in-out-quart);
-    }
-    .page-content {
-      animation: ${fadeIn('right')} 1000ms 200ms both var(--ease-in-out-quart);
-    }
-  }
-  .exiting-child-exit, .exiting-child-exit-active {
-    .page-bookmark {
-      animation: ${fadeOut('top')} 1000ms var(--ease-in-out-quart);
-    }
-    .page-content {
-      animation: ${fadeOut('left')} 1000ms 400ms both var(--ease-in-out-quart);
-    }
-  }
-  .exiting-child-exit-done {
-    ${'' /* .page-bookmark {
-      transform: translate3d(0, -2000px, 0);
-    }
-    .page-content {
-      transform: translate3d(-2000px, 0, 0);
-    } */}
-  }
-`;
 
 export class ContentRouter extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   // state = { transitionState: false }
@@ -135,7 +90,7 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
       // )} />     //  eslint-disable-line react/jsx-closing-bracket-location
       <TransitionGroup
         // component={React.Fragment}
-        component={ContentRouterWrapper}
+        component={Wrapper}
         childFactory={childFactoryCreator(location.key)}
       >
         <CSSTransition

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { opacityIn } from 'utils/keyFrames';
+// import { opacityIn } from 'utils/keyFrames';
 
 const TextContent = styled.div`
   height: 100%;

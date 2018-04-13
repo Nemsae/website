@@ -1,16 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // import { FormattedMessage } from 'react-intl';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-
-import AboutPage from 'containers/AboutPage/Loadable';
-import HomePage from 'containers/HomePage/Loadable';
-import ProjectsPage from 'containers/ProjectsPage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import { makeSelectLocation } from 'containers/App/selectors';
 import { changeLocale } from 'containers/LanguageProvider/actions';
@@ -20,31 +13,24 @@ import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 // import FlagIcon from 'components/FlagIcon';
 
 import CrossMenu from 'components/CrossMenu';
+import ContentRouter from 'containers/ContentRouter';
 
 import A from './A';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
 // import Content from './Content';
-import ContentRouter from './ContentRouter';
+// import ContentRouter from './ContentRouter';
 import CrumbCurrent from './CrumbCurrent';
 import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
-import Header from './Header';
+// import Header from './Header';
 import Button from './Button';
-import TestButton from './TestButton';
+// import TestButton from './TestButton';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
 // import HeaderTitle from './HeaderTitle';
-// import HeaderBar from './HeaderBar';
-// import H1 from './H1';
-// import LangBar from './LangBar';
 import HomeNavLink from './HomeNavLink';
-// import StyledNavLink from './StyledNavLink';
-// import P from './P';
-// import HeaderLeft from './HeaderLeft';
-// import HeaderRight from './HeaderRight';
-import Routes from './Routes';
 
 // import messages from './messages';
 
