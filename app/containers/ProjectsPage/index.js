@@ -9,8 +9,11 @@ import injectSaga from 'utils/injectSaga';
 // import H2 from 'components/H2';
 // import P from 'components/P';
 
-import BookMark from './BookMark';
-import Content from './Content';
+import BookMark from 'containers/AboutPage/BookMark';
+import Content from 'containers/AboutPage/Content';
+
+// import BookMark from './BookMark';
+// import Content from './Content';
 import H2 from './H2';
 import HeaderBar from './HeaderBar';
 import HeaderTitle from './HeaderTitle';

@@ -126,7 +126,9 @@ export class App extends React.PureComponent {
         {/* <Header currentPath={this.props.location.pathname}> */}
         {/* <HeaderTitle>Web Dev</HeaderTitle> */}
         <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
+
         <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
+
         <HeaderLangBar>
           <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
           <A isActive={this.props.locale === 'es'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('es')}><span>ES</span></A>
@@ -138,6 +140,7 @@ export class App extends React.PureComponent {
           captureHoveredLocation={this.captureHoveredLocation}
           resetHoveredLocation={this.resetHoveredLocation}
         />
+
         <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
 
         <ContentRouter />

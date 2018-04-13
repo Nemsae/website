@@ -51,7 +51,7 @@ injectGlobal`
   ${'' /* .route-fade-enter
   .route-fade-enter-active
   .route-fade-enter-done */}
-  .route-fade-enter {
+  ${'' /* .route-fade-enter {
     opacity: 0.01;
   }
   .route-fade-enter-active {
@@ -64,7 +64,7 @@ injectGlobal`
   .route-fade-exit-active {
     opacity: 0.01;
     transition: opacity 3000ms ease-in;
-  }
+  } */}
 
   :root {
     --ease-in-quad: cubic-bezier(.55, .085, .68, .53);
