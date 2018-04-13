@@ -13,6 +13,7 @@ import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 // import FlagIcon from 'components/FlagIcon';
 
 import CrossMenu from 'components/CrossMenu';
+import Eyebrow from 'components/Eyebrow';
 import ContentRouter from 'containers/ContentRouter';
 
 import A from './A';
@@ -29,7 +30,7 @@ import Button from './Button';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
-// import HeaderTitle from './HeaderTitle';
+import HeaderTitle from './HeaderTitle';
 import HomeNavLink from './HomeNavLink';
 
 // import messages from './messages';
@@ -110,6 +111,7 @@ export class App extends React.PureComponent {
       <AppWrapper>
         {/* <Header id="header-root"></Header> */}
         {/* <HeaderTitle>Web Dev</HeaderTitle> */}
+        <HeaderTitle><Eyebrow /></HeaderTitle>
         <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
 
         <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
