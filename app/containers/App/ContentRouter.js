@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { withRouter, Switch, Route } from 'react-router-dom';
-// import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import { fadeIn, fadeOut } from 'utils/keyFrames';
 
@@ -12,44 +11,35 @@ import HomePage from 'containers/HomePage/Loadable';
 import ProjectsPage from 'containers/ProjectsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
-// import { fadeIn } from 'utils/keyFrames';
-// import { paperShadow } from 'utils/componentStyles';
-
-//  BUG: issue with exit timeout not being obeyed is because component re-renders with the new location.key,
-//  BUG: Pages do unmount, but this component never does.
-//  BUG: cWRP fires for every captureHoveredLocation, because props is passed an object, `location`
 //  BUG: React DOM, each <CSSTransition /> is not exiting, doesn't trigger exit
 //       Solution?: key isn't changing. Therefore it won't leave?
-
 //  NOTE: EXIT doesn't work when we pass component
 //  <TransitionGroup
 //    component={TransitionGroupWrapper}
 //  >
+//  SOLUTION: issue most liekely because the component that was passed was being rebuilt every re-render
 
 
 //  This returns a childFactory to provide to TransitionGroup
-const childFactoryCreator = (locationKey) => {
-  console.log('locationKey: ', locationKey);
-  return (
-    (child) => {
-      // console.log('child: ', child);
-      const childKey = child.key.split('$')[1];
-      // console.log('childKey: ', childKey);
-      let showState = true;
-      let classNames = 'entering-child';
-      if (childKey !== locationKey) {
-        showState = false;
-        classNames = 'exiting-child';
-      }
-      return (
-        React.cloneElement(child, {
-          classNames,
-          in: showState,
-        })
-      );
+const childFactoryCreator = (locationKey) => (
+  (child) => {
+    // console.log('child: ', child);
+    const childKey = child.key.split('$')[1];
+    // console.log('childKey: ', childKey);
+    let showState = true;
+    let classNames = 'entering-child';
+    if (childKey !== locationKey) {
+      showState = false;
+      classNames = 'exiting-child';
     }
-  );
-};
+    return (
+      React.cloneElement(child, {
+        classNames,
+        in: showState,
+      })
+    );
+  }
+);
 
 const SwitchWrapper = styled.main`
   position: absolute;
@@ -98,23 +88,23 @@ const ContentRouterWrapper = styled.div`
 `;
 
 export class ContentRouter extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  state = { transitionState: false }
+  // state = { transitionState: false }
 
-  componentWillReceiveProps(nextProps, nextState) {
-    // console.log('<ContentRouter />     CWRP!');     //  eslint-disable-line no-console
-    // console.log(nextProps.location === this.props.location, '<ContentRouter />     nextProps', nextProps);    //  eslint-disable-line no-console
-    // console.log(this.state.transitionState, '<ContentRouter />     nextProps.location: ', nextProps.location);
-    if (nextProps.location !== this.props.location) {
-      //  Here the location/route changed. We need to set `in` as false to trigger exit animation
-      console.log('transitionState now ', !this.state.transitionState);
-      // this.setState({ transitionState: !this.state.transitionState });
-      //  previousKey is so we can compare the new location.key with the previous one, so we can change `in` for previous node
-      // this.setState({
-      //   transitionState: false,
-      //   previousKey: this.props.location.key,
-      // });
-    }
-  }
+  // componentWillReceiveProps(nextProps, nextState) {
+  //   // console.log('<ContentRouter />     CWRP!');     //  eslint-disable-line no-console
+  //   // console.log(nextProps.location === this.props.location, '<ContentRouter />     nextProps', nextProps);    //  eslint-disable-line no-console
+  //   // console.log(this.state.transitionState, '<ContentRouter />     nextProps.location: ', nextProps.location);
+  //   if (nextProps.location !== this.props.location) {
+  //     //  Here the location/route changed. We need to set `in` as false to trigger exit animation
+  //     // console.log('transitionState now ', !this.state.transitionState);
+  //     // this.setState({ transitionState: !this.state.transitionState });
+  //     //  previousKey is so we can compare the new location.key with the previous one, so we can change `in` for previous node
+  //     // this.setState({
+  //     //   transitionState: false,
+  //     //   previousKey: this.props.location.key,
+  //     // });
+  //   }
+  // }
 
   //  NOTE: SCU working as intended
   // shouldComponentUpdate(nextProps) {
@@ -125,14 +115,14 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
   // }
   //
 
-  componentDidUpdate(prevProps, prevState) {     //  eslint-disable-line no-unused-vars
-    console.log('<ContentRouter />     CDU!');     //  eslint-disable-line no-console
-    // this.setState({ transitionState: true });
-  }
-
-  componentWillUnmount() {
-    console.log('<ContentRouter />     CWU!');     //  eslint-disable-line no-console
-  }
+  // componentDidUpdate(prevProps, prevState) {     //  eslint-disable-line no-unused-vars
+  //   console.log('<ContentRouter />     CDU!');     //  eslint-disable-line no-console
+  //   // this.setState({ transitionState: true });
+  // }
+  //
+  // componentWillUnmount() {
+  //   console.log('<ContentRouter />     CWU!');     //  eslint-disable-line no-console
+  // }
 
   render() {
     console.log('<ContentRouter />     rendered!');    //  eslint-disable-line no-console
