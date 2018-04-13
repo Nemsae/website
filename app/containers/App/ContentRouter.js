@@ -156,57 +156,52 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
       } */}
     `;
 
-    const { location } = this.props;
+    // const { location } = this.props;
 
     return (
-      // <Route render={({ location }) => (     //  eslint-disable-line react/jsx-first-prop-new-line
-      // )} />     //  eslint-disable-line react/jsx-closing-bracket-location
-      <TransitionGroup
-        component={Wrapper}
-        childFactory={childFactoryCreator(location.key)}
-      >
-      {/* <CSSTransitionGroup
-        component={Wrapper}
-        className="route-fade"
-        transitionName="route-fade"
-        transitionEnterTimeout={4000}
-        transitionLeaveTimeout={4000}
-      > */}
-        <CSSTransition
-          key={location.key}
-          // classNames="route-fade"
-          classNames="entering-child"
-          // classNames={this.state.transitionState ? 'child-enter' : 'child-exit'}
-          timeout={{ enter: 3000, exit: 3000 }}
-          // timeout={4000}
-          // appear
-          // in
-          // in={false}
-          in={this.state.transitionState}
-          // exit
-          // mountOnEnter
-          // unmountOnExit   //  NOTE: when false, does not delete previously mounted components, memory leak
-          // onEnter={(node) => node.scrollTop}    //  NOTE: node is null when switching to about page
-          onEnter={console.log(location.key, '     onEnter: ', Date.now())}    //  BUG: Enter phase is near instant, and not adhering to enter timeout
-          onEntering={console.log(location.key, '    onEntering: ', Date.now())}
-          onEntered={console.log(location.key, '     onEntered: ', Date.now())}
-          onExit={console.log(location.key, '    onExit: ', Date.now())}    //  BUG: Exit phase is near instant, and not adhering to exit timeout
-          onExiting={console.log(location.key, '     onExiting: ', Date.now())}
-          onExited={console.log(location.key, '    onExited: ', Date.now())}
+      <Route render={({ location }) => (     //  eslint-disable-line react/jsx-first-prop-new-line
+        <TransitionGroup
+          // component={Wrapper}
+          childFactory={childFactoryCreator(location.key)}
         >
-        {/* >{(status) => {
-          console.log(location.pathname, '<ContentRouter />     CSSTransition    status: ', status);
-          return ( */}
-            <Switch location={location}>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/about" component={AboutPage} />
-              <Route exact path="/projects" component={ProjectsPage} />
-              <Route component={NotFoundPage} />
-            </Switch>
-          {/* );
-        }} */}
-        </CSSTransition>
-      </TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            // classNames="route-fade"
+            classNames="entering-child"
+            // classNames={this.state.transitionState ? 'child-enter' : 'child-exit'}
+            timeout={{ enter: 1000, exit: 3000 }}
+            // timeout={4000}
+            // appear
+            in
+            // in={false}
+            // in={this.state.transitionState}
+            // exit
+            // mountOnEnter
+            unmountOnExit   //  NOTE: when false, does not delete previously mounted components, DOM memory leak
+            // onEnter={(node) => node.scrollTop}    //  NOTE: node is null when switching to about page
+            onEnter={console.log(location.key, '     onEnter: ', Date.now())}    //  BUG: Enter phase is near instant, and not adhering to enter timeout
+            onEntering={console.log(location.key, '    onEntering: ', Date.now())}
+            onEntered={console.log(location.key, '     onEntered: ', Date.now())}
+            onExit={console.log(location.key, '    onExit: ', Date.now())}    //  BUG: Exit phase is near instant, and not adhering to exit timeout
+            onExiting={console.log(location.key, '     onExiting: ', Date.now())}
+            onExited={console.log(location.key, '    onExited: ', Date.now())}
+          >
+          {/* >{(status) => {
+            console.log(location.pathname, '<ContentRouter />     CSSTransition    status: ', status);
+            return ( */}
+              <Wrapper>
+                <Switch location={location}>
+                  <Route exact path="/" component={HomePage} />
+                  <Route exact path="/about" component={AboutPage} />
+                  <Route exact path="/projects" component={ProjectsPage} />
+                  <Route component={NotFoundPage} />
+                </Switch>
+              </Wrapper>
+            {/* );
+          }} */}
+          </CSSTransition>
+        </TransitionGroup>
+      )} />     //  eslint-disable-line react/jsx-closing-bracket-location
     );
   }
 }
