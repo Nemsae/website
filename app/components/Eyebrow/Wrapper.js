@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div.attrs({ className: 'moustache__wrapper' })`
+const Wrapper = styled.div.attrs({ className: 'animation__wrapper' })`
   position: relative;
 
 `;

@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { blink, browRaise1, browRaise2 } from './keyFrames';
 import Wrapper from './Wrapper';
 
-export const EyebrowPrimitive = styled.div.attrs({ className: 'eyebrow' })`
+export const EyebrowPrimitive = styled.div`
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -26,7 +27,6 @@ export const EyebrowPrimitive = styled.div.attrs({ className: 'eyebrow' })`
     border-radius: 0 0 0 100%;
     transform: rotate(-50deg);
     transform-origin: right 210px;
-    animation: ${browRaise2} 8s infinite alternate;
   }
   ::after {
     content: '';
@@ -39,10 +39,18 @@ export const EyebrowPrimitive = styled.div.attrs({ className: 'eyebrow' })`
     border-radius: 0 0 100% 0;
     transform: rotate(40deg);
     transform-origin: right 210px;
-    animation: ${browRaise1} 8s infinite alternate;
   }
 
-  animation: ${blink} 8s infinite;
+  &.animate-enable {
+    animation: ${blink} 8s infinite;
+    ::before {
+      animation: ${browRaise2} 8s infinite alternate;
+    }
+    ::after {
+      animation: ${browRaise1} 8s infinite alternate;
+    }
+  }
+
   ${'' /* animation-name: ${blink};
   animation-duration: 8s;
   animation-iteration-count: infinite;
@@ -51,10 +59,14 @@ export const EyebrowPrimitive = styled.div.attrs({ className: 'eyebrow' })`
   animation-fill-mode: forwards; */}
 `;
 
-const Eyebrow = () => (
+const Eyebrow = (props) => (
   <Wrapper>
-    <EyebrowPrimitive />
+    <EyebrowPrimitive className={props.animate ? 'eyebrow animate-enable' : 'eyebrow animate-disable'} />
   </Wrapper>
 );
+
+Eyebrow.propTypes = {
+  animate: PropTypes.bool,
+};
 
 export default Eyebrow;

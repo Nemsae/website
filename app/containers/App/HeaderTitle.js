@@ -5,7 +5,7 @@ const HeaderTitle = styled.h1.attrs({ className: 'header-title' })`
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 99;
+  z-index: 0;
 
   text-transform: uppercase;
 `;
