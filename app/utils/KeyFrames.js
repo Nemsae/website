@@ -3,16 +3,16 @@ import { keyframes } from 'styled-components';
 const directionTransform = (direction) => {
   switch (direction) {
     case 'right':
-      return 'transform: translate3d(100%, 0, 0);';
+      return 'transform: translate3d(2000px, 0, 0);';
     // case 'rightOut':
     case 'left':
-      return 'transform: translate3d(-100%, 0, 0);';
+      return 'transform: translate3d(-2000px, 0, 0);';
     case 'top':
-      return 'transform: translate3d(0, 100%, 0);';
+      return 'transform: translate3d(0, 2000px, 0);';
     case 'bottom':
-      return 'transform: translate3d(0, -100%, 0);';
+      return 'transform: translate3d(0, -2000px, 0);';
     default:
-      return 'transform: translate3d(100%, 0, 0);';
+      return 'transform: translate3d(2000px, 0, 0);';
   }
 };
 

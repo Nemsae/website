@@ -6,7 +6,7 @@ const H2 = NormalH2.extend`
   line-height: 1.1;
   opacity: 0;
 
-  animation: ${fadeIn('left')} 1000ms 600ms, ${opacityIn()} 1000ms 600ms;
+  animation: ${fadeIn('left')} 1000ms 1600ms, ${opacityIn()} 1000ms 1600ms;
   animation-fill-mode: forwards;
 
   b {

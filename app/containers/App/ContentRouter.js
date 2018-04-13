@@ -21,6 +21,12 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 //  BUG: React DOM, each <CSSTransition /> is not exiting, doesn't trigger exit
 //       Solution?: key isn't changing. Therefore it won't leave?
 
+//  NOTE: EXIT doesn't work when we pass component
+//  <TransitionGroup
+//    component={TransitionGroupWrapper}
+//  >
+
+
 //  This returns a childFactory to provide to TransitionGroup
 const childFactoryCreator = (locationKey) => {
   console.log('locationKey: ', locationKey);
@@ -44,13 +50,52 @@ const childFactoryCreator = (locationKey) => {
     }
   );
 };
-// const childFactoryCreator = (classNames) => (
-//   (child) => (
-//     React.cloneElement(child, {
-//       classNames,
-//     })
-//   )
-// );
+
+const SwitchWrapper = styled.main`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+`;
+
+const ContentRouterWrapper = styled.div`
+  .entering-child-enter, .entering-child-enter-active {
+    .page-bookmark {
+      transform: translate3d(0, 2000px, 0);
+    }
+    .page-content {
+      transform: translate3d(2000px, 0, 0);
+    }
+  }
+  .entering-child-enter-done {
+    .page-bookmark {
+      animation: ${fadeIn('bottom')} 1000ms var(--ease-in-out-quart);
+    }
+    .page-content {
+      animation: ${fadeIn('right')} 1000ms 200ms both var(--ease-in-out-quart);
+    }
+  }
+  .exiting-child-exit, .exiting-child-exit-active {
+    .page-bookmark {
+      animation: ${fadeOut('top')} 1000ms var(--ease-in-out-quart);
+    }
+    .page-content {
+      animation: ${fadeOut('left')} 1000ms 400ms both var(--ease-in-out-quart);
+    }
+  }
+  .exiting-child-exit-done {
+    ${'' /* .page-bookmark {
+      transform: translate3d(0, -2000px, 0);
+    }
+    .page-content {
+      transform: translate3d(-2000px, 0, 0);
+    } */}
+  }
+`;
 
 export class ContentRouter extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   state = { transitionState: false }
@@ -91,117 +136,46 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
 
   render() {
     console.log('<ContentRouter />     rendered!');    //  eslint-disable-line no-console
-    console.log('<ContentRouter />     this.props.location.key', this.props.location.key);    //  eslint-disable-line no-console
-    console.log('<ContentRouter />     this.state.transitionState', this.state.transitionState);    //  eslint-disable-line no-console
-    const attributes = { className: 'content-router' };
-    if (this.state.transitionState) {
-      attributes.id = 'show';
-    } else {
-      attributes.id = 'hide';
-    }
-    const Wrapper = styled.main.attrs(attributes)`
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-
-      overflow: auto;
-      height: 100%;
-      width: 100%;
-
-      .entering-child-enter {
-        .page-bookmark {
-          transform: translate3d(-200%, 0, 0);
-        }
-        .page-content {
-          transform: translate3d(0, -200%, 0);
-        }
-      }
-      .entering-child-enter-done {
-        .page-bookmark {
-          animation: ${fadeIn('left')} 1000ms var(--ease-in-out-quart);
-        }
-        .page-content {
-          animation: ${fadeIn('right')} 1000ms 200ms both var(--ease-in-out-quart);
-        }
-      }
-      .exiting-child-enter-done {
-        .page-bookmark {
-          animation: ${fadeOut('left')} 1000ms var(--ease-in-out-quart);
-        }
-        .page-content {
-          animation: ${fadeOut('right')} 1000ms 200ms both var(--ease-in-out-quart);
-        }
-      }
-
-      ${'' /* .route-fade-enter {
-        .page-bookmark {
-          animation: ${fadeIn('left')} 1000ms var(--ease-in-out-quart);
-        }
-        .page-content {
-          animation: ${fadeIn('right')} 1000ms 200ms both var(--ease-in-out-quart);
-        }
-      }
-      .route-fade-enter-active {
-      }
-      .route-fade-exit {
-        .page-bookmark {
-          animation: ${fadeOut('left')} 1000ms var(--ease-in-out-quart);
-        }
-        .page-content {
-          animation: ${fadeOut('right')} 1000ms 200ms both var(--ease-in-out-quart);
-        }
-      }
-      .route-fade-exit-active {
-      } */}
-    `;
-
-    // const { location } = this.props;
+    // console.log('<ContentRouter />     this.props.location.key', this.props.location.key);    //  eslint-disable-line no-console
+    // console.log('<ContentRouter />     this.state.transitionState', this.state.transitionState);    //  eslint-disable-line no-console
+    const { location } = this.props;
 
     return (
-      <Route render={({ location }) => (     //  eslint-disable-line react/jsx-first-prop-new-line
-        <TransitionGroup
-          // component={Wrapper}
-          childFactory={childFactoryCreator(location.key)}
+      // <Route render={({ location }) => (     //  eslint-disable-line react/jsx-first-prop-new-line
+      // )} />     //  eslint-disable-line react/jsx-closing-bracket-location
+      <TransitionGroup
+        // component={React.Fragment}
+        component={ContentRouterWrapper}
+        childFactory={childFactoryCreator(location.key)}
+      >
+        <CSSTransition
+          key={location.key}
+          classNames="entering-child"
+          timeout={{ enter: 1000, exit: 1000 }}
+          unmountOnExit   //  NOTE: when false, does not delete previously mounted components, DOM memory leak
+          // appear
+          // in
+          // in={false}
+          // in={this.state.transitionState}
+          // mountOnEnter
+          // onEnter={(node) => node.scrollTop}    //  NOTE: node is null when switching to about page
+          // onEnter={console.log(location.key, '     onEnter: ', Date.now())}    //  BUG: Enter phase is near instant, and not adhering to enter timeout
+          // onEntering={console.log(location.key, '    onEntering: ', Date.now())}
+          // onEntered={console.log(location.key, '     onEntered: ', Date.now())}
+          // onExit={console.log(location.key, '    onExit: ', Date.now())}    //  BUG: Exit phase is near instant, and not adhering to exit timeout
+          // onExiting={console.log(location.key, '     onExiting: ', Date.now())}
+          // onExited={console.log(location.key, '    onExited: ', Date.now())}
         >
-          <CSSTransition
-            key={location.key}
-            // classNames="route-fade"
-            classNames="entering-child"
-            // classNames={this.state.transitionState ? 'child-enter' : 'child-exit'}
-            timeout={{ enter: 1000, exit: 3000 }}
-            // timeout={4000}
-            // appear
-            in
-            // in={false}
-            // in={this.state.transitionState}
-            // exit
-            // mountOnEnter
-            unmountOnExit   //  NOTE: when false, does not delete previously mounted components, DOM memory leak
-            // onEnter={(node) => node.scrollTop}    //  NOTE: node is null when switching to about page
-            onEnter={console.log(location.key, '     onEnter: ', Date.now())}    //  BUG: Enter phase is near instant, and not adhering to enter timeout
-            onEntering={console.log(location.key, '    onEntering: ', Date.now())}
-            onEntered={console.log(location.key, '     onEntered: ', Date.now())}
-            onExit={console.log(location.key, '    onExit: ', Date.now())}    //  BUG: Exit phase is near instant, and not adhering to exit timeout
-            onExiting={console.log(location.key, '     onExiting: ', Date.now())}
-            onExited={console.log(location.key, '    onExited: ', Date.now())}
-          >
-          {/* >{(status) => {
-            console.log(location.pathname, '<ContentRouter />     CSSTransition    status: ', status);
-            return ( */}
-              <Wrapper>
-                <Switch location={location}>
-                  <Route exact path="/" component={HomePage} />
-                  <Route exact path="/about" component={AboutPage} />
-                  <Route exact path="/projects" component={ProjectsPage} />
-                  <Route component={NotFoundPage} />
-                </Switch>
-              </Wrapper>
-            {/* );
-          }} */}
-          </CSSTransition>
-        </TransitionGroup>
-      )} />     //  eslint-disable-line react/jsx-closing-bracket-location
+          <SwitchWrapper>
+            <Switch location={location}>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/projects" component={ProjectsPage} />
+              <Route component={NotFoundPage} />
+            </Switch>
+          </SwitchWrapper>
+        </CSSTransition>
+      </TransitionGroup>
     );
   }
 }
@@ -216,11 +190,3 @@ ContentRouter.propTypes = {
 // export default withRouter(ContentRouter);
 
 export default withRouter(ContentRouter);
-
-// const WrappedRouter = withRouter(ContentRouter);
-
-// export default () => (
-//   <BrowserRouter>
-//     <WrappedRouter />
-//   </BrowserRouter>
-// );

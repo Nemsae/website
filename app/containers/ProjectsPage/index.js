@@ -11,14 +11,17 @@ import injectSaga from 'utils/injectSaga';
 
 import BookMark from 'containers/AboutPage/BookMark';
 import Content from 'containers/AboutPage/Content';
+import H2 from 'containers/AboutPage/H2';
+import P from 'containers/AboutPage/P';
+import TextContent from 'containers/AboutPage/TextContent';
 
 // import BookMark from './BookMark';
 // import Content from './Content';
-import H2 from './H2';
+// import H2 from './H2';
 import HeaderBar from './HeaderBar';
 import HeaderTitle from './HeaderTitle';
-import P from './P';
-import TextContent from './TextContent';
+// import P from './P';
+// import TextContent from './TextContent';
 import Wrapper from './Wrapper';
 
 import reducer from './reducer';

@@ -12,7 +12,7 @@ const TextContent = styled.div`
 
   overflow: auto;
 
-  animation: ${opacityIn()} 1000ms 200ms;
+  ${'' /* animation: ${opacityIn()} 1000ms 1200ms; */}
 `;
 
 export default TextContent;
