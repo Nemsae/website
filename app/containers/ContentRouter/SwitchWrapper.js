@@ -6,7 +6,7 @@ const SwitchWrapper = styled.main`
   top: 50%;
   transform: translate(-50%, -50%);
 
-  overflow: auto;
+  overflow: hidden;
   height: 100%;
   width: 100%;
 `;
