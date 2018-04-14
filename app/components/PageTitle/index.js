@@ -2,7 +2,7 @@ import NormalH2 from 'components/H2';
 
 import { fadeIn, opacityIn } from 'utils/keyFrames';
 
-const H2 = NormalH2.extend`
+const PageTitle = NormalH2.extend`
   line-height: 1.1;
   opacity: 0;
 
@@ -14,4 +14,4 @@ const H2 = NormalH2.extend`
   }
 `;
 
-export default H2;
+export default PageTitle;

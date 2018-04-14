@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-import { opacityIn } from 'utils/keyFrames';
-
-const Wrapper = styled.div.attrs({ className: 'mx-auto' })`
+const PageWrapper = styled.div.attrs({ className: 'page-wrapper mx-auto' })`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,10 +9,8 @@ const Wrapper = styled.div.attrs({ className: 'mx-auto' })`
 
   height: 100%;
 
-  ${'' /* animation: ${opacityIn} 500ms; */}
-
   padding-bottom: 120px;
   padding-top: 120px;
 `;
 
-export default Wrapper;
+export default PageWrapper;

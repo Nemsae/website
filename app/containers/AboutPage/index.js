@@ -1,35 +1,33 @@
 import React from 'react';
 // import { FormattedMessage } from 'react-intl';
-import PropTypes from 'prop-types';
-import { CSSTransition } from 'react-transition-group';
+// import PropTypes from 'prop-types';
+// import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { makeSelectLocation } from 'containers/App/selectors';
+// import { makeSelectLocation } from 'containers/App/selectors';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
 // import H2 from 'components/H2';
 // import P from 'components/P';
+import PageBookMark from 'components/PageBookmark';
+import PageContent from 'components/PageContent';
+import PageWrapper from 'components/PageWrapper';
+import PageTitle from 'components/PageTitle';
 
 import BackgroundVideo from './BackgroundVideo';
-import BookMark from './BookMark';
-import Content from './Content';
-import H2 from './H2';
 import HeaderBar from './HeaderBar';
 import HeaderTitle from './HeaderTitle';
 import P from './P';
 import TextContent from './TextContent';
-import Wrapper from './Wrapper';
 
 // import { makeSelectRecommendations, makeSelectFeatures } from './selectors';
 // import { fetchRecommendations, rateRecommendation, fetchFeatures } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 // import messages from './messages';
-
-//  NOTE: for main bg video, swap to fullscreen video.
 
 //  ------------------------
 //  The about me page
@@ -78,11 +76,11 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
       //   {(state) => {
       //     // console.log('<AboutPage />     CSSTransition    state: ', state);
       //     return (
-            <Wrapper>
+            <PageWrapper>
               {/* eslint-disable jsx-a11y/media-has-caption */}
-              <BookMark></BookMark>
+              <PageBookMark></PageBookMark>
 
-              <Content>
+              <PageContent>
                 <BackgroundVideo autoPlay loop muted>
                   <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
                   Your browser does not support the mp4 video format.
@@ -91,7 +89,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <TextContent>
                   <HeaderTitle>
                     <HeaderBar />
-                    <H2><b>about</b><br />myself</H2>
+                    <PageTitle><b>about</b><br />myself</PageTitle>
                     {/* <CSSTransition in timeout={1000}>
                       {(state) => {
                         console.log('state: ', state);
@@ -104,9 +102,9 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
 
                   <P>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</P>
                 </TextContent>
-              </Content>
+              </PageContent>
               {/* eslint-ensable jsx-a11y/media-has-caption */}
-            </Wrapper>
+            </PageWrapper>
           // );
         // }}
       // </CSSTransition>

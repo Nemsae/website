@@ -111,7 +111,7 @@ export class App extends React.PureComponent {
       <AppWrapper>
         {/* <Header id="header-root"></Header> */}
         {/* <HeaderTitle>Web Dev</HeaderTitle> */}
-        <HeaderTitle><Eyebrow animate /></HeaderTitle>
+        {/* <HeaderTitle><Eyebrow animate /></HeaderTitle> */}
         <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
 
         <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
