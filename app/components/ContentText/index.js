@@ -9,7 +9,7 @@ const ContentTextPrimitive = styled.div`
   animation: ${fadeIn('top')} 1400ms 2800ms, ${opacityIn()} 700ms 2800ms;
   animation-fill-mode: forwards;
 
-  font-size: 2rem;
+  overflow: auto;
 `;
 
 const ContentText = (props) => (

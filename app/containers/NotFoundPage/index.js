@@ -19,7 +19,7 @@ import PageBookmark from 'components/PageBookmark';
 import PageMain from 'components/PageMain';
 import PageWrapper from 'components/PageWrapper';
 import PageTitle from 'components/PageTitle';
-import Eyebrow from 'components/Eyebrow';
+import RixiLogo from 'components/RixiLogo';
 
 import ContentBackground from './ContentBackground';
 import ContentText from './ContentText';
@@ -51,7 +51,7 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
               <h3>You look like you&apos;re lost.</h3>
               <h4>Lets head back <NavLink to="/">home</NavLink>.</h4>
             </ContentText>
-            <ContentBackground><Eyebrow animate /></ContentBackground>
+            <ContentBackground><RixiLogo /></ContentBackground>
           </MainContent>
         </PageMain>
       </PageWrapper>

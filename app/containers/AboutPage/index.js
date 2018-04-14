@@ -8,7 +8,10 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-import PageBookMark from 'components/PageBookmark';
+import ContentText from 'components/ContentText';
+import MainContent from 'components/MainContent';
+import P from 'components/P';
+import PageBookmark from 'components/PageBookmark';
 import PageMain from 'components/PageMain';
 import PageWrapper from 'components/PageWrapper';
 import PageTitle from 'components/PageTitle';
@@ -16,7 +19,6 @@ import PageTitle from 'components/PageTitle';
 import HeaderBar from './HeaderBar';
 import HeaderTitle from './HeaderTitle';
 import MainContentOverflow from './MainContentOverflow';
-import P from './P';
 
 import BackgroundVideo from './BackgroundVideo';
 
@@ -46,7 +48,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
     return (
       <PageWrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
-        <PageBookMark></PageBookMark>
+        <PageBookmark></PageBookmark>
 
         <PageMain>
           <BackgroundVideo autoPlay loop muted>
@@ -60,15 +62,17 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
               <PageTitle><b>about</b><br />myself</PageTitle>
             </HeaderTitle>
 
-            <P>
-              My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.
-              <br />
-              <br />
-              Since 2016 I&apos;ve been working as a freelance web developer and a half year working remotely as a fullstack software engineer with a startup, Basepaws.
-              <br />
-              <br />
-              Currently hungry for more UI and UX design!
-            </P>
+            <ContentText>
+              <P>
+                My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.
+                <br />
+                <br />
+                Since 2016 I&apos;ve been working as a freelance web developer and a half year working remotely as a fullstack software engineer with a startup, Basepaws.
+                <br />
+                <br />
+                Currently hungry for more UI and UX design!
+              </P>
+            </ContentText>
           </MainContentOverflow>
         </PageMain>
         {/* eslint-ensable jsx-a11y/media-has-caption */}

@@ -48,12 +48,10 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
   }
 }
 
-ContactPage.propTypes = {
-};
+ContactPage.propTypes = {};
 
 export function mapDispatchToProps(dispatch) {    //  eslint-disable-line no-unused-vars
-  return {
-  };
+  return {};
 }
 
 const mapStateToProps = createStructuredSelector({
