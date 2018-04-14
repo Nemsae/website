@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { withRouter, Switch, Route } from 'react-router-dom';
 
 import AboutPage from 'containers/AboutPage/Loadable';
+import ContactPage from 'containers/ContactPage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import ProjectsPage from 'containers/ProjectsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -11,21 +12,17 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import SwitchWrapper from './SwitchWrapper';
 import Wrapper from './Wrapper';
 
-//  BUG: React DOM, each <CSSTransition /> is not exiting, doesn't trigger exit
-//       Solution?: key isn't changing. Therefore it won't leave?
 //  NOTE: EXIT doesn't work when we pass component
 //  <TransitionGroup
 //    component={TransitionGroupWrapper}
 //  >
 //  SOLUTION: issue most liekely because the component that was passed was being rebuilt every re-render
 
-
-//  This returns a childFactory to provide to TransitionGroup
+//  NOTE: This returns a childFactory to provide to TransitionGroup, this allows us to pass updated props
+//  to children that has already "left" the DOM, but is still contained in state of TransitionGroup.
 const childFactoryCreator = (locationKey) => (
   (child) => {
-    // console.log('child: ', child);
     const childKey = child.key.split('$')[1];
-    // console.log('childKey: ', childKey);
     let showState = true;
     let classNames = 'entering-child';
     if (childKey !== locationKey) {
@@ -115,6 +112,7 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
               <Route exact path="/" component={HomePage} />
               <Route exact path="/about" component={AboutPage} />
               <Route exact path="/projects" component={ProjectsPage} />
+              <Route exact path="/contact" component={ContactPage} />
               <Route component={NotFoundPage} />
             </Switch>
           </SwitchWrapper>

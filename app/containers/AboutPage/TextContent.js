@@ -12,6 +12,8 @@ const TextContent = styled.div`
 
   overflow: auto;
 
+  position: relative;
+
   ${'' /* animation: ${opacityIn()} 1000ms 1200ms; */}
 `;
 

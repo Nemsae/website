@@ -6,7 +6,7 @@ const PageTitle = NormalH2.extend`
   line-height: 1.1;
   opacity: 0;
 
-  animation: ${fadeIn('left')} 1000ms 1400ms var(--ease-out-expo), ${opacityIn()} 1000ms 1400ms;
+  animation: ${fadeIn('left')} 1000ms 1600ms var(--ease-out-expo), ${opacityIn()} 1000ms 1600ms;
   animation-fill-mode: forwards;
 
   b {

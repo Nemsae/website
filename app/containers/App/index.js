@@ -11,9 +11,9 @@ import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 
 // import MaterialIcon from 'components/MaterialIcon';
 // import FlagIcon from 'components/FlagIcon';
+// import Eyebrow from 'components/Eyebrow';
 
 import CrossMenu from 'components/CrossMenu';
-import Eyebrow from 'components/Eyebrow';
 import ContentRouter from 'containers/ContentRouter';
 
 import A from './A';
