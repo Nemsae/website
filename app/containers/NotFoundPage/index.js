@@ -47,7 +47,10 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
               <PageTitle><b>hey</b><br />there!</PageTitle>
             </HeaderTitle>
 
-            <ContentText>You look like you&apos;re lost. Lets head back <NavLink to="/">home</NavLink>.</ContentText>
+            <ContentText>
+              <h3>You look like you&apos;re lost.</h3>
+              <h4>Lets head back <NavLink to="/">home</NavLink>.</h4>
+            </ContentText>
             <ContentBackground><Eyebrow animate /></ContentBackground>
           </MainContent>
         </PageMain>

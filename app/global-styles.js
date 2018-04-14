@@ -34,6 +34,19 @@ injectGlobal`
     line-height: 1.5em;
   }
 
+  a {
+    color: pink;
+    text-decoration: none;
+
+    :visited {
+      color: pink;
+    }
+    :hover {
+      background-color: pink;
+      color: white;
+    }
+  }
+
   //  NOTE: BLUE FLASH override
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 

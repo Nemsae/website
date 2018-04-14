@@ -6,8 +6,12 @@ import { fadeIn, opacityIn } from 'utils/keyFrames';
 
 const ContentTextPrimitive = styled.div`
   opacity: 0;
-  animation: ${fadeIn('top')} 1400ms 2000ms, ${opacityIn()} 700ms 2000ms;
+  animation: ${fadeIn('top')} 1400ms 2800ms, ${opacityIn()} 700ms 2800ms;
   animation-fill-mode: forwards;
+
+  font-size: 2rem;
+
+  a {}
 `;
 
 const ContentText = (props) => (

@@ -8,8 +8,6 @@ const MainContent = styled.div`
   margin-right: 1.5rem;
   padding: 6rem 8rem;
 
-  ${'' /* overflow: hidden; */}
-
   position: relative;
 `;
 
