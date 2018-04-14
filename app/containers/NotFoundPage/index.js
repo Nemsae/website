@@ -8,22 +8,65 @@
  * reloading is not a necessity for you then you can refactor it and remove
  * the linting exception.
  */
-
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import { NavLink } from 'react-router-dom';
 
-import Wrapper from './Wrapper';
+import MainContent from 'components/MainContent';
+import PageBookmark from 'components/PageBookmark';
+import PageMain from 'components/PageMain';
+import PageWrapper from 'components/PageWrapper';
+import PageTitle from 'components/PageTitle';
+import Eyebrow from 'components/Eyebrow';
 
-import messages from './messages';
+import ContentBackground from './ContentBackground';
+import ContentText from './ContentText';
+import HeaderBar from './HeaderBar';
+import HeaderTitle from './HeaderTitle';
 
-export default class NotFound extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+//  ------------------------
+//  The 404 page
+//  ------------------------
+export class NotFoundPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentWillUnmount() {
+    console.log('<NotFoundPage />     CWU!');     //  eslint-disable-line no-console
+  }
+
   render() {
+    console.log('<NotFoundPage />     rendered!');     //  eslint-disable-line no-console
     return (
-      <Wrapper>
-        <h1>
-          <FormattedMessage {...messages.header} />
-        </h1>
-      </Wrapper>
+      <PageWrapper>
+        <PageBookmark></PageBookmark>
+
+        <PageMain>
+          <MainContent>
+            <HeaderTitle>
+              <HeaderBar />
+              <PageTitle><b>hey</b><br />there!</PageTitle>
+            </HeaderTitle>
+
+            <ContentText>You look like you&apos;re lost. Lets head back <NavLink to="/">home</NavLink>.</ContentText>
+            <ContentBackground><Eyebrow animate /></ContentBackground>
+          </MainContent>
+        </PageMain>
+      </PageWrapper>
     );
   }
 }
+
+NotFoundPage.propTypes = {};
+
+export function mapDispatchToProps(dispatch) {    //  eslint-disable-line no-unused-vars
+  return {};
+}
+
+const mapStateToProps = createStructuredSelector({
+});
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(
+  withConnect,
+)(NotFoundPage);

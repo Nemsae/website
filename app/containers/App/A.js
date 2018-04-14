@@ -6,6 +6,7 @@ const A = (props) => {
   const APrimitive = styled.a.attrs({ className: `${props.className ? props.className : ''}` })`
     display: flex;
     color: #000;
+    font-size: 1.6rem;
 
     transition: all 300ms;
 

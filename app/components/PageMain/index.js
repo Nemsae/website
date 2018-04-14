@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { paperShadow } from 'utils/componentStyles';
 
-const PageContent = styled.div.attrs({ className: 'page-content' })`
+const PageMain = styled.div.attrs({ className: 'page-content' })`
   display: flex;
 
   background-color: pink;
@@ -13,4 +13,4 @@ const PageContent = styled.div.attrs({ className: 'page-content' })`
   ${paperShadow}
 `;
 
-export default PageContent;
+export default PageMain;

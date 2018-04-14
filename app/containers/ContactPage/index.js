@@ -6,10 +6,9 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-import TextContent from 'containers/AboutPage/TextContent';
-
+import MainContent from 'components/MainContent';
 import PageBookmark from 'components/PageBookmark';
-import PageContent from 'components/PageContent';
+import PageMain from 'components/PageMain';
 import PageWrapper from 'components/PageWrapper';
 import PageTitle from 'components/PageTitle';
 import Eyebrow from 'components/Eyebrow';
@@ -34,16 +33,16 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
       <PageWrapper>
         <PageBookmark></PageBookmark>
 
-        <PageContent>
-          <TextContent>
+        <PageMain>
+          <MainContent>
             <HeaderTitle>
               <HeaderBar />
               <PageTitle><b>hey</b><br />there!</PageTitle>
             </HeaderTitle>
 
             <ContentBackground><Eyebrow animate /></ContentBackground>
-          </TextContent>
-        </PageContent>
+          </MainContent>
+        </PageMain>
       </PageWrapper>
     );
   }

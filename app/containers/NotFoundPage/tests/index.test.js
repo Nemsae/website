@@ -1,17 +1,17 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import { shallow } from 'enzyme';
-
-import NotFoundPage from '../index';
-import messages from '../messages';
-
-describe('<NotFoundPage />', () => {
-  it('should render the page message', () => {
-    const renderedComponent = shallow(
-      <NotFoundPage />
-    );
-    expect(renderedComponent.contains(
-      <FormattedMessage {...messages.header} />
-    )).toEqual(true);
-  });
-});
+// import React from 'react';
+// import { shallow } from 'enzyme';
+//
+// import { CarouselPage } from '../index';
+// import HomeSection from '../HomeSection';
+//
+// describe('<CarouselPage />', () => {
+//   it('should render <HomeSection />', () => {
+//     const renderedComponent = shallow(
+//       <CarouselPage />
+//     );
+//
+//     expect(renderedComponent.contains(
+//       <HomeSection />
+//     )).toEqual(true);
+//   });
+// });

@@ -9,14 +9,14 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
 import PageBookMark from 'components/PageBookmark';
-import PageContent from 'components/PageContent';
+import PageMain from 'components/PageMain';
 import PageWrapper from 'components/PageWrapper';
 import PageTitle from 'components/PageTitle';
 
 import HeaderBar from './HeaderBar';
 import HeaderTitle from './HeaderTitle';
+import MainContentOverflow from './MainContentOverflow';
 import P from './P';
-import TextContent from './TextContent';
 
 import BackgroundVideo from './BackgroundVideo';
 
@@ -48,21 +48,29 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
         {/* eslint-disable jsx-a11y/media-has-caption */}
         <PageBookMark></PageBookMark>
 
-        <PageContent>
+        <PageMain>
           <BackgroundVideo autoPlay loop muted>
             <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
             Your browser does not support the mp4 video format.
           </BackgroundVideo>
 
-          <TextContent>
+          <MainContentOverflow>
             <HeaderTitle>
               <HeaderBar />
               <PageTitle><b>about</b><br />myself</PageTitle>
             </HeaderTitle>
 
-            <P>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</P>
-          </TextContent>
-        </PageContent>
+            <P>
+              My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.
+              <br />
+              <br />
+              Since 2016 I&apos;ve been working as a freelance web developer and a half year working remotely as a fullstack software engineer with a startup, Basepaws.
+              <br />
+              <br />
+              Currently hungry for more UI and UX design!
+            </P>
+          </MainContentOverflow>
+        </PageMain>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </PageWrapper>
     );
