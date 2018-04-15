@@ -1,17 +1,24 @@
-import styled from 'styled-components';
+import React from 'react';
 
-import { paperShadow } from 'utils/componentStyles';
+import IconWrapper from './IconWrapper';
+import SocialIcon from './SocialIcon';
+import Wrapper from './Wrapper';
 
-const PageBookmark = styled.div.attrs({ className: 'page-bookmark' })`
-  background-color: pink;
-
-  height: 100%;
-  width: 150px;
-
-  margin-left: 25px;
-  margin-right: 25px;
-
-  ${paperShadow}
-`;
+const PageBookmark = () => (
+  <Wrapper>
+    <IconWrapper href="https://github.com/Nemsae" tabIndex="0" target="_blank" delay={800}>
+      <SocialIcon className="fab fa-github-alt" />
+    </IconWrapper>
+    <IconWrapper href="https://www.linkedin.com/in/jaysonder/" tabIndex="0" target="_blank" delay={600}>
+      <SocialIcon className="fab fa-linkedin-in" />
+    </IconWrapper>
+    <IconWrapper href="mailto:jsson77@gmail.com?subject=John Son - Software Engineer&body=Hi John," tabIndex="0" delay={200}>
+      <SocialIcon className="far fa-envelope" />
+    </IconWrapper>
+    <IconWrapper href="" tabIndex="0" delay={400}>
+      <SocialIcon className="far fa-file-alt" />
+    </IconWrapper>
+  </Wrapper>
+);
 
 export default PageBookmark;

@@ -12,6 +12,7 @@ import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 // import MaterialIcon from 'components/MaterialIcon';
 // import FlagIcon from 'components/FlagIcon';
 // import Eyebrow from 'components/Eyebrow';
+// import SideSocialIcons from 'components/SideSocialIcons';
 
 import CrossMenu from 'components/CrossMenu';
 import ContentRouter from 'containers/ContentRouter';
@@ -30,7 +31,7 @@ import Button from './Button';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
-import HeaderTitle from './HeaderTitle';
+// import HeaderTitle from './HeaderTitle';
 import HomeNavLink from './HomeNavLink';
 
 // import messages from './messages';
@@ -54,6 +55,9 @@ export class App extends React.PureComponent {
     console.log('<App />    CRWP!');
     //  NOTE: clears the hover, when coming from active Menu to inactive (via selecting a route).
     if (nextProps.location.pathname.slice(1) === this.state.hoveredLocation) this.resetHoveredLocation();
+
+    //  NOTE: when home, have menu expanded
+    if (nextProps.location.pathname === '/') this.setState({ expanded: true });
 
     console.log('<App />    CRWP    nextProps: ', nextProps);
     if (nextProps.locale !== this.props.locale) console.log('<App />    CRWP    locale changed!');

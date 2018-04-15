@@ -89,15 +89,15 @@ export class CrossMenu extends React.PureComponent {
         classNames="menu-overlay"
         onEntering={() => {
           console.log('CSSTransition      action:     Entering');
-          console.log('CSSTransition      this.wrapper', this.wrapper);
-          console.log('CSSTransition      ReactDOM.findDOMNode', ReactDOM.findDOMNode(this.wrapper));
-          Animations.maximizeWrapper(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
+          // console.log('CSSTransition      this.wrapper', this.wrapper);
+          // console.log('CSSTransition      ReactDOM.findDOMNode', ReactDOM.findDOMNode(this.wrapper));
+          // Animations.maximizeWrapper(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
         }}
         onExiting={() => {
           console.log('CSSTransition      action:     Exiting');
           // console.log('CSSTransition      this.wrapper', this.wrapper);
           // console.log('CSSTransition      ReactDOM.findDOMNode', ReactDOM.findDOMNode(this.wrapper));
-          Animations.minimizeWrapper(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
+          // Animations.minimizeWrapper(ReactDOM.findDOMNode(this.wrapper));     //  eslint-disable-line react/no-find-dom-node
         }}
       >
         {(state) => {
