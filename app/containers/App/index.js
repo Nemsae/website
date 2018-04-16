@@ -17,6 +17,9 @@ import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 import CrossMenu from 'components/CrossMenu';
 import ContentRouter from 'containers/ContentRouter';
 
+import LeftQuoteSVG from 'components/LeftQuoteSVG';
+import RightQuoteSVG from 'components/RightQuoteSVG';
+
 import A from './A';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
@@ -123,8 +126,12 @@ export class App extends React.PureComponent {
             </RomanizedWord>
           </a>
           <Translation>
+            {/* always aspire<br /> to improve oneself<br /> and one&apos;s work. */}
             always aspire to improve<wbr /> oneself and one&apos;s work.
+            <LeftQuoteSVG />
+            <RightQuoteSVG />
           </Translation>
+
         </BackgroundText>
 
         <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>

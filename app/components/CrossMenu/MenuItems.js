@@ -5,13 +5,10 @@ import { transitionAll } from 'utils/transitions';
 
 const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
   ${''/* animation: ${squeezeIn} 1100ms ease; */}
-
   display: flex;
   flex-wrap: wrap;
   width: 600px;
   height: 600px;
-  ${'' /* max-width: 600px;
-  max-height: 600px; */}
 
   position: absolute;
   left: 50%;
@@ -28,12 +25,7 @@ const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
 
   ${transitionAll(400)}
 
-  ${'' /* position: absolute;
-  bottom: 50px;
-  right: 50px;
-
-  max-width: 100px;
-  max-height: 100px; */}
+  background: rgba(0, 0, 0, 0.6);
 `;
 
 export default MenuItems;

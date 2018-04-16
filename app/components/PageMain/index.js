@@ -11,6 +11,13 @@ const PageMain = styled.div.attrs({ className: 'page-content' })`
   width: 100%;
 
   ${paperShadow}
+
+  ${'' /* background: rgba(0, 0, 0, 0.85);
+
+  transition: all 400ms;
+  :hover {
+    background: #fff;
+  } */}
 `;
 
 export default PageMain;
