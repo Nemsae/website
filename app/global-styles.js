@@ -14,6 +14,10 @@ injectGlobal`
     font-family: 'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
   }
 
+  .jp {
+    font-family: serif;
+  }
+
   body {
     font-family: 'Raleway', 'Open Sans', Helvetica, Arial, sans-serif;
   }
@@ -23,8 +27,7 @@ injectGlobal`
   } */}
 
   #app {
-    background-color: #f6f9fc;
-    ${''/* background-color: #fafafa; */}
+    ${'' /* background-color: #f6f9fc; */}
     min-height: 100%;
     min-width: 100%;
   }
@@ -34,18 +37,15 @@ injectGlobal`
     line-height: 1.5em;
   }
 
-  ${'' /* a {
-    color: pink;
+  a {
     text-decoration: none;
+    cursor: pointer;
 
     :visited {
-      color: pink;
+      color: initial;
     }
-    :hover {
-      background-color: pink;
-      color: white;
-    }
-  } */}
+    :hover {}
+  }
 
   //  NOTE: BLUE FLASH override
   -webkit-tap-highlight-color: rgba(0,0,0,0);

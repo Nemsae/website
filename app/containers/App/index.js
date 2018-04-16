@@ -20,6 +20,7 @@ import ContentRouter from 'containers/ContentRouter';
 import A from './A';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
+import BackgroundText from './BackgroundText';
 // import Content from './Content';
 // import ContentRouter from './ContentRouter';
 import CrumbCurrent from './CrumbCurrent';
@@ -34,15 +35,11 @@ import HeaderLogo from './HeaderLogo';
 // import HeaderTitle from './HeaderTitle';
 import HomeNavLink from './HomeNavLink';
 
-// import messages from './messages';
+import Word from './Word';
+import RomanizedWord from './RomanizedWord';
+import Translation from './Translation';
 
-const validRoutes = {
-  '/': true,
-  '/about': false,
-  '/projects': false,
-  '/blog': false,
-  '/contact': false,
-};
+// import messages from './messages';
 
 // export function App(props) {
 export class App extends React.PureComponent {
@@ -105,7 +102,6 @@ export class App extends React.PureComponent {
     //  If I render separate component, will this affect the css transitions? I will have to depend on react-transition-group for the render
     //  Also having the component will unmount, and the other will have to mount. No way to link the two for a smooth `transition`
     // console.log('App    this.props.location.pathname: ', this.props.location.pathname);
-    // const isMenuActive = validRoutes[this.props.location.pathname] || false;
 
     console.log('<App />     rendered!');     //  eslint-disable-line no-console
     // console.log('<App />     this.state.expanded: ', this.state.expanded);     //  eslint-disable-line no-console
@@ -116,6 +112,21 @@ export class App extends React.PureComponent {
         {/* <Header id="header-root"></Header> */}
         {/* <HeaderTitle>Web Dev</HeaderTitle> */}
         {/* <HeaderTitle><Eyebrow animate /></HeaderTitle> */}
+
+        <BackgroundText>
+          <Word className="jp">
+            向上心
+          </Word>
+          <a href="http://www.presentationzen.com/presentationzen/2015/05/the-five-secrets-to-mastery.html" target="_blank">
+            <RomanizedWord>
+              Kōjōshin
+            </RomanizedWord>
+          </a>
+          <Translation>
+            always aspire to improve<wbr /> oneself and one&apos;s work.
+          </Translation>
+        </BackgroundText>
+
         <HeaderLogo><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
 
         <HeaderBreadCrumb strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>

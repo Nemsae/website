@@ -8,6 +8,9 @@ const AppWrapper = styled.div`
 
   position: relative;
   height: 100vh;
+  ${'' /* background: radial-gradient(circle closest-corner,#f6f9fc,pink); */}
+  ${'' /* background: radial-gradient(circle closest-corner,#7240ac,#85d8d4); */}
+  ${'' /* background: radial-gradient(circle farthest-corner,#7240ac,#85d8d4); */}
 `;
 
 export default AppWrapper;
