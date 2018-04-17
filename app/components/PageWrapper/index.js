@@ -7,11 +7,12 @@ const PageWrapper = styled.div.attrs({ className: 'page-wrapper' })`
   width: 100%;
   height: 100%;
 
-  .left-quote-svg {
-    position: absolute;
-    top: 6rem;
-    right: 6rem;
-    font-size: 10rem;
+  .left-quote-svg, .right-quote-svg {
+    transition: all 400ms;
+    :hover {
+      ${'' /* transform: scale(1.3) rotate(20deg); */}
+      transform: rotate(20deg);
+    }
   }
 `;
 
