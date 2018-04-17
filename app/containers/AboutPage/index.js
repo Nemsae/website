@@ -21,8 +21,8 @@ import PageWrapper from 'components/PageWrapper';
 import MainWrapper from 'components/MainWrapper';
 import SubWrapper from 'components/SubWrapper';
 // import PageTitle from 'components/PageTitle';
-import MoustacheSolidIcon from 'components/icons/MoustacheSolid';
-import SuitcaseIcon from 'components/icons/Suitcase';
+// import MoustacheSolidIcon from 'components/icons/MoustacheSolid';
+// import SuitcaseIcon from 'components/icons/Suitcase';
 
 import SubHeader from 'components/SubHeader';
 import SubHeaderTitle2 from 'components/SubHeaderTitle2';
@@ -82,14 +82,16 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             Your browser does not support the mp4 video format.
           </BackgroundVideo> */}
 
-          <MainContent>
-            <SectionContent>
-              <SectionIcon><MoustacheSolidIcon size={7} /></SectionIcon>
+          <MainContent className="fa-7x">
+            <SectionContent id="section-introduction">
+              {/* <SectionIcon><MoustacheSolidIcon size={7} /></SectionIcon> */}
+              <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-comment" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>introduction</SectionTitle>
               <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
             </SectionContent>
-            <SectionContent>
-              <SectionIcon><SuitcaseIcon size={7} /></SectionIcon>
+            <SectionContent id="section-experience">
+              {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
+              <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>experience</SectionTitle>
               <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
             </SectionContent>
