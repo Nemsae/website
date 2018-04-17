@@ -89,11 +89,17 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
               <SectionTitle>introduction</SectionTitle>
               <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
             </SectionContent>
-            <SectionContent id="section-experience">
+            <SectionContent id="section-addictions">
               {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
               <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-2" /></SectionIcon>
-              <SectionTitle>experience</SectionTitle>
-              <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+              <SectionTitle>addictions</SectionTitle>
+              <SectionBody>Coffee, Music, Anime, Reading, Spotify, Reddit, Games</SectionBody>
+            </SectionContent>
+            <SectionContent id="section-inspirations">
+              {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
+              <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-2" /></SectionIcon>
+              <SectionTitle>inspirations</SectionTitle>
+              <SectionBody>Jordan Peterson, aaawards.com, dribbble,</SectionBody>
             </SectionContent>
             <SectionContent id="section-experience">
               {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
