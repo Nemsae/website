@@ -9,7 +9,16 @@ const SectionContent = styled.div.attrs({ className: 'section-content' })`
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 8rem;
+  margin-bottom: 16rem;
+
+  &.offset {
+    text-align: right;
+
+    .section-icon {
+      left: auto;
+      right: -8.7rem;
+    }
+  }
 `;
 
 export default SectionContent;

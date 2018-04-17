@@ -10,8 +10,7 @@ const PageWrapper = styled.div.attrs({ className: 'page-wrapper' })`
   .left-quote-svg, .right-quote-svg {
     transition: all 400ms;
     :hover {
-      ${'' /* transform: scale(1.3) rotate(20deg); */}
-      transform: rotate(20deg);
+      transform: scale(1.1) rotate(20deg);
     }
   }
 `;

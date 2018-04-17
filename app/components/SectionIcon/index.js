@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SectionIcon = styled.div`
+const SectionIcon = styled.div.attrs({ className: 'section-icon' })`
   position: absolute;
   top: 0.5rem;
   left: -8.7rem;

@@ -25,7 +25,7 @@ import SubWrapper from 'components/SubWrapper';
 // import SuitcaseIcon from 'components/icons/Suitcase';
 
 import SubHeader from 'components/SubHeader';
-import SubHeaderTitle2 from 'components/SubHeaderTitle2';
+import SubHeaderTitle from 'components/SubHeaderTitle';
 import SubHeaderSubTitle from 'components/SubHeaderSubTitle';
 import SubHeaderInfo from 'components/SubHeaderInfo';
 import SVGQuoteLeft from 'components/SVGQuoteLeft';
@@ -68,8 +68,8 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
         <SubWrapper>
           <SVGQuoteLeft />
           <SubHeader>
-            <SubHeaderTitle2>john son<br />web<br />developer<br />music<br />lover</SubHeaderTitle2>
-            {/* <SubHeaderTitle2>about<br />John Son<br />Web Developer</SubHeaderTitle2> */}
+            <SubHeaderTitle>john son<br />freelance<br />web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle>
+            {/* <SubHeaderTitle>about<br />John Son<br />Web Developer</SubHeaderTitle> */}
             {/* <SubHeaderSubTitle>Web<br />Developer</SubHeaderSubTitle> */}
             {/* <SubHeaderTitle>John Son</SubHeaderTitle> */}
           </SubHeader>
@@ -84,28 +84,41 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
 
           <MainContent className="fa-7x">
             <SectionContent id="section-introduction">
-              {/* <SectionIcon><MoustacheSolidIcon size={7} /></SectionIcon> */}
+              {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
               <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-comment" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>introduction</SectionTitle>
               <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+            </SectionContent>
+            <SectionContent id="section-experience" className="offset">
+              {/* <SectionIcon><i className="fab fa-readme" /></SectionIcon> */}
+              <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-rocket" data-fa-transform="grow-2" /></SectionIcon>
+              <SectionTitle>experience</SectionTitle>
+              <SectionBody>
+                <ul>
+                  <li>
+                    <h3>Freelance</h3>
+                    <h4>Web Developer</h4>
+                    <p>built many things</p>
+                  </li>
+                  <li>
+                    <h3>Basepaws</h3>
+                    <h4>Full Stack Developer</h4>
+                    <p>built redesigned website</p>
+                  </li>
+                </ul>
+              </SectionBody>
             </SectionContent>
             <SectionContent id="section-addictions">
               {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
               <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>addictions</SectionTitle>
-              <SectionBody>Coffee, Music, Anime, Reading, Spotify, Reddit, Games</SectionBody>
+              <SectionBody>Coffee, Crypto, Discovering Music, Anime + Netflix, Consuming Paper Books, Reddit, Games</SectionBody>
             </SectionContent>
-            <SectionContent id="section-inspirations">
+            <SectionContent id="section-inspirations" className="offset">
               {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
-              <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-2" /></SectionIcon>
+              <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-fire" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>inspirations</SectionTitle>
-              <SectionBody>Jordan Peterson, aaawards.com, dribbble,</SectionBody>
-            </SectionContent>
-            <SectionContent id="section-experience">
-              {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
-              <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-2" /></SectionIcon>
-              <SectionTitle>experience</SectionTitle>
-              <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+              <SectionBody>Radiolab, Star Talk Radio, Jordan Peterson, aaawards.com, dribbble.com, collect.ui</SectionBody>
             </SectionContent>
             {/* <HeaderTitle>
               about me
