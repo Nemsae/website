@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SubHeader = styled.article.attrs({ className: 'sub-header' })`
   position: absolute;
-  bottom: -1.1rem;
+  bottom: -0.4rem;
   right: 6rem;
 
   display: flex;

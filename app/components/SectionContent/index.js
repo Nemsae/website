@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 
-const MainContent = styled.div`
-  height: 100%;
+const SectionContent = styled.div`
   width: 100%;
-
-  padding: 6rem 8rem;
+  max-width: 460px;
 
   position: relative;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  margin-bottom: 8rem;
 `;
 
-export default MainContent;
+export default SectionContent;

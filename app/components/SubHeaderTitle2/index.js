@@ -4,7 +4,7 @@ const SubHeaderTitle = styled.h2.attrs({ className: 'sub-header__title' })`
   font-size: 8rem;
   color: #fff;
 
-  line-height: 1;
+  line-height: 0.8;
   text-align: right;
   text-transform: lowercase;
 

@@ -8,16 +8,21 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-import BackgroundText from 'components/BackgroundText';
-import ContentText from 'components/ContentText';
+// import ContentText from 'components/ContentText';
+import SectionBody from 'components/SectionBody';
+import SectionContent from 'components/SectionContent';
+import SectionIcon from 'components/SectionIcon';
+import SectionTitle from 'components/SectionTitle';
 import MainContent from 'components/MainContent';
-import P from 'components/P';
+// import P from 'components/P';
 // import PageBookmark from 'components/PageBookmark';
 // import PageMain from 'components/PageMain';
 import PageWrapper from 'components/PageWrapper';
 import MainWrapper from 'components/MainWrapper';
 import SubWrapper from 'components/SubWrapper';
-import PageTitle from 'components/PageTitle';
+// import PageTitle from 'components/PageTitle';
+import MoustacheSolidIcon from 'components/icons/MoustacheSolid';
+import SuitcaseIcon from 'components/icons/Suitcase';
 
 import SubHeader from 'components/SubHeader';
 import SubHeaderTitle2 from 'components/SubHeaderTitle2';
@@ -67,10 +72,6 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             {/* <SubHeaderTitle2>about<br />John Son<br />Web Developer</SubHeaderTitle2> */}
             {/* <SubHeaderSubTitle>Web<br />Developer</SubHeaderSubTitle> */}
             {/* <SubHeaderTitle>John Son</SubHeaderTitle> */}
-            {/* <SubHeaderSubTitle>Web Developer</SubHeaderSubTitle>
-            <SubHeaderInfo>
-              lover of all things simple, elegant, and art
-            </SubHeaderInfo> */}
           </SubHeader>
         </SubWrapper>
 
@@ -82,6 +83,16 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
           </BackgroundVideo> */}
 
           <MainContent>
+            <SectionContent>
+              <SectionIcon><MoustacheSolidIcon size={7} /></SectionIcon>
+              <SectionTitle>introduction</SectionTitle>
+              <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+            </SectionContent>
+            <SectionContent>
+              <SectionIcon><SuitcaseIcon size={7} /></SectionIcon>
+              <SectionTitle>experience</SectionTitle>
+              <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+            </SectionContent>
             {/* <HeaderTitle>
               about me
             </HeaderTitle> */}
