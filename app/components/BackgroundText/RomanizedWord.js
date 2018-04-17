@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const RomanizedWord = styled.h2.attrs({ className: 'bg-text__word_romanized' })`
-
   font-size: 5rem;
   color: #fff;
   background: #000;

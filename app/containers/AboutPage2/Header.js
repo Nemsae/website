@@ -1,13 +1,8 @@
 import styled from 'styled-components';
 
 const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
   color: #fff;
-
-  text-align: center;
+  background: #000;
 
   ${'' /* display: flex;
   flex-direction: column;

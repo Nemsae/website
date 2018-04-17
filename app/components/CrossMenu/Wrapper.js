@@ -48,6 +48,7 @@ const CrossMenu = (props) => {
         top: auto;
         left: auto;
         justify-content: space-around;
+        background: none;
 
         .link-text {
           // simulate GSAP autoAlpha

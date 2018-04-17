@@ -8,28 +8,16 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-import BackgroundText from 'components/BackgroundText';
 import ContentText from 'components/ContentText';
-// import MainContent from 'components/MainContent';
+import MainContent from 'components/MainContent';
 import P from 'components/P';
-// import PageBookmark from 'components/PageBookmark';
-// import PageMain from 'components/PageMain';
+import PageBookmark from 'components/PageBookmark';
+import PageMain from 'components/PageMain';
 import PageWrapper from 'components/PageWrapper';
-import MainWrapper from 'components/MainWrapper';
-import SubWrapper from 'components/SubWrapper';
 import PageTitle from 'components/PageTitle';
 
-import SubHeader from 'components/SubHeader';
-import SubHeaderTitle2 from 'components/SubHeaderTitle2';
-import SubHeaderSubTitle from 'components/SubHeaderSubTitle';
-import SubHeaderInfo from 'components/SubHeaderInfo';
-import SVGQuoteLeft from 'components/SVGQuoteLeft';
-import SVGQuoteRight from 'components/SVGQuoteRight';
-// import Header from './Header';
-import HeaderTitle from './HeaderTitle';
-// import HeaderSubTitle from './HeaderSubTitle';
-// import HeaderInfo from './HeaderInfo';
 import HeaderBar from './HeaderBar';
+import HeaderTitle from './HeaderTitle';
 import MainContentOverflow from './MainContentOverflow';
 
 import BackgroundVideo from './BackgroundVideo';
@@ -60,37 +48,21 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
     return (
       <PageWrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
-        <SubWrapper>
-          <SVGQuoteLeft />
-          <SubHeader>
-            <SubHeaderTitle2>John Son<br />Web Developer</SubHeaderTitle2>
-            {/* <SubHeaderSubTitle>Web<br />Developer</SubHeaderSubTitle> */}
-            {/* <SubHeaderTitle>John Son</SubHeaderTitle> */}
-            {/* <SubHeaderSubTitle>Web Developer</SubHeaderSubTitle>
-            <SubHeaderInfo>
-              lover of all things simple, elegant, and art
-            </SubHeaderInfo> */}
-          </SubHeader>
-        </SubWrapper>
+        <PageBookmark></PageBookmark>
 
-        <MainWrapper>
-          <SVGQuoteRight />
-          {/* <BackgroundVideo autoPlay loop muted>
+        <PageMain>
+          <BackgroundVideo autoPlay loop muted>
             <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
             Your browser does not support the mp4 video format.
-          </BackgroundVideo> */}
+          </BackgroundVideo>
 
           <MainContentOverflow>
             <HeaderTitle>
               <HeaderBar />
-              <PageTitle>
-                <b>about</b>
-                <br />
-                myself
-              </PageTitle>
+              <PageTitle><b>about</b><br />myself</PageTitle>
             </HeaderTitle>
 
-            {/* <ContentText>
+            <ContentText>
               <P>
                 My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.
                 <br />
@@ -100,9 +72,9 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <br />
                 Currently hungry for more UI and UX design!
               </P>
-            </ContentText> */}
+            </ContentText>
           </MainContentOverflow>
-        </MainWrapper>
+        </PageMain>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </PageWrapper>
     );

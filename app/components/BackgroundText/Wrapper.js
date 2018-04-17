@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BackgroundText = styled.article.attrs({ className: 'bg-text__container' })`
+const Wrapper = styled.article.attrs({ className: 'bg-text__container' })`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11,4 +11,4 @@ const BackgroundText = styled.article.attrs({ className: 'bg-text__container' })
   flex-direction: column;
 `;
 
-export default BackgroundText;
+export default Wrapper;

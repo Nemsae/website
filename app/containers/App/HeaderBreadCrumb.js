@@ -6,17 +6,22 @@ import { transitionAll } from 'utils/transitions';
 const HeaderBreadCrumb = (props) => {
   const HeaderBreadCrumbPrimitive = styled.div.attrs({ className: 'header-bar' })`
     position: absolute;
-    bottom: 40px;
-    left: 40px;
+    bottom: -1rem;
+    left: 3rem;
     z-index: 3;
 
-    font-size: 40px;
-
-    ${'' /* b::first-letter {
-      color: #FEC0C1;
-    } */}
+    font-size: 4rem;
+    transform: rotate(270deg);
+    transform-origin: 0 0;
 
     ${transitionAll(400)}
+
+    ${props.inverted ? `
+      color: #fff;
+    ` : `
+      color: #000;
+    `}
+
     ${props.strikeThrough && `
       .crumb-current {
         text-decoration: line-through;
@@ -29,6 +34,7 @@ const HeaderBreadCrumb = (props) => {
 HeaderBreadCrumb.propTypes = {
   children: PropTypes.any,
   strikeThrough: PropTypes.bool,
+  inverted: PropTypes.bool,
 };
 
 export default HeaderBreadCrumb;
