@@ -63,7 +63,8 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
         <SubWrapper>
           <SVGQuoteLeft />
           <SubHeader>
-            <SubHeaderTitle2>John Son<br />Web Developer</SubHeaderTitle2>
+            <SubHeaderTitle2>john son<br />web<br />developer<br />music<br />lover</SubHeaderTitle2>
+            {/* <SubHeaderTitle2>about<br />John Son<br />Web Developer</SubHeaderTitle2> */}
             {/* <SubHeaderSubTitle>Web<br />Developer</SubHeaderSubTitle> */}
             {/* <SubHeaderTitle>John Son</SubHeaderTitle> */}
             {/* <SubHeaderSubTitle>Web Developer</SubHeaderSubTitle>
