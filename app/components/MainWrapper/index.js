@@ -10,12 +10,21 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
   color: #000;
   position: relative;
 
+  overflow-y: auto;
+
+  border-bottom: 5rem solid #fff;
+
   .right-quote-svg {
-    position: absolute;
-    bottom: 6rem;
+    position: sticky;
+    top: calc(100% - 4rem);
     left: 6rem;
     font-size: 10rem;
     z-index: 2;
+    ${'' /* position: fixed;
+    bottom: 6rem;
+    left: calc(40% + 6rem);
+    font-size: 10rem;
+    z-index: 2; */}
   }
 `;
 
