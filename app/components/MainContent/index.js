@@ -7,6 +7,8 @@ const MainContent = styled.div`
   padding: 6rem 8rem;
 
   position: relative;
+
+  display: flex;
 `;
 
 export default MainContent;

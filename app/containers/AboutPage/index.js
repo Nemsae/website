@@ -10,7 +10,7 @@ import injectSaga from 'utils/injectSaga';
 
 import BackgroundText from 'components/BackgroundText';
 import ContentText from 'components/ContentText';
-// import MainContent from 'components/MainContent';
+import MainContent from 'components/MainContent';
 import P from 'components/P';
 // import PageBookmark from 'components/PageBookmark';
 // import PageMain from 'components/PageMain';
@@ -30,7 +30,7 @@ import HeaderTitle from './HeaderTitle';
 // import HeaderSubTitle from './HeaderSubTitle';
 // import HeaderInfo from './HeaderInfo';
 import HeaderBar from './HeaderBar';
-import MainContentOverflow from './MainContentOverflow';
+// import MainContentOverflow from './MainContentOverflow';
 
 import BackgroundVideo from './BackgroundVideo';
 
@@ -80,15 +80,18 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             Your browser does not support the mp4 video format.
           </BackgroundVideo> */}
 
-          <MainContentOverflow>
-            <HeaderTitle>
+          <MainContent>
+            {/* <HeaderTitle>
+              about me
+            </HeaderTitle> */}
+            {/* <HeaderTitleOLD>
               <HeaderBar />
               <PageTitle>
                 <b>about</b>
                 <br />
                 myself
               </PageTitle>
-            </HeaderTitle>
+            </HeaderTitleOLD> */}
 
             {/* <ContentText>
               <P>
@@ -101,7 +104,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 Currently hungry for more UI and UX design!
               </P>
             </ContentText> */}
-          </MainContentOverflow>
+          </MainContent>
         </MainWrapper>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </PageWrapper>
