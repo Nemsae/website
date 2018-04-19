@@ -19,6 +19,13 @@ const SectionContent = styled.div.attrs({ className: 'section-content' })`
       right: -8.7rem;
     }
   }
+
+  ${'' /* transition: all 400ms; */}
+  transition: transform 400ms;
+  :hover {
+    transform: scale(1.1);
+    ${'' /* box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07); */}
+  }
 `;
 
 export default SectionContent;

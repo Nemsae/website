@@ -16,6 +16,10 @@ import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
 
+// import AOS from 'aos';
+// //  Import Animate on scroll (AOS) lib
+// AOS.init();
+
 // Import root app
 import App from 'containers/App';
 

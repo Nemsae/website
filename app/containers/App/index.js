@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -44,6 +46,19 @@ export class App extends React.PureComponent {
     hoveredLocation: '',
     expanded: false,
   }
+
+  componentDidMount() {
+    // this.aos = AOS;
+    // console.log('this.aos: ', this.aos);
+    // this.aos.init();
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
+  }
+
+  // componentDidUpdate() {
+  //   // this.aos.refresh();
+  //   AOS.refresh()
+  // }
 
   componentWillReceiveProps(nextProps) {
     console.log('<App />    CRWP!');

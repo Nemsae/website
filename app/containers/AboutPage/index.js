@@ -83,17 +83,17 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
           </BackgroundVideo> */}
 
           <MainContent className="fa-7x">
-            <SectionContent id="section-introduction">
+            <SectionContent id="section-introduction" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1400" >
               {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
               <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-comment" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>introduction</SectionTitle>
               <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
             </SectionContent>
-            <SectionContent id="section-experience" className="offset">
+            <SectionContent id="section-experience" className="offset" data-aos="fade-left">
               {/* <SectionIcon><i className="fab fa-readme" /></SectionIcon> */}
               <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-rocket" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>experience</SectionTitle>
-              <SectionBody>
+              <div>
                 <ul>
                   <li>
                     <h3>Freelance</h3>
@@ -106,15 +106,15 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                     <p>built redesigned website</p>
                   </li>
                 </ul>
-              </SectionBody>
+              </div>
             </SectionContent>
-            <SectionContent id="section-addictions">
+            <SectionContent id="section-addictions" data-aos="fade-left">
               {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
               <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>addictions</SectionTitle>
               <SectionBody>Coffee, Crypto, Discovering Music, Anime + Netflix, Consuming Paper Books, Reddit, Games</SectionBody>
             </SectionContent>
-            <SectionContent id="section-inspirations" className="offset">
+            <SectionContent id="section-inspirations" className="offset" data-aos="fade-left">
               {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
               <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-fire" data-fa-transform="grow-2" /></SectionIcon>
               <SectionTitle>inspirations</SectionTitle>

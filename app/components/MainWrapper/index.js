@@ -10,7 +10,8 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
   color: #000;
   position: relative;
 
-  overflow-y: auto;
+  ${'' /* overflow-y: auto; */}
+  overflow-x: hidden;
 
   border-bottom: 5rem solid #fff;
 
