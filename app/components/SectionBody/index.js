@@ -4,7 +4,7 @@
 // `;
 import styled from 'styled-components';
 
-const SectionBody = styled.p`
+const SectionBody = styled.div`
   font-size: 2rem;
   font-weight: 400;
   margin: 0;

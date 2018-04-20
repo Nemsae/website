@@ -13,6 +13,10 @@ const MainContent = styled.div`
   .section-content:first-child {
     margin-top: 8rem;
   }
+
+  .section-content + .section-content {
+    margin-top: 16rem;-
+  }
 `;
 
 export default MainContent;

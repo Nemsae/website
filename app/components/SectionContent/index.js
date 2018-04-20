@@ -9,8 +9,6 @@ const SectionContent = styled.div.attrs({ className: 'section-content' })`
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 16rem;
-
   &.offset {
     text-align: right;
 
@@ -18,12 +16,26 @@ const SectionContent = styled.div.attrs({ className: 'section-content' })`
       left: auto;
       right: -8.7rem;
     }
+
+    .section-list__item {
+      align-items: flex-end;
+    }
+
+    .section-title {
+      background-image: linear-gradient(to left,pink,#fff);
+    }
+  }
+
+  &.no-sticky {
+    .section-title {
+      position: static;
+    }
   }
 
   ${'' /* transition: all 400ms; */}
   transition: transform 400ms;
   :hover {
-    transform: scale(1.1);
+    transform: scale(1.005);
     ${'' /* box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07); */}
   }
 `;
