@@ -30,6 +30,9 @@ import ItemTitle from 'components/ItemTitle';
 import SectionList from 'components/SectionList';
 import SectionListItem from 'components/SectionListItem';
 
+import SectionItem from 'components/SectionItem';
+import SectionRow from 'components/SectionRow';
+
 import SubHeader from 'components/SubHeader';
 import SubHeaderTitle from 'components/SubHeaderTitle';
 import SubHeaderSubTitle from 'components/SubHeaderSubTitle';
@@ -89,14 +92,38 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
           </BackgroundVideo> */}
 
           <MainContent className="fa-7x">
-            <SectionContent id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1400" >
+            <SectionRow id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1400" >
               {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
+              <SectionItem>
+                <ItemTitle>
+                  01
+                </ItemTitle>
+                <ItemSubTitle>
+                  introduction
+                </ItemSubTitle>
+                <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+              </SectionItem>
+            </SectionRow>
+            <SectionRow id="section-introduction2" className="no-sticky">
+              {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
+              <SectionItem className="offset">
+                <ItemTitle>
+                  02
+                </ItemTitle>
+                <ItemSubTitle>
+                  experience
+                </ItemSubTitle>
+                <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+              </SectionItem>
+            </SectionRow>
+            {/* <SectionContent id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1400" >
               <SectionTitle>
                 <SectionIcon><i className="fas fa-barcode fa-3x" data-fa-mask="fas fa-comment" data-fa-transform="grow-3" /></SectionIcon>
                 introduction
               </SectionTitle>
               <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
-            </SectionContent>
+            </SectionContent> */}
+
             <SectionContent id="section-experience" className="offset no-sticky">
             {/* <SectionContent id="section-experience" className="offset" data-aos="fade-left"> */}
               {/* <SectionIcon><i className="fab fa-readme" /></SectionIcon> */}

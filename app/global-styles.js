@@ -10,16 +10,16 @@ injectGlobal`
     font-weight: 400;
   }
 
-  h1 {
-    font-family: 'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
-  }
-
   .jp {
     font-family: serif;
   }
 
   body {
-    font-family: 'Raleway', 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
   }
 
   ${'' /* body.fontLoaded {
