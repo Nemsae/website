@@ -104,7 +104,8 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
               </SectionItem>
             </SectionRow>
-            <SectionRow id="section-introduction2" className="no-sticky">
+
+            <SectionRow id="section-experience" className="no-sticky">
               {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
               <SectionItem className="offset">
                 <ItemTitle>
@@ -113,78 +114,48 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <ItemSubTitle>
                   experience
                 </ItemSubTitle>
-                <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
+                <SectionBody>My past positions and work.</SectionBody>
+                <SectionBody>
+                  <SectionList>
+                    <SectionListItem>
+                      <ItemTitle>Freelance</ItemTitle>
+                      <ItemSubTitle>Web Developer</ItemSubTitle>
+                      <ItemInfo>built many things</ItemInfo>
+                    </SectionListItem>
+                    <SectionListItem>
+                      <ItemTitle>Basepaws</ItemTitle>
+                      <ItemSubTitle>Full Stack Developer</ItemSubTitle>
+                      <ItemInfo>built redesigned website</ItemInfo>
+                    </SectionListItem>
+                  </SectionList>
+                </SectionBody>
               </SectionItem>
             </SectionRow>
-            {/* <SectionContent id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1400" >
-              <SectionTitle>
-                <SectionIcon><i className="fas fa-barcode fa-3x" data-fa-mask="fas fa-comment" data-fa-transform="grow-3" /></SectionIcon>
-                introduction
-              </SectionTitle>
-              <SectionBody>My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.</SectionBody>
-            </SectionContent> */}
 
-            <SectionContent id="section-experience" className="offset no-sticky">
-            {/* <SectionContent id="section-experience" className="offset" data-aos="fade-left"> */}
-              {/* <SectionIcon><i className="fab fa-readme" /></SectionIcon> */}
-              <SectionTitle>
-                <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-rocket" data-fa-transform="grow-3" /></SectionIcon>
-                experience
-              </SectionTitle>
-              <SectionBody>
-                <SectionList>
-                  <SectionListItem>
-                    <ItemTitle>Freelance</ItemTitle>
-                    <ItemSubTitle>Web Developer</ItemSubTitle>
-                    <ItemInfo>built many things</ItemInfo>
-                  </SectionListItem>
-                  <SectionListItem>
-                    <ItemTitle>Basepaws</ItemTitle>
-                    <ItemSubTitle>Full Stack Developer</ItemSubTitle>
-                    <ItemInfo>built redesigned website</ItemInfo>
-                  </SectionListItem>
-                </SectionList>
-              </SectionBody>
-            </SectionContent>
-            <SectionContent id="section-addictions" className="no-sticky">
-              {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
-              <SectionTitle>
-                <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-coffee" data-fa-transform="grow-3" /></SectionIcon>
-                addictions
-              </SectionTitle>
-              <SectionBody>Coffee, Crypto, Discovering Music, Anime + Netflix, Consuming Paper Books, Reddit, Games</SectionBody>
-            </SectionContent>
-            <SectionContent id="section-inspirations" className="offset no-sticky">
-              {/* <SectionIcon><i className="fas fa-coffee" /></SectionIcon> */}
-              <SectionTitle>
-                <SectionIcon><i className="fas fa-barcode" data-fa-mask="fas fa-fire" data-fa-transform="grow-3" /></SectionIcon>
-                inspirations
-              </SectionTitle>
-              <SectionBody>Radiolab, Star Talk Radio, Jordan Peterson, aaawards.com, dribbble.com, collect.ui</SectionBody>
-            </SectionContent>
-            {/* <HeaderTitle>
-              about me
-            </HeaderTitle> */}
-            {/* <HeaderTitleOLD>
-              <HeaderBar />
-              <PageTitle>
-                <b>about</b>
-                <br />
-                myself
-              </PageTitle>
-            </HeaderTitleOLD> */}
+            <SectionRow id="section-addictions" className="no-sticky">
+              <SectionItem>
+                <ItemTitle>
+                  03
+                </ItemTitle>
+                <ItemSubTitle>
+                  addictions
+                </ItemSubTitle>
+                <SectionBody>Coffee, Crypto, Discovering Music, Anime + Netflix, Consuming Paper Books, Reddit, Games</SectionBody>
+              </SectionItem>
+            </SectionRow>
 
-            {/* <ContentText>
-              <P>
-                My first taste of hacking was at the ripe age of 13, in my parent&apos;s basement, running Cheat Engine to inject botting scripts for a MMORPG, Maplestory. Since then I have delved into self study of computer science and web development while working in various industries around California.
-                <br />
-                <br />
-                Since 2016 I&apos;ve been working as a freelance web developer and a half year working remotely as a fullstack software engineer with a startup, Basepaws.
-                <br />
-                <br />
-                Currently hungry for more UI and UX design!
-              </P>
-            </ContentText> */}
+            <SectionRow id="section-inspirations" className="offset no-sticky">
+              <SectionItem className="offset">
+                <ItemTitle>
+                  04
+                </ItemTitle>
+                <ItemSubTitle>
+                  inspirations
+                </ItemSubTitle>
+                <SectionBody>Radiolab, Star Talk Radio, Jordan Peterson, aaawards.com, dribbble.com, collect.ui</SectionBody>
+              </SectionItem>
+            </SectionRow>
+
           </MainContent>
         </MainWrapper>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
