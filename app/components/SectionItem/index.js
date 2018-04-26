@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SectionItem = styled.div.attrs({ className: 'section-item' })`
-  max-width: 325px;
+  width: 325px;
 
   display: flex;
   flex-direction: column;
@@ -9,7 +9,6 @@ const SectionItem = styled.div.attrs({ className: 'section-item' })`
   color: #1B1919;
 
   align-self: flex-start;
-  margin: 0 10rem;
   &.offset {
     align-self: flex-end;
   }

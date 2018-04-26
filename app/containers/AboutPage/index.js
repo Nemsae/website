@@ -32,6 +32,9 @@ import SectionListItem from 'components/SectionListItem';
 
 import SectionItem from 'components/SectionItem';
 import SectionRow from 'components/SectionRow';
+import ListItemInfo from 'components/ListItemInfo';
+import ListItemTitle from 'components/ListItemTitle';
+import ListItemSubTitle from 'components/ListItemSubTitle';
 
 import SubHeader from 'components/SubHeader';
 import SubHeaderTitle from 'components/SubHeaderTitle';
@@ -92,7 +95,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
           </BackgroundVideo> */}
 
           <MainContent className="fa-7x">
-            <SectionRow id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1400" >
+            <SectionRow id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
               {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
               <SectionItem>
                 <ItemTitle>
@@ -106,7 +109,6 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             </SectionRow>
 
             <SectionRow id="section-experience" className="no-sticky">
-              {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
               <SectionItem className="offset">
                 <ItemTitle>
                   02
@@ -114,22 +116,21 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <ItemSubTitle>
                   experience
                 </ItemSubTitle>
-                <SectionBody>My past positions and work.</SectionBody>
-                <SectionBody>
-                  <SectionList>
-                    <SectionListItem>
-                      <ItemTitle>Freelance</ItemTitle>
-                      <ItemSubTitle>Web Developer</ItemSubTitle>
-                      <ItemInfo>built many things</ItemInfo>
-                    </SectionListItem>
-                    <SectionListItem>
-                      <ItemTitle>Basepaws</ItemTitle>
-                      <ItemSubTitle>Full Stack Developer</ItemSubTitle>
-                      <ItemInfo>built redesigned website</ItemInfo>
-                    </SectionListItem>
-                  </SectionList>
-                </SectionBody>
+                <SectionBody>I&apos;ve created, designed and built things with people globally.</SectionBody>
               </SectionItem>
+              <SectionList className="offset">
+                <SectionListItem>
+                  <ListItemTitle>Freelance</ListItemTitle>
+                  <ListItemSubTitle>Web Developer</ListItemSubTitle>
+                  <ListItemInfo>built many things</ListItemInfo>
+                  <ListItemInfo>collaborate with designers</ListItemInfo>
+                </SectionListItem>
+                <SectionListItem>
+                  <ListItemTitle>Basepaws</ListItemTitle>
+                  <ListItemSubTitle>Full Stack Developer</ListItemSubTitle>
+                  <ListItemInfo>built redesigned website</ListItemInfo>
+                </SectionListItem>
+              </SectionList>
             </SectionRow>
 
             <SectionRow id="section-addictions" className="no-sticky">
@@ -142,9 +143,6 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 </ItemSubTitle>
                 <SectionBody>Coffee, Crypto, Discovering Music, Anime + Netflix, Consuming Paper Books, Reddit, Games</SectionBody>
               </SectionItem>
-            </SectionRow>
-
-            <SectionRow id="section-inspirations" className="offset no-sticky">
               <SectionItem className="offset">
                 <ItemTitle>
                   04
@@ -154,6 +152,9 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 </ItemSubTitle>
                 <SectionBody>Radiolab, Star Talk Radio, Jordan Peterson, aaawards.com, dribbble.com, collect.ui</SectionBody>
               </SectionItem>
+            </SectionRow>
+
+            <SectionRow id="section-inspirations" className="offset no-sticky">
             </SectionRow>
 
           </MainContent>

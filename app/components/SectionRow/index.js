@@ -4,12 +4,17 @@ const SectionRow = styled.div.attrs({ className: 'section-row' })`
   width: 100%;
   max-width: 1280px;
 
-  margin: 5rem 0;
+  margin: 6rem 0;
+  padding: 0 10rem;
 
   position: relative;
 
   display: flex;
   flex-direction: column;
+
+  .section-item + .section-item {
+    margin-top: 12rem;
+  }
 `;
 
 export default SectionRow;

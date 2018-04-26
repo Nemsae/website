@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const SubHeaderTitle = styled.h2.attrs({ className: 'sub-header__title' })`
   font-size: 7.3vw;
+  font-weight: 100;
   color: #fff;
 
   line-height: 0.8;
