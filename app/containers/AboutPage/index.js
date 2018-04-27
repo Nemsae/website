@@ -13,7 +13,7 @@ import SectionBody from 'components/SectionBody';
 import SectionContent from 'components/SectionContent';
 import SectionIcon from 'components/SectionIcon';
 import SectionTitle from 'components/SectionTitle';
-import MainContent from 'components/MainContent';
+import MainContainer from 'components/MainContainer';
 // import P from 'components/P';
 // import PageBookmark from 'components/PageBookmark';
 // import PageMain from 'components/PageMain';
@@ -81,6 +81,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
           <SVGQuoteLeft />
           <SubHeader>
             <SubHeaderTitle>john son<br />freelance<br />web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle>
+            {/* <SubHeaderTitle>web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle> */}
             {/* <SubHeaderTitle>about<br />John Son<br />Web Developer</SubHeaderTitle> */}
             {/* <SubHeaderSubTitle>Web<br />Developer</SubHeaderSubTitle> */}
             {/* <SubHeaderTitle>John Son</SubHeaderTitle> */}
@@ -94,7 +95,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             Your browser does not support the mp4 video format.
           </BackgroundVideo> */}
 
-          <MainContent className="fa-7x">
+          <MainContainer className="fa-7x">
             <SectionRow id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
               {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
               <SectionItem>
@@ -157,7 +158,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             <SectionRow id="section-inspirations" className="offset no-sticky">
             </SectionRow>
 
-          </MainContent>
+          </MainContainer>
         </MainWrapper>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </PageWrapper>

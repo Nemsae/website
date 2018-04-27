@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PageWrapper = styled.div.attrs({ className: 'page-wrapper' })`
+const PageWrapper = styled.article.attrs({ className: 'page-wrapper' })`
   display: flex;
   align-items: center;
 

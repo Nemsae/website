@@ -6,18 +6,27 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-import ContentText from 'components/ContentText';
-import P from 'components/P';
-
-import MainContent from 'components/MainContent';
-import PageBookmark from 'components/PageBookmark';
-import PageMain from 'components/PageMain';
+/*  Old style imports  */
+import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
-import PageTitle from 'components/PageTitle';
 
+/*  New style imports  */
+// import MainWrapper from 'components/MainWrapper';
+// import SubWrapper from 'components/SubWrapper';
+import SectionIntro from 'components/SectionIntro';
+import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
+import SectionIntroTitle from 'components/SectionIntroTitle';
+import SectionScrollDown from 'components/SectionScrollDown';
+import SectionRow from 'components/SectionRow';
+import SubHeader from 'components/SubHeader';
+// import SubHeaderTitle from 'components/SubHeaderTitle';
+// import SVGQuoteLeft from 'components/SVGQuoteLeft';
+// import SVGQuoteRight from 'components/SVGQuoteRight';
 
-import HeaderBar from './HeaderBar';
-import HeaderTitle from './HeaderTitle';
+import MainWrapperStyled from './MainWrapperStyled';
+import SubWrapperStyled from './SubWrapperStyled';
+// import HeaderBar from './HeaderBar';
+// import HeaderTitle from './HeaderTitle';
 import reducer from './reducer';
 import saga from './saga';
 
@@ -33,20 +42,36 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
     console.log('<ProjectsPage />     rendered!');     //  eslint-disable-line no-console
     return (
       <PageWrapper>
-        <PageBookmark></PageBookmark>
+        <SubWrapperStyled>
+          {/* <SVGQuoteLeft /> */}
+          <SubHeader>
+            {/* <SubHeaderTitle>john son<br />freelance<br />web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle> */}
+          </SubHeader>
+        </SubWrapperStyled>
+        <MainWrapperStyled>
+          <MainContainer>
 
-        <PageMain>
-          <MainContent>
-            <HeaderTitle>
-              <HeaderBar />
-              <PageTitle><b>john&apos;s</b><br />projects</PageTitle>
-            </HeaderTitle>
+            <SectionRow>
+              <SectionIntro>
+                <SectionIntroTitle>
+                  {/* crave simple,<br />elegant, & speed<br />products */}
+                  crave simple,<br />
+                  elegant, &<br />
+                  <b>pretty things</b>
+                </SectionIntroTitle>
+                <SectionIntroSubTitle>
+                  products that John has worked on
+                </SectionIntroSubTitle>
+                <SectionScrollDown href="#section-projects" />
+              </SectionIntro>
+            </SectionRow>
 
-            <ContentText>
-              <P>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</P>
-            </ContentText>
-          </MainContent>
-        </PageMain>
+            <SectionRow id="section-projects">
+              Projects go here
+            </SectionRow>
+
+          </MainContainer>
+        </MainWrapperStyled>
       </PageWrapper>
     );
   }

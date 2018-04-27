@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const MainContent = styled.div`
+const MainContainer = styled.div`
   width: 100%;
   max-width: 1280px;
 
@@ -20,4 +20,4 @@ const MainContent = styled.div`
   }
 `;
 
-export default MainContent;
+export default MainContainer;

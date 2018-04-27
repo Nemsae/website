@@ -10,14 +10,13 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
   color: #000;
   position: relative;
 
-  ${'' /* overflow-y: auto; */}
   overflow-x: hidden;
 
   border-bottom: 5rem solid #fff;
 
   .right-quote-svg {
     position: sticky;
-    top: calc(100% - 4rem);
+    top: calc(100%);
     left: 6rem;
     font-size: 10rem;
     z-index: 2;
