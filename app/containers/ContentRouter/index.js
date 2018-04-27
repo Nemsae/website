@@ -14,23 +14,33 @@ import AnimationWrapper from './AnimationWrapper';
 
 //  NOTE: This returns a childFactory to provide to TransitionGroup, this allows us to pass updated props
 //  to children that has already "left" the DOM, but is still contained in state of TransitionGroup.
-const childFactoryCreator = (locationKey) => (
+const childFactoryCreator = (location) => (
   (child) => {
     const childKey = child.key.split('$')[1];
     let showState = true;
-    let classNames = 'entering-child';
-    if (childKey !== locationKey) {
+    if (childKey !== location.key) {
       showState = false;
-      classNames = 'exiting-child';
     }
     return (
       React.cloneElement(child, {
-        classNames,
+        // classNames,
         in: showState,
       })
     );
   }
 );
+
+//  NOTE: this fxn willl return the corresponding CSS classname to <CSSTransition />
+const createAnimationClassName = (newLocation) => {
+  switch (newLocation) {
+    case '/': return 'home-page';
+    case '/about': return 'about-page';
+    case '/projects': return 'projects-page';
+    case '/contact': return 'contact-page';
+    default:
+      return 'not-found-page';
+  }
+};
 
 export class ContentRouter extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   // state = { transitionState: false }
@@ -71,23 +81,23 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
 
   render() {
     console.log('<ContentRouter />     rendered!');    //  eslint-disable-line no-console
-    // console.log('<ContentRouter />     this.props.location.key', this.props.location.key);    //  eslint-disable-line no-console
+    // console.log('<ContentRouter />     this.props.location.pathname', this.props.location.pathname);    //  eslint-disable-line no-console
     // console.log('<ContentRouter />     this.state.transitionState', this.state.transitionState);    //  eslint-disable-line no-console
     const { location } = this.props;
-
     return (
       // <Route render={({ location }) => (     //  eslint-disable-line react/jsx-first-prop-new-line
       // )} />     //  eslint-disable-line react/jsx-closing-bracket-location
       <TransitionGroup
         component={AnimationWrapper}
-        childFactory={childFactoryCreator(location.key)}
+        childFactory={childFactoryCreator(location)}
       >
         <CSSTransition
           key={location.key}
-          classNames="entering-child"
-          timeout={{ enter: 1000, exit: 1000 }}
+          // classNames="entering-child"
+          classNames={createAnimationClassName(location.pathname)}
+          timeout={{ enter: 1000, exit: 5000 }}
           unmountOnExit   //  NOTE: when false, does not delete previously mounted components, DOM memory leak
-          // appear
+          appear
           // in
           // in={false}
           // in={this.state.transitionState}
