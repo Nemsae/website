@@ -5,11 +5,12 @@ const SectionRow = styled.div.attrs({ className: 'section-row' })`
   max-width: 1280px;
 
   &.vh-100 {
-    height: calc(100vh - 12rem);
+    ${'' /* height: calc(100vh - 12rem); */}
+    height: 100vh;
   }
 
-  margin: 6rem 0;
-  padding: 0 10rem;
+  ${'' /* margin: 6rem 0; */}
+  padding: 6rem 10rem 0;
 
   position: relative;
 

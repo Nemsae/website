@@ -87,7 +87,7 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
                   </SectionBody> */}
                 </SectionItem>
                 <SectionMediaContainer>
-                  <SectionMedia src="images/basepaws__home-page.jpg" />
+                  <SectionMedia src="images/rixi__home-page.jpg" />
                 </SectionMediaContainer>
               </PortfolioItem>
 
@@ -117,7 +117,7 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
                   <SectionBody>built Affiliato, a crowdfunding platform powered through affiliate links</SectionBody>
                 </SectionItem>
                 <SectionMediaContainer>
-                  <SectionMedia src="images/basepaws__home-page.jpg" />
+                  <SectionMedia src="images/affiliato__home-page.jpg" />
                 </SectionMediaContainer>
               </PortfolioItem>
 
@@ -132,9 +132,25 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
                   <SectionBody>built EzAbsentee, a quick and surefire way for absentee voting registration</SectionBody>
                 </SectionItem>
                 <SectionMediaContainer>
-                  <SectionMedia src="images/basepaws__home-page.jpg" />
+                  <SectionMedia src="images/ezabsentee__first-page.jpg" />
                 </SectionMediaContainer>
               </PortfolioItem>
+
+              <PortfolioItem>
+                <SectionItem>
+                  <ItemTitle>
+                    04
+                  </ItemTitle>
+                  <ItemSubTitle>
+                    Anime LunchBox
+                  </ItemSubTitle>
+                  <SectionBody>a web app for anime enthusiasts to watch and track anime</SectionBody>
+                </SectionItem>
+                <SectionMediaContainer>
+                  <SectionMedia src="images/anime-lunchbox__search-page.jpg" />
+                </SectionMediaContainer>
+              </PortfolioItem>
+
             </SectionRow>
 
           </MainContainer>

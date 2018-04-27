@@ -4,7 +4,7 @@ const SectionScrollDown = styled.a`
   height: 7rem;
   width: 0.4rem;
 
-  margin-top: 4rem;
+  margin-top: 7rem;
   position: relative;
 
   background: pink;
