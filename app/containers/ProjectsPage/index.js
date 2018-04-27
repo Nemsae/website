@@ -56,14 +56,14 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
 
             <SectionRow id="projects-intro" className="vh-100">
               <SectionIntro>
-                <SectionIntroTitle>
-                  {/* crave simple,<br />elegant, & speed<br />products */}
+                <SectionIntroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="1500">
                   crave simple,<br />
                   elegant, &<br />
                   <b>pretty things</b>
                 </SectionIntroTitle>
                 <SectionIntroSubTitle>
-                  products that John has worked on
+                {/* <SectionIntroSubTitle data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="2300" > */}
+                  John&apos;s portfolio of projects, ideas, and digital trinkets.
                 </SectionIntroSubTitle>
                 <SectionScrollDown href="#projects-list" />
               </SectionIntro>

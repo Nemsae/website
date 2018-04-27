@@ -49,7 +49,7 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
         <MainWrapperStyled>
           <MainContainer>
 
-            <SectionRow id="contact-intro" className="vh-100">
+            <SectionRow id="contact-intro" className="vh-100" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="1500">
               <SectionIntro>
                 <SectionIntroTitle>
                   say hi,<br />
