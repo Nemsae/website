@@ -14,17 +14,21 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { NavLink } from 'react-router-dom';
 
-import MainContent from 'components/MainContent';
-import PageBookmark from 'components/PageBookmark';
-import PageMain from 'components/PageMain';
+// import MainContent from 'components/MainContent';
 import PageWrapper from 'components/PageWrapper';
-import PageTitle from 'components/PageTitle';
-import RixiLogo from 'components/RixiLogo';
+import SubWrapper from 'components/SubWrapper';
+import MainWrapper from 'components/MainWrapper';
 
-import ContentBackground from './ContentBackground';
-import ContentText from './ContentText';
-import HeaderBar from './HeaderBar';
-import HeaderTitle from './HeaderTitle';
+import RixiLogo from 'components/RixiLogo';
+import SubHeader from 'components/SubHeader';
+import SubHeaderTitle from 'components/SubHeaderTitle';
+import MainContainer from 'components/MainContainer';
+import SectionRow from 'components/SectionRow';
+
+// import SubWrapperStyled from './SubWrapperStyled';
+// import MainWrapperStyled from './MainWrapperStyled';
+// import ContentBackground from './ContentBackground';
+// import ContentText from './ContentText';
 
 //  ------------------------
 //  The 404 page
@@ -37,23 +41,21 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
   render() {
     console.log('<NotFoundPage />     rendered!');     //  eslint-disable-line no-console
     return (
-      <PageWrapper>
-        <PageBookmark></PageBookmark>
+      <PageWrapper className="fd-column">
+        <SubWrapper className="pos-top">
+          <SubHeader>
+            <SubHeaderTitle>Not Found Page</SubHeaderTitle>
+            {/* <SubHeaderTitle>web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle> */}
+          </SubHeader>
+        </SubWrapper>
 
-        <PageMain>
-          <MainContent>
-            <HeaderTitle>
-              <HeaderBar />
-              <PageTitle><b>hey</b><br />there!</PageTitle>
-            </HeaderTitle>
+        <MainWrapper className="pos-bottom">
+          <MainContainer>
+            <SectionRow id="not-found__introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
 
-            <ContentText>
-              <h3>You look like you&apos;re lost.</h3>
-              <h4>Lets head back <NavLink to="/">home</NavLink>.</h4>
-            </ContentText>
-            <ContentBackground><RixiLogo /></ContentBackground>
-          </MainContent>
-        </PageMain>
+            </SectionRow>
+          </MainContainer>
+        </MainWrapper>
       </PageWrapper>
     );
   }

@@ -10,13 +10,7 @@ import ProjectsPage from 'containers/ProjectsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import SwitchWrapper from './SwitchWrapper';
-import Wrapper from './Wrapper';
-
-//  NOTE: EXIT doesn't work when we pass component
-//  <TransitionGroup
-//    component={TransitionGroupWrapper}
-//  >
-//  SOLUTION: issue most liekely because the component that was passed was being rebuilt every re-render
+import AnimationWrapper from './AnimationWrapper';
 
 //  NOTE: This returns a childFactory to provide to TransitionGroup, this allows us to pass updated props
 //  to children that has already "left" the DOM, but is still contained in state of TransitionGroup.
@@ -85,8 +79,7 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
       // <Route render={({ location }) => (     //  eslint-disable-line react/jsx-first-prop-new-line
       // )} />     //  eslint-disable-line react/jsx-closing-bracket-location
       <TransitionGroup
-        // component={React.Fragment}
-        component={Wrapper}
+        component={AnimationWrapper}
         childFactory={childFactoryCreator(location.key)}
       >
         <CSSTransition
@@ -99,13 +92,6 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
           // in={false}
           // in={this.state.transitionState}
           // mountOnEnter
-          // onEnter={(node) => node.scrollTop}    //  NOTE: node is null when switching to about page
-          // onEnter={console.log(location.key, '     onEnter: ', Date.now())}    //  BUG: Enter phase is near instant, and not adhering to enter timeout
-          // onEntering={console.log(location.key, '    onEntering: ', Date.now())}
-          // onEntered={console.log(location.key, '     onEntered: ', Date.now())}
-          // onExit={console.log(location.key, '    onExit: ', Date.now())}    //  BUG: Exit phase is near instant, and not adhering to exit timeout
-          // onExiting={console.log(location.key, '     onExiting: ', Date.now())}
-          // onExited={console.log(location.key, '    onExited: ', Date.now())}
         >
           <SwitchWrapper>
             <Switch location={location}>
@@ -123,9 +109,9 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
 }
 
 ContentRouter.propTypes = {
-  match: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
+  // match: PropTypes.object.isRequired,
+  // history: PropTypes.object.isRequired,
 };
 
 //  NOTE: withRouter provides <Switch /> and <Route /> with immutable `location`, not live/mutable history.location

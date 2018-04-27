@@ -26,6 +26,15 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
     font-size: 10rem;
     z-index: 2; */}
   }
+
+  &.pos-top {
+    width: 100%;
+    height: 60%;
+  }
+  &.pos-bottom {
+    width: 100%;
+    height: 40%;
+  }
 `;
 
 export default MainWrapper;

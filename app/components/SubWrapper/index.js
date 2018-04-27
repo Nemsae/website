@@ -9,7 +9,7 @@ const SubWrapper = styled.div.attrs({ className: 'sub-wrapper' })`
   float: left;
   position: relative;
 
-  background: #000;
+  background: #1B1819;
   color: pink;
 
   .left-quote-svg {
@@ -17,6 +17,15 @@ const SubWrapper = styled.div.attrs({ className: 'sub-wrapper' })`
     top: 6rem;
     right: 6rem;
     font-size: 10rem;
+  }
+
+  &.pos-top {
+    width: 100%;
+    height: 60%;
+  }
+  &.pos-bottom {
+    width: 100%;
+    height: 40%;
   }
 `;
 

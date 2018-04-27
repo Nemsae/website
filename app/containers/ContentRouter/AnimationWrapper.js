@@ -2,7 +2,30 @@ import styled from 'styled-components';
 
 import { fadeIn, fadeOut } from 'utils/keyFrames';
 
-const Wrapper = styled.div`
+/**
+ *
+ *  ENTERING Children
+ *
+ *  .entering-child-enter, .entering-child-enter-active
+ *
+ *  NOTE: Initial class "state" from which to animate from
+ *        children entering left and right
+ *
+ */
+
+/**
+ *
+ *  EXITING Children
+ *
+ *  .exiting-child-enter, .exiting-child-enter-active
+ *
+ *  NOTE: animate the children to exit "out" of viewport
+ *        children exiting left and right
+ *
+ */
+
+const AnimationWrapper = styled.div`
+
   .entering-child-enter, .entering-child-enter-active {
     .sub-wrapper {
       transform: translate3d(-2000px, 0, 0);
@@ -27,14 +50,14 @@ const Wrapper = styled.div`
       animation: ${fadeOut('right')} 1000ms both var(--ease-in-out-quart);
     }
   }
-  .exiting-child-exit-done {
-    ${'' /* .sub-wrapper {
+  ${'' /* .exiting-child-exit-done {
+    .sub-wrapper {
       transform: translate3d(0, -2000px, 0);
     }
     .main-wrapper {
       transform: translate3d(-2000px, 0, 0);
-    } */}
-  }
+    }
+  } */}
 `;
 
-export default Wrapper;
+export default AnimationWrapper;
