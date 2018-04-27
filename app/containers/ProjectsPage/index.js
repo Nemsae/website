@@ -20,6 +20,8 @@ import SubHeader from 'components/SubHeader';
 
 import PortfolioItem from 'components/PortfolioItem';
 
+import SectionMedia from 'components/SectionMedia';
+import SectionMediaContainer from 'components/SectionMediaContainer';
 import SectionItem from 'components/SectionItem';
 import ItemTitle from 'components/ItemTitle';
 import ItemSubTitle from 'components/ItemSubTitle';
@@ -68,6 +70,7 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
             </SectionRow>
 
             <SectionRow id="projects-list">
+
               <PortfolioItem>
                 <SectionItem>
                   <ItemTitle>
@@ -83,35 +86,55 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
                     aos, express, gsap, history, immutable, intl, react, react-addons-css-transition-group, react-helmet, react-intl, react-loadable, react-redux, react-router-dom, react-router-redux, react-transition-group, redux, redux-immutable, redux-saga, reselect, sanitize.css, styled-components
                   </SectionBody> */}
                 </SectionItem>
+                <SectionMediaContainer>
+                  <SectionMedia src="images/basepaws__home-page.jpg" />
+                </SectionMediaContainer>
               </PortfolioItem>
 
-              <SectionItem>
-                <ItemTitle>
-                  01
-                </ItemTitle>
-                <ItemSubTitle>
-                  basepaws
-                </ItemSubTitle>
-                <SectionBody>built the redesigned website <wbr /> for Basepaws, a startup for feline DNA testing</SectionBody>
-              </SectionItem>
-              <SectionItem>
-                <ItemTitle>
-                  02
-                </ItemTitle>
-                <ItemSubTitle>
-                  affiliato
-                </ItemSubTitle>
-                <SectionBody>built Affiliato, a crowdfunding platform powered through affiliate links</SectionBody>
-              </SectionItem>
-              <SectionItem>
-                <ItemTitle>
-                  03
-                </ItemTitle>
-                <ItemSubTitle>
-                  EzAbsentee
-                </ItemSubTitle>
-                <SectionBody>built EzAbsentee, a quick and surefire way for absentee voting registration</SectionBody>
-              </SectionItem>
+              <PortfolioItem>
+                <SectionItem>
+                  <ItemTitle>
+                    01
+                  </ItemTitle>
+                  <ItemSubTitle>
+                    basepaws
+                  </ItemSubTitle>
+                  <SectionBody>built the redesigned website <wbr /> for Basepaws, a startup for feline DNA testing</SectionBody>
+                </SectionItem>
+                <SectionMediaContainer>
+                  <SectionMedia src="images/basepaws__home-page.jpg" />
+                </SectionMediaContainer>
+              </PortfolioItem>
+
+              <PortfolioItem>
+                <SectionItem>
+                  <ItemTitle>
+                    02
+                  </ItemTitle>
+                  <ItemSubTitle>
+                    affiliato
+                  </ItemSubTitle>
+                  <SectionBody>built Affiliato, a crowdfunding platform powered through affiliate links</SectionBody>
+                </SectionItem>
+                <SectionMediaContainer>
+                  <SectionMedia src="images/basepaws__home-page.jpg" />
+                </SectionMediaContainer>
+              </PortfolioItem>
+
+              <PortfolioItem>
+                <SectionItem>
+                  <ItemTitle>
+                    03
+                  </ItemTitle>
+                  <ItemSubTitle>
+                    EzAbsentee
+                  </ItemSubTitle>
+                  <SectionBody>built EzAbsentee, a quick and surefire way for absentee voting registration</SectionBody>
+                </SectionItem>
+                <SectionMediaContainer>
+                  <SectionMedia src="images/basepaws__home-page.jpg" />
+                </SectionMediaContainer>
+              </PortfolioItem>
             </SectionRow>
 
           </MainContainer>
