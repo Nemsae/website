@@ -4,7 +4,6 @@ const directionTransform = (direction) => {
   switch (direction) {
     case 'right':
       return 'transform: translate3d(2000px, 0, 0);';
-    // case 'rightOut':
     case 'left':
       return 'transform: translate3d(-2000px, 0, 0);';
     case 'top':

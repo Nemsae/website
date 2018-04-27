@@ -10,9 +10,6 @@ import injectSaga from 'utils/injectSaga';
 
 // import ContentText from 'components/ContentText';
 import SectionBody from 'components/SectionBody';
-import SectionContent from 'components/SectionContent';
-import SectionIcon from 'components/SectionIcon';
-import SectionTitle from 'components/SectionTitle';
 import MainContainer from 'components/MainContainer';
 // import P from 'components/P';
 // import PageBookmark from 'components/PageBookmark';
@@ -24,7 +21,7 @@ import SubWrapper from 'components/SubWrapper';
 // import MoustacheSolidIcon from 'components/icons/MoustacheSolid';
 // import SuitcaseIcon from 'components/icons/Suitcase';
 
-import ItemInfo from 'components/ItemInfo';
+// import ItemInfo from 'components/ItemInfo';
 import ItemSubTitle from 'components/ItemSubTitle';
 import ItemTitle from 'components/ItemTitle';
 import SectionList from 'components/SectionList';
@@ -38,18 +35,18 @@ import ListItemSubTitle from 'components/ListItemSubTitle';
 
 import SubHeader from 'components/SubHeader';
 import SubHeaderTitle from 'components/SubHeaderTitle';
-import SubHeaderSubTitle from 'components/SubHeaderSubTitle';
-import SubHeaderInfo from 'components/SubHeaderInfo';
+// import SubHeaderSubTitle from 'components/SubHeaderSubTitle';
+// import SubHeaderInfo from 'components/SubHeaderInfo';
 import SVGQuoteLeft from 'components/SVGQuoteLeft';
 import SVGQuoteRight from 'components/SVGQuoteRight';
 // import Header from './Header';
-import HeaderTitle from './HeaderTitle';
+// import HeaderTitle from './HeaderTitle';
 // import HeaderSubTitle from './HeaderSubTitle';
 // import HeaderInfo from './HeaderInfo';
-import HeaderBar from './HeaderBar';
+// import HeaderBar from './HeaderBar';
 // import MainContentOverflow from './MainContentOverflow';
 
-import BackgroundVideo from './BackgroundVideo';
+// import BackgroundVideo from './BackgroundVideo';
 
 import reducer from './reducer';
 import saga from './saga';

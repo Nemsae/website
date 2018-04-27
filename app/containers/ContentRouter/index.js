@@ -43,50 +43,12 @@ const createAnimationClassName = (newLocation) => {
 };
 
 export class ContentRouter extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  // state = { transitionState: false }
-
-  // componentWillReceiveProps(nextProps, nextState) {
-  //   // console.log('<ContentRouter />     CWRP!');     //  eslint-disable-line no-console
-  //   // console.log(nextProps.location === this.props.location, '<ContentRouter />     nextProps', nextProps);    //  eslint-disable-line no-console
-  //   // console.log(this.state.transitionState, '<ContentRouter />     nextProps.location: ', nextProps.location);
-  //   if (nextProps.location !== this.props.location) {
-  //     //  Here the location/route changed. We need to set `in` as false to trigger exit animation
-  //     // console.log('transitionState now ', !this.state.transitionState);
-  //     // this.setState({ transitionState: !this.state.transitionState });
-  //     //  previousKey is so we can compare the new location.key with the previous one, so we can change `in` for previous node
-  //     // this.setState({
-  //     //   transitionState: false,
-  //     //   previousKey: this.props.location.key,
-  //     // });
-  //   }
-  // }
-
-  //  NOTE: SCU working as intended
-  // shouldComponentUpdate(nextProps) {
-  //   console.log('<ContentRouter />     SCU!');     //  eslint-disable-line no-console
-  //   console.log(this.props.location.key !== nextProps.location.key, '<ContentRouter />     SCU    nextProps.location: ', nextProps.location);     //  eslint-disable-line no-console
-  //   if (this.props.location.key !== nextProps.location.key) return true;
-  //   return false;
-  // }
-  //
-
-  // componentDidUpdate(prevProps, prevState) {     //  eslint-disable-line no-unused-vars
-  //   console.log('<ContentRouter />     CDU!');     //  eslint-disable-line no-console
-  //   // this.setState({ transitionState: true });
-  // }
-  //
-  // componentWillUnmount() {
-  //   console.log('<ContentRouter />     CWU!');     //  eslint-disable-line no-console
-  // }
-
   render() {
     console.log('<ContentRouter />     rendered!');    //  eslint-disable-line no-console
     // console.log('<ContentRouter />     this.props.location.pathname', this.props.location.pathname);    //  eslint-disable-line no-console
     // console.log('<ContentRouter />     this.state.transitionState', this.state.transitionState);    //  eslint-disable-line no-console
     const { location } = this.props;
     return (
-      // <Route render={({ location }) => (     //  eslint-disable-line react/jsx-first-prop-new-line
-      // )} />     //  eslint-disable-line react/jsx-closing-bracket-location
       <TransitionGroup
         component={AnimationWrapper}
         childFactory={childFactoryCreator(location)}
@@ -125,6 +87,4 @@ ContentRouter.propTypes = {
 };
 
 //  NOTE: withRouter provides <Switch /> and <Route /> with immutable `location`, not live/mutable history.location
-// export default withRouter(ContentRouter);
-
 export default withRouter(ContentRouter);
