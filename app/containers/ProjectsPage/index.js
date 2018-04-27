@@ -11,22 +11,23 @@ import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
 
 /*  New style imports  */
-// import MainWrapper from 'components/MainWrapper';
-// import SubWrapper from 'components/SubWrapper';
 import SectionIntro from 'components/SectionIntro';
 import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
 import SectionIntroTitle from 'components/SectionIntroTitle';
 import SectionScrollDown from 'components/SectionScrollDown';
 import SectionRow from 'components/SectionRow';
 import SubHeader from 'components/SubHeader';
-// import SubHeaderTitle from 'components/SubHeaderTitle';
-// import SVGQuoteLeft from 'components/SVGQuoteLeft';
-// import SVGQuoteRight from 'components/SVGQuoteRight';
+
+import PortfolioItem from 'components/PortfolioItem';
+
+import SectionItem from 'components/SectionItem';
+import ItemTitle from 'components/ItemTitle';
+import ItemSubTitle from 'components/ItemSubTitle';
+import SectionBody from 'components/SectionBody';
 
 import MainWrapperStyled from './MainWrapperStyled';
 import SubWrapperStyled from './SubWrapperStyled';
-// import HeaderBar from './HeaderBar';
-// import HeaderTitle from './HeaderTitle';
+
 import reducer from './reducer';
 import saga from './saga';
 
@@ -51,7 +52,7 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
         <MainWrapperStyled>
           <MainContainer>
 
-            <SectionRow>
+            <SectionRow id="projects-intro" className="vh-100">
               <SectionIntro>
                 <SectionIntroTitle>
                   {/* crave simple,<br />elegant, & speed<br />products */}
@@ -62,12 +63,55 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
                 <SectionIntroSubTitle>
                   products that John has worked on
                 </SectionIntroSubTitle>
-                <SectionScrollDown href="#section-projects" />
+                <SectionScrollDown href="#projects-list" />
               </SectionIntro>
             </SectionRow>
 
-            <SectionRow id="section-projects">
-              Projects go here
+            <SectionRow id="projects-list">
+              <PortfolioItem>
+                <SectionItem>
+                  <ItemTitle>
+                    00
+                  </ItemTitle>
+                  <ItemSubTitle>
+                    rixi
+                  </ItemSubTitle>
+                  <SectionBody>
+                    designed and built for John&apos;s personal website
+                  </SectionBody>
+                  {/* <SectionBody>
+                    aos, express, gsap, history, immutable, intl, react, react-addons-css-transition-group, react-helmet, react-intl, react-loadable, react-redux, react-router-dom, react-router-redux, react-transition-group, redux, redux-immutable, redux-saga, reselect, sanitize.css, styled-components
+                  </SectionBody> */}
+                </SectionItem>
+              </PortfolioItem>
+
+              <SectionItem>
+                <ItemTitle>
+                  01
+                </ItemTitle>
+                <ItemSubTitle>
+                  basepaws
+                </ItemSubTitle>
+                <SectionBody>built the redesigned website <wbr /> for Basepaws, a startup for feline DNA testing</SectionBody>
+              </SectionItem>
+              <SectionItem>
+                <ItemTitle>
+                  02
+                </ItemTitle>
+                <ItemSubTitle>
+                  affiliato
+                </ItemSubTitle>
+                <SectionBody>built Affiliato, a crowdfunding platform powered through affiliate links</SectionBody>
+              </SectionItem>
+              <SectionItem>
+                <ItemTitle>
+                  03
+                </ItemTitle>
+                <ItemSubTitle>
+                  EzAbsentee
+                </ItemSubTitle>
+                <SectionBody>built EzAbsentee, a quick and surefire way for absentee voting registration</SectionBody>
+              </SectionItem>
             </SectionRow>
 
           </MainContainer>
