@@ -130,6 +130,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                   <ListItemTitle>Basepaws</ListItemTitle>
                   <ListItemSubTitle>Full Stack Developer</ListItemSubTitle>
                   <ListItemInfo>built redesigned website</ListItemInfo>
+                  <ListItemInfo>collaborate closely with CEO and CTO to define project scope & goals</ListItemInfo>
                 </SectionListItem>
               </SectionList>
             </SectionRow>

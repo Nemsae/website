@@ -13,18 +13,17 @@ import SectionIntro from 'components/SectionIntro';
 import SectionIntroTitle from 'components/SectionIntroTitle';
 // import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
 import SectionRow from 'components/SectionRow';
-// import SectionScrollDown from 'components/SectionScrollDown';
+import SubHeaderTitle from 'components/SubHeaderTitle';
 
-// import MainContent from 'components/MainContent';
-// import PageBookmark from 'components/PageBookmark';
-// import PageMain from 'components/PageMain';
-// import PageWrapper from 'components/PageWrapper';
-// import PageTitle from 'components/PageTitle';
-import Eyebrow from 'components/Eyebrow';
+import SubWrapper from 'components/SubWrapper';
+import MainWrapper from 'components/MainWrapper';
+
+// import Eyebrow from 'components/Eyebrow';
 
 import SectionIntroSubTitleStyled from './SectionIntroSubTitleStyled';
-import SubWrapperStyled from './SubWrapperStyled';
-import MainWrapperStyled from './MainWrapperStyled';
+// import SubWrapperStyled from './SubWrapperStyled';
+// import MainWrapperStyled from './MainWrapperStyled';
+
 import reducer from './reducer';
 import saga from './saga';
 
@@ -40,16 +39,20 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
     console.log('<ContactPage />     rendered!');     //  eslint-disable-line no-console
     return (
       <PageWrapper>
-        <SubWrapperStyled>
+        <SubWrapper>
           {/* <SVGQuoteLeft /> */}
           <SubHeader>
-            {/* <SubHeaderTitle>john son<br />freelance<br />web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle> */}
+            <SubHeaderTitle>
+              email: <b>jsson77@gmail.com</b><br />
+              phone: <b>(650) 678-2956</b><br />
+              code: <b>github.com/nemsae</b>
+            </SubHeaderTitle>
           </SubHeader>
-        </SubWrapperStyled>
-        <MainWrapperStyled>
+        </SubWrapper>
+        <MainWrapper>
           <MainContainer>
 
-            <SectionRow id="contact-intro" className="vh-100" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="1500">
+            <SectionRow id="contact-intro" className="vh-100" data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1800">
               <SectionIntro>
                 <SectionIntroTitle>
                   say hi,<br />
@@ -57,10 +60,15 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
                   <b>good bye</b>
                 </SectionIntroTitle>
                 <SectionIntroSubTitleStyled>
+                  i am currently<br />
+                  <b>available</b><br />
+                  for freelance work!
+                </SectionIntroSubTitleStyled>
+                {/* <SectionIntroSubTitleStyled>
                   email: <b>jsson77@gmail.com</b><br />
                   phone: <b>(650) 678-2956</b><br />
                   code: <b>github.com/nemsae</b>
-                </SectionIntroSubTitleStyled>
+                </SectionIntroSubTitleStyled> */}
               </SectionIntro>
               {/* <Eyebrow /> */}
             </SectionRow>
@@ -69,7 +77,7 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
             </SectionRow>
 
           </MainContainer>
-        </MainWrapperStyled>
+        </MainWrapper>
       </PageWrapper>
     );
   }

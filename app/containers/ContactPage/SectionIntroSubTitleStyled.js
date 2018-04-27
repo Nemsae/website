@@ -4,8 +4,26 @@ const SectionIntroSubTitleStyled = NormalSectionIntroSubTitle.extend`
   max-width: 275px;
   color: #000;
 
+  margin-left: 2rem;
+
+  position: relative;
+
   b {
-    color: pink;
+    color: green;
+
+    ::before {
+      content: " ";
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+
+      position: absolute;
+      left: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background-color: green;
+    }
   }
 `;
 
