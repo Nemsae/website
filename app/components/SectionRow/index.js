@@ -11,6 +11,7 @@ const SectionRow = styled.div.attrs({ className: 'section-row' })`
 
   ${'' /* margin: 6rem 0; */}
   padding: 6rem 10rem 0;
+  margin-bottom: 5rem;
 
   position: relative;
 

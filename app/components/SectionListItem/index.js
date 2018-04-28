@@ -7,10 +7,9 @@ const SectionListItem = styled.li.attrs({ className: 'section-list__item' })`
 
   margin: 5rem 0 5rem;
   padding: 5rem 5rem;
-  ${'' /* border: 2px solid black; */}
-  ${'' /* border-radius: 4px; */}
-  ${'' /* box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07); */}
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  ${'' /* box-shadow: 2rem 2rem 0rem #000, 0 1px 2px rgba(0,0,0,0.24); */}
+  ${'' /* box-shadow: 2rem 2rem 0rem rgba(0,0,0,0.12), 2rem 2rem 0rem rgba(0,0,0,0.24); */}
 `;
 
 export default SectionListItem;

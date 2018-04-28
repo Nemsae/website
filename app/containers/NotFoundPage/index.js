@@ -20,12 +20,14 @@ import SubWrapper from 'components/SubWrapper';
 import MainWrapper from 'components/MainWrapper';
 
 import RixiLogo from 'components/RixiLogo';
-import SubHeader from 'components/SubHeader';
+// import SubHeader from 'components/SubHeader';
+import SubMessage from 'components/SubMessage';
+import SubMessageWrapper from 'components/SubMessageWrapper';
 import SubHeaderTitle from 'components/SubHeaderTitle';
 import MainContainer from 'components/MainContainer';
 import SectionRow from 'components/SectionRow';
 
-// import SubWrapperStyled from './SubWrapperStyled';
+import SubWrapperStyled from './SubWrapperStyled';
 // import MainWrapperStyled from './MainWrapperStyled';
 // import ContentBackground from './ContentBackground';
 // import ContentText from './ContentText';
@@ -42,17 +44,16 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
     console.log('<NotFoundPage />     rendered!');     //  eslint-disable-line no-console
     return (
       <PageWrapper className="fd-column">
-        <SubWrapper className="pos-top">
-          <SubHeader>
-            <SubHeaderTitle>Not Found Page</SubHeaderTitle>
-            {/* <SubHeaderTitle>web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle> */}
-          </SubHeader>
-        </SubWrapper>
+        <SubWrapperStyled className="pos-top">
+          <SubMessageWrapper>
+            <SubMessage>It looks like we&apos;re lost!</SubMessage>
+          </SubMessageWrapper>
+        </SubWrapperStyled>
 
         <MainWrapper className="pos-bottom">
           <MainContainer>
             <SectionRow id="not-found__introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
-
+              <SubHeaderTitle>Let&apos;s head back home</SubHeaderTitle>
             </SectionRow>
           </MainContainer>
         </MainWrapper>

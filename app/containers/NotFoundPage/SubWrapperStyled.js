@@ -1,8 +1,9 @@
 import NormalSubWrapper from 'components/SubWrapper';
 
 const SubWrapperStyled = NormalSubWrapper.extend`
-  width: 100%;
-  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 `;
 
 export default SubWrapperStyled;

@@ -24,9 +24,12 @@ import SubWrapper from 'components/SubWrapper';
 // import ItemInfo from 'components/ItemInfo';
 import ItemSubTitle from 'components/ItemSubTitle';
 import ItemTitle from 'components/ItemTitle';
+import SectionIntro from 'components/SectionIntro';
+import SectionIntroTitle from 'components/SectionIntroTitle';
+import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
+import SectionIntroWrapper from 'components/SectionIntroWrapper';
 import SectionList from 'components/SectionList';
 import SectionListItem from 'components/SectionListItem';
-
 import SectionItem from 'components/SectionItem';
 import SectionRow from 'components/SectionRow';
 import ListItemInfo from 'components/ListItemInfo';
@@ -35,6 +38,9 @@ import ListItemSubTitle from 'components/ListItemSubTitle';
 
 import SubHeader from 'components/SubHeader';
 import SubHeaderTitle from 'components/SubHeaderTitle';
+import SectionHero from 'components/SectionHero';
+import SectionHeroTitle from 'components/SectionHeroTitle';
+import SectionHeroWrapper from 'components/SectionHeroWrapper';
 // import SubHeaderSubTitle from 'components/SubHeaderSubTitle';
 // import SubHeaderInfo from 'components/SubHeaderInfo';
 import SVGQuoteLeft from 'components/SVGQuoteLeft';
@@ -76,13 +82,26 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
         {/* eslint-disable jsx-a11y/media-has-caption */}
         <SubWrapper>
           <SVGQuoteLeft />
-          <SubHeader>
-            <SubHeaderTitle>john son<br />freelance<br />web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle>
-            {/* <SubHeaderTitle>web<br />developer<br />&<br />music<br />fiend</SubHeaderTitle> */}
-            {/* <SubHeaderTitle>about<br />John Son<br />Web Developer</SubHeaderTitle> */}
-            {/* <SubHeaderSubTitle>Web<br />Developer</SubHeaderSubTitle> */}
-            {/* <SubHeaderTitle>John Son</SubHeaderTitle> */}
-          </SubHeader>
+          <SectionHeroWrapper>
+            <SectionHero className="color-white">
+              <SectionHeroTitle>
+              {/* <SectionHeroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="1800"> */}
+                an engineer<br />
+                coffee addict &<br />
+                <b>music fiend</b>
+              </SectionHeroTitle>
+            </SectionHero>
+            {/* <SectionIntro className="color-white">
+              <SectionIntroTitle>
+                an engineer<br />
+                coffee addict &<br />
+                <b>music fiend</b>
+              </SectionIntroTitle>
+              <SectionIntroSubTitle>
+                John&apos;s portfolio of projects, ideas, and digital trinkets.
+              </SectionIntroSubTitle>
+            </SectionIntro> */}
+          </SectionHeroWrapper>
         </SubWrapper>
 
         <MainWrapper>

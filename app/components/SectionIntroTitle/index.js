@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-const SectionIntroTitle = styled.h2.attrs({ className: 'section__intro-title' })`
-  ${'' /* font-family: ''; */}
+const SectionIntroTitle = styled.h2.attrs({ className: 'section-intro__title' })`
   font-size: 8rem;
-  line-height: 7.2rem;
+  line-height: 0.9;
   letter-spacing: -.01em;
 
   margin-bottom: 12rem;
