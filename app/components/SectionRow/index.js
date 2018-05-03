@@ -4,11 +4,6 @@ const SectionRow = styled.div.attrs({ className: 'section-row' })`
   width: 100%;
   max-width: 1280px;
 
-  &.vh-100 {
-    ${'' /* height: calc(100vh - 12rem); */}
-    height: 100vh;
-  }
-
   ${'' /* margin: 6rem 0; */}
   padding: 6rem 10rem 0;
   margin-bottom: 5rem;
@@ -20,6 +15,13 @@ const SectionRow = styled.div.attrs({ className: 'section-row' })`
 
   .section-item + .section-item {
     margin-top: 12rem;
+  }
+
+  &.vh-100 {
+    height: 100vh;
+  }
+  &.no-padding {
+    padding: 0;
   }
 `;
 

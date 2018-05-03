@@ -12,7 +12,7 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
 
   overflow-x: hidden;
 
-  border-bottom: 5rem solid #fff;
+  ${'' /* border-bottom: 5rem solid #fff; */}
 
   .right-quote-svg {
     position: sticky;

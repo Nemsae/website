@@ -36,9 +36,12 @@ import ListItemInfo from 'components/ListItemInfo';
 import ListItemTitle from 'components/ListItemTitle';
 import ListItemSubTitle from 'components/ListItemSubTitle';
 
-import SubHeader from 'components/SubHeader';
-import SubHeaderTitle from 'components/SubHeaderTitle';
+// import SubHeader from 'components/SubHeader';
+// import SubHeaderTitle from 'components/SubHeaderTitle';
 import SectionHero from 'components/SectionHero';
+import HeroIntroSubTitle from 'components/HeroIntroSubTitle';
+import HeroIntroTitle from 'components/HeroIntroTitle';
+import SectionHeroIntro from 'components/SectionHeroIntro';
 import SectionHeroTitle from 'components/SectionHeroTitle';
 import SectionHeroWrapper from 'components/SectionHeroWrapper';
 // import SubHeaderSubTitle from 'components/SubHeaderSubTitle';
@@ -52,7 +55,7 @@ import SVGQuoteRight from 'components/SVGQuoteRight';
 // import HeaderBar from './HeaderBar';
 // import MainContentOverflow from './MainContentOverflow';
 
-// import BackgroundVideo from './BackgroundVideo';
+import BackgroundVideo from './BackgroundVideo';
 
 import reducer from './reducer';
 import saga from './saga';
@@ -91,28 +94,31 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <b>music fiend</b>
               </SectionHeroTitle>
             </SectionHero>
-            {/* <SectionIntro className="color-white">
-              <SectionIntroTitle>
-                an engineer<br />
-                coffee addict &<br />
-                <b>music fiend</b>
-              </SectionIntroTitle>
-              <SectionIntroSubTitle>
-                John&apos;s portfolio of projects, ideas, and digital trinkets.
-              </SectionIntroSubTitle>
-            </SectionIntro> */}
           </SectionHeroWrapper>
         </SubWrapper>
 
         <MainWrapper>
-          <SVGQuoteRight />
-          {/* <BackgroundVideo autoPlay loop muted>
-            <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
-            Your browser does not support the mp4 video format.
-          </BackgroundVideo> */}
-
           <MainContainer className="fa-7x">
-            <SectionRow id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
+            <SectionRow id="section-splash" className="no-padding">
+              <SectionHeroWrapper className="color-black jc-flex-start">
+                <SectionHeroIntro>
+                  <HeroIntroTitle>
+                    About me
+                  </HeroIntroTitle>
+                  <HeroIntroSubTitle>
+                    stuff you ought to know about <strong>john son</strong>
+                  </HeroIntroSubTitle>
+                </SectionHeroIntro>
+
+                {/* <BackgroundVideo autoPlay loop muted>
+                  <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
+                  Your browser does not support the mp4 video format.
+                </BackgroundVideo> */}
+              </SectionHeroWrapper>
+            </SectionRow>
+
+            <SectionRow id="section-introduction" className="no-sticky">
+            {/* <SectionRow id="section-introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" > */}
               {/* <SectionIcon><i className="fas fa-hand-spock" /></SectionIcon> */}
               <SectionItem>
                 <ItemTitle>
@@ -176,6 +182,8 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             </SectionRow>
 
           </MainContainer>
+
+          <SVGQuoteRight />
         </MainWrapper>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </PageWrapper>
