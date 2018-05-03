@@ -16,18 +16,18 @@ import { NavLink } from 'react-router-dom';
 
 // import MainContent from 'components/MainContent';
 import PageWrapper from 'components/PageWrapper';
-import SubWrapper from 'components/SubWrapper';
 import MainWrapper from 'components/MainWrapper';
 
 import RixiLogo from 'components/RixiLogo';
 // import SubHeader from 'components/SubHeader';
 import SubMessage from 'components/SubMessage';
 import SubMessageWrapper from 'components/SubMessageWrapper';
-import SubHeaderTitle from 'components/SubHeaderTitle';
+// import SubHeaderTitle from 'components/SubHeaderTitle';
 import MainContainer from 'components/MainContainer';
-import SectionRow from 'components/SectionRow';
+// import SectionRow from 'components/SectionRow';
 
 import SubWrapperStyled from './SubWrapperStyled';
+import SubText from './SubText';
 // import MainWrapperStyled from './MainWrapperStyled';
 // import ContentBackground from './ContentBackground';
 // import ContentText from './ContentText';
@@ -52,9 +52,10 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
 
         <MainWrapper className="pos-bottom">
           <MainContainer>
-            <SectionRow id="not-found__introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
+            <SubText>404</SubText>
+            {/* <SectionRow id="not-found__introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
               <SubHeaderTitle>Let&apos;s head back home</SubHeaderTitle>
-            </SectionRow>
+            </SectionRow> */}
           </MainContainer>
         </MainWrapper>
       </PageWrapper>
