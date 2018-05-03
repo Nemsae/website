@@ -51,12 +51,12 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
         </SubWrapperStyled>
 
         <MainWrapper className="pos-bottom">
-          <MainContainer>
-            <SubText>404</SubText>
-            {/* <SectionRow id="not-found__introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
+          {/* <MainContainer>
+            <SectionRow id="not-found__introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
               <SubHeaderTitle>Let&apos;s head back home</SubHeaderTitle>
-            </SectionRow> */}
-          </MainContainer>
+            </SectionRow>
+          </MainContainer> */}
+          <SubText>404</SubText>
         </MainWrapper>
       </PageWrapper>
     );
