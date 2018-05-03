@@ -24,10 +24,10 @@ import SubWrapper from 'components/SubWrapper';
 // import ItemInfo from 'components/ItemInfo';
 import ItemSubTitle from 'components/ItemSubTitle';
 import ItemTitle from 'components/ItemTitle';
-import SectionIntro from 'components/SectionIntro';
-import SectionIntroTitle from 'components/SectionIntroTitle';
-import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
-import SectionIntroWrapper from 'components/SectionIntroWrapper';
+// import SectionIntro from 'components/SectionIntro';
+// import SectionIntroTitle from 'components/SectionIntroTitle';
+// import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
+// import SectionIntroWrapper from 'components/SectionIntroWrapper';
 import SectionList from 'components/SectionList';
 import SectionListItem from 'components/SectionListItem';
 import SectionItem from 'components/SectionItem';
@@ -86,8 +86,8 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             <SectionHero className="color-white">
               <SectionHeroTitle>
               {/* <SectionHeroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="1800"> */}
-                an engineer<br />
-                coffee addict &<br />
+                web engineer<br />
+                artist, &<br />
                 <b>music fiend</b>
               </SectionHeroTitle>
             </SectionHero>

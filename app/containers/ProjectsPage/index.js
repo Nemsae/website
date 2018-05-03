@@ -26,7 +26,11 @@ import SectionItem from 'components/SectionItem';
 import ItemTitle from 'components/ItemTitle';
 import ItemSubTitle from 'components/ItemSubTitle';
 import SectionBody from 'components/SectionBody';
+// import SectionMediaWrapper from 'components/SectionMediaWrapper';
+// import SectionMediaWrapper from 'components/SectionMediaWrapper';
+// import SectionMediaWrapper from 'components/SectionMediaWrapper';
 
+import BackgroundVideo from './BackgroundVideo';
 import MainWrapperStyled from './MainWrapperStyled';
 import SubWrapperStyled from './SubWrapperStyled';
 
@@ -67,6 +71,12 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
                 </SectionIntroSubTitle>
                 <SectionScrollDown href="#projects-list" />
               </SectionIntro>
+              {/* <SectionMediaWrapper>
+                <BackgroundVideo autoPlay loop muted>
+                  <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
+                  Your browser does not support the mp4 video format.
+                </BackgroundVideo>
+              </SectionMediaWrapper> */}
             </SectionRow>
 
             <SectionRow id="projects-list">

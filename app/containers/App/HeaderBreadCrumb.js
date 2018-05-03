@@ -11,6 +11,7 @@ const HeaderBreadCrumb = (props) => {
     z-index: 3;
 
     font-size: 4rem;
+    font-weight: 100;
     transform: rotate(270deg);
     transform-origin: 0 0;
 
