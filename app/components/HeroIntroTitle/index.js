@@ -13,7 +13,7 @@ ${'' /* padding-top: 10rem; */}
   padding: 10rem 0;
 
   b {
-    font-weight: 100;
+    color: pink;
   }
 `;
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const HeroIntroSubTitle = styled.h4.attrs({ className: 'hero__intro-sub-title' })`
   line-height: 1.3;
   letter-spacing: -.01em;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 100;
   margin: 0;
 
@@ -11,7 +11,11 @@ const HeroIntroSubTitle = styled.h4.attrs({ className: 'hero__intro-sub-title' }
   padding: 2rem 0;
   max-width: 600px;
 
-  padding-right: 30%;
+  padding-right: 28%;
+
+  b {
+    color: pink;
+  }
 `;
 
 export default HeroIntroSubTitle;

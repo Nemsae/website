@@ -103,10 +103,10 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
               <SectionHeroWrapper className="color-black jc-flex-start">
                 <SectionHeroIntro>
                   <HeroIntroTitle>
-                    About me
+                    About me<b>*</b>
                   </HeroIntroTitle>
                   <HeroIntroSubTitle>
-                    stuff you ought to know about <strong>john son</strong>
+                    <b>***</b>stuff you ought to know about <strong>john</strong>
                   </HeroIntroSubTitle>
                 </SectionHeroIntro>
 
@@ -139,7 +139,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <ItemSubTitle>
                   experience
                 </ItemSubTitle>
-                <SectionBody>I&apos;ve created, designed and built things with people globally.</SectionBody>
+                <SectionBody>I&apos;ve created, designed and built things with people around the world.</SectionBody>
               </SectionItem>
               <SectionList className="offset">
                 <SectionListItem>
