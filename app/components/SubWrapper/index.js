@@ -15,7 +15,7 @@ const SubWrapper = styled.div.attrs({ className: 'sub-wrapper' })`
   .left-quote-svg {
     position: absolute;
     top: 6rem;
-    right: 6rem;
+    right: 4rem;
     font-size: 10rem;
   }
 

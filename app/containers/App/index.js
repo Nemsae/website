@@ -21,7 +21,8 @@ import BackgroundText from 'components/BackgroundText';
 
 import ContentRouter from 'containers/ContentRouter';
 
-import A from './A';
+// import A from './A';
+import HeaderSocialIcon from './HeaderSocialIcon';
 import AppWrapper from './AppWrapper';
 import BackSlash from './BackSlash';
 // import Content from './Content';
@@ -33,7 +34,8 @@ import CrumbNext from './CrumbNext';
 import Button from './Button';
 // import TestButton from './TestButton';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
-import HeaderLangBar from './HeaderLangBar';
+import HeaderSocials from './HeaderSocials';
+// import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
 // import HeaderTitle from './HeaderTitle';
 import HomeNavLink from './HomeNavLink';
@@ -135,11 +137,16 @@ export class App extends React.PureComponent {
 
         <HeaderBreadCrumb inverted={this.props.location.pathname !== '/'} strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
 
-        <HeaderLangBar>
+        <HeaderSocials>
+          <HeaderSocialIcon role="button" tabIndex={0} target="_blank" href="https://github.com/nemsae"><span><i className="fab fa-github fa-lg" /></span></HeaderSocialIcon>
+          <HeaderSocialIcon role="button" tabIndex={0} target="_blank" href="https://www.linkedin.com/in/jaysonder"><span><i className="fab fa-linkedin-in fa-lg" /></span></HeaderSocialIcon>
+          <HeaderSocialIcon role="button" tabIndex={0}><span><i className="far fa-file-alt fa-lg" /></span></HeaderSocialIcon>
+        </HeaderSocials>
+        {/* <HeaderLangBar>
           <A isActive={this.props.locale === 'en'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('en')}><span>EN</span></A>
           <A isActive={this.props.locale === 'es'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('es')}><span>ES</span></A>
           <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
-        </HeaderLangBar>
+        </HeaderLangBar> */}
 
         <CrossMenu
           active={this.state.expanded}

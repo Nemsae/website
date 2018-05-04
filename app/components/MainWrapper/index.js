@@ -16,9 +16,7 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
 
   .right-quote-svg {
     position: sticky;
-    ${'' /* top: calc(100% - 6rem); */}
     bottom: 6rem;
-    ${'' /* left: 40%; */}
     right: calc(100% - 8rem);
     font-size: 10rem;
     z-index: 2;

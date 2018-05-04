@@ -10,9 +10,9 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
   line-height: 1.1;
   letter-spacing: 4px;
 
-  margin-top: 60px;
-  padding: 8px 10px;
-  width: 370px;
+  margin-top: 6rem;
+  padding: 8px 1rem;
+  width: 37rem;
 
   position: relative;
 
@@ -21,12 +21,12 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
     color: #000;
   }
   .left-quote-svg {
-    top: -40px;
-    left: -60px;
+    top: -4rem;
+    left: -6rem;
   }
   .right-quote-svg {
-    bottom: -40px;
-    right: -60px;
+    bottom: -4rem;
+    right: -6rem;
   }
 `;
 

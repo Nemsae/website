@@ -50,7 +50,7 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
           </SubMessageWrapper>
         </SubWrapperStyled>
 
-        <MainWrapper className="pos-bottom">
+        <MainWrapper className="pos-bottom o-hidden">
           {/* <MainContainer>
             <SectionRow id="not-found__introduction" className="no-sticky" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="2000" >
               <SubHeaderTitle>Let&apos;s head back home</SubHeaderTitle>

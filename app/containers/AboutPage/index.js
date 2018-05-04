@@ -84,7 +84,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
       <PageWrapper>
         {/* eslint-disable jsx-a11y/media-has-caption */}
         <SubWrapper>
-          <SVGQuoteLeft />
+          {/* <SVGQuoteLeft /> */}
           <SectionHeroWrapper>
             <SectionHero className="color-white">
               <SectionHeroTitle>
@@ -181,7 +181,7 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             <SectionRow id="section-inspirations" className="offset no-sticky">
             </SectionRow>
 
-            <SVGQuoteRight />
+            {/* <SVGQuoteRight /> */}
           </MainContainer>
 
         </MainWrapper>

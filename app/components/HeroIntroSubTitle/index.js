@@ -6,6 +6,8 @@ const HeroIntroSubTitle = styled.h4.attrs({ className: 'hero__intro-sub-title' }
   font-size: 2rem;
   font-weight: 100;
   margin: 0;
+  ${'' /* NOTE: for sticky
+  margin-bottom: 7rem; */}
 
   border-top: 2px solid #000;
   padding: 2rem 0;

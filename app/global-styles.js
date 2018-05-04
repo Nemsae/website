@@ -69,6 +69,10 @@ injectGlobal`
     margin-right: auto !important;
   }
 
+  .o-hidden {
+    overflow: hidden;
+  }
+
   :root {
     --ease-in-quad: cubic-bezier(.55, .085, .68, .53);
     --ease-in-cubic: cubic-bezier(.550, .055, .675, .19);
