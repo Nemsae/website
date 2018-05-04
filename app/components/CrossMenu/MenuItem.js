@@ -14,6 +14,11 @@ ${''/* const MenuItem = styled.li` */}
 
   ${transitionAll(400)}
 
+  color: #fff;
+  :visited {
+    color: #fff;
+  }
+
   &.active-link {
     cursor: default;
     .bullet-link {

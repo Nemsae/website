@@ -47,7 +47,13 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
     console.log('<ContentRouter />     rendered!');    //  eslint-disable-line no-console
     // console.log('<ContentRouter />     this.props.location.pathname', this.props.location.pathname);    //  eslint-disable-line no-console
     // console.log('<ContentRouter />     this.state.transitionState', this.state.transitionState);    //  eslint-disable-line no-console
-    const { location } = this.props;
+    const { location, isMenuActive } = this.props;
+    //  NOTE: when isMenuActive is true
+    //        when not on the home page "/"
+    //        animate: push out current page
+    //  NOTE: when isMenuActive is false
+    //        when not on the home page "/"
+    //        animate: pull back in current page
     return (
       <TransitionGroup
         component={AnimationWrapper}

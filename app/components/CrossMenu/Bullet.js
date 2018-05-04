@@ -12,7 +12,7 @@ const Bullet = (props) => {
     ${props.left && 'left: -30px;'}
     ${props.right && 'right: -30px;'}
 
-    background: #000;
+    background: #fff;
 
     opacity: 1;
   `;

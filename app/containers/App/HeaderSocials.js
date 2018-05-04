@@ -11,6 +11,7 @@ const HeaderSocials = styled.div`
 
   padding: 1rem 6rem;
   height: 4rem;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 
   a + a {
     margin-left: 3rem;
@@ -28,6 +29,15 @@ const HeaderSocials = styled.div`
     border-top: 2rem solid #1B1819;
     border-bottom: 2rem solid #1B1819;
     border-left: 2rem solid transparent;
+  }
+  ::after {
+    content: '';
+    position: absolute;
+    bottom: 0rem;
+    left: -4rem;
+    height: 1rem;
+    width: 4rem;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
   }
 `;
 

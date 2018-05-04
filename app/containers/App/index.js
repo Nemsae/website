@@ -113,6 +113,12 @@ export class App extends React.PureComponent {
     });
   }
 
+  expandMenu = () => {
+    //  NOTE: First, animate out the page overlay, than animate in the menu.
+    //        Change the CSS class and add an animation in.
+    this.setState({ expanded: !this.state.expanded });
+  }
+
   render() {
     //  TODO: ⭐ Abstract out each link into an array and map out the elements instead of repetition. In HeaderLang
 
@@ -154,9 +160,9 @@ export class App extends React.PureComponent {
           resetHoveredLocation={this.resetHoveredLocation}
         />
 
-        <Button onClick={() => this.setState({ expanded: !this.state.expanded })}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
+        <Button onClick={this.expandMenu}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
 
-        <ContentRouter />
+        <ContentRouter isMenuActive={this.state.expanded} />
       </AppWrapper>
     );
   }

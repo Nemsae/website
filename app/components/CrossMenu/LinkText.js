@@ -27,8 +27,6 @@ const LinkTextPrimitive = styled.h2.attrs({ className: 'link-text' })`
   text-decoration: none;
   text-transform: lowercase;
 
-  color: #000;
-
   ${transitionAll(400)}
 
   ${''/* ${this.props.active && 'opacity: 1'} */}

@@ -29,7 +29,7 @@ export class LanguageProvider extends React.PureComponent { // eslint-disable-li
     // console.log('<LanguageProvider />     messages: ', messages);    //  eslint-disable-line no-console
     return (
       <Provider value={messages}>
-        <IntlProvider locale={this.props.locale} messages={this.props.messages[this.props.locale]}>
+        <IntlProvider locale={this.props.locale} messages={this.props.messages[this.props.locale]} textComponent={React.Fragment}>
           {React.Children.only(this.props.children)}
         </IntlProvider>
       </Provider>
