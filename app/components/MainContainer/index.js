@@ -16,7 +16,7 @@ const MainContainer = styled.div`
   }
 
   .section-content + .section-content {
-    margin-top: 16rem;-
+    margin-top: 16rem;
   }
 `;
 

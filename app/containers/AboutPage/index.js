@@ -181,9 +181,9 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             <SectionRow id="section-inspirations" className="offset no-sticky">
             </SectionRow>
 
+            <SVGQuoteRight />
           </MainContainer>
 
-          <SVGQuoteRight />
         </MainWrapper>
         {/* eslint-ensable jsx-a11y/media-has-caption */}
       </PageWrapper>
