@@ -7,7 +7,6 @@ const HeroIntroTitle = styled.h2.attrs({ className: 'hero__intro-title' })`
   font-size: 8rem;
 ${'' /* padding-top: 10rem; */}
 
-  border-top: 2px solid #000;
   margin: 0;
   font-size: 15vw;
   padding: 10rem 0;

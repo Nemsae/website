@@ -10,7 +10,7 @@ import ProjectsPage from 'containers/ProjectsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import SwitchWrapper from './SwitchWrapper';
-import AnimationWrapper from './AnimationWrapper';
+import AnimationWrapper, { aniEnterTime, aniExitTime } from './AnimationWrapper';
 
 //  NOTE: This returns a childFactory to provide to TransitionGroup, this allows us to pass updated props
 //  to children that has already "left" the DOM, but is still contained in state of TransitionGroup.
@@ -57,7 +57,7 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
           key={location.key}
           // classNames="entering-child"
           classNames={createAnimationClassName(location.pathname)}
-          timeout={{ enter: 1000, exit: 5000 }}
+          timeout={{ enter: aniEnterTime, exit: aniExitTime }}
           unmountOnExit   //  NOTE: when false, does not delete previously mounted components, DOM memory leak
           appear
           // in

@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 import { fadeIn, fadeOut } from 'utils/keyFrames';
 
+const aniEnterTime = 600;
+const aniExitTime = 600;
+
 const AnimationWrapper = styled.div`
   ${'' /*
     NOTE: ABOUT PAGE ANIMATIONS
@@ -19,18 +22,18 @@ const AnimationWrapper = styled.div`
   }
   .about-page-enter-done, .contact-page-enter-done {
     .sub-wrapper {
-      animation: ${fadeIn('left')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeIn('left')} ${aniEnterTime}ms both var(--ease-out-quart);
     }
     .main-wrapper {
-      animation: ${fadeIn('right')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeIn('right')} ${aniEnterTime}ms both var(--ease-out-quart);
     }
   }
   .about-page-exit, .about-page-exit-active, .contact-page-exit, .contact-page-exit-active {
     .sub-wrapper {
-      animation: ${fadeOut('left')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeOut('left')} ${aniExitTime}ms both var(--ease-in-quart);
     }
     .main-wrapper {
-      animation: ${fadeOut('right')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeOut('right')} ${aniExitTime}ms both var(--ease-in-quart);
     }
   }
 
@@ -49,18 +52,18 @@ const AnimationWrapper = styled.div`
   }
   .projects-page-enter-done {
     .sub-wrapper {
-      animation: ${fadeIn('left')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeIn('left')} ${aniEnterTime}ms both var(--ease-out-quart);
     }
     .main-wrapper {
-      animation: ${fadeIn('bottom')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeIn('bottom')} ${aniEnterTime}ms both var(--ease-out-quart);
     }
   }
   .projects-page-exit, .projects-page-exit-active {
     .sub-wrapper {
-      animation: ${fadeOut('left')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeOut('left')} ${aniExitTime}ms both var(--ease-in-quart);
     }
     .main-wrapper {
-      animation: ${fadeOut('top')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeOut('top')} ${aniExitTime}ms both var(--ease-in-quart);
     }
   }
 
@@ -79,20 +82,25 @@ const AnimationWrapper = styled.div`
   }
   .not-found-page-enter-done {
     .sub-wrapper {
-      animation: ${fadeIn('bottom')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeIn('bottom')} ${aniEnterTime}ms both var(--ease-out-quart);
     }
     .main-wrapper {
-      animation: ${fadeIn('top')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeIn('top')} ${aniEnterTime}ms both var(--ease-out-quart);
     }
   }
   .not-found-page-exit, .not-found-page-exit-active {
     .sub-wrapper {
-      animation: ${fadeOut('bottom')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeOut('bottom')} ${aniExitTime}ms both var(--ease-in-quart);
     }
     .main-wrapper {
-      animation: ${fadeOut('top')} 1000ms both var(--ease-in-out-quart);
+      animation: ${fadeOut('top')} ${aniExitTime}ms both var(--ease-in-quart);
     }
   }
 `;
+
+export {
+  aniEnterTime,
+  aniExitTime,
+};
 
 export default AnimationWrapper;

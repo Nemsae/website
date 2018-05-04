@@ -19,6 +19,11 @@ const SectionItem = styled.div.attrs({ className: 'section-item' })`
     height: 4px;
     background-color: #1B1919;
   } */}
+
+  ${'' /* transition: all 400ms;
+  &:not(:hover) {
+    opacity: 0.3 !important;
+  } */}
 `;
 
 export default SectionItem;

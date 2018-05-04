@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 const SectionHeroIntro = styled.div.attrs({ className: 'section-hero__intro' })`
-  height: 100%;
-  width: 100%;
   max-width: 60rem;
-  padding-top: 6rem;
-  padding-left: 10rem;
+  margin-top: 6rem;
+  height: calc(100% - 6rem);
+  margin-left: 10rem;
+  width: 100%;
+  border-top: 2px solid #000;
 
   align-self: flex-start;
 
