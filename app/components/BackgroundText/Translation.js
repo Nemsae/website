@@ -12,13 +12,13 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
 
   margin-top: 6rem;
   padding: 8px 1rem;
-  width: 37rem;
 
   position: relative;
 
   .left-quote-svg, .right-quote-svg {
     position: absolute;
     color: #1B1819;
+    transition: color 400ms;
   }
   .left-quote-svg {
     top: -4rem;
@@ -27,6 +27,24 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
   .right-quote-svg {
     bottom: -4rem;
     right: -6rem;
+  }
+
+  width: 37rem;
+  height: 9rem;
+
+  transition: all 600ms;
+  :hover {
+    color: #1B1819;
+    background: transparent;
+    border: 0.5rem solid #1B1819;
+
+    font-size: 3rem;
+    width: 40rem;
+    height: 10rem;
+
+    .left-quote-svg, .right-quote-svg {
+      color: pink;
+    }
   }
 `;
 
