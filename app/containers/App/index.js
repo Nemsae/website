@@ -139,9 +139,14 @@ export class App extends React.PureComponent {
 
         <BackgroundText />
 
-        <HeaderLogo inverted={this.props.location.pathname !== '/'}><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo>
+        <HeaderLogo inverted={this.props.location.pathname !== '/'} to="/" activeClassName="active-link">R</HeaderLogo>
+        {/* <HeaderLogo inverted={this.props.location.pathname !== '/'}><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo> */}
 
-        <HeaderBreadCrumb inverted={this.props.location.pathname !== '/'} strikeThrough={this.state.hoveredLocation.length > 0}><BackSlash /><CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent><CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext></HeaderBreadCrumb>
+        <HeaderBreadCrumb inverted={this.props.location.pathname !== '/'} strikeThrough={this.state.hoveredLocation.length > 0}>
+          <BackSlash />
+          <CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent>
+          <CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext>
+        </HeaderBreadCrumb>
 
         <HeaderSocials>
           <HeaderSocialIcon role="button" tabIndex={0} target="_blank" href="https://github.com/nemsae"><span><i className="fab fa-github fa-lg" /></span></HeaderSocialIcon>
@@ -154,6 +159,7 @@ export class App extends React.PureComponent {
           <A isActive={this.props.locale === 'ko'} role="button" tabIndex={0} onClick={() => this.props.changeLocaleLang('ko')}><span>KO</span></A>
         </HeaderLangBar> */}
 
+        {/* NOTE: I need to animate menu style change, after wrappers pushed */}
         <CrossMenu
           active={this.state.expanded}
           captureHoveredLocation={this.captureHoveredLocation}
@@ -162,6 +168,7 @@ export class App extends React.PureComponent {
 
         <Button onClick={this.expandMenu}>{ this.state.expanded ? 'Minimize' : 'Maximize' }</Button>
 
+        {/* NOTE: I need to push out wrappers here */}
         <ContentRouter isMenuActive={this.state.expanded} />
       </AppWrapper>
     );

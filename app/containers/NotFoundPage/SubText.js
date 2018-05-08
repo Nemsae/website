@@ -8,6 +8,8 @@ const SubText = styled.h4`
   font-family: montserrat;
   line-height: 0.7;
   text-align: center;
+
+  text-rendering: geometricPrecision;
 `;
 
 export default SubText;

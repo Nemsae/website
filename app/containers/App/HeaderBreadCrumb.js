@@ -17,11 +17,12 @@ const HeaderBreadCrumb = (props) => {
 
     ${transitionAll(400)}
 
-    ${props.inverted ? `
+    isolation: isolate;
+    ${'' /* ${props.inverted ? `
       color: #fff;
     ` : `
       color: #000;
-    `}
+    `} */}
 
     ${props.strikeThrough && `
       .crumb-current {

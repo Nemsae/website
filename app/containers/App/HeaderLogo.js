@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+
+import BasicNavLink from './BasicNavLink';
 
 const HeaderLogo = (props) => {
-  const HeaderLogoPrimitive = styled.div.attrs({ className: 'header-title' })`
+  const HeaderLogoPrimitive = BasicNavLink.extend.attrs({ className: 'link-text' })`
     border: 1px solid #000;
     line-height: 40px;
     height: 40px;

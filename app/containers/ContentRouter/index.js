@@ -32,14 +32,36 @@ const childFactoryCreator = (location) => (
 
 //  NOTE: this fxn willl return the corresponding CSS classname to <CSSTransition />
 const createAnimationClassName = (newLocation) => {
+// const createAnimationClassName = (newLocation, isMenuActive) => {
+  let animationClassName = '';
   switch (newLocation) {
-    case '/': return 'home-page';
-    case '/about': return 'about-page';
-    case '/projects': return 'projects-page';
-    case '/contact': return 'contact-page';
+    case '/': {
+      animationClassName = 'home-page';
+      break;
+    }
+    case '/about': {
+      animationClassName = 'about-page';
+      break;
+    }
+    case '/projects': {
+      animationClassName = 'projects-page';
+      break;
+    }
+    case '/contact': {
+      animationClassName = 'contact-page';
+      break;
+    }
     default:
-      return 'not-found-page';
+      animationClassName = 'not-found-page';
   }
+
+  // if (isMenuActive) {
+  //   animationClassName += '__pushed';
+  // }
+
+  // console.log('animationClassName: ', animationClassName);
+
+  return animationClassName;
 };
 
 export class ContentRouter extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -54,6 +76,8 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
     //  NOTE: when isMenuActive is false
     //        when not on the home page "/"
     //        animate: pull back in current page
+    console.log('<ContentRouter />     location.key: ', location.key);
+    console.log('<ContentRouter />     isMenuActive: ', isMenuActive);
     return (
       <TransitionGroup
         component={AnimationWrapper}
@@ -62,7 +86,7 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
         <CSSTransition
           key={location.key}
           // classNames="entering-child"
-          classNames={createAnimationClassName(location.pathname)}
+          classNames={createAnimationClassName(location.pathname)}      //  NOTE: applies the css class to <SwitchWrapper />
           timeout={{ enter: aniEnterTime, exit: aniExitTime }}
           unmountOnExit   //  NOTE: when false, does not delete previously mounted components, DOM memory leak
           appear

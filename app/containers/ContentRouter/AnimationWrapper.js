@@ -12,6 +12,14 @@ const AnimationWrapper = styled.div`
           SUB (L -> R)
           MAIN (T -> B)
   */}
+  .about-page__pushed {
+    .sub-wrapper {
+      transform: translate3d(-2000px, 0, 0);
+    }
+    .main-wrapper {
+      transform: translate3d(2000px, 0, 0);
+    }
+  }
   .about-page-enter, .about-page-enter-active, .contact-page-enter, .contact-page-enter-active {
     .sub-wrapper {
       transform: translate3d(-2000px, 0, 0);
