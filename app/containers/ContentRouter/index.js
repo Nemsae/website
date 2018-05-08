@@ -95,7 +95,7 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
           // in={this.state.transitionState}
           // mountOnEnter
         >
-          <SwitchWrapper>
+          <SwitchWrapper className={location.pathname === '/' && 'hidden'}>
             <Switch location={location}>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/about" component={AboutPage} />

@@ -9,6 +9,10 @@ const SwitchWrapper = styled.main`
   overflow: hidden;
   height: 100%;
   width: 100%;
+
+  &.hidden {
+    display: none;
+  }
 `;
 
 export default SwitchWrapper;

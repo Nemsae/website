@@ -10,7 +10,7 @@ import injectSaga from 'utils/injectSaga';
 
 // import BackgroundVideo from './BackgroundVideo';
 // import H2 from 'components/H2';
-import Wrapper from './Wrapper';
+// import Wrapper from './Wrapper';
 
 // import { makeSelectRecommendations, makeSelectFeatures } from './selectors';
 // import { fetchRecommendations, rateRecommendation, fetchFeatures } from './actions';
@@ -23,16 +23,7 @@ import saga from './saga';
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     // console.log('<HomePage />     rendered!!!');
-    return (
-      <Wrapper>
-        {/* eslint-disable jsx-a11y/media-has-caption */}
-        {/* <BackgroundVideo autoPlay loop muted onLoadedData={() => console.log('Video loaded.')}>
-          <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
-          Your browser does not support the mp4 video format.
-        </BackgroundVideo> */}
-        {/* eslint-ensable jsx-a11y/media-has-caption */}
-      </Wrapper>
-    );
+    return React.Fragment;
   }
 }
 
