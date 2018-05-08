@@ -27,7 +27,7 @@ injectGlobal`
   } */}
 
   #app {
-    background-color: #F6F9FC;
+    ${'' /* background-color: #F6F9FC; */}
     min-height: 100%;
     min-width: 100%;
   }

@@ -24,7 +24,7 @@ import ContentRouter from 'containers/ContentRouter';
 // import A from './A';
 import HeaderSocialIcon from './HeaderSocialIcon';
 import AppWrapper from './AppWrapper';
-import BackSlash from './BackSlash';
+import CrumbBackSlash from './CrumbBackSlash';
 // import Content from './Content';
 // import ContentRouter from './ContentRouter';
 import CrumbCurrent from './CrumbCurrent';
@@ -41,6 +41,19 @@ import HeaderLogo from './HeaderLogo';
 import HomeNavLink from './HomeNavLink';
 
 // import messages from './messages';
+
+//  NOTE: returns a bool that will determine whether to invert the breadcrumb or not.
+const breadCrumbInvertState = (currentPath) => {
+  //  NOTE: do NOT invert for following paths
+  console.log('breadCrumbInvertState    currentPath: ', currentPath);
+  const invertDict = {
+    '/about': true,
+    '/projects': true,
+    '/contact': true,
+  };
+  console.log('breadCrumbInvertState    invertDict[currentPath]: ', invertDict[currentPath]);
+  return invertDict[currentPath];
+};
 
 // export function App(props) {
 export class App extends React.PureComponent {
@@ -127,9 +140,10 @@ export class App extends React.PureComponent {
     //  Also having the component will unmount, and the other will have to mount. No way to link the two for a smooth `transition`
     // console.log('App    this.props.location.pathname: ', this.props.location.pathname);
 
+    const { location } = this.props;
     console.log('<App />     rendered!');     //  eslint-disable-line no-console
     // console.log('<App />     this.state.expanded: ', this.state.expanded);     //  eslint-disable-line no-console
-    // console.log('<App />     this.props.location.key', this.props.location.key);    //  eslint-disable-line no-console
+    console.log('<App />     this.props.location', this.props.location);    //  eslint-disable-line no-console
 
     return (
       <AppWrapper>
@@ -139,12 +153,12 @@ export class App extends React.PureComponent {
 
         <BackgroundText />
 
-        <HeaderLogo inverted={this.props.location.pathname !== '/'} to="/" activeClassName="active-link">R</HeaderLogo>
-        {/* <HeaderLogo inverted={this.props.location.pathname !== '/'}><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo> */}
+        <HeaderLogo inverted={location.pathname !== '/'} to="/" activeClassName="active-link">R</HeaderLogo>
+        {/* <HeaderLogo inverted={location.pathname !== '/'}><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo> */}
 
-        <HeaderBreadCrumb inverted={this.props.location.pathname !== '/'} strikeThrough={this.state.hoveredLocation.length > 0}>
-          <BackSlash />
-          <CrumbCurrent>{`${this.props.location.pathname.slice(1)}`}</CrumbCurrent>
+        <HeaderBreadCrumb inverted={breadCrumbInvertState(location.pathname)} strikeThrough={this.state.hoveredLocation.length > 0}>
+          <CrumbBackSlash />
+          <CrumbCurrent>{`${location.pathname.slice(1)}`}</CrumbCurrent>
           <CrumbNext>{this.state.hoveredLocation && this.state.hoveredLocation}</CrumbNext>
         </HeaderBreadCrumb>
 

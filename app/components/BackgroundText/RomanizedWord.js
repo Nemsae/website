@@ -10,7 +10,7 @@ const RomanizedWord = styled.h2.attrs({ className: 'bg-text__word_romanized' })`
 
   margin: 0.5rem 0rem;
   padding-left: 6rem;
-  width: 36rem;
+  width: 35rem;
   height: 8rem;
 
   transition: all 600ms;

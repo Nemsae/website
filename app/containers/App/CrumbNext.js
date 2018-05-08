@@ -5,6 +5,8 @@ const CrumbNext = styled.span`
   padding: 0;
 
   color: #FEC0C1;
+  ${'' /* color: #FFF;
+  mix-blend-mode: difference; */}
 `;
 
 export default CrumbNext;
