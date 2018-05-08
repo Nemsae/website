@@ -7,7 +7,7 @@ const SectionHeroWrapper = styled.div.attrs({ className: 'section-hero__wrapper'
   justify-content: center;
 
   &.color-black {
-    color: #000;
+    color: #1B1819;
   }
   &.color-white {
     color: #fff;

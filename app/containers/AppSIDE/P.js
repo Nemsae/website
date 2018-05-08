@@ -15,11 +15,11 @@ const P = styled.p`
   }
 
   a {
-    color: #000;
+    color: #1B1819;
     text-decoration: none;
 
     &:visited {
-      color: #000;
+      color: #1B1819;
     }
     &:hover {
       color: #F7CA18 !important;

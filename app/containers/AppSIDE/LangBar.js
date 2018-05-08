@@ -17,10 +17,10 @@ const LangBar = styled.div`
 
   ${'' /* a {
     display: flex;
-    color: #000;
+    color: #1B1819;
 
     &:visited {
-      color: #000;
+      color: #1B1819;
     }
   } */}
 `;

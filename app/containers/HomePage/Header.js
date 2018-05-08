@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Header = styled.header`
   color: #fff;
-  background: #000;
+  background: #1B1819;
 
   ${'' /* display: flex;
   flex-direction: column;

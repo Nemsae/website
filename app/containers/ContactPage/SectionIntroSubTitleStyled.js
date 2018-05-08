@@ -2,7 +2,7 @@ import NormalSectionIntroSubTitle from 'components/SectionIntroSubTitle';
 
 const SectionIntroSubTitleStyled = NormalSectionIntroSubTitle.extend`
   max-width: 275px;
-  color: #000;
+  color: #1B1819;
 
   margin-left: 2rem;
 

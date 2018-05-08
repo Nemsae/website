@@ -46,8 +46,8 @@ const minimizeWrapper = (CrossMenuContainer) => {
   }, '+=0.1')
 
   .to(menuItem, 0.3, {
-    // border: '14px solid #000',
-    background: '#000',
+    // border: '14px solid #1B1819',
+    background: '#1B1819',
   // }, 1.3)
   })
 
@@ -56,7 +56,7 @@ const minimizeWrapper = (CrossMenuContainer) => {
     justifyContent: 'space-around',
   })
   .to(menuItem, 0.3, {
-    // background: '#000',
+    // background: '#1B1819',
     width: '45%',
     height: '45%',
     //  NOTE: once animation is complete, then re-render with new props/state

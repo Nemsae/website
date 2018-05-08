@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
   color: #fff;
-  background: #000;
+  background: #1B1819;
 
   font-family: monospace;
   font-size: 2.8rem;
@@ -18,7 +18,7 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
 
   .left-quote-svg, .right-quote-svg {
     position: absolute;
-    color: #000;
+    color: #1B1819;
   }
   .left-quote-svg {
     top: -4rem;

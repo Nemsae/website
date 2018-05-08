@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ItemInfo = styled.p.attrs({ className: 'item-info' })`
   color: #fff;
-  background: #000;
+  background: #1B1819;
 
   font-family: monospace;
   font-size: 2.8rem;

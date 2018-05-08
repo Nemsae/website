@@ -7,7 +7,7 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
   height: 100%;
   float: right;
   background: #fff;
-  color: #000;
+  color: #1B1819;
   position: relative;
 
   overflow-x: hidden;

@@ -8,7 +8,7 @@ const ListItemInfo = NormalItemInfo.extend.attrs({ className: 'list__item-info' 
 
 // const ListItemInfo = styled.p.attrs({ className: 'list__item-info' })`
 //   color: #fff;
-//   background: #000;
+//   background: #1B1819;
 //
 //   font-family: monospace;
 //   font-size: 2.8rem;

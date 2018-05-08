@@ -4,7 +4,7 @@ const SocialLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1.5px solid #000;
+  border: 1.5px solid #1B1819;
   border-radius: 50%;
   ${'' /* cursor: pointer; */}
   height: 50px;

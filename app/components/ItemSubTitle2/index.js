@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ItemSubTitle = styled.h3.attrs({ className: 'item-sub-title' })`
   font-size: 3.5rem;
   color: #fff;
-  background: #000;
+  background: #1B1819;
 
   letter-spacing: 12px;
 

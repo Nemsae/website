@@ -9,7 +9,7 @@ const HeaderTitle = styled.div`
   text-align: center;
   text-transform: lowercase;
 
-  color: #000;
+  color: #1B1819;
   border-bottom: 1rem solid pink;
   padding: 0 3rem;
 `;

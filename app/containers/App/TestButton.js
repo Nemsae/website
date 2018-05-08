@@ -12,7 +12,7 @@ const Button = (props) => {
     text-transform: uppercase;
     padding: 10px 15px;
 
-    border: 1px solid #000;
+    border: 1px solid #1B1819;
   `;
 
   return <ButtonPrimitive {...props}>{ props.children }</ButtonPrimitive>;

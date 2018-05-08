@@ -21,7 +21,7 @@ const HeaderBreadCrumb = (props) => {
     ${'' /* ${props.inverted ? `
       color: #fff;
     ` : `
-      color: #000;
+      color: #1B1819;
     `} */}
 
     ${props.strikeThrough && `

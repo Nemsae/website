@@ -6,7 +6,7 @@ const SectionHeroIntro = styled.div.attrs({ className: 'section-hero__intro' })`
   height: calc(100% - 6rem);
   margin-left: 10rem;
   width: 100%;
-  border-top: 2px solid #000;
+  border-top: 2px solid #1B1819;
 
   align-self: flex-start;
 

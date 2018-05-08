@@ -6,7 +6,7 @@ import BasicNavLink from './BasicNavLink';
 
 const HeaderLogo = (props) => {
   const HeaderLogoPrimitive = BasicNavLink.extend.attrs({ className: 'link-text' })`
-    border: 1px solid #000;
+    border: 1px solid #1B1819;
     line-height: 40px;
     height: 40px;
     width: 40px;

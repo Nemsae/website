@@ -8,7 +8,7 @@ const Footer = styled.div`
   padding-right: 60px;
 
   background: #fff;
-  color: #000;
+  color: #1B1819;
 
   max-height: 60px;
 
