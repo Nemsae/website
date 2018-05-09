@@ -108,6 +108,76 @@ export const squeezeIn = () => {
   return squeeze;
 };
 
+export const panelMaximize = () => {
+  const panelKeyFrame = keyframes`
+    from {
+      flex-grow: 1;
+      min-width: 60rem;
+      ${'' /* background: #fff; */}
+    }
+
+    to {
+      flex-grow: 10;
+      min-width: 60vw;
+      ${'' /* background: #f7f7f7; */}
+      ${'' /* min-width: 128rem; */}
+      ${'' /* min-width: 100%; */}
+    }
+  `;
+
+  return panelKeyFrame;
+};
+
+export const panelMinimize = () => {
+  const panelKeyFrame = keyframes`
+    from {
+      flex-grow: 10;
+      min-width: 60vw;
+      ${'' /* background: #f7f7f7; */}
+    }
+
+    to {
+      flex-grow: 1;
+      min-width: 60rem;
+      ${'' /* background: #fff; */}
+    }
+  `;
+
+  return panelKeyFrame;
+};
+
+export const panelTitleMaximize = () => {
+  const panelTitleKeyFrame = keyframes`
+    from {
+      font-size: 6rem;
+      color: #1B1819;
+    }
+
+    to {
+      font-size: 8rem;
+      color: pink;
+    }
+  `;
+
+  return panelTitleKeyFrame;
+};
+
+export const panelTitleMinimize = () => {
+  const panelTitleKeyFrame = keyframes`
+    from {
+      font-size: 8rem;
+      color: pink;
+    }
+
+    to {
+      font-size: 6rem;
+      color: #1B1819;
+    }
+  `;
+
+  return panelTitleKeyFrame;
+};
+
 export default {
   squeezeIn,
   opacityIn,
@@ -115,4 +185,8 @@ export default {
   autoAlphaIn,
   fadeIn,
   fadeOut,
+  panelMaximize,
+  panelMinimize,
+  panelTitleMaximize,
+  panelTitleMinimize,
 };

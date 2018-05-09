@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 // import { FormattedMessage } from 'react-intl';
 import { CSSTransition } from 'react-transition-group';

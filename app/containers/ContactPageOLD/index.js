@@ -6,18 +6,14 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-import Accordion from 'components/Accordion';
 import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
-// import SubHeader from 'components/SubHeader';
+import SubHeader from 'components/SubHeader';
 import SectionIntro from 'components/SectionIntro';
 import SectionIntroTitle from 'components/SectionIntroTitle';
 // import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
 import SectionRow from 'components/SectionRow';
-// import SubHeaderTitle from 'components/SubHeaderTitle';
-import SectionHeroWrapper from 'components/SectionHeroWrapper';
-import SectionHero from 'components/SectionHero';
-import SectionHeroTitle from 'components/SectionHeroTitle';
+import SubHeaderTitle from 'components/SubHeaderTitle';
 
 import SubWrapper from 'components/SubWrapper';
 import MainWrapper from 'components/MainWrapper';
@@ -45,38 +41,40 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
       <PageWrapper>
         <SubWrapper>
           {/* <SVGQuoteLeft /> */}
-          <SectionHeroWrapper>
-            <SectionHero className="color-white">
-              <SectionHeroTitle>
-                <b>currently i am</b><br />
-                unavailable<br />
-                <b>for work.</b>
-                {/* say hello,<br />
-                inquire, or<br />
-                <b>share a song</b> */}
-                {/* e: jsson77@gmail.com<br />
-                p: +1 650 678 2956<br />
-                <b>foo bar</b> */}
-              </SectionHeroTitle>
-            </SectionHero>
-          </SectionHeroWrapper>
+          <SubHeader>
+            <SubHeaderTitle>
+              email: <b>jsson77@gmail.com</b><br />
+              phone: <b>(650) 678-2956</b><br />
+              code: <b>github.com/nemsae</b>
+            </SubHeaderTitle>
+          </SubHeader>
         </SubWrapper>
         <MainWrapper>
           <MainContainer>
 
-            <Accordion>
-              {/* <card>
-                contact me
-              </card>
-              <card>
-                share music
-              </card> */}
-            </Accordion>
+            <SectionRow id="contact-intro" className="vh-100" data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1800">
+              <SectionIntro>
+                <SectionIntroTitle>
+                  say hi,<br />
+                  hello, &<br />
+                  <b>good bye</b>
+                </SectionIntroTitle>
+                <SectionIntroSubTitleStyled>
+                  i am currently<br />
+                  <b>available</b><br />
+                  for freelance work!
+                </SectionIntroSubTitleStyled>
+                {/* <SectionIntroSubTitleStyled>
+                  email: <b>jsson77@gmail.com</b><br />
+                  phone: <b>(650) 678-2956</b><br />
+                  code: <b>github.com/nemsae</b>
+                </SectionIntroSubTitleStyled> */}
+              </SectionIntro>
+              {/* <Eyebrow /> */}
+            </SectionRow>
 
-            {/* <SectionRow id="contact-intro" className="vh-100" data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1800">
-            </SectionRow> */}
-            {/* <SectionRow id="contact-form">
-            </SectionRow> */}
+            <SectionRow id="contact-form">
+            </SectionRow>
 
           </MainContainer>
         </MainWrapper>

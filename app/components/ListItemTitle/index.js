@@ -4,7 +4,7 @@ const ListItemTitle = NormalH2.extend.attrs({ className: 'list__item-title' })`
   font-size: 8rem;
   font-weight: 400;
   text-transform: lowercase;
-  line-height: 0.8;
+  line-height: 0.65;
   color: pink;
 `;
 
