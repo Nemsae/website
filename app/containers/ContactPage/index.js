@@ -7,6 +7,7 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
 import Accordion from 'components/Accordion';
+import BackgroundText from 'components/BackgroundText';
 import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
 // import SubHeader from 'components/SubHeader';
@@ -19,14 +20,14 @@ import SectionHeroWrapper from 'components/SectionHeroWrapper';
 import SectionHero from 'components/SectionHero';
 import SectionHeroTitle from 'components/SectionHeroTitle';
 
-import SubWrapper from 'components/SubWrapper';
-import MainWrapper from 'components/MainWrapper';
+// import SubWrapper from 'components/SubWrapper';
+// import MainWrapper from 'components/MainWrapper';
 
 // import Eyebrow from 'components/Eyebrow';
 
-import SectionIntroSubTitleStyled from './SectionIntroSubTitleStyled';
-// import SubWrapperStyled from './SubWrapperStyled';
-// import MainWrapperStyled from './MainWrapperStyled';
+// import SectionIntroSubTitleStyled from './SectionIntroSubTitleStyled';
+import SubWrapperStyled from './SubWrapperStyled';
+import MainWrapperStyled from './MainWrapperStyled';
 
 import reducer from './reducer';
 import saga from './saga';
@@ -43,10 +44,13 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
     console.log('<ContactPage />     rendered!');     //  eslint-disable-line no-console
     return (
       <PageWrapper>
-        <SubWrapper>
-          {/* <SVGQuoteLeft /> */}
+        <SubWrapperStyled>
+          <BackgroundText className="invert" />
+        </SubWrapperStyled>
+        <MainWrapperStyled>
+          {/* NOTE: make this a alert message, a 2 sec modal that slides in then out. */}
           <SectionHeroWrapper>
-            <SectionHero className="color-white">
+            <SectionHero className="color-black">
               <SectionHeroTitle>
                 <b>currently i am</b><br />
                 unavailable<br />
@@ -60,26 +64,11 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
               </SectionHeroTitle>
             </SectionHero>
           </SectionHeroWrapper>
-        </SubWrapper>
-        <MainWrapper>
-          <MainContainer>
-
+          {/* <MainContainer>
             <Accordion>
-              {/* <card>
-                contact me
-              </card>
-              <card>
-                share music
-              </card> */}
             </Accordion>
-
-            {/* <SectionRow id="contact-intro" className="vh-100" data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-out-sine" data-aos-duration="600" data-aos-delay="1800">
-            </SectionRow> */}
-            {/* <SectionRow id="contact-form">
-            </SectionRow> */}
-
-          </MainContainer>
-        </MainWrapper>
+          </MainContainer> */}
+        </MainWrapperStyled>
       </PageWrapper>
     );
   }

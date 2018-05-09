@@ -25,6 +25,11 @@ const Panel = (props) => {
     }
 
     flex-grow: 1;
+    ${'' /* height: 50%; */}
+    ${'' /* height: 50%; */}
+    ${'' /* height: 50%; */}
+    ${'' /* height: 50%; */}
+    ${'' /* height: 50%; */}
 
     cursor: pointer;
     transition: all 400ms;

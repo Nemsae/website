@@ -62,6 +62,9 @@ injectGlobal`
   //  NOTE: BLUE FLASH override
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 
+  .mw-none {
+    max-width: none !important;
+  }
   .ml-auto, .mx-auto {
     margin-left: auto !important;
   }

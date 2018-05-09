@@ -47,8 +47,9 @@ export class NotFoundPage extends React.PureComponent { // eslint-disable-line r
         <SubWrapperStyled className="pos-top">
           <SubMessageWrapper>
             <SubMessage>It looks like we&apos;re lost!</SubMessage>
-            <SubMessage>Go back</SubMessage>
-            <SubMessage>Or let&apos;s go home.</SubMessage>
+            {/* <SubMessage>Let&apos;s go home.</SubMessage> */}
+            {/* <SubMessage>Go back</SubMessage>
+              <SubMessage>Or let&apos;s go home.</SubMessage> */}
           </SubMessageWrapper>
         </SubWrapperStyled>
 

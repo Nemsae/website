@@ -56,28 +56,28 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
           </SubHeader>
         </SubWrapperStyled>
         <MainWrapperStyled>
+          <SectionRow id="projects-intro" className="vh-100 mw-none">
+            <SectionIntro>
+              <SectionIntroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="900">
+                crave simple,<br />
+                elegant, &<br />
+                <b>pretty things</b>
+              </SectionIntroTitle>
+              <SectionIntroSubTitle>
+                {/* <SectionIntroSubTitle data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="2300" > */}
+                John&apos;s portfolio of projects, ideas, and digital trinkets.
+              </SectionIntroSubTitle>
+              <SectionScrollDown href="#projects-list" />
+            </SectionIntro>
+            {/* <SectionMediaWrapper>
+                <BackgroundVideo autoPlay loop muted>
+                <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
+                Your browser does not support the mp4 video format.
+              </BackgroundVideo>
+            </SectionMediaWrapper> */}
+          </SectionRow>
           <MainContainer>
 
-            <SectionRow id="projects-intro" className="vh-100">
-              <SectionIntro>
-                <SectionIntroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="900">
-                  crave simple,<br />
-                  elegant, &<br />
-                  <b>pretty things</b>
-                </SectionIntroTitle>
-                <SectionIntroSubTitle>
-                {/* <SectionIntroSubTitle data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="2300" > */}
-                  John&apos;s portfolio of projects, ideas, and digital trinkets.
-                </SectionIntroSubTitle>
-                <SectionScrollDown href="#projects-list" />
-              </SectionIntro>
-              {/* <SectionMediaWrapper>
-                <BackgroundVideo autoPlay loop muted>
-                  <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
-                  Your browser does not support the mp4 video format.
-                </BackgroundVideo>
-              </SectionMediaWrapper> */}
-            </SectionRow>
 
             <SectionRow id="projects-list">
 

@@ -2,7 +2,7 @@
 import NormalSubWrapper from 'components/SubWrapper';
 
 const SubWrapperStyled = NormalSubWrapper.extend`
-  width: 12rem;
+  width: 50%;
 `;
 
 export default SubWrapperStyled;

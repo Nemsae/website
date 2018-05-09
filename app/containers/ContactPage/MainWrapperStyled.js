@@ -2,8 +2,7 @@
 import NormalMainWrapper from 'components/MainWrapper';
 
 const MainWrapperStyled = NormalMainWrapper.extend`
-  width: 100%;
-  border: none;
+  width: 50%;
 `;
 
 export default MainWrapperStyled;

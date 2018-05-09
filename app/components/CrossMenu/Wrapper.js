@@ -19,7 +19,7 @@ const CrossMenu = (props) => {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(45deg);
     z-index: 2;
 
     ${!props.active && `

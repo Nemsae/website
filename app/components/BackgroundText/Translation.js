@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
-  color: #fff;
   background: #1B1819;
 
   font-family: monospace;

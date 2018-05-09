@@ -7,8 +7,10 @@ const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
   ${''/* animation: ${squeezeIn} 1100ms ease; */}
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
+  width: 70.71vh;
+  height: 70.71vh;
+  ${'' /* width: 600px;
+  height: 600px; */}
 
   position: absolute;
   left: 50%;

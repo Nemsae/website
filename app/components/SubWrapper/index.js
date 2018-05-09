@@ -12,13 +12,6 @@ const SubWrapper = styled.div.attrs({ className: 'sub-wrapper' })`
   background: #1B1819;
   color: pink;
 
-  .left-quote-svg {
-    position: absolute;
-    top: 6rem;
-    right: 4rem;
-    font-size: 10rem;
-  }
-
   &.pos-top {
     width: 100%;
     height: 60%;
