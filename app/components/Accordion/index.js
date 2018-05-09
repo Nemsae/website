@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 // import { CSSTransition } from 'react-transition-group';
 
 import Panel from './Panel';
+import PanelHeader from './PanelHeader';
+import PanelNumber from './PanelNumber';
 import PanelInfo from './PanelInfo';
 import PanelTitle from './PanelTitle';
 import Wrapper from './Wrapper';
@@ -30,10 +32,16 @@ export class Accordion extends React.PureComponent {
             activePanel === 1 &&
             <PanelInfo></PanelInfo>
           }
-          <PanelTitle>email john</PanelTitle>
+          <PanelHeader>
+            <PanelNumber>01</PanelNumber>
+            <PanelTitle>email john</PanelTitle>
+          </PanelHeader>
         </Panel>
         <Panel className="top" onClick={() => this.maximizePanel(2)} active={activePanel === 2}>
-          <PanelTitle>share music</PanelTitle>
+          <PanelHeader>
+            <PanelTitle>share music</PanelTitle>
+            <PanelNumber>02</PanelNumber>
+          </PanelHeader>
           {
             activePanel === 2 &&
             <PanelInfo></PanelInfo>

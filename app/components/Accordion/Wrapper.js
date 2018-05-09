@@ -10,6 +10,8 @@ const Wrapper = styled.article`
 
   .panel + .panel {
     border-top: 2px solid #1B1819;
+    border-left: 10rem solid transparent;
+    border-right: 10rem solid transparent;
   }
 `;
 

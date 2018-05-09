@@ -149,12 +149,12 @@ export const panelMinimize = () => {
 export const panelTitleMaximize = () => {
   const panelTitleKeyFrame = keyframes`
     from {
-      font-size: 4rem;
+      font-size: 2vw;
       color: #1B1819;
     }
 
     to {
-      font-size: 6rem;
+      font-size: 4vw;
       color: pink;
     }
   `;
@@ -165,12 +165,12 @@ export const panelTitleMaximize = () => {
 export const panelTitleMinimize = () => {
   const panelTitleKeyFrame = keyframes`
     from {
-      font-size: 6rem;
+      font-size: 4vw;
       color: pink;
     }
 
     to {
-      font-size: 4rem;
+      font-size: 2vw;
       color: #1B1819;
     }
   `;

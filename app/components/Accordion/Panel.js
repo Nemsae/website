@@ -9,6 +9,8 @@ import { panelMaximize,
   panelInfoShow,
  } from 'utils/keyFrames';
 
+const titleFontSize = '4vw';
+
 const Panel = (props) => {
   const PanelPrimitive = styled.div.attrs({ className: 'panel' })`
     display: flex;
@@ -17,20 +19,34 @@ const Panel = (props) => {
     justify-content: flex-end;
     &.top {
       justify-content: flex-start;
+      .panel__header {
+        margin-top: 4rem;
+      }
     }
 
     flex-grow: 1;
 
     cursor: pointer;
-    ${'' /* &:hover {
-      background: pink;
-    } */}
+    transition: all 400ms;
+    &:hover {
+      .panel__title {
+        font-size: ${titleFontSize};
+      }
+      .panel__number {
+        font-size: 6vw;
+      }
+      .panel__info {
+
+      }
+    }
 
     animation: ${panelMinimize()} 600ms;
     animation-fill-mode: both;
     .panel__title {
+      font-size: 2vw;
+      color: #1B1819;
       animation: ${panelTitleMinimize()} 600ms;
-      animation-fill-mode: both;
+      animation-fill-mode: backwards;
     }
     .panel__info {
       animation: ${panelInfoShow(false)} 400ms 600ms var(--ease-in-quad);
@@ -40,19 +56,26 @@ const Panel = (props) => {
     ${props.active && `
       cursor: default;
 
-      :hover {}
+      :hover {
 
-      animation: ${panelMaximize()} 600ms var(--ease-in-out-quad);
+      }
+
+      flex-grow: 10;
+      min-width: 60vw;
+      animation: ${panelMaximize()} 600ms var(--ease-out-quad);
       animation-fill-mode: both;
 
       .panel__info {
-        animation: ${panelInfoShow(true)} 400ms 600ms var(--ease-in-quad);
+        opacity: 1;
+        animation: ${panelInfoShow(true)} 400ms 600ms var(--ease-out-quad);
         animation-fill-mode: both;
       }
 
       .panel__title {
-        animation: ${panelTitleMaximize()} 600ms var(--ease-in-out-quad);
-        animation-fill-mode: both;
+        font-size: ${titleFontSize};
+        color: pink;
+        animation: ${panelTitleMaximize()} 600ms var(--ease-out-quad);
+        animation-fill-mode: backwards;
       }
     `}
   `;

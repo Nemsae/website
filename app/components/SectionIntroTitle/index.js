@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SectionIntroTitle = styled.h2.attrs({ className: 'section-intro__title' })`
-  font-size: 8rem;
+  font-size: 4vw;
   line-height: 0.9;
   letter-spacing: -.01em;
 
