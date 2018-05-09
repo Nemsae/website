@@ -149,12 +149,12 @@ export const panelMinimize = () => {
 export const panelTitleMaximize = () => {
   const panelTitleKeyFrame = keyframes`
     from {
-      font-size: 6rem;
+      font-size: 4rem;
       color: #1B1819;
     }
 
     to {
-      font-size: 8rem;
+      font-size: 6rem;
       color: pink;
     }
   `;
@@ -165,17 +165,44 @@ export const panelTitleMaximize = () => {
 export const panelTitleMinimize = () => {
   const panelTitleKeyFrame = keyframes`
     from {
-      font-size: 8rem;
+      font-size: 6rem;
       color: pink;
     }
 
     to {
-      font-size: 6rem;
+      font-size: 4rem;
       color: #1B1819;
     }
   `;
 
   return panelTitleKeyFrame;
+};
+
+export const panelInfoShow = (bool) => {
+  let panelInfoKeyFrame;
+  if (bool) {
+    panelInfoKeyFrame = keyframes`
+      from {
+        opacity: 0.001;
+      }
+
+      to {
+        opacity: 1;
+      }
+    `;
+  } else {
+    panelInfoKeyFrame = keyframes`
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0.001;
+      }
+    `;
+  }
+
+  return panelInfoKeyFrame;
 };
 
 export default {
@@ -189,4 +216,5 @@ export default {
   panelMinimize,
   panelTitleMaximize,
   panelTitleMinimize,
+  panelInfoShow,
 };
