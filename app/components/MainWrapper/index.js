@@ -14,18 +14,13 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
 
   ${'' /* border-bottom: 5rem solid var(--white); */}
 
-  .right-quote-svg {
+  ${'' /* .right-quote-svg {
     position: sticky;
     bottom: 6rem;
     right: calc(100% - 8rem);
     font-size: 10rem;
     z-index: 2;
-    ${'' /* position: fixed;
-    bottom: 6rem;
-    left: calc(40% + 6rem);
-    font-size: 10rem;
-    z-index: 2; */}
-  }
+  } */}
 
   &.pos-top {
     width: 100%;

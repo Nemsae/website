@@ -79,9 +79,9 @@ export class Form extends React.PureComponent {
     console.log('<Form />     inputs', inputs);    //  eslint-disable-line no-console
     return (
       <Wrapper className={`${validateForm(inputs) ? 'valid' : 'invalid'}`}>
-        <BigInput id="name" className={`white ${validate('name', inputs.name)}`} placeholder="type your name" tabIndex={0} onChange={this.handleChange} value={inputs.name} />
-        <SmallInput id="email" className={`white ${validate('email', inputs.email)}`} placeholder="type your email" tabIndex={0} onChange={this.handleChange} value={inputs.email} />
-        <InfoInput id="message" className={`white ${validate('message', inputs.message)}`} placeholder="type a message here" tabIndex={0} onChange={this.handleChange} value={inputs.message} />
+        <BigInput id="name" className={`black ${validate('name', inputs.name)}`} placeholder="type your name" tabIndex={0} onChange={this.handleChange} value={inputs.name} autoFocus />
+        <SmallInput id="email" className={`black ${validate('email', inputs.email)}`} placeholder="type your email" tabIndex={0} onChange={this.handleChange} value={inputs.email} />
+        <InfoInput id="message" className={`black ${validate('message', inputs.message)}`} placeholder="type a message here" tabIndex={0} onChange={this.handleChange} value={inputs.message} />
       </Wrapper>
     );
   }

@@ -16,10 +16,7 @@ const Input = styled.input.attrs({ className: 'input' })`
   &.white {
     color: var(--black);
     background: var(--white);
-    ${'' /* &::selection {
-      background-color: var(--white);
-      color: var(--black);
-    } */}
+
     &.valid, :focus, :hover {
       color: var(--white);
       background: var(--black);
@@ -29,10 +26,7 @@ const Input = styled.input.attrs({ className: 'input' })`
   &.black {
     color: var(--white);
     background: var(--black);
-    ${'' /* &::selection {
-      background-color: var(--black);
-      color: var(--white);
-    } */}
+
     &.valid, :focus, :hover {
       color: var(--black);
       background: var(--white);

@@ -64,7 +64,7 @@ const InfoTextAreaPrimitive = styled.textarea.attrs({ className: 'textarea--info
 
   padding: 1.5rem 4rem;
   width: 37rem;
-  height: 9rem;
+  height: 12rem;
 
   transition: all 600ms;
   &.valid, :focus, :hover {
@@ -74,7 +74,7 @@ const InfoTextAreaPrimitive = styled.textarea.attrs({ className: 'textarea--info
 
     font-size: 3rem;
     width: 40rem;
-    height: 10rem;
+    height: 15rem;
   }
 `;
 
