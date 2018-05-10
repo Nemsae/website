@@ -1,16 +1,16 @@
 import NormalInput from './Input';
 
 const BigInput = NormalInput.extend.attrs({ className: 'input--big' })`
-  font-size: 10rem;
+  font-size: 4rem;
   color: var(--white);
   background: var(--black);
 
-  text-align: center;
-  letter-spacing: 12px;
+  letter-spacing: 1rem;
 
   margin: 0;
-  padding-left: 50px;
-  width: 400px;
+  padding-left: 4rem;
+  height: 12rem;
+  width: 40rem;
 
   &.white {
     color: var(--black);

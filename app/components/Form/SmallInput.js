@@ -2,20 +2,19 @@
 import NormalInput from './Input';
 
 const SmallInput = NormalInput.extend.attrs({ className: 'input--small' })`
-  font-size: 5rem;
+  font-size: 3rem;
   color: var(--white);
   background: var(--black);
 
-  text-align: right;
-  letter-spacing: 12px;
+  letter-spacing: 1rem;
 
   margin: 0.5rem 0rem;
-  padding-left: 6rem;
+  padding-left: 4rem;
   width: 35rem;
-  height: 8rem;
+  height: 9rem;
 
   :focus, :hover {
-    font-size: 6rem;
+    font-size: 4rem;
     width: 40rem;
     height: 10rem;
   }

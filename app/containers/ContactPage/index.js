@@ -52,7 +52,6 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
           {/* <BackgroundText className="invert" /> */}
         </SubWrapperStyled>
         <MainWrapperStyled>
-          <BackgroundText />
           {/* NOTE: make this a alert message, a 2 sec modal that slides in then out. */}
           {/* <SectionHeroWrapper>
             <SectionHero className="color-black">

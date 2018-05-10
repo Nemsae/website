@@ -64,11 +64,13 @@ const InfoTextAreaPrimitive = styled.textarea.attrs({ className: 'textarea--info
 
   font-family: monospace;
   font-size: 2.8rem;
-  text-align: right;
-  line-height: 1.1;
+  line-height: 1.3;
   letter-spacing: 4px;
 
-  padding: 8px 1rem;
+  ${'' /* padding-top: 0.8rem;
+  padding-left: 4rem;
+  padding-right: 4rem; */}
+  padding: 1.5rem 4rem;
   width: 37rem;
   height: 9rem;
 
