@@ -6,35 +6,17 @@ const SmallInput = NormalInput.extend.attrs({ className: 'input--small' })`
   color: var(--white);
   background: var(--black);
 
-  letter-spacing: 1rem;
+  letter-spacing: 0.5rem;
 
   margin: 0.5rem 0rem;
   padding-left: 4rem;
   width: 35rem;
   height: 9rem;
 
-  :focus, :hover {
-    font-size: 4rem;
+  &.valid, :focus, :hover {
+    font-size: 3.5rem;
     width: 40rem;
     height: 10rem;
-  }
-  &.white {
-    color: var(--black);
-    background: var(--white);
-    :focus, :hover {
-      color: var(--white);
-      background: var(--black);
-      border: 0.5rem solid var(--white);
-    }
-  }
-  &.black {
-    color: var(--white);
-    background: var(--black);
-    :focus, :hover {
-      color: var(--black);
-      background: var(--white);
-      border: 0.5rem solid var(--black);
-    }
   }
 `;
 

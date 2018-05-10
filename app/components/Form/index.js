@@ -10,55 +10,63 @@ import Wrapper from './Wrapper';
 
 // import Animations from './Animations';
 
-// NOTE: Form Validation
+// NOTE: Input Validation
 // TODO: actually validate and sanitize
 const validate = (formType, formValue) => {
-  let isValid = false;
+  let isValid = 'invalid';
   if (!formValue) return isValid;
 
   switch (formType) {
     case 'name': {
-      isValid = formValue.length;
+      isValid = formValue.length > 0 && 'valid';
       break;
     }
     case 'email': {
-      isValid = formValue.length;
+      isValid = formValue.length > 0 && 'valid';
       break;
     }
     case 'message': {
-      isValid = formValue.length;
+      isValid = formValue.length > 0 && 'valid';
       break;
     }
     default:
-      isValid = false;
+      isValid = 'invalid';
   }
 
   return isValid;
-}
+};
+
+// NOTE: Form Validation
+const validateForm = (formInputs) => {
+  const formKeys = Object.keys(formInputs);
+  return formKeys.every((key) => formInputs[key].length > 0);
+  // formKeys.every((key) => {
+  //   return formInputs[key].length > 0;
+  // });
+};
+
 // NOTE: HOC
 
 export class Form extends React.PureComponent {
   state = {
     inputs: {
-      // name: '',
-      // email: '',
-      // message: '',
+      name: '',
+      email: '',
+      message: '',
     },
   }
 
   submitForm = () => {}
 
   handleChange = (evt) => {
-    // console.log('evt.target.id: ', evt.target.id);
-    // console.log('evt.target.value: ', evt.target.value);
-    // this.setState({ [evt.target.id]: evt.target.value });
     const id = evt.target.id;
     const value = evt.target.value;
-    console.log('id: ', id);
-    console.log('value: ', value);
     this.setState((prevState) => ({
-      ...prevState.inputs,
-      [id]: value,
+      ...prevState,
+      inputs: {
+        ...prevState.inputs,
+        [id]: value,
+      },
     }));
   }
 
@@ -70,9 +78,9 @@ export class Form extends React.PureComponent {
     console.log('<Form />     this.state', this.state);    //  eslint-disable-line no-console
     console.log('<Form />     inputs', inputs);    //  eslint-disable-line no-console
     return (
-      <Wrapper>
-        <BigInput id="name" className={`white ${validate('name', inputs.name)}`} placeholder="name" tabIndex={0} onChange={this.handleChange} value={inputs.name} />
-        <SmallInput id="email" className={`white ${validate('email', inputs.email)}`} placeholder="email" tabIndex={0} onChange={this.handleChange} value={inputs.email} />
+      <Wrapper className={`${validateForm(inputs) ? 'valid' : 'invalid'}`}>
+        <BigInput id="name" className={`white ${validate('name', inputs.name)}`} placeholder="type your name" tabIndex={0} onChange={this.handleChange} value={inputs.name} />
+        <SmallInput id="email" className={`white ${validate('email', inputs.email)}`} placeholder="type your email" tabIndex={0} onChange={this.handleChange} value={inputs.email} />
         <InfoInput id="message" className={`white ${validate('message', inputs.message)}`} placeholder="type a message here" tabIndex={0} onChange={this.handleChange} value={inputs.message} />
       </Wrapper>
     );

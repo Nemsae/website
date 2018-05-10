@@ -21,22 +21,17 @@ const Wrapper = styled.div`
     bottom: -4rem;
     right: -6rem;
   }
-  :focus, :hover {
-    .left-quote-svg, .right-quote-svg {
-      color: pink;
-    }
-  }
   &.white {
     .textarea--info {
       color: var(--black);
       background-color: var(--white);
-      &::placeholder {
-        color: var(--black);
-      }
-      :focus, :hover {
+      &.valid, :focus, :hover {
         color: var(--white);
         background: var(--black);
         border: 0.5rem solid var(--white);
+        &::placeholder {
+          color: var(--white);
+        }
       }
     }
     svg {
@@ -47,7 +42,7 @@ const Wrapper = styled.div`
     .textarea--info {
       color: var(--white);
       background-color: var(--black);
-      :focus, :hover {
+      &.valid, :focus, :hover {
         color: var(--black);
         background: var(--white);
         border: 0.5rem solid var(--black);
@@ -67,15 +62,12 @@ const InfoTextAreaPrimitive = styled.textarea.attrs({ className: 'textarea--info
   line-height: 1.3;
   letter-spacing: 4px;
 
-  ${'' /* padding-top: 0.8rem;
-  padding-left: 4rem;
-  padding-right: 4rem; */}
   padding: 1.5rem 4rem;
   width: 37rem;
   height: 9rem;
 
   transition: all 600ms;
-  :focus, :hover {
+  &.valid, :focus, :hover {
     color: var(--black);
     background: transparent;
     border: 0.5rem solid var(--black);

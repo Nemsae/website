@@ -5,6 +5,12 @@ const Wrapper = styled.form`
   flex-direction: column;
 
   margin: 5rem auto;
+
+  &.valid {
+    svg.left-quote-svg, svg.right-quote-svg {
+      color: pink;
+    }
+  }
 `;
 
 export default Wrapper;

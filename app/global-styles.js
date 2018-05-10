@@ -83,6 +83,7 @@ injectGlobal`
   :root {
     --black: #1B1819;
     --white: #fff;
+    --pink: pink;
 
     --ease-in-quad: cubic-bezier(.55, .085, .68, .53);
     --ease-in-cubic: cubic-bezier(.550, .055, .675, .19);
