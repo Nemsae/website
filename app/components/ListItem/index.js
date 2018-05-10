@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const ListItem = styled.li.attrs({ className: 'list__item' })`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+const ItemNumber = styled.span.attrs({ className: 'item__number' })`
+  font-size: 4rem;
+  font-family: serif;
+  color:
 `;
 
-export default ListItem;
+export default ItemNumber;

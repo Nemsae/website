@@ -10,11 +10,15 @@ injectGlobal`
     font-weight: 400;
   }
 
-  .jp {
-    font-family: serif;
+  *:focus {
+    outline: none;
   }
 
-  body {
+  ${'' /* .jp {
+    font-family: serif;
+  } */}
+
+  body, input {
     font-family: 'Raleway', sans-serif;
   }
 

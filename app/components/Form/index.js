@@ -1,48 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import { CSSTransition } from 'react-transition-group';
 
-import Panel from './Panel';
-import PanelHeader from './PanelHeader';
-import PanelNumber from './PanelNumber';
-import PanelInfo from './PanelInfo';
-import PanelTitle from './PanelTitle';
+import BigInput from './BigInput';
+import SmallInput from './SmallInput';
+import InfoInput from './InfoInput';
 import Wrapper from './Wrapper';
 // import messages from './messages3';
 
 // import Animations from './Animations';
+
+// NOTE: HOC
 
 export class Form extends React.PureComponent {
   state = {}
 
   submitForm = () => {}
 
+  // NOTE: check form validation state, if isValid, then animate inputs
+
   render() {
     console.log('<Form />     rendered!');     //  eslint-disable-line no-console
-    const { activePanel } = this.state;
-    console.log('activePanel: ', activePanel);
     return (
       <Wrapper>
-        <Panel onClick={() => this.maximizePanel(1)} active={activePanel === 1}>
-          {
-            activePanel === 1 &&
-            <PanelInfo></PanelInfo>
-          }
-          <PanelHeader>
-            <PanelNumber>01</PanelNumber>
-            <PanelTitle>email john</PanelTitle>
-          </PanelHeader>
-        </Panel>
-        <Panel className="top" onClick={() => this.maximizePanel(2)} active={activePanel === 2}>
-          <PanelHeader>
-            <PanelTitle>share music</PanelTitle>
-            <PanelNumber>02</PanelNumber>
-          </PanelHeader>
-          {
-            activePanel === 2 &&
-            <PanelInfo></PanelInfo>
-          }
-        </Panel>
+        <BigInput id="name" className="white" placeholder="Name" tabIndex={0} onChange={this.handleChange} />
+        <SmallInput id="email" className="white" placeholder="Email" tabIndex={0} onChange={this.handleChange} />
+        <InfoInput id="message" className="white" placeholder="type your message here" tabIndex={0} onChange={this.handleChange} />
       </Wrapper>
     );
   }

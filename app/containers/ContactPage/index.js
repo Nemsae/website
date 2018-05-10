@@ -6,13 +6,14 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-import Accordion from 'components/Accordion';
+// import Accordion from 'components/Accordion';
 import BackgroundText from 'components/BackgroundText';
-import MainContainer from 'components/MainContainer';
+import Form from 'components/Form';
+// import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
 // import SubHeader from 'components/SubHeader';
-import SectionIntro from 'components/SectionIntro';
-import SectionIntroTitle from 'components/SectionIntroTitle';
+// import SectionIntro from 'components/SectionIntro';
+// import SectionIntroTitle from 'components/SectionIntroTitle';
 // import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
 import SectionRow from 'components/SectionRow';
 // import SubHeaderTitle from 'components/SubHeaderTitle';
@@ -47,7 +48,8 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
     return (
       <PageWrapper>
         <SubWrapperStyled>
-          <BackgroundText className="invert" />
+          <Form />
+          {/* <BackgroundText className="invert" /> */}
         </SubWrapperStyled>
         <MainWrapperStyled>
           <BackgroundText />

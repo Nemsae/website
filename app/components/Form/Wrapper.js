@@ -1,18 +1,10 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.article`
-  overflow: hidden;
-  height: 100vh;
-  ${'' /* width: 100%; */}
-
+const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
 
-  .panel + .panel {
-    border-top: 2px solid var(--black);
-    border-left: 10rem solid transparent;
-    border-right: 10rem solid transparent;
-  }
+  margin: 5rem auto;
 `;
 
 export default Wrapper;
