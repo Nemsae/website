@@ -14,9 +14,9 @@ ${''/* const MenuItem = styled.li` */}
 
   ${transitionAll(400)}
 
-  color: #fff;
+  color: var(--white);
   :visited {
-    color: #fff;
+    color: var(--white);
   }
 
   &.active-link {
@@ -28,13 +28,13 @@ ${''/* const MenuItem = styled.li` */}
 
   &:not(.active-link) {
     &:hover {
-      background: #1B1819;
+      background: var(--black);
 
       .bullet-link {
         opacity: 0;
       }
       .link-text {
-        color: #fff;
+        color: var(--white);
         font-size: 45px;
       }
     }
@@ -42,24 +42,24 @@ ${''/* const MenuItem = styled.li` */}
 
 
   &:nth-child(1) {
-    border-bottom: 1px solid #1B1819;
-    border-right: 1px solid #1B1819;
+    border-bottom: 1px solid var(--black);
+    border-right: 1px solid var(--black);
     .link-group {
       bottom: 8px;
       right: 70px;
     }
   }
   &:nth-child(2) {
-    border-left: 1px solid #1B1819;
-    border-bottom: 1px solid #1B1819;
+    border-left: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
     .link-group {
       bottom: 8px;
       left: 70px;
     }
   }
   &:nth-child(3) {
-    border-top: 1px solid #1B1819;
-    border-right: 1px solid #1B1819;
+    border-top: 1px solid var(--black);
+    border-right: 1px solid var(--black);
     ${''/* background: #FEC0C1; */}
     .link-group {
       top: 8px;
@@ -67,8 +67,8 @@ ${''/* const MenuItem = styled.li` */}
     }
   }
   &:nth-child(4) {
-    border-left: 1px solid #1B1819;
-    border-top: 1px solid #1B1819;
+    border-left: 1px solid var(--black);
+    border-top: 1px solid var(--black);
     ${''/* background: #DC2543; */}
     .link-group {
       top: 8px;

@@ -24,7 +24,7 @@ export const IconWrapper = (props) => {
     :hover {
       background-color: pink;
       color: white;
-      ${'' /* border-left: 10px solid #fff; */}
+      ${'' /* border-left: 10px solid var(--white); */}
       i {
         transform: scale(1.2);
       }

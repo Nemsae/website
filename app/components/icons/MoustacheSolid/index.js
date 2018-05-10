@@ -10,7 +10,7 @@ const MoustacheSolid = (props) => {
     ${props.size && `transform: scale(${props.size});`}
 
     .mustache-solid.icon {
-      color: #1B1819;
+      color: var(--black);
       position: absolute;
       width: 6px;
       height: 6px;

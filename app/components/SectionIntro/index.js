@@ -6,7 +6,7 @@ const SectionIntro = styled.div.attrs({ className: 'section-intro' })`
   align-items: flex-start;
 
   &.color-white {
-    color: #fff;
+    color: var(--white);
   }
 `;
 

@@ -113,7 +113,7 @@ export const panelMaximize = () => {
     from {
       flex-grow: 1;
       min-width: 60rem;
-      ${'' /* background: #fff; */}
+      ${'' /* background: var(--white); */}
     }
 
     to {
@@ -139,7 +139,7 @@ export const panelMinimize = () => {
     to {
       flex-grow: 1;
       min-width: 60rem;
-      ${'' /* background: #fff; */}
+      ${'' /* background: var(--white); */}
     }
   `;
 
@@ -150,7 +150,7 @@ export const panelTitleMaximize = () => {
   const panelTitleKeyFrame = keyframes`
     from {
       font-size: 2vw;
-      color: #1B1819;
+      color: var(--black);
     }
 
     to {
@@ -171,7 +171,7 @@ export const panelTitleMinimize = () => {
 
     to {
       font-size: 2vw;
-      color: #1B1819;
+      color: var(--black);
     }
   `;
 

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const RomanizedWord = styled.h2.attrs({ className: 'bg-text__word-romanized' })`
   font-size: 5rem;
-  color: #fff;
-  background: #1B1819;
+  color: var(--white);
+  background: var(--black);
 
   text-align: right;
   letter-spacing: 12px;
@@ -15,9 +15,9 @@ const RomanizedWord = styled.h2.attrs({ className: 'bg-text__word-romanized' })`
 
   transition: all 600ms;
   :hover {
-    color: #1B1819;
+    color: var(--black);
     background: transparent;
-    border: 0.5rem solid #1B1819;
+    border: 0.5rem solid var(--black);
 
     font-size: 6rem;
     width: 40rem;

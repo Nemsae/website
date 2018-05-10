@@ -6,13 +6,13 @@ const MainWrapper = styled.div.attrs({ className: 'main-wrapper' })`
   width: 60%;
   height: 100%;
   float: right;
-  background: #fff;
-  color: #1B1819;
+  background: var(--white);
+  color: var(--black);
   position: relative;
 
   overflow-x: hidden;
 
-  ${'' /* border-bottom: 5rem solid #fff; */}
+  ${'' /* border-bottom: 5rem solid var(--white); */}
 
   .right-quote-svg {
     position: sticky;

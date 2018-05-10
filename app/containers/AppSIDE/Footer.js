@@ -7,8 +7,8 @@ const Footer = styled.div`
   justify-content: flex-end;
   padding-right: 60px;
 
-  background: #fff;
-  color: #1B1819;
+  background: var(--white);
+  color: var(--black);
 
   max-height: 60px;
 

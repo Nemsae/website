@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SubHeaderInfo = styled.p.attrs({ className: 'sub-header__info' })`
-  color: #fff;
+  color: var(--white);
   background: pink;
 
   font-family: monospace;

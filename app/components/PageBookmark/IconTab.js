@@ -23,7 +23,7 @@ export const IconTab = (props) => {
 
     transition: all 400ms;
     :hover {
-      background-color: #fff;
+      background-color: var(--white);
       color: pink;
     }
   `;

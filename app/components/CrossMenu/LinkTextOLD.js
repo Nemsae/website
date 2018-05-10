@@ -6,7 +6,7 @@ const LinkText = styled.h2.attrs({ className: 'link-text' })`
   text-decoration: none;
   text-transform: lowercase;
 
-  color: #1B1819;
+  color: var(--black);
 `;
 
 export default LinkText;

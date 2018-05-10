@@ -11,16 +11,16 @@ const LangBar = styled.div`
     cursor: pointer;
 
     &:hover {
-      color: #fff;
+      color: var(--white);
     }
   }
 
   ${'' /* a {
     display: flex;
-    color: #1B1819;
+    color: var(--black);
 
     &:visited {
-      color: #1B1819;
+      color: var(--black);
     }
   } */}
 `;

@@ -16,7 +16,7 @@ const PageMain = styled.div.attrs({ className: 'page-content' })`
 
   transition: all 400ms;
   :hover {
-    background: #fff;
+    background: var(--white);
   } */}
 `;
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   ${'' /* background: #f7f7f7; */}
-  color: #fff;
+  color: var(--white);
   ${''/* background: #464647; */}
 
   display: flex;

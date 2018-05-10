@@ -5,7 +5,7 @@ const Header = styled.header`
   flex-direction: column;
   align-items: flex-start;
 
-  color: #fff;
+  color: var(--white);
 
   text-align: center;
 

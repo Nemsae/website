@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HeaderSocialIcon = styled.a`
-  color: #fff;
+  color: var(--white);
 
   font-size: 1.6rem;
 
@@ -13,7 +13,7 @@ const HeaderSocialIcon = styled.a`
   }
 
   &:visited {
-    color: #fff;
+    color: var(--white);
   }
 `;
 

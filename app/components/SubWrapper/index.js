@@ -9,7 +9,7 @@ const SubWrapper = styled.div.attrs({ className: 'sub-wrapper' })`
   float: left;
   position: relative;
 
-  background: #1B1819;
+  background: var(--black);
   color: pink;
 
   &.pos-top {

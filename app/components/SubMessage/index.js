@@ -4,7 +4,7 @@ const SubMessage = styled.p.attrs({ className: 'sub-message' })`
   margin: 0;
   font-size: 9vw;
   line-height: 0.8;
-  color: #fff;
+  color: var(--white);
   text-align: left;
 `;
 

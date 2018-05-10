@@ -9,7 +9,7 @@ const Moustache = (props) => {
   const MoustachePrimitive = styled.div.attrs({ className: 'icon-moustache' })`
     ${props.size && `transform: scale(${props.size});`}
 
-    color: #1B1819;
+    color: var(--black);
     position: absolute;
     width: 6px;
     height: 6px;

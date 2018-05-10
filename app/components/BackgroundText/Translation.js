@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
-  background: #1B1819;
+  background: var(--black);
 
   font-family: monospace;
   font-size: 2.8rem;
@@ -16,7 +16,7 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
 
   .left-quote-svg, .right-quote-svg {
     position: absolute;
-    color: #1B1819;
+    color: var(--black);
     transition: color 400ms;
   }
   .left-quote-svg {
@@ -33,9 +33,9 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
 
   transition: all 600ms;
   :hover {
-    color: #1B1819;
+    color: var(--black);
     background: transparent;
-    border: 0.5rem solid #1B1819;
+    border: 0.5rem solid var(--black);
 
     font-size: 3rem;
     width: 40rem;

@@ -9,7 +9,7 @@ const SectionIntroWrapper = styled.div.attrs({ className: 'section-intro__wrappe
   } */}
 
   .section-intro__sub-title::before {
-    background-color: #fff;
+    background-color: var(--white);
   }
 `;
 

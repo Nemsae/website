@@ -5,14 +5,14 @@ import styled from 'styled-components';
 const A = (props) => {
   const APrimitive = styled.a.attrs({ className: `${props.className ? props.className : ''}` })`
     display: flex;
-    color: #1B1819;
+    color: var(--black);
 
     &:visited {
-      color: #1B1819;
+      color: var(--black);
     }
 
     ${props.isActive && `
-      color: #fff;
+      color: var(--white);
     `}
   `;
 

@@ -10,35 +10,35 @@ const Wrapper = styled.article.attrs({ className: 'bg-text__container' })`
   align-items: flex-end;
   flex-direction: column;
 
-  color: #fff;
+  color: var(--white);
 
   &.invert {
-    color: #1B1819;
+    color: var(--black);
     align-items: flex-start;
 
     .left-quote-svg, .right-quote-svg {
-      color: #fff;
+      color: var(--white);
     }
     .bg-text__translation {
-      background: #fff;
+      background: var(--white);
       :hover {
-        border: 0.5rem solid #fff;
-        background: #1B1819;
-        color: #fff;
+        border: 0.5rem solid var(--white);
+        background: var(--black);
+        color: var(--white);
       }
-      color: #1B1819;
+      color: var(--black);
     }
     .bg-text__word {
-      background: #fff;
-      color: #1B1819;
+      background: var(--white);
+      color: var(--black);
     }
     .bg-text__word-romanized {
-      background: #fff;
-      color: #1B1819;
+      background: var(--white);
+      color: var(--black);
       :hover {
-        border: 0.5rem solid #fff;
-        background: #1B1819;
-        color: #fff;
+        border: 0.5rem solid var(--white);
+        background: var(--black);
+        color: var(--white);
       }
     }
   }

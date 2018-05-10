@@ -19,6 +19,8 @@ import SectionRow from 'components/SectionRow';
 import SectionHeroWrapper from 'components/SectionHeroWrapper';
 import SectionHero from 'components/SectionHero';
 import SectionHeroTitle from 'components/SectionHeroTitle';
+import SectionList from 'components/SectionList';
+import SectionListItem from 'components/SectionListItem';
 
 // import SubWrapper from 'components/SubWrapper';
 // import MainWrapper from 'components/MainWrapper';
@@ -48,22 +50,27 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
           <BackgroundText className="invert" />
         </SubWrapperStyled>
         <MainWrapperStyled>
+          <BackgroundText />
           {/* NOTE: make this a alert message, a 2 sec modal that slides in then out. */}
-          <SectionHeroWrapper>
+          {/* <SectionHeroWrapper>
             <SectionHero className="color-black">
               <SectionHeroTitle>
                 <b>currently i am</b><br />
                 unavailable<br />
                 <b>for work.</b>
-                {/* say hello,<br />
-                inquire, or<br />
-                <b>share a song</b> */}
-                {/* e: jsson77@gmail.com<br />
-                p: +1 650 678 2956<br />
-                <b>foo bar</b> */}
               </SectionHeroTitle>
             </SectionHero>
-          </SectionHeroWrapper>
+          </SectionHeroWrapper> */}
+
+          {/* <SectionList className="centered">
+            <ListItem>
+              01
+            </ListItem>
+            <ListItem>
+              02
+            </ListItem>
+          </SectionList> */}
+
           {/* <MainContainer>
             <Accordion>
             </Accordion>

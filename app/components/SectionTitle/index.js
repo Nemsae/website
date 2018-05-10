@@ -10,7 +10,7 @@ const SectionTitle = NormalH2.extend.attrs({ className: 'section-title' })`
   position: sticky;
   top: 10rem;
   color: white;
-  background-image: linear-gradient(to right,pink,#fff);
+  background-image: linear-gradient(to right,pink,var(--white));
 
   // color: black;
   // font-weight: bold;

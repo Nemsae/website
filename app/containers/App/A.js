@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const A = (props) => {
   const APrimitive = styled.a.attrs({ className: `${props.className ? props.className : ''}` })`
     display: flex;
-    color: #1B1819;
+    color: var(--black);
     font-size: 1.6rem;
 
     transition: all 300ms;
@@ -15,7 +15,7 @@ const A = (props) => {
     }
 
     &:visited {
-      color: #1B1819;
+      color: var(--black);
     }
 
     ${props.isActive && `

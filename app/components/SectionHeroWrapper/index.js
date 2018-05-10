@@ -7,10 +7,10 @@ const SectionHeroWrapper = styled.div.attrs({ className: 'section-hero__wrapper'
   justify-content: center;
 
   &.color-black {
-    color: #1B1819;
+    color: var(--black);
   }
   &.color-white {
-    color: #fff;
+    color: var(--white);
   }
   &.jc-flex-start {
     justify-content: flex-start;

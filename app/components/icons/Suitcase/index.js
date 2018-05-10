@@ -11,7 +11,7 @@ const Suitcase = (props) => {
     ${props.size && `transform: scale(${props.size});`}
 
     .suitcase-3.icon {
-      color: #1B1819;
+      color: var(--black);
       position: absolute;
       margin-left: 2px;
       margin-top: 6px;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SubText = styled.h4`
   margin: 0;
-  color: #1B1819;
+  color: var(--black);
 
   font-size: 55vh;
   font-family: montserrat;

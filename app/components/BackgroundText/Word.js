@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const Word = styled.h1.attrs({ className: 'bg-text__word' })`
   font-size: 10rem;
-  color: #fff;
-  background: #1B1819;
+  color: var(--white);
+  background: var(--black);
 
   text-align: center;
   letter-spacing: 12px;

@@ -14,13 +14,13 @@ export const invert = (bool) => {
       }
 
       to {
-        background: #1B1819;
+        background: var(--black);
       }
     `;
   } else {
     keyFrame = keyframes`
       from {
-        background: #1B1819;
+        background: var(--black);
       }
 
       to {
@@ -53,7 +53,7 @@ class HeaderBreadCrumb extends React.PureComponent {
       animation: ${invert(false)} 600ms;
       ${'' /* animation-fill-mode: both; */}
       ${this.props.inverted && `
-        background: #1B1819;
+        background: var(--black);
         animation: ${invert(true)} 1400ms;
         animation-fill-mode: both;
       `}

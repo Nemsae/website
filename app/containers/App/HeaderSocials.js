@@ -17,7 +17,7 @@ const HeaderSocials = styled.div`
     margin-left: 3rem;
   }
 
-  background-color: #1B1819;
+  background-color: var(--black);
 
   ::before {
     content: '';
@@ -26,8 +26,8 @@ const HeaderSocials = styled.div`
     left: -4rem;
     height: 4rem;
     width: 4rem;
-    border-top: 2rem solid #1B1819;
-    border-bottom: 2rem solid #1B1819;
+    border-top: 2rem solid var(--black);
+    border-bottom: 2rem solid var(--black);
     border-left: 2rem solid transparent;
   }
   ::after {

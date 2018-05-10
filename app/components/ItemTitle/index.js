@@ -5,7 +5,7 @@ const ItemTitle = styled.span.attrs({ className: 'item-title' })`
   ${'' /* font-family: serif;
   font-size: 8.5rem;
   background: #1B1919;
-  color: #fff;
+  color: var(--white);
   margin: 3rem -1rem;
   padding-left: 1rem; */}
 

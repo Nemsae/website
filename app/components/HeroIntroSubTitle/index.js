@@ -9,7 +9,7 @@ const HeroIntroSubTitle = styled.h4.attrs({ className: 'hero__intro-sub-title' }
   ${'' /* NOTE: for sticky
   margin-bottom: 7rem; */}
 
-  border-top: 2px solid #1B1819;
+  border-top: 2px solid var(--black);
   padding: 2rem 0;
   max-width: 600px;
 

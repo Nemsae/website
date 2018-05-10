@@ -22,7 +22,7 @@ const SectionContent = styled.div.attrs({ className: 'section-content' })`
     }
 
     .section-title {
-      background-image: linear-gradient(to left,pink,#fff);
+      background-image: linear-gradient(to left,pink,var(--white));
     }
   }
 

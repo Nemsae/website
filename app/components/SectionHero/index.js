@@ -5,10 +5,10 @@ const SectionHero = styled.div.attrs({ className: 'section-hero' })`
   align-items: center; */}
 
   &.color-black {
-    color: #1B1819;
+    color: var(--black);
   }
   &.color-white {
-    color: #fff;
+    color: var(--white);
   }
 `;
 

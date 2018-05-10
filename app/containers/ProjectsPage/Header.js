@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Header = styled.header`
-  color: #fff;
-  background: #1B1819;
+  color: var(--white);
+  background: var(--black);
 
   ${'' /* display: flex;
   flex-direction: column;
