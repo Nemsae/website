@@ -2,13 +2,11 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 // import { CSSTransition } from 'react-transition-group';
 
-import BigInput from './BigInput';
-import SmallInput from './SmallInput';
-import InfoInput from './InfoInput';
+import InputBig from 'components/InputBig';
+import InputSmall from 'components/InputSmall';
+import TextAreaStyled from 'components/TextAreaStyled';
 import Wrapper from './Wrapper';
-// import messages from './messages3';
 
-// import Animations from './Animations';
 
 // NOTE: Input Validation
 // TODO: actually validate and sanitize
@@ -46,6 +44,7 @@ const validateForm = (formInputs) => {
 };
 
 // NOTE: HOC
+// HOC will check form and validate inputs, regardless the number of inputs in form.
 
 export class Form extends React.PureComponent {
   state = {
@@ -79,9 +78,9 @@ export class Form extends React.PureComponent {
     console.log('<Form />     inputs', inputs);    //  eslint-disable-line no-console
     return (
       <Wrapper className={`${validateForm(inputs) ? 'valid' : 'invalid'}`}>
-        <BigInput id="name" className={`black ${validate('name', inputs.name)}`} placeholder="type your name" tabIndex={0} onChange={this.handleChange} value={inputs.name} autoFocus />
-        <SmallInput id="email" className={`black ${validate('email', inputs.email)}`} placeholder="type your email" tabIndex={0} onChange={this.handleChange} value={inputs.email} />
-        <InfoInput id="message" className={`black ${validate('message', inputs.message)}`} placeholder="type a message here" tabIndex={0} onChange={this.handleChange} value={inputs.message} />
+        <InputBig id="name" className={`black ${validate('name', inputs.name)}`} placeholder="type your name" tabIndex={0} onChange={this.handleChange} value={inputs.name} autoFocus />
+        <InputSmall id="email" className={`black ${validate('email', inputs.email)}`} placeholder="type your email" tabIndex={0} onChange={this.handleChange} value={inputs.email} />
+        <TextAreaStyled id="message" className={`black ${validate('message', inputs.message)}`} placeholder="type a message here" tabIndex={0} onChange={this.handleChange} value={inputs.message} />
       </Wrapper>
     );
   }

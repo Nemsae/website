@@ -1,7 +1,6 @@
-// import styled from 'styled-components';
-import NormalInput from './Input';
+import NormalInput from 'components/Input';
 
-const SmallInput = NormalInput.extend.attrs({ className: 'input--small' })`
+const InputSmall = NormalInput.extend.attrs({ className: 'input--small' })`
   font-size: 3rem;
   color: var(--white);
   background: var(--black);
@@ -20,4 +19,4 @@ const SmallInput = NormalInput.extend.attrs({ className: 'input--small' })`
   }
 `;
 
-export default SmallInput;
+export default InputSmall;

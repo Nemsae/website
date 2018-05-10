@@ -7,7 +7,7 @@ const Wrapper = styled.form`
   margin: 5rem auto;
 
   &.valid {
-    svg.left-quote-svg, svg.right-quote-svg {
+    svg, svg.left-quote-svg, svg.right-quote-svg {
       color: pink;
     }
   }

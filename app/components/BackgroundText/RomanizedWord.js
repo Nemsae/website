@@ -16,7 +16,7 @@ const RomanizedWord = styled.h2.attrs({ className: 'bg-text__word-romanized' })`
   transition: all 600ms;
   :hover {
     color: var(--black);
-    background: transparent;
+    background: var(--white);
     border: 0.5rem solid var(--black);
 
     font-size: 6rem;

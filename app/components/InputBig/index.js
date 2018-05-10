@@ -1,6 +1,6 @@
-import NormalInput from './Input';
+import NormalInput from 'components/Input';
 
-const BigInput = NormalInput.extend.attrs({ className: 'input--big' })`
+const InputBig = NormalInput.extend.attrs({ className: 'input--big' })`
   font-size: 3.5rem;
   color: var(--white);
   background: var(--black);
@@ -13,4 +13,4 @@ const BigInput = NormalInput.extend.attrs({ className: 'input--big' })`
   width: 40rem;
 `;
 
-export default BigInput;
+export default InputBig;
