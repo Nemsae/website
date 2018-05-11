@@ -7,12 +7,16 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
 // import Accordion from 'components/Accordion';
-import BackgroundText from 'components/BackgroundText';
+// import BackgroundText from 'components/BackgroundText';
 import Form from 'components/Form';
 import List from 'components/List';
+// import ListItemIcon from 'components/ListItemIcon';
 import ListItem from 'components/ListItem';
 import ListItemNumber from 'components/ListItemNumber';
-// import ListItemTitle from 'components/ListItemTitle';
+import ListItemTitle from 'components/ListItemTitle';
+import ListItemSubTitle from 'components/ListItemSubTitle';
+import ListTitle from 'components/ListTitle';
+import ListWrapper from 'components/ListWrapper';
 
 // import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
@@ -53,24 +57,40 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
     return (
       <PageWrapper>
         <SubWrapperStyled>
-          {/* <SectionList className="centered">
-            <ListItem>
-              01
-            </ListItem>
-            <ListItem>
-              02
-            </ListItem>
-          </SectionList> */}
-          <List>
-            <ListItem>
-              <ListItemNumber>01</ListItemNumber>
-              {/* <ListItemTitle>01</ListItemTitle> */}
-            </ListItem>
-          </List>
-          {/* <BackgroundText className="invert" /> */}
+          <ListWrapper>
+            <ListTitle>
+              contact<br />
+              <b>details</b>
+            </ListTitle>
+            <List className="white">
+              <ListItem>
+                <ListItemNumber className="pos-left">01</ListItemNumber>
+                <ListItemSubTitle>email</ListItemSubTitle>
+                <ListItemTitle>jsson77@gmail.com</ListItemTitle>
+              </ListItem>
+              <ListItem>
+                <ListItemNumber className="pos-left">02</ListItemNumber>
+                <ListItemSubTitle>phone</ListItemSubTitle>
+                <ListItemTitle>+1 650 678 2956</ListItemTitle>
+              </ListItem>
+              <ListItem>
+                <ListItemNumber className="pos-left">03</ListItemNumber>
+                <ListItemSubTitle>linkedin</ListItemSubTitle>
+                <ListItemTitle>jaysonder</ListItemTitle>
+              </ListItem>
+              <ListItem>
+                <ListItemNumber className="pos-left">04</ListItemNumber>
+                <ListItemSubTitle>github</ListItemSubTitle>
+                <ListItemTitle>nemsae</ListItemTitle>
+              </ListItem>
+            </List>
+          </ListWrapper>
         </SubWrapperStyled>
         <MainWrapperStyled>
           <Form />
+
+          {/* <Form /> */}
+
           {/* NOTE: make this a alert message, a 2 sec modal that slides in then out. */}
           {/* <SectionHeroWrapper>
             <SectionHero className="color-black">
@@ -81,7 +101,6 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
               </SectionHeroTitle>
             </SectionHero>
           </SectionHeroWrapper> */}
-
 
           {/* <MainContainer>
             <Accordion>

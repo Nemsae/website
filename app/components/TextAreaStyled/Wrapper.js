@@ -17,6 +17,17 @@ const Wrapper = styled.div`
     bottom: -4rem;
     right: -6rem;
   }
+
+  &.white {
+    svg {
+      color: var(--white);
+    }
+  }
+  &.black {
+    svg {
+      color: var(--black);
+    }
+  }
 `;
 
 export default Wrapper;

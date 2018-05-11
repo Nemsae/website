@@ -68,7 +68,7 @@ export class Form extends React.PureComponent {
       },
     }));
   }
-  
+
   // NOTE: check form validation state, if isValid, then animate inputs
 
   render() {
