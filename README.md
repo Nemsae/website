@@ -29,6 +29,7 @@ hover exit fade timeout does not trigger at all.
 
 ## Todos
 
+1. documentation
 1. Host on S3
 2. `cd react-boilerplate`.<br />
 3. Run `npm run setup` in order to install dependencies and clean the git repo.<br />
