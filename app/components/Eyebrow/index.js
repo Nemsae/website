@@ -42,12 +42,12 @@ export const EyebrowPrimitive = styled.div`
   }
 
   &.animate-enable {
-    animation: ${blink} 8s infinite;
+    animation: ${blink} 8s 1400ms infinite;
     ::before {
-      animation: ${browRaise2} 8s infinite alternate;
+      animation: ${browRaise2} 8s 1400ms infinite alternate;
     }
     ::after {
-      animation: ${browRaise1} 8s infinite alternate;
+      animation: ${browRaise1} 8s 1400ms infinite alternate;
     }
   }
 

@@ -4,7 +4,7 @@ const SubText = styled.h4`
   margin: 0;
   color: var(--black);
 
-  font-size: 55vh;
+  font-size: 55.5vh;
   font-family: montserrat;
   line-height: 0.7;
   text-align: center;

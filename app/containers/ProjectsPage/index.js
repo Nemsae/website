@@ -11,6 +11,7 @@ import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
 
 /*  New style imports  */
+import Eyebrow from 'components/Eyebrow';
 import SectionIntro from 'components/SectionIntro';
 import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
 import SectionIntroTitle from 'components/SectionIntroTitle';
@@ -56,6 +57,7 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
           </SubHeader>
         </SubWrapperStyled>
         <MainWrapperStyled>
+
           <SectionRow id="projects-intro" className="vh-100 mw-none">
             <SectionIntro>
               <SectionIntroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="900">
@@ -69,6 +71,7 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
               </SectionIntroSubTitle>
               <SectionScrollDown href="#projects-list" />
             </SectionIntro>
+          <Eyebrow animate />
             {/* <SectionMediaWrapper>
                 <BackgroundVideo autoPlay loop muted>
                 <source src="images/rixi_20180110_012904.mp4" type="video/mp4" />
@@ -76,9 +79,8 @@ export class ProjectsPage extends React.PureComponent { // eslint-disable-line r
               </BackgroundVideo>
             </SectionMediaWrapper> */}
           </SectionRow>
+
           <MainContainer>
-
-
             <SectionRow id="projects-list">
 
               <PortfolioItem>
