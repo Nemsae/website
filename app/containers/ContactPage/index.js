@@ -9,19 +9,24 @@ import injectSaga from 'utils/injectSaga';
 // import Accordion from 'components/Accordion';
 import BackgroundText from 'components/BackgroundText';
 import Form from 'components/Form';
+import List from 'components/List';
+import ListItem from 'components/ListItem';
+import ListItemNumber from 'components/ListItemNumber';
+// import ListItemTitle from 'components/ListItemTitle';
+
 // import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
 // import SubHeader from 'components/SubHeader';
 // import SectionIntro from 'components/SectionIntro';
 // import SectionIntroTitle from 'components/SectionIntroTitle';
 // import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
-import SectionRow from 'components/SectionRow';
+// import SectionRow from 'components/SectionRow';
 // import SubHeaderTitle from 'components/SubHeaderTitle';
-import SectionHeroWrapper from 'components/SectionHeroWrapper';
-import SectionHero from 'components/SectionHero';
-import SectionHeroTitle from 'components/SectionHeroTitle';
-import SectionList from 'components/SectionList';
-import SectionListItem from 'components/SectionListItem';
+// import SectionHeroWrapper from 'components/SectionHeroWrapper';
+// import SectionHero from 'components/SectionHero';
+// import SectionHeroTitle from 'components/SectionHeroTitle';
+// import SectionList from 'components/SectionList';
+// import SectionListItem from 'components/SectionListItem';
 
 // import SubWrapper from 'components/SubWrapper';
 // import MainWrapper from 'components/MainWrapper';
@@ -48,7 +53,20 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
     return (
       <PageWrapper>
         <SubWrapperStyled>
-          {/* <Form /> */}
+          {/* <SectionList className="centered">
+            <ListItem>
+              01
+            </ListItem>
+            <ListItem>
+              02
+            </ListItem>
+          </SectionList> */}
+          <List>
+            <ListItem>
+              <ListItemNumber>01</ListItemNumber>
+              {/* <ListItemTitle>01</ListItemTitle> */}
+            </ListItem>
+          </List>
           {/* <BackgroundText className="invert" /> */}
         </SubWrapperStyled>
         <MainWrapperStyled>
@@ -64,14 +82,6 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
             </SectionHero>
           </SectionHeroWrapper> */}
 
-          {/* <SectionList className="centered">
-            <ListItem>
-              01
-            </ListItem>
-            <ListItem>
-              02
-            </ListItem>
-          </SectionList> */}
 
           {/* <MainContainer>
             <Accordion>

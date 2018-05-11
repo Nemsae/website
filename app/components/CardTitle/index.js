@@ -1,6 +1,6 @@
 import NormalH2 from 'components/H2';
 
-const ListItemTitle = NormalH2.extend.attrs({ className: 'list__item-title' })`
+const CardTitle = NormalH2.extend.attrs({ className: 'card__title' })`
   font-size: 8rem;
   font-weight: 400;
   text-transform: lowercase;
@@ -8,4 +8,4 @@ const ListItemTitle = NormalH2.extend.attrs({ className: 'list__item-title' })`
   color: pink;
 `;
 
-export default ListItemTitle;
+export default CardTitle;

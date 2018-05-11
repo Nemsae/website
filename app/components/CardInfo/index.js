@@ -1,12 +1,12 @@
 import NormalItemInfo from 'components/ItemInfo';
 // import styled from 'styled-components';
 
-const ListItemInfo = NormalItemInfo.extend.attrs({ className: 'list__item-info' })`
+const CardInfo = NormalItemInfo.extend.attrs({ className: 'card__info' })`
   font-size: 2rem;
   margin: 1rem 0;
 `;
 
-// const ListItemInfo = styled.p.attrs({ className: 'list__item-info' })`
+// const CardInfo = styled.p.attrs({ className: 'list__item-info' })`
 //   color: var(--white);
 //   background: var(--black);
 //
@@ -23,4 +23,4 @@ const ListItemInfo = NormalItemInfo.extend.attrs({ className: 'list__item-info' 
 //   width: 37rem;
 // `;
 
-export default ListItemInfo;
+export default CardInfo;

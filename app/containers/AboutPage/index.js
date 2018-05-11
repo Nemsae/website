@@ -29,12 +29,12 @@ import ItemTitle from 'components/ItemTitle';
 // import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
 // import SectionIntroWrapper from 'components/SectionIntroWrapper';
 import SectionList from 'components/SectionList';
-import SectionListItem from 'components/SectionListItem';
+import Card from 'components/Card';
 import SectionItem from 'components/SectionItem';
 import SectionRow from 'components/SectionRow';
-import ListItemInfo from 'components/ListItemInfo';
-import ListItemTitle from 'components/ListItemTitle';
-import ListItemSubTitle from 'components/ListItemSubTitle';
+import CardInfo from 'components/CardInfo';
+import CardTitle from 'components/CardTitle';
+import CardSubTitle from 'components/CardSubTitle';
 
 // import SubHeader from 'components/SubHeader';
 // import SubHeaderTitle from 'components/SubHeaderTitle';
@@ -142,18 +142,18 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
                 <SectionBody>I&apos;ve created, designed and built things with people around the world.</SectionBody>
               </SectionItem>
               <SectionList className="offset">
-                <SectionListItem>
-                  <ListItemTitle>Freelance</ListItemTitle>
-                  <ListItemSubTitle>Web Developer</ListItemSubTitle>
-                  <ListItemInfo>built many things</ListItemInfo>
-                  <ListItemInfo>collaborate with designers</ListItemInfo>
-                </SectionListItem>
-                <SectionListItem>
-                  <ListItemTitle>Basepaws</ListItemTitle>
-                  <ListItemSubTitle>Full Stack Developer</ListItemSubTitle>
-                  <ListItemInfo>built redesigned website</ListItemInfo>
-                  <ListItemInfo>collaborate closely with CEO and CTO to define project scope & goals</ListItemInfo>
-                </SectionListItem>
+                <Card>
+                  <CardTitle>Freelance</CardTitle>
+                  <CardSubTitle>Web Developer</CardSubTitle>
+                  <CardInfo>built many things</CardInfo>
+                  <CardInfo>collaborate with designers</CardInfo>
+                </Card>
+                <Card>
+                  <CardTitle>Basepaws</CardTitle>
+                  <CardSubTitle>Full Stack Developer</CardSubTitle>
+                  <CardInfo>built redesigned website</CardInfo>
+                  <CardInfo>collaborate closely with CEO and CTO to define project scope & goals</CardInfo>
+                </Card>
               </SectionList>
             </SectionRow>
 

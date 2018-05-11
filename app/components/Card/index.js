@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SectionListItem = styled.li.attrs({ className: 'section-list__item' })`
+const Card = styled.li.attrs({ className: 'card' })`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,4 +13,4 @@ const SectionListItem = styled.li.attrs({ className: 'section-list__item' })`
   ${'' /* box-shadow: 2rem 2rem 0rem rgba(0,0,0,0.12), 2rem 2rem 0rem rgba(0,0,0,0.24); */}
 `;
 
-export default SectionListItem;
+export default Card;

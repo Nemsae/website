@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ListItemSubTitle = styled.h4.attrs({ className: 'list__item-sub-title' })`
+const CardSubTitle = styled.h4.attrs({ className: 'card__sub-title' })`
   font-family: 'Montserrat', sans-serif;
   font-size: 3.5rem;
   font-weight: 100;
@@ -10,4 +10,4 @@ const ListItemSubTitle = styled.h4.attrs({ className: 'list__item-sub-title' })`
   text-transform: lowercase;
 `;
 
-export default ListItemSubTitle;
+export default CardSubTitle;
