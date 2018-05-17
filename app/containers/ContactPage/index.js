@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
-
+import { copyToClipboard } from 'utils/documentMethods';
 // import Accordion from 'components/Accordion';
 // import BackgroundText from 'components/BackgroundText';
 import Form from 'components/Form';
@@ -25,66 +25,12 @@ import MainWrapperStyled from './MainWrapperStyled';
 import reducer from './reducer';
 import saga from './saga';
 
+console.log('copyToClipboard: ', copyToClipboard);
+
 //  ------------------------
 //  The contact page
 //  ------------------------
 export class ContactPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  copyText = (text) => {
-    console.log('text: ', text);
-    // var copyText = document.getElementById("myInput");
-    // copyText.select();
-    // document.execCommand("copy");
-
-    const input = document.createElement('input');
-    input.style.position = 'fixed';
-    input.style.top = 0;
-    input.style.left = '-5rem'; //  NOTE: push to left of page
-
-    // Ensure it has a small width and height. Setting to 1px / 1em
-    // doesn't work as this gives a negative w/h on some browsers.
-    input.style.width = '2em';
-    input.style.height = '2em';
-
-    // We don't need padding, reducing the size if it does flash render.
-    input.style.padding = 0;
-
-    // Clean up any borders.
-    input.style.border = 'none';
-    input.style.outline = 'none';
-    input.style.boxShadow = 'none';
-
-    // Avoid flash of white box if rendered for any reason.
-    input.style.background = 'transparent';
-    // input.setAttribute('value', text);
-    input.value = text;
-
-    document.body.appendChild(input);
-    input.select();
-    const result = document.execCommand('copy');
-    // document.body.removeChild(input);
-    console.log('ContactPage    result: ', result);
-    // return result;
-
-    try {
-      if (result) {
-        console.log('Copied Successfully! Do whatever you want next');
-      } else {
-        throw ('Unable to copy');
-      }
-    } catch (err) {
-      console.warn('Oops, Something went wrong ', err);
-    }
-  }
-
-  // copyText = (evt) => {
-  //   const id = evt.target.id.split('__')[1];
-  //   console.log('evt.target: ', evt.target);
-  //   console.log('id: ', id);
-  //   // var copyText = document.getElementById("myInput");
-  //   // copyText.select();
-  //   // document.execCommand("copy");
-  // }
-
   render() {
     console.log('<ContactPage />     rendered!');     //  eslint-disable-line no-console
     return (
@@ -96,22 +42,22 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
               <b>details</b>
             </ListTitle>
             <List className="white">
-              <ListItem id="contact__email" onClick={() => this.copyText('jsson77@gmail.com')}>
+              <ListItem id="contact__email" onClick={() => copyToClipboard('jsson77@gmail.com')}>
                 <ListItemNumber className="pos-left">01</ListItemNumber>
                 <ListItemSubTitle>email</ListItemSubTitle>
                 <ListItemTitle>jsson77@gmail.com</ListItemTitle>
               </ListItem>
-              <ListItem id="contact__phone" onClick={() => this.copyText('+1 650 678 2956')}>
+              <ListItem id="contact__phone" onClick={() => copyToClipboard('+1 650 678 2956')}>
                 <ListItemNumber className="pos-left">02</ListItemNumber>
                 <ListItemSubTitle>phone</ListItemSubTitle>
                 <ListItemTitle>+1 650 678 2956</ListItemTitle>
               </ListItem>
-              <ListItem id="contact__linkedin" onClick={() => this.copyText('linkedin.com/in/jaysonder')}>
+              <ListItem id="contact__linkedin" onClick={() => copyToClipboard('linkedin.com/in/jaysonder')}>
                 <ListItemNumber className="pos-left">03</ListItemNumber>
                 <ListItemSubTitle>linkedin</ListItemSubTitle>
                 <ListItemTitle>jaysonder</ListItemTitle>
               </ListItem>
-              <ListItem id="contact__github" onClick={() => this.copyText('github.com/nemsae')}>
+              <ListItem id="contact__github" onClick={() => copyToClipboard('github.com/nemsae')}>
                 <ListItemNumber className="pos-left">04</ListItemNumber>
                 <ListItemSubTitle>github</ListItemSubTitle>
                 <ListItemTitle>nemsae</ListItemTitle>
