@@ -15,8 +15,8 @@ const Wrapper = styled.div`
 
   ${'' /* overflow: auto;
 
-  padding-left: 80px;
-  padding-right: 80px; */}
+  padding-left: 8rem;
+  padding-right: 8rem; */}
 `;
 
 export default Wrapper;

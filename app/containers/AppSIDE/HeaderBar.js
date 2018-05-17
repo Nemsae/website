@@ -4,7 +4,7 @@ const HeaderBar = styled.div.attrs({ className: 'header-bar' })`
   background: #F7CA18;
 
   height: 80%;
-  width: 10px;
+  width: 1rem;
 
   margin-left: 6px;
   margin-right: 6px;

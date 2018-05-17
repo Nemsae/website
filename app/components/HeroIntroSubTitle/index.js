@@ -11,7 +11,7 @@ const HeroIntroSubTitle = styled.h4.attrs({ className: 'hero__intro-sub-title' }
 
   border-top: 2px solid var(--black);
   padding: 2rem 0;
-  max-width: 600px;
+  max-width: 60rem;
 
   padding-right: 28%;
 

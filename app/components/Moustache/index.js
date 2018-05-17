@@ -4,39 +4,39 @@ import styled from 'styled-components';
 import Wrapper from './Wrapper';
 
 export const MoustachePrimitive = styled.div.attrs({ className: 'moustache' })`
-  width: 180px;
-  height: 180px;
+  width: 18rem;
+  height: 18rem;
   border-radius: 50%;
   position: absolute;
-  left: 100px;
+  left: 10rem;
   color: black;
   box-shadow:
-    150px 240px 0 0 currentColor,
-    300px 240px 0 0 currentColor;
+    15rem 24rem 0 0 currentColor,
+    30rem 24rem 0 0 currentColor;
 
   ::before {
     content: '';
     position:absolute;
-    left: 30px;
-    top: 120px;
-    width: 210px;
-    height: 120px;
-    border-bottom: solid 180px currentColor;
+    left: 3rem;
+    top: 12rem;
+    width: 21rem;
+    height: 12rem;
+    border-bottom: solid 18rem currentColor;
     border-radius: 0 0 0 100%;
     transform: rotate(-40deg);
-    transform-origin: right 210px;
+    transform-origin: right 21rem;
   }
   ::after {
     content: '';
     position:absolute;
-    left: 30px;
-    top: 120px;
-    width: 210px;
-    height: 120px;
-    border-bottom: solid 180px currentColor;
+    left: 3rem;
+    top: 12rem;
+    width: 21rem;
+    height: 12rem;
+    border-bottom: solid 18rem currentColor;
     border-radius: 0 0 100% 0;
     transform: rotate(40deg);
-    transform-origin: right 210px;
+    transform-origin: right 21rem;
   }
 `;
 

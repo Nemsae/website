@@ -28,8 +28,8 @@ const CrossMenu = (props) => {
 
       left: auto;
       top: auto;
-      bottom: 70px;
-      right: 70px;
+      bottom: 7rem;
+      right: 7rem;
       transform: translate(0%, 0%);
     `}
 
@@ -69,11 +69,11 @@ const CrossMenu = (props) => {
       //     position: absolute;
       //     left: auto;
       //     top: auto;
-      //     bottom: 50px;
-      //     right: 50px;
+      //     bottom: 5rem;
+      //     right: 5rem;
       //
-      //     max-width: 100px;
-      //     max-height: 100px;
+      //     max-width: 10rem;
+      //     max-height: 10rem;
       //
       //     .link-text {
       //       opacity: 0;
@@ -91,8 +91,8 @@ const CrossMenu = (props) => {
       //     top: 50%;
       //     transform: translate(-50%, -50%);
       //
-      //     max-width: 600px;
-      //     max-height: 600px;
+      //     max-width: 60rem;
+      //     max-height: 60rem;
       //
       //     .link-text {
       //       opacity: 1;

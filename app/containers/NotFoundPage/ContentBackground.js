@@ -10,8 +10,8 @@ const ContentBackgroundPrimitive = styled.div`
   animation-fill-mode: forwards;
 
   position: absolute;
-  right: 310px;
-  bottom: 420px;
+  right: 31rem;
+  bottom: 42rem;
 `;
 
 const ContentBackground = (props) => (

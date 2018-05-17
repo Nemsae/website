@@ -25,9 +25,9 @@ const minimizeWrapper = (CrossMenuContainer) => {
   .to(menuItems, 0.3, {
     left: 'auto',
     top: 'auto',
-    right: '30px',
-    bottom: '30px',
-    transformOrigin: '287% 260% 0px',
+    right: '3rem',
+    bottom: '3rem',
+    transformOrigin: '287% 260% rem',
     // transform: 'translate(0, 0)',
     // x: 290,
     // y: 0,
@@ -44,8 +44,8 @@ const minimizeWrapper = (CrossMenuContainer) => {
   // }, {
   //   left: 'auto',
   //   top: 'auto',
-  //   right: '30px',
-  //   bottom: '30px',
+  //   right: '3rem',
+  //   bottom: '3rem',
   //   transform: 'translate(0, 0)',
   //   // ease: Sine.easeOut,     //  eslint-disable-line no-undef
   // }, '+=0.1')

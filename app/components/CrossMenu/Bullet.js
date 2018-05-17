@@ -4,13 +4,13 @@ import styled from 'styled-components';
 
 const Bullet = (props) => {
   const BulletPrimitive = styled.div.attrs({ className: 'bullet-link' })`
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
 
     position: absolute;
 
-    ${props.left && 'left: -30px;'}
-    ${props.right && 'right: -30px;'}
+    ${props.left && 'left: -3rem;'}
+    ${props.right && 'right: -3rem;'}
 
     background: var(--white);
 

@@ -7,7 +7,7 @@ import Wrapper from './Wrapper';
 
 export const RixiLogoPrimitive = styled.div`
   width: 79px;
-  height: 260px;
+  height: 26rem;
   border-radius: 0% 110% 0% 40%;
   position: absolute;
   left: 50%;
@@ -18,26 +18,26 @@ export const RixiLogoPrimitive = styled.div`
   ::before {
     content: '';
     position:absolute;
-    left: 30px;
+    left: 3rem;
     top: 58px;
-    width: 210px;
-    height: 120px;
-    border-bottom: solid 80px currentColor;
+    width: 21rem;
+    height: 12rem;
+    border-bottom: solid 8rem currentColor;
     border-radius: 0 0 0 100%;
     transform: rotate(-50deg);
-    transform-origin: right 210px;
+    transform-origin: right 21rem;
   }
   ::after {
     content: '';
     position:absolute;
-    left: 30px;
-    top: 120px;
-    width: 210px;
-    height: 120px;
-    border-bottom: solid 180px currentColor;
+    left: 3rem;
+    top: 12rem;
+    width: 21rem;
+    height: 12rem;
+    border-bottom: solid 18rem currentColor;
     border-radius: 0 0 100% 0;
     transform: rotate(40deg);
-    transform-origin: right 210px;
+    transform-origin: right 21rem;
   }
 
   &.animate-enable {

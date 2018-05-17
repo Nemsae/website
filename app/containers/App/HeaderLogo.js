@@ -7,17 +7,17 @@ import BasicNavLink from './BasicNavLink';
 const HeaderLogo = (props) => {
   const HeaderLogoPrimitive = BasicNavLink.extend.attrs({ className: 'link-text' })`
     border: 1px solid var(--black);
-    line-height: 40px;
-    height: 40px;
-    width: 40px;
+    line-height: 4rem;
+    height: 4rem;
+    width: 4rem;
 
     font-size: 2em;
     font-family: 'Montserrat';
     text-align: center;
 
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
     z-index: 3;
 
     ${props.inverted && `

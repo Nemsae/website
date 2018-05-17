@@ -15,7 +15,7 @@ const Header = styled.div`
 
   ${'' /* overflow: hidden;
   float: left;
-  width: 100px;
+  width: 10rem;
   height: 100vh; */}
 `;
 

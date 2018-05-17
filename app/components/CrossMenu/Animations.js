@@ -26,19 +26,19 @@ const minimizeWrapper = (CrossMenuContainer) => {
   .to(CrossMenuContainer, 0.1, {
     left: 'auto',
     top: 'auto',
-    bottom: '70px',
-    right: '70px',
+    bottom: '7rem',
+    right: '7rem',
     transform: 'translate(0%, 0%)',
   })
   .to(menuItems, 0.3, {
     left: 'auto',
     top: 'auto',
-    right: '30px',
-    bottom: '30px',
+    right: '3rem',
+    bottom: '3rem',
     // transform: matrix(0.07071, 0.07071, -0.07071, 0.07071, 0, 0);
     // justify-content: space-around;
 
-    transformOrigin: '287% 260% 0px',
+    transformOrigin: '287% 260% rem',
     // transform: 'translate(0, 0)',
     // x: 290,
     // y: 0,

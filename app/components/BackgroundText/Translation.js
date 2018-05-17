@@ -10,7 +10,7 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
   letter-spacing: 4px;
 
   margin-top: 6rem;
-  padding: 8px 1rem;
+  padding: 1rem;
 
   position: relative;
 
@@ -29,17 +29,17 @@ const Translation = styled.p.attrs({ className: 'bg-text__translation' })`
   }
 
   width: 37rem;
-  height: 9rem;
 
   transition: all 600ms;
   :hover {
     color: var(--black);
     background: transparent;
+
     border: 0.5rem solid var(--black);
+    padding: 2rem 1rem;
 
     font-size: 3rem;
     width: 40rem;
-    height: 10rem;
 
     .left-quote-svg, .right-quote-svg {
       color: pink;

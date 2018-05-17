@@ -11,7 +11,7 @@ const HeaderInfo = styled.div`
     margin-left: -5px;
     position: absolute;
     top: 0;
-    width: 10px;
+    width: 1rem;
   }
 
 `;

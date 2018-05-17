@@ -4,10 +4,10 @@ const Wrapper = styled.article`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 280px;
+  height: 28rem;
   position: absolute;
-  right: 30px;
-  bottom: 300px;
+  right: 3rem;
+  bottom: 30rem;
   z-index: 2;
 `;
 

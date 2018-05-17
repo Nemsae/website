@@ -28,10 +28,10 @@ const AnimationWrapper = styled.div`
 
   .entering-child-enter, .entering-child-enter-active {
     .sub-wrapper {
-      transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-200rem, 0, 0);
     }
     .main-wrapper {
-      transform: translate3d(2000px, 0, 0);
+      transform: translate3d(200rem, 0, 0);
     }
   }
   .entering-child-enter-done {
@@ -52,10 +52,10 @@ const AnimationWrapper = styled.div`
   }
   ${'' /* .exiting-child-exit-done {
     .sub-wrapper {
-      transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -200rem, 0);
     }
     .main-wrapper {
-      transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-200rem, 0, 0);
     }
   } */}
 `;

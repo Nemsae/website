@@ -5,7 +5,7 @@ const HeaderSocials = styled.div`
   align-items: center;
 
   position: absolute;
-  top: 40px;
+  top: 4rem;
   right: 0;
   z-index: 3;
 

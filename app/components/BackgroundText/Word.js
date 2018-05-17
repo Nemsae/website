@@ -9,8 +9,8 @@ const Word = styled.h1.attrs({ className: 'bg-text__word' })`
   letter-spacing: 12px;
 
   margin: 0;
-  padding-left: 50px;
-  width: 400px;
+  padding-left: 5rem;
+  width: 40rem;
 `;
 
 export default Word;

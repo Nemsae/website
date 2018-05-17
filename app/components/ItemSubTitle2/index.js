@@ -7,8 +7,8 @@ const ItemSubTitle = styled.h3.attrs({ className: 'item-sub-title' })`
 
   letter-spacing: 12px;
 
-  margin: 5px 0px;
-  padding-left: 60px;
+  margin: 5px rem;
+  padding-left: 6rem;
 `;
 
 export default ItemSubTitle;

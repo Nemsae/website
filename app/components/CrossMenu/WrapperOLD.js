@@ -14,21 +14,21 @@ class CrossMenu extends React.PureComponent {
       ${!this.props.active && `
         .menu-items {
           position: absolute;
-          bottom: 50px;
-          right: 50px;
+          bottom: 5rem;
+          right: 5rem;
 
-          max-width: 100px;
-          max-height: 100px;
+          max-width: 10rem;
+          max-height: 10rem;
 
           .link-text {
             opacity: 0;
           }
 
           .bullet-link {
-            height: 20px;
-            width: 20px;
+            height: 2rem;
+            width: 2rem;
 
-            // right: -40px;
+            // right: -4rem;
           }
         }
       `}

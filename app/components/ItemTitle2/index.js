@@ -8,7 +8,7 @@ const ItemTitle = styled.h3.attrs({ className: 'item-title' })`
   letter-spacing: 12px;
 
   margin: 0;
-  padding-left: 50px;
+  padding-left: 5rem;
 `;
 
 export default ItemTitle;

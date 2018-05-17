@@ -5,12 +5,12 @@ const PageWrapper = styled.div.attrs({ className: 'page-wrapper mx-auto' })`
   align-items: center;
   justify-content: center;
 
-  max-width: 1200px;
+  max-width: 120rem;
 
   height: 100%;
 
-  padding-bottom: 120px;
-  padding-top: 120px;
+  padding-bottom: 12rem;
+  padding-top: 12rem;
 `;
 
 export default PageWrapper;

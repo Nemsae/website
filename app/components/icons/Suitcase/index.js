@@ -16,7 +16,7 @@ const Suitcase = (props) => {
       margin-left: 2px;
       margin-top: 6px;
       width: 15px;
-      height: 10px;
+      height: 1rem;
       border-radius: 2px;
       border: solid 1px currentColor;
       background-color: currentColor;
@@ -40,7 +40,7 @@ const Suitcase = (props) => {
       position: absolute;
       left: 4px;
       width: 7px;
-      height: 10px;
+      height: 1rem;
       color: white;
       background-color: currentColor;
     }

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const SectionMediaContainer = styled.div`
-  ${'' /* max-width: 1080px; */}
-  ${'' /* max-width: 480px; */}
+  ${'' /* max-width: 108rem; */}
+  ${'' /* max-width: 48rem; */}
 
   position: absolute;
   left: 35rem;

@@ -11,15 +11,14 @@ import { makeSelectLocation } from 'containers/App/selectors';
 import { changeLocale } from 'containers/LanguageProvider/actions';
 import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 
-// import MaterialIcon from 'components/MaterialIcon';
 // import FlagIcon from 'components/FlagIcon';
-// import Eyebrow from 'components/Eyebrow';
-// import SideSocialIcons from 'components/SideSocialIcons';
-
-import CrossMenu from 'components/CrossMenu';
-import BackgroundText from 'components/BackgroundText';
 
 import ContentRouter from 'containers/ContentRouter';
+
+import BackgroundText from 'components/BackgroundText';
+import CrossMenu from 'components/CrossMenu';
+import RixiLogo from 'components/RixiLogo';
+
 
 // import A from './A';
 import HeaderSocialIcon from './HeaderSocialIcon';
@@ -32,26 +31,24 @@ import CrumbNext from './CrumbNext';
 // import Footer from './Footer';
 // import Header from './Header';
 import Button from './Button';
-// import TestButton from './TestButton';
 import HeaderBreadCrumb from './HeaderBreadCrumb';
 import HeaderSocials from './HeaderSocials';
 // import HeaderLangBar from './HeaderLangBar';
 import HeaderLogo from './HeaderLogo';
-// import HeaderTitle from './HeaderTitle';
-import HomeNavLink from './HomeNavLink';
+// import HomeNavLink from './HomeNavLink';
 
 // import messages from './messages';
 
 //  NOTE: returns a bool that will determine whether to invert the breadcrumb or not.
 const breadCrumbInvertState = (currentPath) => {
-  //  NOTE: do NOT invert for following paths
-  console.log('breadCrumbInvertState    currentPath: ', currentPath);
+  //  NOTE: do NOT invert colors for following routes
+  // console.log('breadCrumbInvertState    currentPath: ', currentPath)
   const invertDict = {
     '/about': true,
     '/projects': true,
     '/contact': true,
   };
-  console.log('breadCrumbInvertState    invertDict[currentPath]: ', invertDict[currentPath]);
+  // console.log('breadCrumbInvertState    invertDict[currentPath]: ', invertDict[currentPath]);
   return invertDict[currentPath];
 };
 
@@ -114,12 +111,7 @@ export class App extends React.PureComponent {
   }
 
   captureHoveredLocation = (location) => {
-    //  BUG: re render of the menu items, because of the capture changing state.
-
-    // const location = evt.target.id;
-    // console.log('evt.target.attr: ', evt.target.attr);
-    // console.log('evt.target.parentNode.className: ', evt.target.parentNode.className);
-    // console.log('Sanity:captureHoveredLocation    called!     with location: ', location, '     and a previous location: ', this.state.hoveredLocation);
+    //  NOTE: will cause re-render of the menu items, because of the capture changing state.
     if (location === '' || location === this.state.hoveredLocation || location === this.props.location.pathname.slice(1)) return;
     this.setState({
       hoveredLocation: location,
@@ -147,13 +139,11 @@ export class App extends React.PureComponent {
 
     return (
       <AppWrapper>
-        {/* <Header id="header-root"></Header> */}
-        {/* <HeaderTitle>Web Dev</HeaderTitle> */}
-        {/* <HeaderTitle><Eyebrow animate /></HeaderTitle> */}
-
         <BackgroundText />
 
-        <HeaderLogo inverted={location.pathname !== '/'} to="/" activeClassName="active-link">R</HeaderLogo>
+        <HeaderLogo inverted={location.pathname !== '/'} to="/" activeClassName="active-link">
+          <RixiLogo />
+        </HeaderLogo>
         {/* <HeaderLogo inverted={location.pathname !== '/'}><HomeNavLink to="/" activeClassName="active-link">R</HomeNavLink></HeaderLogo> */}
 
         <HeaderBreadCrumb inverted={breadCrumbInvertState(location.pathname)} strikeThrough={this.state.hoveredLocation.length > 0}>

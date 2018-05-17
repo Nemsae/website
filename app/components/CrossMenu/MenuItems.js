@@ -9,8 +9,8 @@ const MenuItems = styled.ul.attrs({ className: 'menu-items' })`
   flex-wrap: wrap;
   width: 70.71vh;
   height: 70.71vh;
-  ${'' /* width: 600px;
-  height: 600px; */}
+  ${'' /* width: 60rem;
+  height: 60rem; */}
 
   position: absolute;
   left: 50%;

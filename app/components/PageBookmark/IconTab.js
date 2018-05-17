@@ -16,7 +16,7 @@ export const IconTab = (props) => {
     color: #d0e0ef;
 
     width: 100%;
-    height: 100px;
+    height: 10rem;
 
     background-color: pink;
     color: white;

@@ -3,15 +3,15 @@ import { keyframes } from 'styled-components';
 const directionTransform = (direction) => {
   switch (direction) {
     case 'right':
-      return 'transform: translate3d(2000px, 0, 0);';
+      return 'transform: translate3d(200rem, 0, 0);';
     case 'left':
-      return 'transform: translate3d(-2000px, 0, 0);';
+      return 'transform: translate3d(-200rem, 0, 0);';
     case 'top':
-      return 'transform: translate3d(0, 2000px, 0);';
+      return 'transform: translate3d(0, 200rem, 0);';
     case 'bottom':
-      return 'transform: translate3d(0, -2000px, 0);';
+      return 'transform: translate3d(0, -200rem, 0);';
     default:
-      return 'transform: translate3d(2000px, 0, 0);';
+      return 'transform: translate3d(200rem, 0, 0);';
   }
 };
 
@@ -100,8 +100,8 @@ export const squeezeIn = () => {
     }
 
     to {
-      max-width: 600px;
-      max-height: 600px;
+      max-width: 60rem;
+      max-height: 60rem;
     }
   `;
 

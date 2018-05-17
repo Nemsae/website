@@ -9,7 +9,7 @@ const Wrapper = styled.div.attrs({ className: 'page-bookmark' })`
   align-items: center;
 
   height: 100%;
-  width: 150px;
+  width: 15rem;
 
   margin-left: 25px;
   margin-right: 25px;

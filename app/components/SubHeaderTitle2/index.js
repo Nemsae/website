@@ -10,7 +10,7 @@ const SubHeaderTitle = styled.h2.attrs({ className: 'sub-header__title' })`
   letter-spacing: 12px;
 
   margin: 0;
-  padding-left: 50px;
+  padding-left: 5rem;
 `;
 
 export default SubHeaderTitle;

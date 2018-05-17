@@ -14,18 +14,18 @@ const AnimationWrapper = styled.div`
   */}
   .about-page__pushed {
     .sub-wrapper {
-      transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-200rem, 0, 0);
     }
     .main-wrapper {
-      transform: translate3d(2000px, 0, 0);
+      transform: translate3d(200rem, 0, 0);
     }
   }
   .about-page-enter, .about-page-enter-active, .contact-page-enter, .contact-page-enter-active {
     .sub-wrapper {
-      transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-200rem, 0, 0);
     }
     .main-wrapper {
-      transform: translate3d(2000px, 0, 0);
+      transform: translate3d(200rem, 0, 0);
     }
   }
   .about-page-enter-done, .contact-page-enter-done {
@@ -52,10 +52,10 @@ const AnimationWrapper = styled.div`
   */}
   .projects-page-enter, .projects-page-enter-active {
     .sub-wrapper {
-      transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-200rem, 0, 0);
     }
     .main-wrapper {
-      transform: translate3d(0, 2000px, 0);
+      transform: translate3d(0, 200rem, 0);
     }
   }
   .projects-page-enter-done {
@@ -82,10 +82,10 @@ const AnimationWrapper = styled.div`
   */}
   .not-found-page-enter, .not-found-page-enter-active {
     .sub-wrapper {
-      transform: translate3d(0, 2000px, 0);
+      transform: translate3d(0, 200rem, 0);
     }
     .main-wrapper {
-      transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -200rem, 0);
     }
   }
   .not-found-page-enter-done {

@@ -15,7 +15,7 @@ const MoustacheSolid = (props) => {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      box-shadow: 5px 8px 0 0 currentColor,  10px 8px 0 0 currentColor;
+      box-shadow: 5px 8px 0 0 currentColor,  1rem 8px 0 0 currentColor;
     }
 
     .mustache-solid.icon:before {

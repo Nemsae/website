@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SectionRow = styled.div.attrs({ className: 'section-row' })`
   width: 100%;
-  max-width: 1280px;
+  max-width: 128rem;
 
   ${'' /* margin: 6rem 0; */}
   padding: 6rem 10rem 0;

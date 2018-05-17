@@ -5,15 +5,15 @@ const Menu = styled.nav`
 
   transform: rotate(270deg);
 
-  margin-top: 150px;
+  margin-top: 15rem;
 
   &:before {
     position: absolute;
     content: "";
     height: 2px;
-    width: 30px;
+    width: 3rem;
     background-color: #949495;
-    left: -50px;
+    left: -5rem;
     top: 6px;
   }
 
