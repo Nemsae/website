@@ -33,7 +33,7 @@ export class BlogPage extends React.PureComponent { // eslint-disable-line react
               <SubHeaderTitle>Let&apos;s head back home</SubHeaderTitle>
             </SectionRow>
           </MainContainer> */}
-          <SubText>ixi</SubText>
+          <SubText>rixi</SubText>
         </MainWrapper>
       </PageWrapper>
     );

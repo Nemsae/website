@@ -25,8 +25,6 @@ import MainWrapperStyled from './MainWrapperStyled';
 import reducer from './reducer';
 import saga from './saga';
 
-console.log('copyToClipboard: ', copyToClipboard);
-
 //  ------------------------
 //  The contact page
 //  ------------------------
