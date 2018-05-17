@@ -1,6 +1,4 @@
 export const copyToClipboard = (text) => {
-  console.log('text: ', text);
-
   const input = document.createElement('input');
   input.style.position = 'fixed';
   input.style.top = 0;
@@ -14,7 +12,7 @@ export const copyToClipboard = (text) => {
   // We don't need padding, reducing the size if it does flash render.
   input.style.padding = 0;
 
-  // Clean up any borders.
+  // Clean up any borders.333
   input.style.border = 'none';
   input.style.outline = 'none';
   input.style.boxShadow = 'none';

@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { withRouter, Switch, Route } from 'react-router-dom';
 
 import AboutPage from 'containers/AboutPage/Loadable';
+import BlogPage from 'containers/BlogPage/Loadable';
 import ContactPage from 'containers/ContactPage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import ProjectsPage from 'containers/ProjectsPage/Loadable';
@@ -101,6 +102,7 @@ export class ContentRouter extends React.PureComponent { // eslint-disable-line 
               <Route exact path="/about" component={AboutPage} />
               <Route exact path="/projects" component={ProjectsPage} />
               <Route exact path="/contact" component={ContactPage} />
+              <Route exact path="/blog" component={BlogPage} />
               <Route component={NotFoundPage} />
             </Switch>
           </SwitchWrapper>
