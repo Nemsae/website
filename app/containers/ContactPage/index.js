@@ -52,6 +52,41 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
     console.log('<ContactPage />     CWU!');     //  eslint-disable-line no-console
   }
 
+  copyText = (text) => {
+    console.log('text: ', text);
+    // var copyText = document.getElementById("myInput");
+    // copyText.select();
+    // document.execCommand("copy");
+
+    // var input = document.createElement('input');
+    // input.setAttribute('value', text);
+    // document.body.appendChild(input);
+    // input.select();
+    // var result = document.execCommand('copy');
+    // document.body.removeChild(input)
+    // return result;
+
+    // try {
+    //   var successful = document.execCommand('copy');
+    //   if (successful) {
+    //     console.log('Copied Successfully! Do whatever you want next');
+    //   } else {
+    //     throw ('Unable to copy');
+    //   }
+    // } catch (err) {
+    //   console.warn('Oops, Something went wrong ', err);
+    // }
+  }
+
+  // copyText = (evt) => {
+  //   const id = evt.target.id.split('__')[1];
+  //   console.log('evt.target: ', evt.target);
+  //   console.log('id: ', id);
+  //   // var copyText = document.getElementById("myInput");
+  //   // copyText.select();
+  //   // document.execCommand("copy");
+  // }
+
   render() {
     console.log('<ContactPage />     rendered!');     //  eslint-disable-line no-console
     return (
@@ -63,22 +98,22 @@ export class ContactPage extends React.PureComponent { // eslint-disable-line re
               <b>details</b>
             </ListTitle>
             <List className="white">
-              <ListItem>
+              <ListItem id="contact__email" onClick={() => this.copyText('jsson77@gmail.com')}>
                 <ListItemNumber className="pos-left">01</ListItemNumber>
                 <ListItemSubTitle>email</ListItemSubTitle>
                 <ListItemTitle>jsson77@gmail.com</ListItemTitle>
               </ListItem>
-              <ListItem>
+              <ListItem id="contact__phone" onClick={() => this.copyText('+1 650 678 2956')}>
                 <ListItemNumber className="pos-left">02</ListItemNumber>
                 <ListItemSubTitle>phone</ListItemSubTitle>
                 <ListItemTitle>+1 650 678 2956</ListItemTitle>
               </ListItem>
-              <ListItem>
+              <ListItem id="contact__linkedin" onClick={() => this.copyText('linkedin.com/in/jaysonder')}>
                 <ListItemNumber className="pos-left">03</ListItemNumber>
                 <ListItemSubTitle>linkedin</ListItemSubTitle>
                 <ListItemTitle>jaysonder</ListItemTitle>
               </ListItem>
-              <ListItem>
+              <ListItem id="contact__github" onClick={() => this.copyText('github.com/nemsae')}>
                 <ListItemNumber className="pos-left">04</ListItemNumber>
                 <ListItemSubTitle>github</ListItemSubTitle>
                 <ListItemTitle>nemsae</ListItemTitle>
