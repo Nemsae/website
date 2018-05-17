@@ -9,7 +9,7 @@ export const MoustachePrimitive = styled.div.attrs({ className: 'moustache' })`
   border-radius: 50%;
   position: absolute;
   left: 10rem;
-  color: black;
+  color: var(--black);
   box-shadow:
     15rem 24rem 0 0 currentColor,
     30rem 24rem 0 0 currentColor;

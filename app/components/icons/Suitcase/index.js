@@ -41,7 +41,7 @@ const Suitcase = (props) => {
       left: 4px;
       width: 7px;
       height: 1rem;
-      color: white;
+      color: var(--white);
       background-color: currentColor;
     }
   `;

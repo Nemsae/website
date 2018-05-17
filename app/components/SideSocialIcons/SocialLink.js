@@ -11,10 +11,10 @@ const SocialLink = styled.a`
   text-decoration: none;
   width: 5rem;
   &:hover {
-    border-color: white;
+    border-color: var(--white);
     text-decoration: none;
     i {
-      color: white;
+      color: var(--white);
     }
   }
 `;

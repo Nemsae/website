@@ -2,11 +2,11 @@ import NormalH3 from 'components/H3';
 // import styled from 'styled-components';
 
 const SectionIntroSubTitle = NormalH3.extend.attrs({ className: 'section-intro__sub-title' })`
-  // font-family: "raleway", sans-serif;
-
-  max-width: 225px;
+  max-width: 22.5rem;
 
   position: relative;
+
+  line-height: 1.4;
 
   :before {
     content: "";

@@ -2,17 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { blink, browRaise1, browRaise2 } from './keyFrames';
+// import { blink, browRaise1, browRaise2 } from './keyFrames';
+import SubWrapper from './SubWrapper';
 import Wrapper from './Wrapper';
 
-export const RixiLogoPrimitive = styled.div`
-  width: 79px;
+export const RixiLogoPrimitive = styled.div.attrs({ className: 'rixi-logo__primitive' })`
+  width: 8rem;
   height: 26rem;
   border-radius: 0% 110% 0% 40%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: black;
+  ${'' /* color: var(--black); */}
   box-shadow: 155px 157px 0 0 currentColor;
 
   ::before {
@@ -40,20 +41,16 @@ export const RixiLogoPrimitive = styled.div`
     transform-origin: right 21rem;
   }
 
-  &.animate-enable {
-    animation: ${blink} 8s infinite;
-    ::before {
-      animation: ${browRaise2} 8s infinite alternate;
-    }
-    ::after {
-      animation: ${browRaise1} 8s infinite alternate;
-    }
-  }
+  &.animate-enable {}
+
+  transform: scale(0.10);
 `;
 
 const RixiLogo = (props) => (
   <Wrapper>
-    <RixiLogoPrimitive className={props.animate ? 'rixi-logo animate-enable' : 'rixi animate-disable'} />
+    <SubWrapper>
+      <RixiLogoPrimitive className={props.animate ? 'rixi-logo animate-enable' : 'rixi animate-disable'} />
+    </SubWrapper>
   </Wrapper>
 );
 

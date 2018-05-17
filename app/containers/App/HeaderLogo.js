@@ -6,24 +6,33 @@ import BasicNavLink from './BasicNavLink';
 
 const HeaderLogo = (props) => {
   const HeaderLogoPrimitive = BasicNavLink.extend.attrs({ className: 'link-text' })`
-    border: 1px solid var(--black);
-    line-height: 4rem;
-    height: 4rem;
-    width: 4rem;
+    border: 3px solid var(--black);
+    height: 4.2rem;
+    width: 4.2rem;
 
-    font-size: 2em;
-    font-family: 'Montserrat';
-    text-align: center;
+    overflow: hidden;
 
     position: absolute;
     top: 4rem;
-    left: 4rem;
+    left: 3.8rem;
     z-index: 3;
 
+    transition: all 400ms;
+    :hover {
+      transform: scale(1.2);
+      border-color: var(--pink);
+      .rixi-logo__wrapper {
+        color: var(--pink);
+      }
+    }
+
     ${props.inverted && `
-      border-color: white;
+      border-color: var(--white);
       .link-text {
-        color: white;
+        color: var(--white);
+      }
+      .rixi-logo__wrapper {
+        color: var(--white);
       }
     `}
 

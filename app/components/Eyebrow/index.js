@@ -12,7 +12,7 @@ export const EyebrowPrimitive = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: black;
+  color: var(--black);
   box-shadow:
     12rem 24rem 0 0 currentColor;
 

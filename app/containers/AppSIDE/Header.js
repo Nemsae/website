@@ -9,7 +9,7 @@ const Header = styled.div`
   z-index: 1000;
 
   border-right: 1px solid #ECEBEB;
-  background-color: white;
+  background-color: var(--white);
 
   transition: margin 600ms cubic-bezier(0.77, 0, 0.175, 1);
 

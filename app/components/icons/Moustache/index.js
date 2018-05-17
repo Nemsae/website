@@ -52,7 +52,7 @@ const Moustache = (props) => {
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      color: white;
+      color: var(--white);
       box-shadow: 6px 9px 0 0 currentColor,  11px 9px 0 0 currentColor;
       position: absolute;
       z-index: 2;
@@ -64,7 +64,7 @@ const Moustache = (props) => {
         top: 6px;
         width: 6px;
         height: 3px;
-        color: white;
+        color: var(--white);
         border: 0 solid transparent;
         border-bottom: 4px solid currentColor;
         border-radius: 0 0 0 100%;
@@ -81,7 +81,7 @@ const Moustache = (props) => {
         top: 6px;
         width: 6px;
         height: 3px;
-        color: white;
+        color: var(--white);
         border: 0 solid transparent;
         border-bottom: 4px solid currentColor;
         border-radius: 0 0 100% 0;

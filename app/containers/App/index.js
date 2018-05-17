@@ -19,12 +19,9 @@ import BackgroundText from 'components/BackgroundText';
 import CrossMenu from 'components/CrossMenu';
 import RixiLogo from 'components/RixiLogo';
 
-
-// import A from './A';
 import HeaderSocialIcon from './HeaderSocialIcon';
 import AppWrapper from './AppWrapper';
 import CrumbBackSlash from './CrumbBackSlash';
-// import Content from './Content';
 // import ContentRouter from './ContentRouter';
 import CrumbCurrent from './CrumbCurrent';
 import CrumbNext from './CrumbNext';
