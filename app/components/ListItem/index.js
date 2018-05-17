@@ -7,10 +7,21 @@ const ListItem = styled.li.attrs({ className: 'list__item' })`
 
   position: relative;
 
-  margin: 1rem 0;
+  margin: 1rem -1rem;
+  padding: 1rem;
+
+  cursor: pointer;
 
   &:first-child {
     margin-top: 2rem;
+  }
+
+  :hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    .list__item__number {
+      color: var(--pink);
+      transform: translateY(-50%) scale(1.5);
+    }
   }
 `;
 

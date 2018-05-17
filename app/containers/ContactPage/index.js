@@ -17,27 +17,8 @@ import ListItemTitle from 'components/ListItemTitle';
 import ListItemSubTitle from 'components/ListItemSubTitle';
 import ListTitle from 'components/ListTitle';
 import ListWrapper from 'components/ListWrapper';
-
-// import MainContainer from 'components/MainContainer';
 import PageWrapper from 'components/PageWrapper';
-// import SubHeader from 'components/SubHeader';
-// import SectionIntro from 'components/SectionIntro';
-// import SectionIntroTitle from 'components/SectionIntroTitle';
-// import SectionIntroSubTitle from 'components/SectionIntroSubTitle';
-// import SectionRow from 'components/SectionRow';
-// import SubHeaderTitle from 'components/SubHeaderTitle';
-// import SectionHeroWrapper from 'components/SectionHeroWrapper';
-// import SectionHero from 'components/SectionHero';
-// import SectionHeroTitle from 'components/SectionHeroTitle';
-// import SectionList from 'components/SectionList';
-// import SectionListItem from 'components/SectionListItem';
 
-// import SubWrapper from 'components/SubWrapper';
-// import MainWrapper from 'components/MainWrapper';
-
-// import Eyebrow from 'components/Eyebrow';
-
-// import SectionIntroSubTitleStyled from './SectionIntroSubTitleStyled';
 import SubWrapperStyled from './SubWrapperStyled';
 import MainWrapperStyled from './MainWrapperStyled';
 
@@ -48,34 +29,51 @@ import saga from './saga';
 //  The contact page
 //  ------------------------
 export class ContactPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  componentWillUnmount() {
-    console.log('<ContactPage />     CWU!');     //  eslint-disable-line no-console
-  }
-
   copyText = (text) => {
     console.log('text: ', text);
     // var copyText = document.getElementById("myInput");
     // copyText.select();
     // document.execCommand("copy");
 
-    // var input = document.createElement('input');
+    const input = document.createElement('input');
+    input.style.position = 'fixed';
+    input.style.top = 0;
+    input.style.left = '-5rem'; //  NOTE: push to left of page
+
+    // Ensure it has a small width and height. Setting to 1px / 1em
+    // doesn't work as this gives a negative w/h on some browsers.
+    input.style.width = '2em';
+    input.style.height = '2em';
+
+    // We don't need padding, reducing the size if it does flash render.
+    input.style.padding = 0;
+
+    // Clean up any borders.
+    input.style.border = 'none';
+    input.style.outline = 'none';
+    input.style.boxShadow = 'none';
+
+    // Avoid flash of white box if rendered for any reason.
+    input.style.background = 'transparent';
     // input.setAttribute('value', text);
-    // document.body.appendChild(input);
-    // input.select();
-    // var result = document.execCommand('copy');
-    // document.body.removeChild(input)
+    input.value = text;
+
+    document.body.appendChild(input);
+    input.select();
+    const result = document.execCommand('copy');
+    // document.body.removeChild(input);
+    console.log('ContactPage    result: ', result);
     // return result;
 
-    // try {
-    //   var successful = document.execCommand('copy');
-    //   if (successful) {
-    //     console.log('Copied Successfully! Do whatever you want next');
-    //   } else {
-    //     throw ('Unable to copy');
-    //   }
-    // } catch (err) {
-    //   console.warn('Oops, Something went wrong ', err);
-    // }
+    try {
+      if (result) {
+        console.log('Copied Successfully! Do whatever you want next');
+      } else {
+        throw ('Unable to copy');
+      }
+    } catch (err) {
+      console.warn('Oops, Something went wrong ', err);
+    }
   }
 
   // copyText = (evt) => {
