@@ -102,7 +102,8 @@ export class AboutPage extends React.PureComponent { // eslint-disable-line reac
             <SectionRow id="section-splash" className="no-padding">
               <SectionHeroWrapper className="color-black jc-flex-start">
                 <SectionHeroIntro>
-                  <HeroIntroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="900">
+                  <HeroIntroTitle>
+                    {/* <HeroIntroTitle data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-out-sine" data-aos-duration="600" data-aos-delay="900"> */}
                     About me<b>*</b>
                   </HeroIntroTitle>
                   <HeroIntroSubTitle>

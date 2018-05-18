@@ -61,11 +61,11 @@ export class App extends React.PureComponent {
     // console.log('this.aos: ', this.aos);
     // this.aos.init();
     AOS.init();
-    window.addEventListener('load', () => {
-      // console.log('Sanity:load', AOS.refresh);
-      AOS.refresh();
-    });
-    // window.addEventListener('load', AOS.refresh());
+    // window.addEventListener('load', () => {
+    //   // console.log('Sanity:load', AOS.refresh);
+    //   AOS.refresh();
+    // });
+    window.addEventListener('load', AOS.refresh());
   }
 
   // componentDidUpdate() {
